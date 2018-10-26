@@ -1,0 +1,2 @@
+http://localhost/footregion/api/index.php?task=joueurs&login=mdupond&pwd=123456
+http://localhost/footregion/api/index.php?task=joueurs&id=2&login=mdupond&pwd=123456
