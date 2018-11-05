@@ -16,5 +16,23 @@ class UtilisateurHelper extends JHelperContent
 				'index.php?option=com_footregion&view=discussions',
 				$vName == 'discussions'
 		);
+		
+		JHtmlSidebar::addEntry(
+			JText::_('clubs'),
+			'index.php?option=com_footregion&view=clubs',
+			$vName == 'clubs'
+		);
+
+		JHtmlSidebar::addEntry(
+			JText::_('categories'),
+			'index.php?option=com_footregion&view=categories',
+			$vName == 'categories'
+		);
+
+		JHtmlSidebar::addEntry(
+			JText::_('directeurs'),
+			'index.php?option=com_footregion&view=directeurs',
+			$vName == 'directeurs'
+		);
 	}
 }
