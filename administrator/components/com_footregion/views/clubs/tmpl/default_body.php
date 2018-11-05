@@ -30,7 +30,10 @@ if ($saveOrder)
 			<?php echo $item->sigle; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->prenom; ?>
+			<?php echo $item->nomDirecteur; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->prenomDirecteur; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'clubs.', true); ?>
