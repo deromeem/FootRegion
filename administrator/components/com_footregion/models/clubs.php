@@ -15,6 +15,8 @@ class FootregionModelClubs extends JModelList
 				'adr_rue', 'c.adr_rue',
 				'adr_ville', 'c.adr_ville',
 				'adr_cp', 'c.adr_cp',
+				'nom','c.nom',
+				'prenom','c.prenom',
 				'directeurs_id', 'c.directeurs_id',
 				'alias','c.alias',
 				'published', 'c.published',
@@ -47,6 +49,11 @@ class FootregionModelClubs extends JModelList
 		$query = $this->_db->getQuery(true);
 		$query->select('c.id, c.nom, c.adr_rue,c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
 		$query->from('#__footregion_clubs c');
+
+		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
+		$query->select('u.nom AS nom, u.prenom AS prenom')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
+		
+
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {

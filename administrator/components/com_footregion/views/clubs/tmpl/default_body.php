@@ -30,6 +30,9 @@ if ($saveOrder)
 			<?php echo $item->sigle; ?>
 		</td>
 		<td class="nowrap hidden-phone">
+			<?php echo $item->nom; ?>
+		</td>
+		<td class="nowrap hidden-phone">
 			<?php echo $item->prenom; ?>
 		</td>
 		<td class="center hidden-phone">
