@@ -49,8 +49,6 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="form-vertical">
 				<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('club_id'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('club_id'); ?></div>
 				</div>					
 			</div>
 		</div>

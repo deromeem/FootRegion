@@ -5,14 +5,14 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-        <field name="nom" type="text" label="COM_FOOTREGION_CLUBS_NOM"
-            description="COM_FOOTREGION_DIRECTEURS_NOM"
+        <field name="nom" type="text" label="COM_FOOTREGION_UTILISATEURS_NOM"
+            description="COM_FOOTREGION_UTILISATEURS_NOM"
             size="40" class="inputbox" default="" required="true"
         />
 
 		<field name="alias" type="text" label="COM_FOOTREGION_DIRECTEURS_ALIAS"
             description="COM_FOOTREGION_DIRECTEURS_ALIAS"
-            size="40" class="inputbox" default="" required="true"
+            size="40" class="inputbox" default="" required="false"
         />
         
 		<field
