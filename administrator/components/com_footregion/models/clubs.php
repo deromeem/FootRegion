@@ -15,8 +15,8 @@ class FootregionModelClubs extends JModelList
 				'adr_rue', 'c.adr_rue',
 				'adr_ville', 'c.adr_ville',
 				'adr_cp', 'c.adr_cp',
-				'nom','c.nom',
-				'prenom','c.prenom',
+				'nom','c.nomDirecteur',
+				'prenom','c.prenomDirecteur',
 				'directeurs_id', 'c.directeurs_id',
 				'alias','c.alias',
 				'published', 'c.published',
@@ -51,7 +51,7 @@ class FootregionModelClubs extends JModelList
 		$query->from('#__footregion_clubs c');
 
 		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
-		$query->select('u.nom AS nom, u.prenom AS prenom')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
+		$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 		
 
 		// filtre de recherche rapide textuel
