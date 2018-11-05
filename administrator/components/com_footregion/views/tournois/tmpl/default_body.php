@@ -3,10 +3,11 @@ defined('_JEXEC') or die('Restricted Access');
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
+
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=clubs.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_footregion&task=utilisateurs.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -18,28 +19,28 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=club.edit&id='.(int) $item->id); ?>">
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=utilisateur.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->nom); ?>
 				</a>
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->alias; ?>
+			<?php echo $item->prenom; ?>
 		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->sigle; ?>
+		<td class="nowrap hidden-tablet hidden-phone">
+			<?php echo $item->email; ?>
 		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->nomDirecteur; ?>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->prenomDirecteur; ?>
+		<td class="nowrap center hidden-tablet hidden-phone">
+			<?php echo $item->mobile; ?>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'clubs.', true); ?>
+			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'utilisateurs.', true); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo JHtml::_('date', $item->modified, $this->paramDateFmt); ?>
+		</td>
+		<td class="center hidden-tablet hidden-phone">
+			<?php echo (int) $item->hits; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo (int) $item->id; ?>
