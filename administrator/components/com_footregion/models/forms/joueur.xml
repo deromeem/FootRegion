@@ -18,7 +18,7 @@
         />        
         <field name="poste" type="text" label="COM_FOOTREGION_JOUEURS_POSTE"
             description="COM_FOOTREGION_JOUEURS_POSTE"
-            size="40" class="input-large-text" default="" required="true"
+            size="40" class="input-large-text" default="" required="false"
         />        
         <field name="num_licence" type="text" label="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
             description="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
