@@ -4,8 +4,8 @@ defined('_JEXEC') or die('Restricted access');
 class FootregionModelTournoi extends JModelAdmin
 {
 	protected $_compo = 'com_footregion';
-	protected $_context = 'match';
-	public $typeAlias = 'com_footregion.match';
+	protected $_context = 'tournoi';
+	public $typeAlias = 'com_footregion.tournoi';
 	
 	// Surcharges des méthodes de la classe mère pour :
 	

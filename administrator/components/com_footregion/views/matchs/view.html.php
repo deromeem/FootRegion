@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewmatchs extends JViewLegacy
+class FootregionViewMatchs extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -85,10 +85,7 @@ class FootregionViewmatchs extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'm.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			'm.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
-			'm.published' => JText::_('JSTATUS'),
-			'm.modified' => JText::_('JDATE'),
+			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_NOM'),
 			'm.id' => "Id"
 		);
 	}  
