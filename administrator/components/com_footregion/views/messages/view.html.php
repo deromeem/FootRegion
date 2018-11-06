@@ -86,6 +86,9 @@ class FootregionViewMessages extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			'm.libelle' => JText::_('COM_FOOTREGION_MESSAGES_LIBELLE'),
+			'm.alias' => JText::_('COM_FOOTREGION_MESSAGES_ALIAS'),
+			'm.utilisateurs_id' => JText::_('COM_FOOTREGION_MESSAGES_UTILISATEURS_ID'),
+			'm.discussions_id' => JText::_('COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID'),
 			'm.published' => JText::_('JSTATUS'),
 			'm.modified' => JText::_('JDATE'),
 			'm.id' => "Id"
