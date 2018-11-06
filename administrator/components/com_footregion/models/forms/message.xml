@@ -8,9 +8,15 @@
         <field name="discussions_id" type="text" label="COM_FOOTREGION_MESSAGE_DISCUSSIONS_ID"
             description="COM_FOOTREGION_MESSAGE_DISCUSSIONS_ID"
             size="40" class="input-large-text" default="" required="true"
+<<<<<<< HEAD
         />
 		<field name="utilisateurs_id" type="text" label="COM_FOOTREGION_MESSAGE_UTILISATEURS_ID"
             description="COM_FOOTREGION_MESSAGE_UTILISATEURS_ID"
+=======
+        />        
+        <field name="discussions_id" type="text" label="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
+            description="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
+>>>>>>> db3c5cdbd8e44d3e4c6a3fc142b2dd85ca6f5b1e
             size="40" class="input-large-text" default="" required="true"
         />
 		<field name="alias" type="text"
@@ -19,6 +25,7 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
+<<<<<<< HEAD
         <field
 			name="libelle" type="editor" label="COM_FOOTREGION_MESSAGE_LIBELLE"
 			description="COM_FOOTREGION_MESSAGE_LIBELLE"
@@ -27,6 +34,13 @@
 			buttons="true"
 			hide="readmore,pagebreak"
 		/>
+=======
+        
+        <field name="utilisateurs_id" type="text" label="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            description="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            size="40" class="inputbox" default="" required="true"
+        />
+>>>>>>> db3c5cdbd8e44d3e4c6a3fc142b2dd85ca6f5b1e
 
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
