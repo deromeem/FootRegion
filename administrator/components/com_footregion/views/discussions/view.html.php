@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewTournois extends JViewLegacy
+class FootregionViewDiscussions extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -31,7 +31,7 @@ class FootregionViewTournois extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		TournoiHelper::addSubmenu('tournois');
+		UtilisateurHelper::addSubmenu('Utilisateurs');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,17 +43,17 @@ class FootregionViewTournois extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_TOURNOIS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_DISCUSSIONS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('tournoi.add');
-		JToolBarHelper::editList('tournoi.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'tournois.delete');
-		JToolbarHelper::publish('tournois.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('tournois.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('tournois.archive');
-		JToolbarHelper::checkin('tournois.checkin');
-		JToolbarHelper::trash('tournois.trash');
+		JToolBarHelper::addNew('discussion.add');
+		JToolBarHelper::editList('discussion.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'discussions.delete');
+		JToolbarHelper::publish('discussions.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('discussions.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('discussions.archive');
+		JToolbarHelper::checkin('discussions.checkin');
+		JToolbarHelper::trash('discussions.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
@@ -85,11 +85,12 @@ class FootregionViewTournois extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			't.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			't.alias' => JText::_('COM_ANNUAIRE_ENTREPRISES_ALIAS'),
-			't.published' => JText::_('JSTATUS'),
-			't.modified' => JText::_('JDATE'),
-			't.id' => "Id"
+			'd.theme' => JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'),
+			'd.utilisateurs_id' => JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID'),
+			'd.published' => JText::_('JSTATUS'),
+			'd.modified' => JText::_('JDATE'),
+			'd.id' => "Id"
 		);
 	}  
+	
 }

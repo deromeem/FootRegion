@@ -49,14 +49,16 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="form-vertical">
 				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('sigle'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('sigle'); ?></div> 
 					<div class="control-label"><?php echo $this->form->getLabel('adr_rue'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('adr_rue'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('adr_ville'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('adr_ville'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('adr_cp'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
-					<div class="control-label"><?php echo $this->form->getLabel('directeurs'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('directeurs'); ?></div>
+					<div class="control-label"><?php echo $this->form->getLabel('directeurs_id'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('directeurs_id'); ?></div> 
 				</div>					
 			</div>
 		</div>

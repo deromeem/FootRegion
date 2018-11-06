@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewMatch extends JViewLegacy
+class FootregionViewMessage extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -33,23 +33,23 @@ class FootregionViewMatch extends JViewLegacy
 		// $checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $userId);
 	
 		$isNew = ($this->item->id == 0);
-		JToolBarHelper::title(JText::_('COM_FOOTREGION_MATCH')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'address');
+		JToolBarHelper::title(JText::_('COM_FOOTREGION_MESSAGE')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'libelle');
 
 
 		if ($isNew)
 		{
-			JToolbarHelper::apply('match.apply');
-			JToolbarHelper::save('match.save');
-			JToolbarHelper::save2new('match.save2new');
+			JToolbarHelper::apply('message.apply');
+			JToolbarHelper::save('message.save');
+			JToolbarHelper::save2new('message.save2new');
 		}
 		else
 		{
 			// if (!$checkedOut)
 			// {
-				JToolbarHelper::apply('match.apply');
-				JToolbarHelper::save('match.save');
+				JToolbarHelper::apply('message.apply');
+				JToolbarHelper::save('message.save');
 			// }
 		}
-		JToolBarHelper::cancel('match.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
+		JToolBarHelper::cancel('message.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
 }

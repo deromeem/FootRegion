@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelMessages extends JModelList
+class FootregionModelSignalements extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -9,14 +9,14 @@ class FootregionModelMessages extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'm.id',
-				'libelle', 'm.libelle',
-				'alias', 'm.alias',
-				'utilisateurs_id', 'm.utilisateurs_id',
-				'discussions_id', 'm.discussions_id',
-				'published', 'm.published',
-				'hits', 'm.hits',
-				'modified', 'm.modified'
+				'id', 's.id',
+				'libelle', 's.libelle',
+				'arbitres_id', 's.arbitres_id',
+				'entraineurs_id', 's.entraineurs_id',
+				'alias', 's.alias',
+				'published', 's.published',
+				'hits', 's.hits',
+				'modified', 's.modified'
 			);
 		}
 		parent::__construct($config);
@@ -24,7 +24,7 @@ class FootregionModelMessages extends JModelList
 
 	protected function populateState($ordering = null, $direction = null)
 	{
-		// récupère les informations de la session utilisateur nécessaires au paramétrage de l'écran
+		// récupère les informations de la session signalement nécessaires au paramétrage de l'écran
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
@@ -41,26 +41,26 @@ class FootregionModelMessages extends JModelList
 	{
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
-		$query->select('m.id,m.libelle,m.alias,m.utilisateurs_id,m.discussions_id,m.published,m.hits,m.modified');
-		$query->from('#__footregion_messages m');
+		$query->select('s.id, s.libelle, s.arbitres_id, s.entraineurs_id, s.alias, s.published, s.hits, s.modified');
+		$query->from('#__footregion_signalements s');
 
 		// joint la table pays
-		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
+		$query->select('a.id AS arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.id=s.id');
+		$query->select('e.id AS entraineurs')->join('LEFT', '#__footregion_entraineurs AS e ON e.id=s.id');
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('m.id = '.(int) substr($search, 3));
+				$query->where('s.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'm.nom LIKE '.$search;
-				$searches[]	= 'm.prenom LIKE '.$search;
+				$searches[]	= 's.libelle LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -75,15 +75,15 @@ class FootregionModelMessages extends JModelList
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
 		if (is_numeric($published)) {
-			$query->where('m.published=' . (int) $published);
+			$query->where('s.published=' . (int) $published);
 		}
 		elseif ($published === '') {
 			// si aucune sélection, on n'affiche que les publiés et dépubliés
-			$query->where('(m.published=0 OR m.published=1)');
+			$query->where('(s.published=0 OR s.published=1)');
 		}
 
 		// tri des colonnes
-		$orderCol = $this->state->get('list.ordering', 'm.nom');
+		$orderCol = $this->state->get('list.ordering', 's.nom');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
@@ -91,15 +91,26 @@ class FootregionModelMessages extends JModelList
 		return $query;
 	}
 
-	// public function getPays()
-	// {
-		// $query = $this->_db->getQuery(true);
-		// $query->select('id, pays');
-		// $query->from('#__annuaire_pays');
-		// $query->where('published=1');
-		// $query->order('pays ASC');
-		// $this->_db->setQuery($query);
-		// $pays = $this->_db->loadObjectList();
-		// return $pays;
-	// }	
+	public function getEntraineurs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id');
+		$query->from('#__footregion_entraineurs');
+		$query->where('published=1');
+		$query->order('entraineurs ASC');
+		$this->_db->setQuery($query);
+		$entraineurs = $this->_db->loadObjectList();
+		return $entraineurs;
+	}
+	public function getArbitres()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id');
+		$query->from('#__footregion_arbitres');
+		$query->where('published=1');
+		$query->order('id ASC');
+		$this->_db->setQuery($query);
+		$arbitres = $this->_db->loadObjectList();
+		return $arbitres;
+	}	
 }

@@ -1,16 +1,16 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelMatch extends JModelAdmin
+class FootregionModelMessage extends JModelAdmin
 {
 	protected $_compo = 'com_footregion';
-	protected $_context = 'match';
-	public $typeAlias = 'com_footregion.match';
+	protected $_context = 'message';
+	public $typeAlias = 'com_footregion.message';
 	
 	// Surcharges des méthodes de la classe mère pour :
 	
 	// 1) définir la table de soutien à utiliser
-	public function getTable($type = 'Match', $prefix = 'FootregionTable', $config = array()) 
+	public function getTable($type = 'message', $prefix = 'FootregionTable', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

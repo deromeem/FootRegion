@@ -8,7 +8,7 @@ JHtml::_('formbehavior.chosen', 'select');
 <script type="text/javascript">
 	Joomla.submitbutton = function(task)
 	{
-		if (task == 'entraineur.cancel' || document.formvalidator.isValid(document.id('footregion-form')))
+		if (task == 'message.cancel' || document.formvalidator.isValid(document.id('footregion-form')))
 		{
 			Joomla.submitform(task, document.getElementById('footregion-form'));
 		}
@@ -18,11 +18,15 @@ JHtml::_('formbehavior.chosen', 'select');
 <form action="<?php echo JRoute::_('index.php?option=com_footregion&layout=edit&id='.(int) $this->item->id); ?>"
       method="post" name="adminForm" id="footregion-form" class="form-validate">
 
-	<div class="form-inline form-inline-header">
+	<div class="form-inline form-inline-header">				
 		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-		</div>										
+			<div class="control-label"><?php echo $this->form->getLabel('discussions_id'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('discussions_id'); ?></div>
+		</div>
+		<div class="control-group">
+			<div class="control-label"><?php echo $this->form->getLabel('utilisateurs_id'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('utilisateurs_id'); ?></div>
+		</div>						
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
@@ -30,28 +34,28 @@ JHtml::_('formbehavior.chosen', 'select');
 	</div>
 	
 	<div class="form-horizontal">
-	<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'entraineur')); ?>
+		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'message')); ?>
 
-<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'entraineur', JText::_('COM_FOOTREGION_ENTRAINEUR')); ?>
-<div class="row-fluid">
-	<div class="span9">
-		<div class="form-vertical">
-			<div class="control-group">
-				<div class="span2">
-					<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
-				</div>
-				<div class="span7">
-					<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
+		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'message', JText::_('COM_FOOTREGION_MESSAGE')); ?>
+		<div class="row-fluid">
+			<div class="span9">
+				<div class="form-vertical">
+					<div class="control-group">
+						<div class="span2">
+							<div class="control-label"><?php echo $this->form->getLabel('libelle'); ?></div>
+						</div>
+						<div class="span7">
+							<div class="controls"><?php echo $this->form->getInput('libelle'); ?></div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="span3">
+				<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
+			</div>
 		</div>
-	</div>
-	<div class="span3">
-		<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
-	</div>
-</div>
-<?php echo JHtml::_('bootstrap.endTab'); ?>
-		
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('JGLOBAL_FIELDSET_PUBLISHING', true)); ?>
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="span6">
