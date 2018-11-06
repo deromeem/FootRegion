@@ -46,6 +46,7 @@ class FootregionModelSignalements extends JModelList
 
 		// joint la table pays
 		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
+		// joint les tables
 		$query->select('a.id AS arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.id=s.id');
 		$query->select('e.id AS entraineurs')->join('LEFT', '#__footregion_entraineurs AS e ON e.id=s.id');
 
