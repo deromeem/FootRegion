@@ -16,7 +16,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX', 'm.equipe_domicile', $listDirn, $listOrder) ?>
         </th>
         <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX', 'm.equipe_invite', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS', 'm.equipe_invite', $listDirn, $listOrder) ?>
         </th>
         <th class="nowrap center hidden-tablet hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_TOURNOI', 'm.tournoi', $listDirn, $listOrder) ?>

@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewMatchs extends JViewLegacy
+class FootregionViewStatuts extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -31,7 +31,7 @@ class FootregionViewMatchs extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('matchs');
+		UtilisateurHelper::addSubmenu('statuts');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,17 +43,17 @@ class FootregionViewMatchs extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCHS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_STATUTS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('match.add');
-		JToolBarHelper::editList('match.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'matchs.delete');
-		JToolbarHelper::publish('matchs.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('matchs.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('matchs.archive');
-		JToolbarHelper::checkin('matchs.checkin');
-		JToolbarHelper::trash('matchs.trash');
+		JToolBarHelper::addNew('statut.add');
+		JToolBarHelper::editList('statut.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'statuts.delete');
+		JToolbarHelper::publish('statuts.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('statuts.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('statuts.archive');
+		JToolbarHelper::checkin('statuts.checkin');
+		JToolbarHelper::trash('statuts.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
@@ -85,8 +85,8 @@ class FootregionViewMatchs extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_NOM'),
-			'm.id' => "Id"
+			's.statut' => JText::_('COM_FOOTREGION_STATUTS_STATUT'),
+			's.id' => "Id"
 		);
 	}  
 	
