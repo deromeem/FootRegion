@@ -25,6 +25,9 @@
 		<submenu>
 			<menu link="option=com_footregion&amp;view=utilisateurs">com_footregion_utilisateurs</menu>
 			<menu link="option=com_footregion&amp;view=discussions">com_footregion_discussions</menu>
+			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
+			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>
+			<menu link="option=com_footregion&amp;view=directeurs">com_footregion_directeurs</menu>
 		</submenu>
 		<files folder="admin">
 			<folder>controllers</folder>
