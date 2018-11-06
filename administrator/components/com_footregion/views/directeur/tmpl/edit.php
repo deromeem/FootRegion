@@ -20,11 +20,8 @@ JHtml::_('formbehavior.chosen', 'select');
       method="post" name="adminForm" id="footregion-form" class="form-validate">
 
 	<div class="control-group">
-		
-	    <div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
-		<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
-		<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
-		<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
+		<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+		<div class="controls"><?php echo $this->form->getInput('email'); ?></div>			
 		<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 		<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
 	</div>					
@@ -52,9 +49,6 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="form-vertical">
 				<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-					
 					<div class="control-label"><?php echo $this->form->getLabel('date_affectation'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('date_affectation'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('club_id'); ?></div>

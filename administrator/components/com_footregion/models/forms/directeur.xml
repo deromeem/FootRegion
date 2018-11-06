@@ -5,19 +5,11 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 
-		<field name="email" type="text" label="COM_FOOTREGION_UTILISATEURS_EMAIL"
-            description="COM_FOOTREGION_UTILISATEURS_EMAIL"
+		<field name="email" type="text" label="COM_FOOTREGION_DIRECTEURS_EMAIL"
+            description="COM_FOOTREGION_DIRECTEURS_EMAIL"
             size="40" class="inputbox" default="" required="true"
         />
-		<field name="prenom" type="text" label="COM_FOOTREGION_UTILISATEURS_PRENOM"
-            description="COM_FOOTREGION_UTILISATEURS_PRENOM"
-            size="40" class="inputbox" default="" required="true"
-        />
-        <field name="nom" type="text" label="COM_FOOTREGION_UTILISATEURS_NOM"
-            description="COM_FOOTREGION_UTILISATEURS_NOM"
-            size="40" class="inputbox" default="" required="true"
-        />
-
+		
 		<field name="alias" type="text" label="COM_FOOTREGION_DIRECTEURS_ALIAS"
             description="COM_FOOTREGION_DIRECTEURS_ALIAS"
             size="40" class="inputbox" default="" required="false"
@@ -28,7 +20,6 @@
 			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
         />
 		
-        
 		<field
 				name="commentaire" type="editor" label="COM_FOOTREGION_DIRECTEURS_COMMENTAIRE"
 				description="COM_FOOTREGION_DIRECTEURS_COMMENTAIRE"
