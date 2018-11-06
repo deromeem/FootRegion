@@ -22,11 +22,7 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
-		</div>					
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
-		</div>					
+		</div>										
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
@@ -40,6 +36,14 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="row-fluid">
 			<div class="span9">
 				<div class="form-vertical">
+				<div class="control-group">
+						<div class="span2">
+							<div class="control-label"><?php echo $this->form->getLabel('date_heure'); ?></div>
+						</div>
+						<div class="span7">
+							<div class="controls"><?php echo $this->form->getInput('date_heure'); ?></div>
+						</div>
+					</div>
 					<div class="control-group">
 						<div class="span2">
 							<div class="control-label"><?php echo $this->form->getLabel('score_domicile'); ?></div>
@@ -58,27 +62,11 @@ JHtml::_('formbehavior.chosen', 'select');
 					</div>
 					<div class="control-group">
 						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('date_heure'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('date_heure'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
 							<div class="control-label"><?php echo $this->form->getLabel('adr_rue'); ?></div>
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('adr_rue'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -86,7 +74,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('adr_ville'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -94,7 +82,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -102,7 +90,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('coord_gps'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -110,7 +98,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('equipes_invite_id'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -118,7 +106,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('equipes_domicile_id'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -126,7 +114,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('entraineurs_invite_id'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -134,7 +122,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('entraineurs_initiateur_id'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -142,7 +130,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('tournois_id'); ?></div>
-						</div>	
+						</div>
 					</div>
 					<div class="control-group">
 						<div class="span2">
@@ -150,63 +138,7 @@ JHtml::_('formbehavior.chosen', 'select');
 						</div>
 						<div class="span7">
 							<div class="controls"><?php echo $this->form->getInput('statuts_id'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('published'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('published'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('created'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('created'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('created_by'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('created_by'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('modified'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('modified'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('modified_by'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('modified_by'); ?></div>
-						</div>	
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('hits'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('hits'); ?></div>
-						</div>	
 					</div>
 				</div>
 			</div>

@@ -19,10 +19,19 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=messages.edit&id='.(int) $item->id); ?>">
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=message.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->libelle); ?>
 				</a>
 			</div>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->alias; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->utilisateurs_id; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->discussions_id; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'messages.', true); ?>

@@ -26,21 +26,48 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-		</div>	
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('clubs_id'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('clubs_id'); ?></div>
-		</div>
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('categories_id'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('categories_id'); ?></div>
-		</div>
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-		</div>				
+		</div>					
 	</div>
+	<div class="form-horizontal">
+		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'equipe')); ?>
 
+		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'equipe', JText::_('COM_FOOTREGION_EQUIPE')); ?>
+		<div class="row-fluid">
+			<div class="span9">
+				<div class="form-vertical">
+					<div class="control-group">
+						<div class="span2">
+							<div class="control-label"><?php echo $this->form->getLabel('clubs_id'); ?></div>
+						</div>
+						<div class="span7">
+							<div class="controls"><?php echo $this->form->getInput('clubs_id'); ?></div>
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="span2">
+							<div class="control-label"><?php echo $this->form->getLabel('categories_id'); ?></div>
+						</div>
+						<div class="span7">
+							<div class="controls"><?php echo $this->form->getInput('categories_id'); ?></div>
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="span2">
+							<div class="control-label"><?php echo $this->form->getLabel('entraineurs_id'); ?></div>
+						</div>
+						<div class="span7">
+							<div class="controls"><?php echo $this->form->getInput('entraineurs_id'); ?></div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="span3">
+				<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
+			</div>
+		</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
+		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'equipe')); ?>
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('JGLOBAL_FIELDSET_PUBLISHING', true)); ?>
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="span6">

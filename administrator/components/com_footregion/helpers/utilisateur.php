@@ -78,9 +78,9 @@ class UtilisateurHelper extends JHelperContent
 		);
 		
 		JHtmlSidebar::addEntry(
-			JText::_('Status'),
-			'index.php?option=com_footregion&view=status',
-			$vName == 'status'
+			JText::_('Statuts'),
+			'index.php?option=com_footregion&view=statuts',
+			$vName == 'statuts'
 		);
 
 		JHtmlSidebar::addEntry(

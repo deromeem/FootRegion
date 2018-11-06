@@ -21,8 +21,8 @@
 		/>  
 		<field name="entraineurs_id" type="sql" default="" label="COM_FOOTREGION_ENTRAINEURS_ID" 
 			description="COM_FOOTREGION_ENTRAINEURS_ID"
-			query="SELECT id, nom FROM #__footregion_entraineurs" 
-			key_field="id" value_field="nom" required="false"
+			query="SELECT id, email FROM #__footregion_entraineurs" 
+			key_field="id" value_field="email" required="false"
 		/>  
 
 		<field name="alias" type="text"

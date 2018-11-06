@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewUtilisateurs extends JViewLegacy
+class FootregionViewTournois extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -31,7 +31,7 @@ class FootregionViewUtilisateurs extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('utilisateurs');
+		TournoiHelper::addSubmenu('tournois');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,17 +43,17 @@ class FootregionViewUtilisateurs extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_UTILISATEURS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_TOURNOIS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('utilisateur.add');
-		JToolBarHelper::editList('utilisateur.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'utilisateurs.delete');
-		JToolbarHelper::publish('utilisateurs.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('utilisateurs.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('utilisateurs.archive');
-		JToolbarHelper::checkin('utilisateurs.checkin');
-		JToolbarHelper::trash('utilisateurs.trash');
+		JToolBarHelper::addNew('tournoi.add');
+		JToolBarHelper::editList('tournoi.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'tournois.delete');
+		JToolbarHelper::publish('tournois.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('tournois.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('tournois.archive');
+		JToolbarHelper::checkin('tournois.checkin');
+		JToolbarHelper::trash('tournois.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
@@ -85,12 +85,11 @@ class FootregionViewUtilisateurs extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'u.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			'u.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
-			'u.published' => JText::_('JSTATUS'),
-			'u.modified' => JText::_('JDATE'),
-			'u.id' => "Id"
+			't.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
+			't.alias' => JText::_('COM_ANNUAIRE_ENTREPRISES_ALIAS'),
+			't.published' => JText::_('JSTATUS'),
+			't.modified' => JText::_('JDATE'),
+			't.id' => "Id"
 		);
 	}  
-	
 }
