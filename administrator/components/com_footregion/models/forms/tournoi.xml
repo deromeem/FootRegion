@@ -9,10 +9,7 @@
             description="COM_FOOTREGION_TOURNOIS_NOM" 
             size="40" class="input-large-text" default="" required="true"
         />        
-        <field name="prenom" type="text" label="Prenom"
-            description="COM_FOOTREGION_TOURNOIS_PRENOM"
-            size="40" class="input-large-text" default="" required="true"
-        />
+
 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
 			description="JFIELD_ALIAS_DESC"
@@ -20,18 +17,9 @@
 			class="inputbox" size="45"
 		/>
         
-        <field name="nom" type="text" label="COM_FOOTREGION_TOURNOIS_NOM"
+        <field name="nom" type="text" label="Nom"
             description="COM_FOOTREGION_TOURNOIS_NOM"
             size="40" class="inputbox" default="" required="true"
-        />        
-        <field name="mobile" type="text" label="COM_FOOTREGION_TOURNOIS_MOBILE"
-            description="COM_FOOTREGION_TOURNOIS_MOBILE"
-            size="40" class="inputbox" default="" required="false"
-        />        
-		<field name="date_naiss" type="calendar" label="COM_FOOTREGION_TOURNOIS_DATE_NAISS"
-            description="COM_FOOTREGION_TOURNOIS_DATE_NAISS"
-			class="inputbox" default="" required="false" filter="user_utc" format="%Y-%m-%d"
-			showtime="false" todaybutton="false" filltable="false" translateformat="true"
         />
 
 		<field id="published" name="published" type="list"
