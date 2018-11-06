@@ -13,7 +13,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DISCUSSIONS_THEME', 'd.theme', $listDirn, $listOrder) ?>
         </th>
         <th width="35%">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID', 'd.utilisateur_id', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID', 'd.utilisateurs_id', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:55px" class="nowrap center ">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'd.published', $listDirn, $listOrder) ?>
