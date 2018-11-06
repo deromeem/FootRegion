@@ -7,7 +7,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=matchs.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_footregion&task=matchs_arbitres.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -19,22 +19,22 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=match.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->nom); ?>
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=matchs_arbitre.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->role); ?>
 				</a>
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->equipe_domicile; ?>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->equipe_invite; ?>
+			<?php echo $item->matchs_id; ?>
 		</td>
 		<td class="nowrap hidden-tablet hidden-phone">
-			<?php echo $item->tournoi; ?>
+			<?php echo $item->arbitres_id; ?>
+		</td>
+		<td class="nowrap center hidden-tablet hidden-phone">
+			<?php echo $item->alias; ?>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'matchs.', true); ?>
+			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'matchs_arbitres.', true); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo JHtml::_('date', $item->modified, $this->paramDateFmt); ?>

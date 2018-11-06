@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelMatchs extends JModelList
+class FootregionModelMatchs_arbitres extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -9,17 +9,14 @@ class FootregionModelMatchs extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'm.id',
-				'nom', 'm.nom',
-				'scoreDomicile', 'm.score_domicile',
-				'scoreInvite', 'm.score_invite',
-				'adresse', 'm.adr_rue',
-				'ville', 'm.adr_ville',
-				'codePostale', 'm.adr_cp',
-				'coordgps', 'm.coord_gps',
-				'published', 'm.published',
-				'hits', 'm.hits',
-				'modified', 'm.modified'
+				'id', 'ma.id',
+				'role', 'ma.role',
+				'matchs_id', 'ma.matchs_id',
+				'arbitres_id', 'ma.arbitres_id',
+				'alias', 'ma.alias',
+				'published', 'ma.published',
+				'hits', 'ma.hits',
+				'modified', 'ma.modified'
 			);
 		}
 		parent::__construct($config);
@@ -27,7 +24,7 @@ class FootregionModelMatchs extends JModelList
 
 	protected function populateState($ordering = null, $direction = null)
 	{
-		// récupère les informations de la session match nécessaires au paramétrage de l'écran
+		// récupère les informations de la session utilisateur nécessaires au paramétrage de l'écran
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
@@ -44,30 +41,27 @@ class FootregionModelMatchs extends JModelList
 	{
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
-		$query->select('m.id, m.nom, m.score_domicile, m.score_invite, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.published, m.hits, m.modified');
-		$query->from('#__footregion_matchs m');
+		$query->select('ma.id, ma.role, ma.matchs_id, ma.arbitres_id, ma.alias, ma.published, ma.hits, ma.modified');
+		$query->from('#__footregion_matchs_arbitres ma');
 
 		// joint la table pays
-		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
-		$query->select('e.nom AS equipe_invite')->join('LEFT', '#__footregion_equipes AS e ON e.id=m.equipes_invite_id');
-		$query->select('ed.nom AS equipe_domicile')->join('LEFT', '#__footregion_equipes AS ed ON ed.id=m.equipes_domicile_id');
-		$query->select('einv.email AS entraineur_invite')->join('LEFT', '#__footregion_entraineurs AS einv ON einv.id=m.entraineurs_invite_id');
-		$query->select('ein.email AS entraineur_initiateur')->join('LEFT', '#__footregion_entraineurs AS ein ON ein.id=m.entraineurs_initiateur_id');
-		$query->select('t.nom AS tournoi')->join('LEFT', '#__footregion_tournois AS t ON t.id=m.tournois_id');
-		$query->select('s.statut AS statut')->join('LEFT', '#__footregion_statuts AS s ON s.id=m.statuts_id');
+		$query->select('m.id AS matchs')->join('LEFT', '#__footregion_matchs AS m ON m.id=ma.matchs_id');
+		$query->select('a.id AS arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.id=ma.arbitres_id');
+
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('m.id = '.(int) substr($search, 3));
+				$query->where('ma.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'm.nom LIKE '.$search;
+				$searches[]	= 'ma.role LIKE '.$search;
+				$searches[]	= 'ma.matchs.id LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -82,15 +76,15 @@ class FootregionModelMatchs extends JModelList
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
 		if (is_numeric($published)) {
-			$query->where('m.published=' . (int) $published);
+			$query->where('ma.published=' . (int) $published);
 		}
 		elseif ($published === '') {
 			// si aucune sélection, on n'affiche que les publiés et dépubliés
-			$query->where('(m.published=0 OR m.published=1)');
+			$query->where('(ma.published=0 OR m.published=1)');
 		}
 
 		// tri des colonnes
-		$orderCol = $this->state->get('list.ordering', 'm.nom');
+		$orderCol = $this->state->get('list.ordering', 'ma.role');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
@@ -98,15 +92,26 @@ class FootregionModelMatchs extends JModelList
 		return $query;
 	}
 
-	// public function getPays()
-	// {
-		// $query = $this->_db->getQuery(true);
-		// $query->select('id, pays');
-		// $query->from('#__annuaire_pays');
-		// $query->where('published=1');
-		// $query->order('pays ASC');
-		// $this->_db->setQuery($query);
-		// $pays = $this->_db->loadObjectList();
-		// return $pays;
-	// }	
+	public function getMatchs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id');
+		$query->from('#__footregion_matchs');
+		$query->where('published=1');
+		$query->order('id ASC');
+		$this->_db->setQuery($query);
+		$matchs = $this->_db->loadObjectList();
+		return $matchs;
+	}
+	public function getArbitres()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id');
+		$query->from('#__footregion_arbitres');
+		$query->where('published=1');
+		$query->order('id ASC');
+		$this->_db->setQuery($query);
+		$arbitres = $this->_db->loadObjectList();
+		return $arbitres;
+	}	
 }
