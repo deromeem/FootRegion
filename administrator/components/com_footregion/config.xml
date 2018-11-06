@@ -24,6 +24,26 @@
 			<option value="1">JYES</option>
 			<option value="0">JNO</option>
 		</field>
+		<field
+			name="show_title"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="COM_FOOTREGION_OPTIONS_SHOW_CLUBS_NOM_LABEL"
+			description="COM_FOOTREGION_OPTIONS_SHOW_CLUBS_NOM_DESCR">
+			<option value="1">JSHOW</option>
+			<option value="0">JHIDE</option>
+		</field>
+		<field
+			name="link_titles"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="COM_FOOTREGION_OPTIONS_SHOW_CLUBS_LOGO_LABEL"
+			description="COM_FOOTREGION_OPTIONS_SHOW_CLUBS_LOGO_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
 	</fieldset>
 	<fieldset
 		name="permissions"
