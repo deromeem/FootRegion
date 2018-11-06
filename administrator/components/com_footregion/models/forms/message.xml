@@ -5,24 +5,26 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-        <field name="nom" type="text" label="COM_FOOTREGION_UTILISATEURS_NOM"
-            description="COM_FOOTREGION_UTILISATEURS_NOM"
-            size="40" class="inputbox" default="" required="true"
+        <field name="nom" type="text" label="COM_FOOTREGION_MESSAGES_LIBELLE"
+            description="COM_FOOTREGION_MESSAGES_LIBELLE"
+            size="40" class="input-large-text" default="" required="true"
+        />        
+        <field name="prenom" type="text" label="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
+            description="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
+            size="40" class="input-large-text" default="" required="true"
         />
-
-		<field name="alias" type="text" label="COM_FOOTREGION_DIRECTEURS_ALIAS"
-            description="COM_FOOTREGION_DIRECTEURS_ALIAS"
-            size="40" class="inputbox" default="" required="false"
-        />
-        
-		<field
-				name="commentaire" type="editor" label="COM_FOOTREGION_DIRECTEURS_COMMENTAIRE"
-				description="COM_FOOTREGION_DIRECTEURS_COMMENTAIRE"
-				class="inputbox"
-				filter="JComponentHelper::filterText"
-				buttons="true"
-				hide="readmore,pagebreak"
+		<field name="alias" type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+			class="inputbox" size="45"
 		/>
+        
+        <field name="email" type="text" label="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            description="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            size="40" class="inputbox" default="" required="true"
+        />£
+
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"
@@ -35,8 +37,7 @@
 				JARCHIVED</option>
 			<option value="-2">
 				JTRASHED</option>
-		</field>
-		
+		</field>		
 		
 		<field
 			name="hits" type="text" label="JGLOBAL_HITS"
