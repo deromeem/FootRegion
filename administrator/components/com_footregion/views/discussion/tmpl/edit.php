@@ -22,7 +22,11 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-		</div>					
+		</div>		
+		<div class="control-group">
+			<div class="control-label"><?php echo $this->form->getLabel('utilisateurs_id'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('utilisateurs_id'); ?></div>
+		</div>			
 	</div>
 	
 	<div class="form-horizontal">

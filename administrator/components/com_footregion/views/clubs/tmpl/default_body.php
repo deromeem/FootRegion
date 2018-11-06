@@ -35,6 +35,15 @@ if ($saveOrder)
 		<td class="nowrap hidden-phone">
 			<?php echo $item->prenomDirecteur; ?>
 		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->adr_rue; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->adr_ville; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->adr_cp; ?>
+		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'clubs.', true); ?>
 		</td>

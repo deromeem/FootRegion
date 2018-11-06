@@ -28,6 +28,8 @@
 			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
 			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>
 			<menu link="option=com_footregion&amp;view=directeurs">com_footregion_directeurs</menu>
+			<menu link="option=com_footregion&amp;view=statuts">com_footregion_statuts</menu>
+			<menu link="option=com_footregion&amp;view=matchs">com_footregion_matchs</menu>
 		</submenu>
 		<files folder="admin">
 			<folder>controllers</folder>

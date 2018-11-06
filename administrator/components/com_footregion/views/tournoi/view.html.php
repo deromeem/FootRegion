@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewUtilisateur extends JViewLegacy
+class FootregionViewTournoi extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -33,23 +33,23 @@ class FootregionViewUtilisateur extends JViewLegacy
 		// $checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $userId);
 	
 		$isNew = ($this->item->id == 0);
-		JToolBarHelper::title(JText::_('COM_FOOTREGION_UTILISATEUR')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'address');
+		JToolBarHelper::title(JText::_('COM_FOOTREGION_TOURNOI')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'address');
 
 
 		if ($isNew)
 		{
-			JToolbarHelper::apply('utilisateur.apply');
-			JToolbarHelper::save('utilisateur.save');
-			JToolbarHelper::save2new('utilisateur.save2new');
+			JToolbarHelper::apply('tournoi.apply');
+			JToolbarHelper::save('tournoi.save');
+			JToolbarHelper::save2new('tournoi.save2new');
 		}
 		else
 		{
 			// if (!$checkedOut)
 			// {
-				JToolbarHelper::apply('utilisateur.apply');
-				JToolbarHelper::save('utilisateur.save');
+				JToolbarHelper::apply('tournoi.apply');
+				JToolbarHelper::save('tournoi.save');
 			// }
 		}
-		JToolBarHelper::cancel('utilisateur.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
+		JToolBarHelper::cancel('tournoi.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
 }
