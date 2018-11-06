@@ -18,11 +18,7 @@ JHtml::_('formbehavior.chosen', 'select');
 <form action="<?php echo JRoute::_('index.php?option=com_footregion&layout=edit&id='.(int) $this->item->id); ?>"
       method="post" name="adminForm" id="footregion-form" class="form-validate">
 
-	<div class="form-inline form-inline-header">
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('libelle'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('libelle'); ?></div>
-		</div>					
+	<div class="form-inline form-inline-header">				
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('discussions_id'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('discussions_id'); ?></div>
@@ -49,23 +45,7 @@ JHtml::_('formbehavior.chosen', 'select');
 							<div class="control-label"><?php echo $this->form->getLabel('libelle'); ?></div>
 						</div>
 						<div class="span7">
-							<div class="controls"><input type="<?php echo $this->form->getInput('libelle'); ?>"></div>
-						</div>
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('discussions_id'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('discussions_id'); ?></div>
-						</div>
-					</div>
-					<div class="control-group">
-						<div class="span2">
-							<div class="control-label"><?php echo $this->form->getLabel('utilisateurs_id'); ?></div>
-						</div>
-						<div class="span7">
-							<div class="controls"><?php echo $this->form->getInput('utilisateurs_id'); ?></div>
+							<div class="controls"><?php echo $this->form->getInput('libelle'); ?></div>
 						</div>
 					</div>
 				</div>
