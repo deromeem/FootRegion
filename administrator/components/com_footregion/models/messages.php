@@ -11,6 +11,9 @@ class FootregionModelMessages extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'm.id',
 				'libelle', 'm.libelle',
+				'alias', 'm.alias',
+				'utilisateurs_id', 'm.utilisateurs_id',
+				'discussions_id', 'm.discussions_id',
 				'published', 'm.published',
 				'hits', 'm.hits',
 				'modified', 'm.modified'
@@ -38,7 +41,7 @@ class FootregionModelMessages extends JModelList
 	{
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
-		$query->select('m.id, m.libelle, m.published, m.hits, m.modified');
+		$query->select('m.id,m.libelle,m.alias,m.utilisateurs_id,m.discussions_id,m.published,m.hits,m.modified');
 		$query->from('#__footregion_messages m');
 
 		// joint la table pays
