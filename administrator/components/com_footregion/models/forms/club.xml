@@ -15,6 +15,11 @@
             size="40" class="inputbox" default="" required="false"
         />
 
+		<field name="sigle" type="text" label="COM_FOOTREGION_CLUBS_SIGLE"
+            description="COM_FOOTREGION_CLUBS_SIGLE"
+            size="40" class="inputbox" default="" required="false"
+        />
+
 		<field name="adr_rue" type="text" label="COM_FOOTREGION_CLUBS_ADR_RUE"
             description="COM_FOOTREGION_CLUBS_ADR_RUE"
             size="40" class="inputbox" default="" required="false"
@@ -82,9 +87,9 @@
 			class="inputbox" default=""
 		/>
 
-		<field name="directeurs" type="sql" default="" label="COM_FOOTREGION_CLUBS_DIRECTEURS" 
+		<field name="directeurs_id" type="sql" default="" label="COM_FOOTREGION_CLUBS_DIRECTEURS" 
 			description="COM_FOOTREGION_CLUBS_DIRECTEURS"
-			query="SELECT d.id, d.email FROM #__footregion_directeurs AS d" 
+			query="SELECT id, email FROM #__footregion_directeurs" 
 			key_field="id" value_field="email" required="true" />
 	</fieldset>
 </form>
