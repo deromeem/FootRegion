@@ -22,23 +22,7 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-		</div>					
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
-		</div>	
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
-		</div>	
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
-		</div>	
-		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
-		</div>					
+		</div>								
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
@@ -46,7 +30,51 @@ JHtml::_('formbehavior.chosen', 'select');
 	</div>
 	
 	<div class="form-horizontal">
-		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'joueur')); ?>
+	<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'joueur')); ?>
+
+	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'joueur', JText::_('COM_FOOTREGION_JOUEUR')); ?>
+	<div class="row-fluid">
+		<div class="span9">
+			<div class="form-vertical">
+				<div class="control-group">
+					<div class="span2">
+						<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
+					</div>
+					<div class="span7">
+						<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="span2">
+						<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
+					</div>
+					<div class="span7">
+						<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="span2">
+						<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+					</div>
+					<div class="span7">
+						<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+					</div>	
+				</div>
+				<div class="control-group">
+					<div class="span2">
+						<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
+					</div>
+					<div class="span7">
+						<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	<div class="span3">
+		<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
+	</div>
+</div>
+<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('JGLOBAL_FIELDSET_PUBLISHING', true)); ?>
 		<div class="row-fluid form-horizontal-desktop">
