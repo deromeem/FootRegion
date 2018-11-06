@@ -5,29 +5,16 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-<<<<<<< HEAD:administrator/components/com_footregion/models/forms/match.xml
         <field name="nom" type="text" label="COM_FOOTREGION_MATCHS_NOM"
             description="COM_FOOTREGION_MATCHS_NOM"
             size="40" class="input-large-text" default="" required="true"
         />        
-=======
-        <field name="discussions_id" type="text" label="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
-            description="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
-            size="40" class="input-large-text" default="" required="true" readonly="true"
-        />
-			
-		<field name="utilisateurs_id" type="text" label="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
-            description="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
-			size="40" class="input-large-text" default="" required="true" readonly="true"
-        />
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/models/forms/message.xml
 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
 			description="JFIELD_ALIAS_DESC"
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-<<<<<<< HEAD:administrator/components/com_footregion/models/forms/match.xml
         <field name="date_heure" type="calendar" label="COM_FOOTREGION_MATCHS_DATE_HEURE"
             description="COM_FOOTREGION_MATCHS_DATE_HEURE"
             query="SELECT id, date_heure FROM #__footregion_matchs ORDER BY date_heure" 
@@ -87,21 +74,6 @@
 			query="SELECT id, statut FROM #__footregion_statuts ORDER BY statut" 
 			key_field="id" value_field="statut" required="false"
 		/>   
-=======
-        <field
-			name="libelle" type="editor" label="COM_FOOTREGION_MESSAGES_LIBELLE"
-			description="COM_FOOTREGION_MESSAGES_LIBELLE"
-			class="inputbox"
-			filter="JComponentHelper::filterText"
-			buttons="true"
-			hide="readmore,pagebreak"
-		/>
-        
-        <field name="utilisateurs_id" type="text" label="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
-            description="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
-            size="40" class="inputbox" default="" required="true"
-        />
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/models/forms/message.xml
 
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"

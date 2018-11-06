@@ -1,11 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-<<<<<<< HEAD:administrator/components/com_footregion/views/matchs/view.html.php
 class FootregionViewMatchs extends JViewLegacy
-=======
-class FootregionViewMatchs_arbitres extends JViewLegacy
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/views/matchs_arbitres/view.html.php
 {
 	function display($tpl = null) 
 	{
@@ -20,7 +16,7 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 		$this->listDirn	= $this->escape($this->state->get('list.direction'));			
 
 		// récupère les paramêtres du fichier de configuration config.xml
-		$params = JComponentHelper::getParams('com_footregion');
+		$params = JComponentHelper::getParams('com_annuaire');
 		$this->paramDescShow = $params->get('jannuaire_show_desc', 0);
 		$this->paramDescSize = $params->get('jannuaire_size_desc', 70);
 		$this->paramDateFmt = $params->get('jannuaire_date_fmt', "d F Y");
@@ -35,7 +31,7 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('matchs_arbitres');
+		UtilisateurHelper::addSubmenu('matchs');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -47,24 +43,24 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCH_ARBITRES'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCHS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('match_arbitre.add');
-		JToolBarHelper::editList('match_arbitre.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'match_arbitres.delete');
-		JToolbarHelper::publish('match_arbitres.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('match_arbitres.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('match_arbitres.archive');
-		JToolbarHelper::checkin('match_arbitres.checkin');
-		JToolbarHelper::trash('match_arbitres.trash');
+		JToolBarHelper::addNew('match.add');
+		JToolBarHelper::editList('match.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'matchs.delete');
+		JToolbarHelper::publish('matchs.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('matchs.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('matchs.archive');
+		JToolbarHelper::checkin('matchs.checkin');
+		JToolbarHelper::trash('matchs.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
 	protected function prepareSideBar()
 	{
 		// definit l'action du formulaire sidebar
-		JHtmlSidebar::setAction('index.php?option=com_footregion');
+		JHtmlSidebar::setAction('index.php?option=com_annuaire');
 		
 		// ajoute le filtre standard des statuts dans le bloc des sous-menus
 		JHtmlSidebar::addFilter( JText::_('JOPTION_SELECT_PUBLISHED'), 'filter_published',
@@ -89,13 +85,7 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-<<<<<<< HEAD:administrator/components/com_footregion/views/matchs/view.html.php
 			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_NOM'),
-=======
-			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'),
-			'm.published' => JText::_('JSTATUS'),
-			'm.modified' => JText::_('JDATE'),
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/views/matchs_arbitres/view.html.php
 			'm.id' => "Id"
 		);
 	}  
