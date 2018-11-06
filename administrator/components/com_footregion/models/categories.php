@@ -34,6 +34,8 @@ class FootregionModelCategories extends JModelList
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
 		$this->setState('filter.published', $published);
+
+		parent::populateState('modified', 'desc');
 	}
 	
 	protected function getListQuery()
