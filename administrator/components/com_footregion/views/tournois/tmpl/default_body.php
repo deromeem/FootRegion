@@ -25,17 +25,16 @@ if ($saveOrder)
 			</div>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo (int) $item->id; ?>
+			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'tournois.', true); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
-			<?php echo (int) $item->alias; ?>
-		</td>
-		<td class="center hidden-phone">
-			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'tournois.', true); ?>
+			<?php echo JHtml::_('date', $item->modified, $this->paramDateFmt); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo (int) $item->hits; ?>
 		</td>
-
+		<td class="center hidden-phone">
+			<?php echo (int) $item->id; ?>
+		</td>
 	</tr>
 <?php endforeach; ?>
