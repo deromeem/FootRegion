@@ -22,16 +22,16 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_ALIAS', 'ma.alias', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:55px" class="nowrap center ">
-                <?php echo JHtml::_('grid.sort', 'Publié', 'u.published', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'Publié', 'ma.published', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:120px" class="nowrap center">
-                <?php echo JHtml::_('grid.sort', 'Date', 'u.modified', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'Date', 'ma.modified', $listDirn, $listOrder) ?>
         </th>
 		<th width="10%">
-			<?php echo JHtml::_('grid.sort', 'JGLOBAL_HITS', 'u.hits', $listDirn, $listOrder); ?>
+			<?php echo JHtml::_('grid.sort', 'JGLOBAL_HITS', 'ma.hits', $listDirn, $listOrder); ?>
 		</th>
 		<th width="1%" class="nowrap center hidden-phone">
-			<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'u.id', $listDirn, $listOrder); ?>
+			<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'ma.id', $listDirn, $listOrder); ?>
 		</th>
 	</tr>
 

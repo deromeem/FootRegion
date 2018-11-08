@@ -86,9 +86,9 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'),
-			'm.published' => JText::_('JSTATUS'),
-			'm.modified' => JText::_('JDATE'),
-			'm.id' => "Id"
+			'ma.published' => JText::_('JSTATUS'),
+			'ma.modified' => JText::_('JDATE'),
+			'ma.id' => "Id"
 		);
 	}  
 	
