@@ -11,6 +11,6 @@ INSERT INTO `footregion_footregion_equipes` (`id`, `nom`, `clubs_id`, `categorie
 (6, 'HFC-Vétérans+45-2', 10, 9, 4, 'hfc-veterans-45-2', 1, '2018-11-08 14:06:58', 35, '0000-00-00 00:00:00', 0, 0);
 
 INSERT INTO `footregion_footregion_joueurs` (`id`, `email`, `poste`, `num_licence`, `date_naiss`, `equipes_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(8, 'vjunior@gmail.com', '', '', '2000-07-12', 1, '', 1, '2018-11-05 09:23:41', 35, '0000-00-00 00:00:00', 0, 0),
+(8, 'vjunior@gmail.com', '', '', '2000-07-12', 5, '', 1, '2018-11-05 09:23:41', 35, '0000-00-00 00:00:00', 0, 0),
 (9, 'brahim.chebak@gmail.com', 'G', '1 234 567 890', '2011-11-22', 2, '', 1, '2018-11-06 13:14:32', 35, '0000-00-00 00:00:00', 0, 0),
 (10, 'masensio@footregion.fr', 'ATT', '9 999 999 999', '1991-11-06', 3, '', 1, '2018-11-06 15:55:01', 35, '2018-11-06 15:56:50', 35, 0);
