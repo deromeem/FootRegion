@@ -16,7 +16,7 @@ class FootregionViewSignalements extends JViewLegacy
 		$this->listDirn	= $this->escape($this->state->get('list.direction'));			
 
 		// récupère les paramêtres du fichier de configuration config.xml
-		$params = JComponentHelper::getParams('com_annuaire');
+		$params = JComponentHelper::getParams('com_footregion');
 		$this->paramDescShow = $params->get('jannuaire_show_desc', 0);
 		$this->paramDescSize = $params->get('jannuaire_size_desc', 70);
 		$this->paramDateFmt = $params->get('jannuaire_date_fmt', "d F Y");
@@ -60,7 +60,7 @@ class FootregionViewSignalements extends JViewLegacy
 	protected function prepareSideBar()
 	{
 		// definit l'action du formulaire sidebar
-		JHtmlSidebar::setAction('index.php?option=com_annuaire');
+		JHtmlSidebar::setAction('index.php?option=com_footregion');
 		
 		// ajoute le filtre standard des statuts dans le bloc des sous-menus
 		JHtmlSidebar::addFilter( JText::_('JOPTION_SELECT_PUBLISHED'), 'filter_published',
@@ -86,8 +86,8 @@ class FootregionViewSignalements extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			's.libelle' => JText::_('COM_FOOTREGION_SIGNALEMENTS_LIBELLE'),
-			's.arbitres_id' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRES_ID'),
-			's.entraineurs_id' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEURS_ID'),
+			'a.email' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRES_ID'),
+			'e.email' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEURS_ID'),
 			's.published' => JText::_('JSTATUS'),
 			's.modified' => JText::_('JDATE'),
 			's.id' => "Id"

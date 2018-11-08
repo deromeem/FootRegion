@@ -30,9 +30,6 @@ if ($saveOrder)
 			<?php echo $item->prenom; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->alias; ?>
-		</td>
-		<td class="nowrap hidden-phone">
 			<?php echo $item->date_affectation; ?>
 		</td>
 		<td class="center hidden-phone">
