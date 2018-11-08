@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewTournois extends JViewLegacy
+class FootregionViewJoueurs extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -16,7 +16,7 @@ class FootregionViewTournois extends JViewLegacy
 		$this->listDirn	= $this->escape($this->state->get('list.direction'));			
 
 		// récupère les paramêtres du fichier de configuration config.xml
-		$params = JComponentHelper::getParams('com_annuaire');
+		$params = JComponentHelper::getParams('com_footregion');
 		$this->paramDescShow = $params->get('jannuaire_show_desc', 0);
 		$this->paramDescSize = $params->get('jannuaire_size_desc', 70);
 		$this->paramDateFmt = $params->get('jannuaire_date_fmt', "d F Y");
@@ -31,7 +31,7 @@ class FootregionViewTournois extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('tournois');
+		UtilisateurHelper::addSubmenu('Joueurs');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,24 +43,24 @@ class FootregionViewTournois extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_tournoiS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_JOUEURS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('tournoi.add');
-		JToolBarHelper::editList('tournoi.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'tournois.delete');
-		JToolbarHelper::publish('tournois.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('tournois.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('tournois.archive');
-		JToolbarHelper::checkin('tournois.checkin');
-		JToolbarHelper::trash('tournois.trash');
+		JToolBarHelper::addNew('equipe.add');
+		JToolBarHelper::editList('equipe.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'joueurs.delete');
+		JToolbarHelper::publish('joueurs.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('joueurs.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('joueurs.archive');
+		JToolbarHelper::checkin('joueurs.checkin');
+		JToolbarHelper::trash('joueurs.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
 	protected function prepareSideBar()
 	{
 		// definit l'action du formulaire sidebar
-		JHtmlSidebar::setAction('index.php?option=com_annuaire');
+		JHtmlSidebar::setAction('index.php?option=com_footregion');
 		
 		// ajoute le filtre standard des statuts dans le bloc des sous-menus
 		JHtmlSidebar::addFilter( JText::_('JOPTION_SELECT_PUBLISHED'), 'filter_published',
@@ -75,7 +75,7 @@ class FootregionViewTournois extends JViewLegacy
 			// $options3[]	= JHtml::_('select.option', $pay->id,  $pay->pays);
 		// }
 		// $this->pay = $options3;
-		// JHtmlSidebar::addFilter("- ".JText::_('COM_ANNUAIRE_SELECT_PAYS')." -", 'filter_pay',
+		// JHtmlSidebar::addFilter("- ".JText::_('COM_FOOTREGION_SELECT_PAYS')." -", 'filter_pay',
 			// JHtml::_('select.options', $this->pay,
 			// 'value', 'text', $this->state->get('filter.pay'))
 		// );
@@ -85,11 +85,15 @@ class FootregionViewTournois extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			't.nom' => JText::_('COM_FOOTREGION_TOURNOIS_NOM'),
-			't.hits' => JText::_('Clics'),
-			't.published' => JText::_('JSTATUS'),
-			't.modified' => JText::_('JDATE'),
-			't.id' => "Id"
+			'j.id' => JText::_('COM_FOOTREGION_JOUEURS_ID'),
+			'j.email' => JText::_('COM_FOOTREGION_EMAIL'),
+			'j.poste' => JText::_('COM_FOOTREGION_POSTE'),
+			'j.num_licence' => JText::_('COM_FOOTREGION_NUM_LICENCE'),
+			'j.date_naiss' => JText::_('COM_FOOTREGION_DATE_NAISS'),
+			'j.equipes_id' => JText::_('COM_FOOTREGION_EQUIPES_ID'),
+			'j.published' => JText::_('JSTATUS'),
+			'j.modified' => JText::_('JDATE'),
+			'j.id' => "Id"
 		);
 	}  
 	
