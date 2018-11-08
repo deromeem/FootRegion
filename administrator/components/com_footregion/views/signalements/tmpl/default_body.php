@@ -25,13 +25,10 @@ if ($saveOrder)
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->arbitres_id; ?>
+			<?php echo $item->arbitre; ?>
 		</td>
 		<td class="nowrap hidden-tablet hidden-phone">
-			<?php echo $item->entraineurs_id; ?>
-		</td>
-		<td class="nowrap center hidden-tablet hidden-phone">
-			<?php echo $item->alias; ?>
+			<?php echo $item->entraineur; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'signalements.', true); ?>

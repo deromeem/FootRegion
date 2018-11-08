@@ -24,16 +24,7 @@ if ($saveOrder)
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->alias; ?>
-		</td>
-		<td class="nowrap hidden-phone">
 			<?php echo $item->sigle; ?>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->nomDirecteur; ?>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->prenomDirecteur; ?>
 		</td>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->adr_rue; ?>
