@@ -85,11 +85,11 @@ class FootregionViewTournois extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'm.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			'm.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
-			'm.published' => JText::_('JSTATUS'),
-			'm.modified' => JText::_('JDATE'),
-			'm.id' => "Id"
+			't.nom' => JText::_('COM_ANNUAIRE_TOURNOIS_NOM'),
+			't.hits' => JText::_('COM_ANNUAIRE_TOURNOIS_HITS'),
+			't.published' => JText::_('JSTATUS'),
+			't.modified' => JText::_('JDATE'),
+			't.id' => "Id"
 		);
 	}  
 	
