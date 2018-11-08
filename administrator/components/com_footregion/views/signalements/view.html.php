@@ -86,8 +86,8 @@ class FootregionViewSignalements extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			's.libelle' => JText::_('COM_FOOTREGION_SIGNALEMENTS_LIBELLE'),
-			's.arbitres_id' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRES_ID'),
-			's.entraineurs_id' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEURS_ID'),
+			'a.email' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRES_ID'),
+			'e.email' => JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEURS_ID'),
 			's.published' => JText::_('JSTATUS'),
 			's.modified' => JText::_('JDATE'),
 			's.id' => "Id"

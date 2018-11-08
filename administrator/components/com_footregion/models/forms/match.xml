@@ -51,18 +51,18 @@
 		/>
 		<field name="equipes_domicile_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX" 
 			description="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX"
-			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom" 
 			key_field="id" value_field="nom" required="false"
 		/>
 		<field name="entraineurs_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS" 
 			description="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS"
-			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
-			key_field="id" value_field="nom" required="false"
+			query="SELECT id, email FROM #__footregion_entraineurs ORDER BY email" 
+			key_field="id" value_field="email" required="false"
 		/>
 		<field name="entraineurs_initiateur_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX" 
 			description="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX"
-			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
-			key_field="id" value_field="nom" required="false"
+			query="SELECT id, email FROM #__footregion_entraineurs ORDER BY email" 
+			key_field="id" value_field="email" required="false"
 		/>
 		<field name="tournois_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_TOURNOI" 
 			description="COM_FOOTREGION_MATCHS_TOURNOI"

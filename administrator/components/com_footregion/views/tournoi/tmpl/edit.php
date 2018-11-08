@@ -30,15 +30,7 @@ JHtml::_('formbehavior.chosen', 'select');
 	</div>
 	
 	<div class="form-horizontal">
-		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'tournoi')); ?>
-
-		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'tournoi', JText::_('COM_FOOTREGION_TOURNOI')); ?>
-		<div class="row-fluid">
-			<div class="span3">
-				<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
-			</div>
-		</div>
-		<?php echo JHtml::_('bootstrap.endTab'); ?>
+		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'publishing')); ?>
 
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('JGLOBAL_FIELDSET_PUBLISHING', true)); ?>
 		<div class="row-fluid form-horizontal-desktop">
@@ -47,6 +39,9 @@ JHtml::_('formbehavior.chosen', 'select');
 			</div>
 			<div class="span6">
 				<?php echo JLayoutHelper::render('joomla.edit.metadata', $this); ?>
+			</div>
+			<div class="span3">
+				<?php echo JLayoutHelper::render('joomla.edit.global', $this); ?>
 			</div>
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
