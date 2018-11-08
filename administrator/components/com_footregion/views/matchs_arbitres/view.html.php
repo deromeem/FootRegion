@@ -1,11 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-<<<<<<< HEAD:administrator/components/com_footregion/views/matchs/view.html.php
-class FootregionViewMatchs extends JViewLegacy
-=======
 class FootregionViewMatchs_arbitres extends JViewLegacy
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/views/matchs_arbitres/view.html.php
 {
 	function display($tpl = null) 
 	{
@@ -89,14 +85,10 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-<<<<<<< HEAD:administrator/components/com_footregion/views/matchs/view.html.php
-			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_NOM'),
-=======
 			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'),
-			'm.published' => JText::_('JSTATUS'),
-			'm.modified' => JText::_('JDATE'),
->>>>>>> 9c9ba101812b36a3c63ab4cedf8d827267555930:administrator/components/com_footregion/views/matchs_arbitres/view.html.php
-			'm.id' => "Id"
+			'ma.published' => JText::_('JSTATUS'),
+			'ma.modified' => JText::_('JDATE'),
+			'ma.id' => "Id"
 		);
 	}  
 	

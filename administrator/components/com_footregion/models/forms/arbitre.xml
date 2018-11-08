@@ -5,36 +5,18 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 
-		<field name="alias" type="text"
+        <field name="email" type="text" label="COM_FOOTREGION_ARBITRES_EMAIL"
+            description="COM_FOOTREGION_ARBITRES_EMAIL"
+            size="40" class="inputbox" default="" required="true"
+        />        
+
+ 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
 			description="JFIELD_ALIAS_DESC"
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
         
-        <field name="email" type="text" label="COM_FOOTREGION_JOUEURS_EMAIL"
-            description="COM_FOOTREGION_JOUEURS_EMAIL"
-            size="40" class="inputbox" default="" required="true"
-        />        
-        <field name="poste" type="text" label="COM_FOOTREGION_JOUEURS_POSTE"
-            description="COM_FOOTREGION_JOUEURS_POSTE"
-            size="40" class="input-large-text" default="" required="false"
-        />        
-        <field name="num_licence" type="text" label="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
-            description="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
-            size="40" class="input-large-text" default="" required="true"
-        />     
-		<field name="date_naiss" type="calendar" label="COM_FOOTREGION_JOUEURS_DATE_NAISS"
-            description="COM_FOOTREGION_JOUEURS_DATE_NAISS"
-			class="inputbox" default="" required="false" filter="user_utc" format="%Y-%m-%d"
-			showtime="false" todaybutton="false" filltable="false" translateformat="true"
-        />
-		<field name="equipes_id" type="sql" default="" label="COM_FOOTREGION_EQUIPES_ID" 
-			description="COM_FOOTREGION_EQUIPES_ID"
-			query="SELECT id, nom FROM #__footregion_equipes" 
-			key_field="id" value_field="nom" required="false"
-		/>  
-
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"

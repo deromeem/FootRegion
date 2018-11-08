@@ -30,9 +30,6 @@ if ($saveOrder)
 		<td class="nowrap hidden-tablet hidden-phone">
 			<?php echo $item->entraineurs_id; ?>
 		</td>
-		<td class="nowrap center hidden-tablet hidden-phone">
-			<?php echo $item->alias; ?>
-		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'signalements.', true); ?>
 		</td>

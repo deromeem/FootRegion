@@ -13,16 +13,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_NOM', 'c.nom', $listDirn, $listOrder) ?>
         </th>
         <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_ALIAS', 'c.alias', $listDirn, $listOrder) ?>
-        </th>
-        <th width="35%" class="nowrap hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_SIGLE', 'c.sigle', $listDirn, $listOrder) ?>
-        </th>
-        <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_NOM_DIRECTEUR', 'c.nomDirecteur', $listDirn, $listOrder) ?>
-        </th>
-        <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_PRENOM_DIRECTEUR', 'c.prenomDirecteur', $listDirn, $listOrder) ?>
         </th>
         <th width="35%" class="nowrap hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CLUBS_ADR_RUE', 'c.adr_rue', $listDirn, $listOrder) ?>
