@@ -19,7 +19,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
         <th width="1%" style="min-width:120px" class="nowrap center">
                 <?php echo JHtml::_('grid.sort', 'Date', 't.modified', $listDirn, $listOrder) ?>
         </th>
-		<th width="10%">
+		<th width="10%" class="nowrap center">
 			<?php echo JHtml::_('grid.sort', 'JGLOBAL_HITS', 't.hits', $listDirn, $listOrder); ?>
 		</th>
 		<th width="1%" class="nowrap center hidden-phone">
