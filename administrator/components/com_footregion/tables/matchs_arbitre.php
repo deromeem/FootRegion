@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionTableMatch_Arbitre extends JTable
+class FootregionTableMatchs_arbitre extends JTable
 {
 	function __construct(&$db) 
 	{
@@ -31,7 +31,7 @@ class FootregionTableMatch_Arbitre extends JTable
 		}
 		
 		// contrôle d'unicité de l'alias SEF
-		$table = JTable::getInstance('Match_Arbitre', 'FootregionTable');
+		$table = JTable::getInstance('Matchs_arbitre', 'FootregionTable');
 		// if ($table->load(array('alias' => $this->alias)) && ($table->id != $this->id || $this->id == 0))
 		// {
 			// $this->setError("COM_FOOTREGION_ALIAS_USED");

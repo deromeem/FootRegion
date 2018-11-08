@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewMatch_Arbitre extends JViewLegacy
+class FootregionViewMatchs_arbitre extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -33,23 +33,23 @@ class FootregionViewMatch_Arbitre extends JViewLegacy
 		// $checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $userId);
 	
 		$isNew = ($this->item->id == 0);
-		JToolBarHelper::title(JText::_('COM_FOOTREGION_MATCH_ARBITRE')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'address');
+		JToolBarHelper::title(JText::_('COM_FOOTREGION_MATCHS_ARBITRE')." : ".($isNew ? JText::_('COM_FOOTREGION_NEW'): JText::_('COM_FOOTREGION_MODIF')), 'address');
 
 
 		if ($isNew)
 		{
-			JToolbarHelper::apply('match_arbitre.apply');
-			JToolbarHelper::save('match_arbitre.save');
-			JToolbarHelper::save2new('match_arbitre.save2new');
+			JToolbarHelper::apply('matchs_arbitre.apply');
+			JToolbarHelper::save('matchs_arbitre.save');
+			JToolbarHelper::save2new('matchs_arbitre.save2new');
 		}
 		else
 		{
 			// if (!$checkedOut)
 			// {
-				JToolbarHelper::apply('match_arbitre.apply');
-				JToolbarHelper::save('match_arbitre.save');
+				JToolbarHelper::apply('matchs_arbitre.apply');
+				JToolbarHelper::save('matchs_arbitre.save');
 			// }
 		}
-		JToolBarHelper::cancel('match_arbitre.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
+		JToolBarHelper::cancel('matchs_arbitre.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
 	}
 }

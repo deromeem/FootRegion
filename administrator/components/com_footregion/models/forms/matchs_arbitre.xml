@@ -4,19 +4,6 @@
 		<field name="id" type="hidden" />
 
 		<field name="asset_id" type="hidden" filter="unset" />
-		
-        <field name="nom" type="text" label="COM_FOOTREGION_MATCHS_ARBITRES_ROLE"
-            description="COM_FOOTREGION_MATCHS_ARBITRES_ROLE"
-            size="40" class="input-large-text" default="" required="true"
-        />        
-        <field name="prenom" type="text" label="COM_FOOTREGION_MATCHS_ARBITRES_MATCHS_ID"
-            description="COM_FOOTREGION_MATCHS_ARBITRES_MATCHS_ID"
-            size="40" class="input-large-text" default="" required="true"
-        />
-		<field name="email" type="text" label="COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES_ID"
-            description="COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES_ID"
-            size="40" class="inputbox" default="" required="true"
-        />        
 
 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
@@ -25,6 +12,19 @@
 			class="inputbox" size="45"
 		/>
         
+        <field name="email" type="text" label="COM_FOOTREGION_MATCHS_ARBITRE_ROLE"
+            description="COM_FOOTREGION_MATCHS_ARBITRE_ROLE"
+            size="40" class="inputbox" default="" required="true"
+        />        
+        <field name="poste" type="text" label="COM_FOOTREGION_MATCHS_ARBITRE_MATCHS_ID"
+            description="COM_FOOTREGION_MACHS_ARBITRE_MATCHS_ID"
+            size="40" class="input-large-text" default="" required="false"
+        />        
+        <field name="num_licence" type="text" label="COM_FOOTREGION_MATCHS_ARBITRE_ARBITRES_ID"
+            description="COM_FOOTREGION_MATCHS_ARBITRE_ARBIRES_ID"
+            size="40" class="input-large-text" default="" required="true"
+        />
+
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"

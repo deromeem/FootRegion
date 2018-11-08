@@ -1,16 +1,16 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelMatch_Arbitre extends JModelAdmin
+class FootregionModelMatchs_arbitre extends JModelAdmin
 {
 	protected $_compo = 'com_footregion';
-	protected $_context = 'match_arbitre';
-	public $typeAlias = 'com_footregion.match_arbitre';
+	protected $_context = 'matchs_arbitre';
+	public $typeAlias = 'com_footregion.matchs_arbitre';
 	
 	// Surcharges des méthodes de la classe mère pour :
 	
 	// 1) définir la table de soutien à utiliser
-	public function getTable($type = 'Match_Arbitre', $prefix = 'FootregionTable', $config = array()) 
+	public function getTable($type = 'Matchs_arbitre', $prefix = 'FootregionTable', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
