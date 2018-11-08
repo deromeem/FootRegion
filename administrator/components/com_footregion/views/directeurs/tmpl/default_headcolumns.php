@@ -17,10 +17,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
         </th>   
         <th width="35%" >
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DIRECTEURS_PRENOM', 'd.prenom', $listDirn, $listOrder) ?>
-        </th>   
-        <th width="35%" >
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DIRECTEURS_ALIAS', 'd.alias', $listDirn, $listOrder) ?>
-        </th>                   >
+        </th>
         <th width="35%" >
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_DIRECTEURS_DATE_AFFECTATION', 'd.date_affectation', $listDirn, $listOrder) ?>
         </th>
