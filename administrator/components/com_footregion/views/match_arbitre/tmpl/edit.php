@@ -8,7 +8,7 @@ JHtml::_('formbehavior.chosen', 'select');
 <script type="text/javascript">
 	Joomla.submitbutton = function(task)
 	{
-		if (task == 'arbitre.cancel' || document.formvalidator.isValid(document.id('footregion-form')))
+		if (task == 'match_arbitre.cancel' || document.formvalidator.isValid(document.id('footregion-form')))
 		{
 			Joomla.submitform(task, document.getElementById('footregion-form'));
 		}
@@ -20,19 +20,23 @@ JHtml::_('formbehavior.chosen', 'select');
 
 	<div class="form-inline form-inline-header">
 		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+			<div class="control-label"><?php echo $this->form->getLabel('role'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('role'); ?></div>
 		</div>					
 		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
+			<div class="control-label"><?php echo $this->form->getLabel('matchs_id'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('matchs_id'); ?></div>
+		</div>					
+		<div class="control-group">
+			<div class="control-label"><?php echo $this->form->getLabel('arbitres_id'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('arbitres_id'); ?></div>
 		</div>					
 	</div>
 	
 	<div class="form-horizontal">
-		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'arbitre')); ?>
+		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'match_arbitre')); ?>
 
-		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'arbitre', JText::_('COM_FOOTREGION_ARBITRE')); ?>
+		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'match_arbitre', JText::_('COM_FOOTREGION_MATCH_ARBITRE')); ?>
 		<div class="row-fluid">
 			<div class="span9">
 				<div class="form-vertical">
