@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelEquipes extends JModelList
+class FootregionModelJoueurs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -9,17 +9,15 @@ class FootregionModelEquipes extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'eq.id',
-				'nom', 'eq.nom',
-				'clubs_id', 'eq.clubs_id',
-				'categories_id', 'eq.categories_id',
-				'entraineurs_id', 'eq.entraineurs_id',
-				'published', 'eq.published',
-				'hits', 'eq.hits',
-				'modified', 'eq.modified',
-				'nom_clubs', 'eq.nom_clubs',
-				'nom_categorie', 'eq.nom_categories',
-				'email', 'eq.email'
+				'id', 'j.id',
+				'email', 'j.email',
+				'poste', 'j.poste',
+				'num_licence', 'j.num_licence',
+				'date_naiss', 'j.date_naiss',
+				'equipe_id', 'j.equipes_id',
+				'published', 'j.published',
+				'hits', 'j.hits',
+				'modified', 'j.modified'
 			);
 		}
 		parent::__construct($config);
@@ -27,7 +25,7 @@ class FootregionModelEquipes extends JModelList
 
 	protected function populateState($ordering = null, $direction = null)
 	{
-		// récupère les informations de la session Equipe nécessaires au paramétrage de l'écran
+		// récupère les informations de la session Joueur nécessaires au paramétrage de l'écran
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
@@ -44,27 +42,25 @@ class FootregionModelEquipes extends JModelList
 	{
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
-		$query->select('eq.id, eq.nom, eq.clubs_id, eq.categories_id, eq.published, eq.entraineurs_id, eq.hits, eq.modified');
-		$query->from('#__footregion_Equipes eq');
+		$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.published, j.hits, j.modified');
+		$query->from('#__footregion_Joueurs j');
 
 		// joint la table pays
-		$query->select('c.nom AS nom_clubs')->join('LEFT', '#__footregion_clubs AS c ON c.id = eq.clubs_id');
-		$query->select('ca.nom AS nom_categories')->join('LEFT', '#__footregion_categories AS ca ON ca.id = eq.categories_id');
-		$query->select('en.email AS email_entraineurs')->join('LEFT', '#__footregion_entraineurs AS en ON en.email = eq.id');
-		
+		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
+
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('eq.id = '.(int) substr($search, 3));
+				$query->where('j.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'eq.nom LIKE '.$search;
+				$searches[]	= 'j.nom LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -79,26 +75,26 @@ class FootregionModelEquipes extends JModelList
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
 		if (is_numeric($published)) {
-			$query->where('eq.published=' . (int) $published);
+			$query->where('j.published=' . (int) $published);
 		}
 		elseif ($published === '') {
 			// si aucune sélection, on n'affiche que les publiés et dépubliés
-			$query->where('(eq.published=0 OR eq.published=1)');
+			$query->where('(j.published=0 OR j.published=1)');
 		}
 
 		// tri des colonnes
-		$orderCol = $this->state->get('list.ordering', 'eq.nom');
+		$orderCol = $this->state->get('list.ordering', 'j.nom');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		 //echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
-	public function getEquipe()
+	public function getJoueur()
 	{
 		$query = $this->_db->getQuery(true);
-		$query->select('id, nom');
-		$query->from('#__footregion_equipes');
+		$query->select('id');
+		$query->from('#__footregion_joueurs');
 		$query->where('published=1');
 		$query->order('nom ASC');
 		$this->_db->setQuery($query);
