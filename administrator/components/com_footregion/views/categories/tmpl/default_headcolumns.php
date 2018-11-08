@@ -12,9 +12,6 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
         <th width="35%" >
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CATEGORIES_NOM', 'c.nom', $listDirn, $listOrder) ?>
         </th>
-        <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_CATEGORIES_ALIAS', 'c.alias', $listDirn, $listOrder) ?>
-        </th>
 	<th width="35%" style="min-width:55px" class="nowrap center ">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'c.published', $listDirn, $listOrder) ?>
         </th>
