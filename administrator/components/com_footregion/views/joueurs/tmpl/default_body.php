@@ -20,18 +20,24 @@ if ($saveOrder)
 		<td class="wrap has-context">
 			<div class="pull-left">
 				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=equipe.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->nom); ?>
+					<?php echo $this->escape($item->id); ?>
 				</a>
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->nom_clubs; ?>
+			<?php echo $item->email; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->nom_categories; ?>
+			<?php echo $item->poste; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->email_entraineurs; ?>
+			<?php echo $item->num_licence; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->date_naiss; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->equipes_id; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?>
