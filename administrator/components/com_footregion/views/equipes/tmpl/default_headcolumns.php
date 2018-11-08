@@ -12,15 +12,15 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
         <th width="35%">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_NOM', 'eq.nom', $listDirn, $listOrder) ?>
         </th>
-        <th class="nowrap center hidden-tablet hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_CLUBS', 'eq.clubs_id', $listDirn, $listOrder) ?>
+        <th class="nowrap hidden-tablet hidden-phone">
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_CLUBS', 'eq.nom_clubs', $listDirn, $listOrder) ?>
         </th>
         </th>
-        <th class="nowrap center hidden-tablet hidden-phone">
+        <th class="nowrap hidden-tablet hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_CATEGORIES', 'eq.categories_id', $listDirn, $listOrder) ?>
         </th>
         </th>
-        <th class="nowrap center hidden-tablet hidden-phone">
+        <th class="nowrap hidden-tablet hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_ENTRAINEURS', 'eq.entraineurs_id', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:55px" class="nowrap center ">
@@ -32,7 +32,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	<th width="10%">
 		<?php echo JHtml::_('grid.sort', 'JGLOBAL_HITS', 'eq.hits', $listDirn, $listOrder); ?>
 	</th>
-	<th width="1%" class="nowrap center hidden-phone">
+	<th width="1%" class="nowrap hidden-phone">
 		<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'eq.id', $listDirn, $listOrder); ?>
 	</th>
 	</tr>
