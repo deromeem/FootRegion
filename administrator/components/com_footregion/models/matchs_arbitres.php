@@ -44,9 +44,10 @@ class FootregionModelMatchs_arbitres extends JModelList
 		$query->select('ma.id, ma.role, ma.matchs_id, ma.arbitres_id, ma.alias, ma.published, ma.hits, ma.modified');
 		$query->from('#__footregion_matchs_arbitres ma');
 
-		// joint la table pays
-		$query->select('m.id AS matchs')->join('LEFT', '#__footregion_matchs AS m ON m.id=ma.matchs_id');
-		$query->select('a.id AS arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.id=ma.arbitres_id');
+		// joint les tables
+		$query->select('m.nom AS nommatch')->join('LEFT', '#__footregion_matchs AS m ON m.id=ma.matchs_id');
+		$query->select('a.email AS emailarbitre')->join('LEFT', '#__footregion_arbitres AS a ON a.id=ma.arbitres_id');
+
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
