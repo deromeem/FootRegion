@@ -85,8 +85,8 @@ class FootregionViewTournois extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			't.nom' => JText::_('COM_ANNUAIRE_TOURNOIS_NOM'),
-			't.hits' => JText::_('COM_ANNUAIRE_TOURNOIS_HITS'),
+			't.nom' => JText::_('COM_FOOTREGION_TOURNOIS_NOM'),
+			't.hits' => JText::_('Clics'),
 			't.published' => JText::_('JSTATUS'),
 			't.modified' => JText::_('JDATE'),
 			't.id' => "Id"
