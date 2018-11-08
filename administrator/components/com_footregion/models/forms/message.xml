@@ -10,7 +10,7 @@
             size="40" class="input-large-text" default="" required="true"
         />        
         <field name="discussions_id" type="text" label="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
-            description="COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID"
+            description="COM_FOOTREGION_MESSAGE_DISCUSSIONS_ID"
             size="40" class="input-large-text" default="" required="true" readonly="true"
         />
 			
@@ -24,6 +24,65 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
+        <field name="date_heure" type="calendar" label="COM_FOOTREGION_MATCHS_DATE_HEURE"
+            description="COM_FOOTREGION_MATCHS_DATE_HEURE"
+            query="SELECT id, date_heure FROM #__footregion_matchs ORDER BY date_heure" 
+			key_field="id" value_field="date_heure" required="false"
+        />        
+        <field name="score_domicile" type="text" label="COM_FOOTREGION_MATCHS_SCORE_DOM"
+            description="COM_FOOTREGION_MATCHS_SCORE_DOM"
+            size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="score_invite" type="text" label="COM_FOOTREGION_MATCHS_SCORE_INV"
+            description="COM_FOOTREGION_MATCHS_SCORE_INV"
+            size="40" class="inputbox" default="" required="false"
+        />        
+		<field name="adr_rue" type="text" label="COM_FOOTREGION_MATCHS_ADR_RUE"
+            description="COM_FOOTREGION_MATCHS_ADR_RUE"
+            size="40" class="inputbox" default="" required="false"
+        />     
+		<field name="adr_ville" type="text" label="COM_FOOTREGION_MATCHS_ADR_VILLE"
+            description="COM_FOOTREGION_MATCHS_ADR_VILLE"
+            size="40" class="inputbox" default="" required="false"
+        />    
+		<field name="adr_cp" type="text" label="COM_FOOTREGION_MATCHS_ADR_CP"
+            description="COM_FOOTREGION_MATCHS_ADR_CP"
+            size="40" class="inputbox" default="" required="false"
+        />    	
+		<field name="coord_gps" type="text" label="COM_FOOTREGION_MATCHS_COORD_GPS"
+            description="COM_FOOTREGION_MATCHS_COORD_GPS"
+            size="40" class="inputbox" default="" required="false"
+        />	
+		<field name="equipes_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS" 
+			description="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS"
+			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="equipes_domicile_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX" 
+			description="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX"
+			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="entraineurs_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS" 
+			description="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS"
+			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="entraineurs_initiateur_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX" 
+			description="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX"
+			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="tournois_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_TOURNOI" 
+			description="COM_FOOTREGION_MATCHS_TOURNOI"
+			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="statuts_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_STATUT" 
+			description="COM_FOOTREGION_MATCHS_STATUT"
+			query="SELECT id, statut FROM #__footregion_statuts ORDER BY statut" 
+			key_field="id" value_field="statut" required="false"
+		/>   
         <field
 			name="libelle" type="editor" label="COM_FOOTREGION_MESSAGES_LIBELLE"
 			description="COM_FOOTREGION_MESSAGES_LIBELLE"
@@ -32,6 +91,11 @@
 			buttons="true"
 			hide="readmore,pagebreak"
 		/>
+        
+        <field name="utilisateurs_id" type="text" label="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            description="COM_FOOTREGION_MESSAGES_UTILISATEURS_ID"
+            size="40" class="inputbox" default="" required="true"
+        />
 
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
