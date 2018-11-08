@@ -13,13 +13,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_ROLE', 'ma.role', $listDirn, $listOrder) ?>
         </th>
         <th width="35%">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_MATCHS_ID', 'ma.matchs_id', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_MATCHS_ID', 'm.nom', $listDirn, $listOrder) ?>
         </th>
         <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES_ID', 'ma.arbitres_id', $listDirn, $listOrder) ?>
-        </th>
-        <th class="nowrap center hidden-tablet hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_ALIAS', 'ma.alias', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES_ID', 'a.email', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:55px" class="nowrap center ">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'ma.published', $listDirn, $listOrder) ?>
