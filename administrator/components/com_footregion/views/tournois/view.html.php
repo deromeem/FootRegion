@@ -31,7 +31,7 @@ class FootregionViewTournois extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		TournoiHelper::addSubmenu('tournois');
+		UtilisateurHelper::addSubmenu('tournois');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,7 +43,7 @@ class FootregionViewTournois extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_TOURNOIS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_tournoiS'));
 		
 		// affiche les boutons d'action
 		JToolBarHelper::addNew('tournoi.add');
@@ -85,11 +85,12 @@ class FootregionViewTournois extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			't.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			't.alias' => JText::_('COM_ANNUAIRE_ENTREPRISES_ALIAS'),
+			't.nom' => JText::_('COM_ANNUAIRE_TOURNOIS_NOM'),
+			't.hits' => JText::_('COM_ANNUAIRE_TOURNOIS_HITS'),
 			't.published' => JText::_('JSTATUS'),
 			't.modified' => JText::_('JDATE'),
 			't.id' => "Id"
 		);
 	}  
+	
 }
