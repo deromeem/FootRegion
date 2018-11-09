@@ -1,16 +1,16 @@
 <?php
 /**
- * @copyright  Copyright (C) 2016 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-// Redéfinit le séparateur de dossiers
+// RedÃ©finit le sÃ©parateur de dossiers
 const DS = DIRECTORY_SEPARATOR;
 // Enregistre les dossiers du chemin courant dans un tableau
 $parts = explode(DS, JPATH_BASE);
-// Dépile le dernier élément du tableau
+// DÃ©pile le dernier Ã©lÃ©ment du tableau
 array_pop($parts);
 
 // Definit les constantes JPATH_

@@ -1,8 +1,8 @@
 <?php
 /**
- * @package    Joomla.Site
+ * @package    Joomla.Administrator
  *
- * @copyright  Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -14,13 +14,13 @@ defined('_JEXEC') or die;
 // System includes
 require_once JPATH_LIBRARIES . '/import.legacy.php';
 
-// Set system error handling
-// JError::setErrorHandling(E_NOTICE, 'message');
-// JError::setErrorHandling(E_WARNING, 'message');
-// JError::setErrorHandling(E_ERROR, 'callback', array('JError', 'customErrorPage'));
-
 // Bootstrap the CMS libraries.
 require_once JPATH_LIBRARIES . '/cms.php';
+
+// Set system error handling
+JError::setErrorHandling(E_NOTICE, 'message');
+JError::setErrorHandling(E_WARNING, 'message');
+JError::setErrorHandling(E_ERROR, 'message', array('JError', 'customErrorPage'));
 
 $version = new JVersion;
 
@@ -31,9 +31,9 @@ if (!file_exists(JPATH_CONFIGURATION . '/configuration.php')
 {
 	if (file_exists(JPATH_INSTALLATION . '/index.php'))
 	{
-		header('Location: ' . substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], 'index.php')) . 'installation/index.php');
+		header('Location: ../installation/index.php');
 
-		exit;
+		exit();
 	}
 	else
 	{
@@ -96,5 +96,6 @@ unset($config);
 // System profiler
 if (JDEBUG)
 {
+	// @deprecated 4.0 - The $_PROFILER global will be removed
 	$_PROFILER = JProfiler::getInstance('Application');
 }
