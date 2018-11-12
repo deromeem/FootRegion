@@ -27,7 +27,7 @@ if ($saveOrder)
 			<?php echo $item->num_licence; ?>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo (int) $item->id; ?>
+			<?php echo $item->nom_entraineurs?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'entraineurs.', true); ?>

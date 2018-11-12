@@ -34,7 +34,7 @@ if ($saveOrder)
 			<?php echo $item->date_naiss; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->equipes_id; ?>
+			<?php echo $item->nom_equipes; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?>

@@ -23,7 +23,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_JOUEURS_DATE_NAISS', 'j.entraineurs_date_naiss', $listDirn, $listOrder) ?>
         </th>
         <th class="nowrap hidden-tablet hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_JOUEURS_EQUIPES_ID', 'j.clubs_equipes_id', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_EQUIPES_NOM', 'eq.clubs_nom', $listDirn, $listOrder) ?>
         </th>
         <th class="nowrap" width="1%" style="min-width:55px">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'j.published', $listDirn, $listOrder) ?>
