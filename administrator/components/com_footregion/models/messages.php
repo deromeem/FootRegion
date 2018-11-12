@@ -16,7 +16,8 @@ class FootregionModelMessages extends JModelList
 				'discussions_id', 'm.discussions_id',
 				'published', 'm.published',
 				'hits', 'm.hits',
-				'modified', 'm.modified'
+				'modified', 'm.modified',
+
 			);
 		}
 		parent::__construct($config);
@@ -30,6 +31,12 @@ class FootregionModelMessages extends JModelList
 
 		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
 		$this->setState('filter.pay', $pay);
+
+		$user = $this->getUserStateFromRequest($this->context.'.filter.user', 'filter_user', '');
+		$this->setState('filter.user', $user);
+
+		$discussion = $this->getUserStateFromRequest($this->context.'.filter.discussion', 'filter_discussion', '');
+		$this->setState('filter.discussion', $discussion);
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
 		$this->setState('filter.published', $published);
@@ -47,6 +54,12 @@ class FootregionModelMessages extends JModelList
 		// joint la table pays
 		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
 
+		// joint la table discussions
+		$query->select('d.theme AS theme')->join('LEFT', '#__footregion_discussions AS d ON d.id=m.discussions_id');
+
+		// joint la table utilisateurs
+		$query->select('u.nom AS nom')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=m.discussions_id');
+		
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
@@ -59,8 +72,8 @@ class FootregionModelMessages extends JModelList
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'm.nom LIKE '.$search;
-				$searches[]	= 'm.prenom LIKE '.$search;
+				$searches[]	= 'u.nom LIKE '.$search;
+				//$searches[]	= 'm.prenom LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -71,7 +84,18 @@ class FootregionModelMessages extends JModelList
 		// if (is_numeric($pay)) {
 		// 	$query->where('e.pays_id=' . (int) $pay);
 		// }
+
+		//filtre selon l'état du filtre 'filter_user'
+		$user = $this->getState('filter.user');
+		if (is_numeric($user)) {
+			$query->where('u.nom=' . (int) $user);
+		}
 		
+		//filtre selon l'état du filtre 'filter_discussion'
+		$discussion = $this->getState('filter_discussion');
+		if (is_numeric($discussion)) {
+			$query->where('d.theme=' . (int) $discussion);
+		}
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
 		if (is_numeric($published)) {
@@ -84,22 +108,34 @@ class FootregionModelMessages extends JModelList
 
 		// tri des colonnes
 		$orderCol = $this->state->get('list.ordering', 'm.nom');
+		$orderCol = $this->state->get('list.ordering', 'm.libelle');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 
-	// public function getPays()
-	// {
-		// $query = $this->_db->getQuery(true);
-		// $query->select('id, pays');
-		// $query->from('#__annuaire_pays');
-		// $query->where('published=1');
-		// $query->order('pays ASC');
-		// $this->_db->setQuery($query);
-		// $pays = $this->_db->loadObjectList();
-		// return $pays;
-	// }	
+	public function getUtilisateurs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, nom');
+		$query->from('#__footregion_utilisateurs');
+		$query->where('published=1');
+		$query->order('nom ASC');
+		$this->_db->setQuery($query);
+		$utilisateurs = $this->_db->loadObjectList();
+		return $utilisateurs;
+	}	
+	public function getDiscussions()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, theme');
+		$query->from('#__footregion_discussions');
+		$query->where('published=1');
+		$query->order('theme ASC');
+		$this->_db->setQuery($query);
+		$discussions = $this->_db->loadObjectList();
+		return $discussions;
+	}	
 }

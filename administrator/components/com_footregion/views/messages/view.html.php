@@ -79,6 +79,30 @@ class FootregionViewMessages extends JViewLegacy
 			// JHtml::_('select.options', $this->pay,
 			// 'value', 'text', $this->state->get('filter.pay'))
 		// );
+				
+		// ajoute le filtre spécifique pour les utilisateurs
+		$this->utilisateurs = $this->get('utilisateurs');
+		$options3	= array();
+		foreach ($this->utilisateurs as $user){
+			$options3[]	= JHtml::_('select.option', $user->id,  $user->nom);
+		}
+		$this->user = $options3;
+		JHtmlSidebar::addFilter( JText::_('COM_FOOTREGION_UTILISATEURS_NOM'), 'filter_user',
+			JHtml::_('select.options', $this->user,
+			'value', 'text', $this->state->get('filter.user'))
+		);
+
+		// ajoute le filtre spécifique pour les discussions
+		$this->discussions = $this->get('discussions');
+		$options3	= array();
+		foreach ($this->discussions as $discussion){
+			$options3[]	= JHtml::_('select.option', $discussion->id, $discussion->theme);
+			}
+		$this->discussion = $options3;
+		JHtmlSidebar::addFilter( JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'), 'filter_discussion',
+			JHtml::_('select.options', $this->discussion,
+			'value', 'text', $this->state->get('filter.discussion'))
+		); 
 	}
 
  	protected function getSortFields()
@@ -87,8 +111,8 @@ class FootregionViewMessages extends JViewLegacy
 		return array(
 			'm.libelle' => JText::_('COM_FOOTREGION_MESSAGES_LIBELLE'),
 			'm.alias' => JText::_('COM_FOOTREGION_MESSAGES_ALIAS'),
-			'm.utilisateurs_id' => JText::_('COM_FOOTREGION_MESSAGES_UTILISATEURS_ID'),
-			'm.discussions_id' => JText::_('COM_FOOTREGION_MESSAGES_DISCUSSIONS_ID'),
+			'u.nom' => JText::_('COM_FOOTREGION_UTILISATEURS_NOM'),
+			'd.theme' => JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'),
 			'm.published' => JText::_('JSTATUS'),
 			'm.modified' => JText::_('JDATE'),
 			'm.id' => "Id"
