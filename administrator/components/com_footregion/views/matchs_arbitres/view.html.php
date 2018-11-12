@@ -43,7 +43,7 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCH_ARBITRES'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCHS_ARBITRES'));
 		
 		// affiche les boutons d'action
 		JToolBarHelper::addNew('match_arbitre.add');

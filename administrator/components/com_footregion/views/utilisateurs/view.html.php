@@ -85,8 +85,10 @@ class FootregionViewUtilisateurs extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'u.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
-			'u.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
+			'u.nom' => JText::_('COM_FOOTREGION_UTILISATEURS_NOM'),
+			'u.prenom' => JText::_('COM_FOOTREGION_UTILISATEURS_PRENOM'),
+			'u.email' => JText::_('COM_FOOTREGION_UTILISATEURS_EMAIL'),
+			'u.mobile' => JText::_('COM_FOOTREGION_UTILISATEURS_MOBILE'),
 			'u.published' => JText::_('JSTATUS'),
 			'u.modified' => JText::_('JDATE'),
 			'u.id' => "Id"

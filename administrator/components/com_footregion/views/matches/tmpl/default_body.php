@@ -7,7 +7,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=matchs.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_footregion&task=matches.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
