@@ -11,7 +11,7 @@ if (version_compare(PHP_VERSION, JOOMLA_MINIMUM_PHP, '<'))
 	die('Your host needs to use PHP ' . JOOMLA_MINIMUM_PHP . ' or higher to run this version of Joomla!');
 }
 
-// Enregistre l'heure courante et la quantit� de m�moire utilis�e par PHP :
+// Enregistre l'heure courante et la quantité de mémoire utilisée par PHP :
 $startTime = microtime(1);
 $startMem  = memory_get_usage();
 
@@ -32,8 +32,8 @@ if (!defined('_JDEFINES'))
 // Chargement du Framework Joomla :
 require_once JPATH_BASE . '/includes/framework.php';
 
-// D�finit dans le profiler l'heure de d�but et la m�moire utilis�e et la marque afterLoad :
-JDEBUG ? $_PROFILER->setStart($startTime, $startMem)->mark('afterLoad') : null;
+// Définit dans le profiler l'heure de début et la mémoire utilisée et la marque afterLoad :
+JDEBUG ? JProfiler::getInstance('Application')->setStart($startTime, $startMem)->mark('afterLoad') : null;
 
 // Chargement de l'application :
 require_once JPATH_BASE . '/application/footregion.php';

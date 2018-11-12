@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 JLoader::import('joomla.user.authentication');
 JLoader::import('joomla.application.component.helper');
 
-class AppFootregionWeb extends JApplicationWeb
+class AppFootregionWeb extends JApplicationCms
 {
 	public function __construct()
 	{
