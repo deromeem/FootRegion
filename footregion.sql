@@ -1,22 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le :  mar. 06 nov. 2018 à 17:40
--- Version du serveur :  10.1.26-MariaDB
--- Version de PHP :  7.1.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `footregion`
@@ -743,7 +724,7 @@ INSERT INTO `footregion_extensions` (`extension_id`, `package_id`, `name`, `type
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"July 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTH_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{\"name\":\"plg_twofactorauth_yubikey\",\"type\":\"plugin\",\"creationDate\":\"September 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.2.0\",\"description\":\"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"yubikey\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{\"name\":\"plg_search_tags\",\"type\":\"plugin\",\"creationDate\":\"March 2014\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEARCH_TAGS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tags\"}', '{\"search_limit\":\"50\",\"show_tagged_items\":\"1\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1541511492}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1542007415}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{\"name\":\"plg_editors-xtd_module\",\"type\":\"plugin\",\"creationDate\":\"October 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_MODULE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"module\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 0, 1, 0, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"November 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '{\"mode\":3,\"lastrun\":\"\",\"unique_id\":\"d28c6cf7ac9fe5bcd5f11b16123b6cce8813712a\",\"interval\":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{\"name\":\"plg_installer_packageinstaller\",\"type\":\"plugin\",\"creationDate\":\"May 2016\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.6.0\",\"description\":\"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"packageinstaller\"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1362,7 +1343,9 @@ CREATE TABLE `footregion_footregion_arbitres` (
 
 INSERT INTO `footregion_footregion_arbitres` (`id`, `email`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'phochon@footregion.fr', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'phochon@footregion.fr', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'adrien_saumon@footregion.fr', '', 1, '0000-00-00 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(4, 'alain_footix@footregion.fr', '', 1, '0000-00-00 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1426,7 +1409,12 @@ CREATE TABLE `footregion_footregion_clubs` (
 
 INSERT INTO `footregion_footregion_clubs` (`id`, `sigle`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `directeurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(13, 'FCA', 'FC Annecy', '24 Rue du Commandant Guilbaud', 'Annecy', '74000', 12, 'fc-annecy', 1, '2018-11-08 13:17:24', 35, '2018-11-08 13:30:58', 35, 0),
+(14, 'FSR', 'Fréjus-Saint-Raphaël', '10 Avenue Simone Veil ', 'Saint-Raphaël', '83600', 13, 'frejus-saint-raphael', 1, '2018-11-08 13:19:02', 35, '2018-11-08 13:31:07', 35, 0),
+(15, 'HFC', 'Hyères FC', '24 Rue Charles de Gaulle', 'Hyères', '83400', 11, 'hyeres-fc', 1, '2018-11-08 13:20:07', 35, '2018-11-08 13:31:15', 35, 0),
+(16, 'CAP', 'CA Pontarlier', '54 Rue Marpaud', 'Pontarlier', '25300', 10, 'ca-pontarlier', 1, '2018-11-08 13:21:11', 35, '2018-11-08 13:31:23', 35, 0),
+(17, 'TFC', 'Trélissac', '13 Avenue Jean Jaurès', 'Trélissac', '24750', 9, 'trelissac', 1, '2018-11-08 13:22:43', 35, '2018-11-08 13:31:30', 35, 0);
 
 -- --------------------------------------------------------
 
@@ -1453,7 +1441,12 @@ CREATE TABLE `footregion_footregion_directeurs` (
 
 INSERT INTO `footregion_footregion_directeurs` (`id`, `email`, `date_affectation`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '0000-00-00', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'hboss@footregion.fr', '0000-00-00', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'hboss@footregion.fr', '2018-11-15', '', 1, '2018-10-24 00:00:00', 45, '2018-11-06 14:02:30', 35, 0),
+(14, 'vadendavignon@footregion.fr', '2016-11-24', '', 1, '2018-11-08 13:26:37', 35, '2018-11-08 13:26:56', 35, 0),
+(15, 'mauricebarrientos@footregion.fr', '2017-07-18', '', 1, '2018-11-08 13:28:13', 35, '0000-00-00 00:00:00', 0, 0),
+(16, 'guyparenteau@footregion.fr', '2015-04-22', '', 1, '2018-11-08 13:29:03', 35, '2018-11-08 13:29:19', 35, 0),
+(17, 'aleronayot@footregion.fr', '2014-12-16', '', 1, '2018-11-08 13:29:56', 35, '0000-00-00 00:00:00', 0, 0),
+(18, 'artuscaron@footregion.fr', '2018-05-16', '', 1, '2018-11-08 13:30:33', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1480,7 +1473,20 @@ CREATE TABLE `footregion_footregion_discussions` (
 
 INSERT INTO `footregion_footregion_discussions` (`id`, `theme`, `utilisateurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'Covoiturage samedi 27/10 équipe UFBSJA-Seniors-1', 8, '', 1, '2018-10-26 00:00:00', 42, '0000-00-00 00:00:00', 0, 0);
+(2, 'Covoiturage samedi 27/10 équipe UFBSJA-Seniors-1', 8, '', 1, '2018-10-26 00:00:00', 42, '0000-00-00 00:00:00', 0, 0),
+(3, 'La meilleure celle la', 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'Les bests', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'La team qui tue', 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'Nature Rouge', 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(7, 'Gazelle Plage', 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(8, 'Pour Tous Alpha', 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(9, 'Renard Gamma', 8, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(10, 'Tonnerre Avenue', 9, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(11, 'Royale En Boite', 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(12, 'Attaque Infernale', 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(13, 'Pro Bronze', 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(14, 'Atelier Rouge', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(15, 'Laboratoire Extasy', 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1508,7 +1514,10 @@ CREATE TABLE `footregion_footregion_entraineurs` (
 INSERT INTO `footregion_footregion_entraineurs` (`id`, `email`, `num_licence`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (2, 'inote@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(3, 'sfrais@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(3, 'sfrais@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(7, 'entraineur1@gmail.com', '0 123 456 789', '', 1, '2018-11-06 13:19:44', 35, '0000-00-00 00:00:00', 0, 0),
+(8, 'asieye@footregion.fr', '6 666 666 666', '', 1, '2018-11-08 13:03:35', 35, '0000-00-00 00:00:00', 0, 0),
+(9, 'aforson@footregion.fr', '5 486 877 154', '', 1, '2018-11-08 13:11:13', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1537,7 +1546,11 @@ CREATE TABLE `footregion_footregion_equipes` (
 
 INSERT INTO `footregion_footregion_equipes` (`id`, `nom`, `clubs_id`, `categories_id`, `entraineurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA-Seniors-1', 2, 7, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'UFBSJA-Seniors-1', 2, 7, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'UFBSJA-Véterans-1', 2, 8, 2, 'ufbsja-veterans-2', 1, '2018-11-06 13:23:28', 35, '2018-11-06 13:24:55', 35, 0),
+(7, 'FCA-U16-U17-2', 8, 5, 6, 'fca-u16-u17-2', 1, '2018-11-08 14:05:34', 35, '0000-00-00 00:00:00', 0, 0),
+(8, 'FSR-Séniors-1', 9, 7, 5, 'fsr-seniors-1', 1, '2018-11-08 14:06:31', 35, '0000-00-00 00:00:00', 0, 0),
+(9, 'HFC-Vétérans+45-2', 10, 9, 4, 'hfc-veterans-45-2', 1, '2018-11-08 14:06:58', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1571,7 +1584,10 @@ INSERT INTO `footregion_footregion_joueurs` (`id`, `email`, `poste`, `num_licenc
 (3, 'tbut@footregion.fr', '', '', '2000-10-07', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (5, 'adurand@footregion.fr', '', '', '0000-00-00', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (6, 'mdupond@footregion.fr', '', '', '0000-00-00', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(7, 'pnalty@footregion.fr', '', '', '0000-00-00', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(7, 'pnalty@footregion.fr', '', '', '0000-00-00', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(11, 'vjunior@gmail.com', '', '', '2000-07-12', 5, '', 1, '2018-11-05 09:23:41', 35, '0000-00-00 00:00:00', 0, 0),
+(12, 'brahim.chebak@gmail.com', 'G', '1 234 567 890', '2011-11-22', 2, '', 1, '2018-11-06 13:14:32', 35, '0000-00-00 00:00:00', 0, 0),
+(13, 'masensio@footregion.fr', 'ATT', '9 999 999 999', '1991-11-06', 3, '', 1, '2018-11-06 15:55:01', 35, '2018-11-06 15:56:50', 35, 0);
 
 -- --------------------------------------------------------
 
@@ -1610,7 +1626,10 @@ CREATE TABLE `footregion_footregion_matchs` (
 
 INSERT INTO `footregion_footregion_matchs` (`id`, `date_heure`, `score_domicile`, `score_invite`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `coord_gps`, `equipes_invite_id`, `equipes_domicile_id`, `entraineurs_invite_id`, `entraineurs_initiateur_id`, `tournois_id`, `statuts_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '2018-10-24 00:00:00', 0, 0, '-', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 0, '0000-00-00 00:00:00', 45, 0),
-(2, '2018-10-26 13:00:00', 0, 0, 'Match test 1', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, '2018-10-26 13:00:00', 0, 0, 'Match test 1', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, '2018-11-14 00:00:00', 0, 0, 'Senior 1', '5 rue du loup', 'Marseille', '04530', 'E78964,N4544', 5, 2, 5, 2, 5, 2, 'junior-1', 1, '2018-11-08 15:16:12', 35, '2018-11-08 15:16:20', 35, 0),
+(4, '2018-11-17 00:00:00', 0, 0, 'Vétérans Edition', '107 avenue Bernard', 'Lyon', '76520', 'E456*9,S485', 6, 3, 6, 2, 2, 5, 'veterans-edition', 1, '2018-11-08 15:18:01', 35, '2018-11-08 15:18:11', 35, 0),
+(5, '2018-11-01 00:00:00', 4, 2, 'Amical U16/17', '7 impasse du clos', 'Épône', '78680', 'N15971,S4318', 4, 4, 4, 4, 4, 3, 'amical-u16-17', 1, '2018-11-08 15:19:46', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1638,7 +1657,11 @@ CREATE TABLE `footregion_footregion_matchs_arbitres` (
 
 INSERT INTO `footregion_footregion_matchs_arbitres` (`id`, `role`, `matchs_id`, `arbitres_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'Central', 2, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'Central', 2, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'Central', 2, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'Central', 2, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'Central', 2, 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'Central', 2, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1666,7 +1689,46 @@ CREATE TABLE `footregion_footregion_messages` (
 
 INSERT INTO `footregion_footregion_messages` (`id`, `libelle`, `discussions_id`, `utilisateurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'Bonjour, pour ceux que cela intéresse, j\'ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0);
+(2, 'Bonjour, pour ceux que cela intéresse, j\'ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0),
+(3, 'Etre jeune, Avoir du fun, Tester ballon', 3, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'Pour vous, Foot est inépuisable', 3, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'massacre n a pas de prix', 3, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'ferme ta gueule. Qui peut le battre ? ', 4, 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(7, 'Avec tournoi tout est clair', 5, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(8, 'Peut-on envisager un repas sans match ?', 5, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(9, 'ronaldo n est pas né de la dernière pluie ', 5, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(10, 'C est tous les jours la fête avec messi ', 5, 8, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(11, '2 secondes ça c est fort de fruits', 6, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(12, 'L entraineur is magic !', 6, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(13, 'Pogba crie tout haut ce que vous pensez tout bas', 6, 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(14, 'Vien au match demain tu l aimes ou tu le quittes', 7, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(15, 'Dribbles. It s a bit strong !', 8, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(16, 'Arbre ça change l école', 8, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(17, 'Une envie, un délice, un ronaldinho', 8, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(18, 'Avant la roberto carlos, deux guerres mondiales. Après la roberto carlos, zéro.', 8, 9, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(19, 'Le futur choisit crespo - Prenez votre futur en main', 9, 8, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(20, 'Inzaghi est le seul moyen d être heureux', 9, 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(21, 'papa et vos idées ont du génie', 10, 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(22, 'Si c est Pelé j y vais aussi', 10, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(23, 'maradonna est plus bon que le chocolat ! ', 10, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(24, 'Elle a quelque chose en plus, et si c était okocha ?', 11, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(25, 'podolski wa-wa-wa-Hamdoulah ça va ! ', 11, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(26, 'Rien n est trop bon pour Anelka', 11, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(27, 'Vidic president !', 11, 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(28, 'Zidane et ça repart', 11, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(29, 'Gullit pèse lourd sur le web', 11, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(30, 'Peut-on envisager un repas sans Cruyff ?', 12, 8, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(31, 'Schevchenko, ça déchire', 12, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(32, 'Ferdinand a un coeur gros comme ça', 13, 9, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(33, 'Zico c est Halla Halla !', 13, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(34, 'Platini est ce que le monde attendait ', 13, 9, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(35, 'Hagi, c est beau la vie pour les grands et les petits', 14, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(36, 'You make Rui Costa real', 14, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(37, 'Oh mon Dieu ! c est Alex de souza !', 14, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(38, 'Mon eau minceur c est Maldini', 15, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(39, 'Zlatan. Opportunity. Quality. Achievement.', 15, 1, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(40, 'Modric ne s use jamais', 15, 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(41, 'Yachine, ça fait mal, ça fait mal', 15, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1693,7 +1755,12 @@ CREATE TABLE `footregion_footregion_signalements` (
 --
 
 INSERT INTO `footregion_footregion_signalements` (`id`, `libelle`, `arbitres_id`, `entraineurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'Hors-jeu', 3, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(3, 'Corner', 5, 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'Avertissement', 6, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'Penalty', 4, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'Expulsion', 4, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1749,7 +1816,12 @@ CREATE TABLE `footregion_footregion_tournois` (
 --
 
 INSERT INTO `footregion_footregion_tournois` (`id`, `nom`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'Champion', 'champion', 1, '2018-11-06 15:35:47', 35, '0000-00-00 00:00:00', 0, 0),
+(3, 'Intercommunal d Iser', 'intercommunal-d-iser', 1, '2018-11-08 14:09:10', 35, '0000-00-00 00:00:00', 0, 0),
+(4, 'Challenge Bouilhaguet', 'challenge-bouilhaguet', 1, '2018-11-08 14:11:29', 35, '0000-00-00 00:00:00', 0, 0),
+(5, 'Tournoi paques', 'tournoi-paques', 1, '2018-11-08 14:11:39', 35, '0000-00-00 00:00:00', 0, 0),
+(6, 'Tournoi Futsal de l AFAF', 'tournois-de-foot-foot-en-salle-tournoi-futsal-de-l-afaf', 1, '2018-11-08 14:11:54', 35, '2018-11-08 14:12:23', 35, 0);
 
 -- --------------------------------------------------------
 
@@ -1786,7 +1858,30 @@ INSERT INTO `footregion_footregion_utilisateurs` (`id`, `nom`, `prenom`, `mobile
 (7, 'FRAIS', 'Sami', '', 'sfrais@footregion.fr', 'frais', 1, '2018-10-24 14:49:32', 45, '0000-00-00 00:00:00', 0, 0),
 (8, 'MARQUE', 'Jean', '', 'jmarque@footregion.fr', 'marque', 1, '2018-10-24 14:50:02', 45, '2018-10-24 14:58:41', 35, 0),
 (9, 'BUT', 'Théo', '', 'tbut@footregion.fr', 'but', 1, '2018-10-24 14:50:31', 45, '0000-00-00 00:00:00', 0, 0),
-(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0);
+(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0),
+(21, 'PARENTEAU', 'Guy', '0444897789', 'guyparenteau@footregion.fr', 'parenteau', 1, '2018-11-08 13:57:08', 35, '2018-11-08 14:01:13', 35, 0),
+(22, 'DAVIGNON', 'Vaden', '0164974410', 'vadendavignon@footregion.fr', 'davignon', 1, '2018-11-08 13:57:55', 35, '2018-11-08 14:00:36', 35, 0),
+(23, 'BARRIENTOS', 'Maurice', '0563550978', 'mauricebarrientos@footregion.fr', 'barrientos', 1, '2018-11-08 14:00:25', 35, '0000-00-00 00:00:00', 0, 0),
+(24, 'AYOT', 'Aleron', '0105573281', 'aleronayot@footregion.fr', 'ayot', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(25, 'CARON', 'Artus', '0247002196', 'artuscaron@footregion.fr', 'caron', 1, '2018-11-08 14:04:42', 35, '0000-00-00 00:00:00', 0, 0),
+(26, 'JOSHUA', 'Barker', '0463446310', 'JoshuaBarker@footregion.fr', 'joshua', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(27, 'CHRISTOPHER', 'Morton', '0240835925', 'ChristopherMorton@footregion.fr', 'christopher', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(28, 'JASON', 'Mitchell', '0423670188', 'JasonMitchell@footregion.fr', 'jason', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(29, 'DANIEL', 'Davison', '0540209485', 'DanielDavison@footregion.fr', 'daniel', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(30, 'JOHN', 'Castro', '0188308420', 'JohnCastro@footregion.fr', 'john', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(31, 'DAVID', 'Parsons', '0599683950', 'DavidParsons@footregion.fr', 'david', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(32, 'ROBERT', 'Higgins', '0421599364', 'RobertHiggins@footregion.fr', 'robert', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(33, 'JOSEPH', 'Frost', '0413941270', 'JosephFrost@footregion.fr', 'joseph', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(34, 'MICHAEL', 'Matthews', '0413991270', 'MichaelMatthews@footregion.fr', 'michael', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(35, 'MATTHEW', 'Houston', '0413941270', 'MatthewHouston@footregion.fr', 'matthew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(36, 'JAMES', 'Mohamed', '0419752827', 'JamesMohamed@footregion.fr', 'james', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(37, 'ANDREW', 'Jackson', '0165237099', 'AndrewJackson@footregion.fr', 'andrew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(38, 'Entraineur', 'Un', '0658897541', 'entraineur1@gmail.com', 'entraineur', 1, '2018-11-08 15:41:58', 35, '0000-00-00 00:00:00', 0, 0),
+(39, 'Sieye', 'Armand', '0698787451', 'asieye@footregion.fr', 'sieye', 1, '2018-11-08 15:42:32', 35, '0000-00-00 00:00:00', 0, 0),
+(40, 'Forson', 'Allan', '0780987456', 'aforson@footregion.fr', 'forson', 1, '2018-11-08 15:43:01', 35, '0000-00-00 00:00:00', 0, 0),
+(41, 'Junior', 'Vinicius', '0589745621', 'vjunior@gmail.com', 'junior', 1, '2018-11-08 16:03:35', 35, '0000-00-00 00:00:00', 0, 0),
+(42, 'Chebak', 'Brahim', '0789845414', 'brahim.chebak@gmail.com', 'chebak', 1, '2018-11-08 16:04:50', 35, '0000-00-00 00:00:00', 0, 0),
+(43, 'Asensio', 'Marco', '0898452874', 'masensio@footregion.fr', 'asensio', 1, '2018-11-08 16:06:27', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2173,8 +2268,8 @@ CREATE TABLE `footregion_session` (
 --
 
 INSERT INTO `footregion_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('o1u07d8eeb9hhqidv16c1mp8h4', 1, 0, '1541415600', 'joomla|s:1332:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyNTtzOjU6InRva2VuIjtzOjMyOiI1QXJHNjZMazlidmtIa3pWWUFIS1QybXJ0MjdMdWg5UCI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTQxNDE0Mzg0O3M6NDoibGFzdCI7aToxNTQxNDE1NTk5O3M6Mzoibm93IjtpOjE1NDE0MTU2MDA7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxNDoiY29tX2Zvb3RyZWdpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMToidXRpbGlzYXRldXIiO086ODoic3RkQ2xhc3MiOjI6e3M6MjoiaWQiO2E6MTp7aTowO2k6NDt9czo0OiJkYXRhIjtOO31zOjc6Im1lc3NhZ2UiO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZGF0YSI7YTo4OntzOjU6ImFsaWFzIjtzOjA6IiI7czo5OiJwdWJsaXNoZWQiO3M6MToiMSI7czo3OiJjcmVhdGVkIjtzOjE5OiIyMDE4LTEwLTI2IDExOjIxOjAwIjtzOjEwOiJjcmVhdGVkX2J5IjtzOjI6IjQyIjtzOjg6Im1vZGlmaWVkIjtzOjA6IiI7czoxMToibW9kaWZpZWRfYnkiO3M6MToiMCI7czo0OiJoaXRzIjtzOjE6IjAiO3M6MjoiaWQiO2k6Mjt9fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO3M6MjoiMzUiO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 35, 'SLAM'),
-('otso72nnan60aa9ik9ntc94pjf', 1, 0, '1541522141', 'joomla|s:1284:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo3MztzOjU6InRva2VuIjtzOjMyOiJ4ZVROYkZNclZQZVpGZDRXZTBaaXppekE2dDJucUR2bCI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTQxNTE3OTk4O3M6NDoibGFzdCI7aToxNTQxNTIxODI5O3M6Mzoibm93IjtpOjE1NDE1MjIxNDE7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxNDoiY29tX2Zvb3RyZWdpb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo3OiJtZXNzYWdlIjtPOjg6InN0ZENsYXNzIjoyOntzOjI6ImlkIjthOjE6e2k6MDtpOjI7fXM6NDoiZGF0YSI7Tjt9fXM6ODoibWVzc2FnZXMiO086ODoic3RkQ2xhc3MiOjQ6e3M6NjoiZmlsdGVyIjtPOjg6InN0ZENsYXNzIjoyOntzOjY6InNlYXJjaCI7czowOiIiO3M6OToicHVibGlzaGVkIjtzOjA6IiI7fXM6ODoib3JkZXJjb2wiO3M6OToibS5saWJlbGxlIjtzOjk6Im9yZGVyZGlybiI7czozOiJhc2MiO3M6MTA6ImxpbWl0c3RhcnQiO2k6MDt9fXM6NjoiZ2xvYmFsIjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6Imxpc3QiO086ODoic3RkQ2xhc3MiOjE6e3M6NToibGltaXQiO2k6MjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7czoyOiIzNSI7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 35, 'SLAM');
+('0gdd6o6aab747fs0q2f7df2v30', 1, 0, '1541695915', 'joomla|s:916:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxNDtzOjU6InRva2VuIjtzOjMyOiIzZ0RraTZXYzlmNFkyYUo0dWxGcHRGeXBxak5VMXlUYiI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTQxNjk0MzYwO3M6NDoibGFzdCI7aToxNTQxNjk1NzMxO3M6Mzoibm93IjtpOjE1NDE2OTU5MTQ7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxNDoiY29tX2Zvb3RyZWdpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJjbHViIjtPOjg6InN0ZENsYXNzIjoyOntzOjI6ImlkIjthOjA6e31zOjQ6ImRhdGEiO047fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO3M6MjoiMzUiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 35, 'SLAM'),
+('f6u20hebkcoho021ngmp143kg0', 1, 0, '1542007618', 'joomla|s:868:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxMTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1NDIwMDc0MTM7czo0OiJsYXN0IjtpOjE1NDIwMDc2MDg7czozOiJub3ciO2k6MTU0MjAwNzYxNzt9czo1OiJ0b2tlbiI7czozMjoiUWE1bnp4TFhVYzloWVU2SDlqRE9RUFR4MHR1ZmpFalIiO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjt9fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO3M6MjoiMzUiO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 35, 'SLAM');
 
 -- --------------------------------------------------------
 
@@ -2362,80 +2457,7 @@ CREATE TABLE `footregion_updates` (
 --
 
 INSERT INTO `footregion_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
-(1, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
-(2, 2, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.8.0.1', '', 'https://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
-(3, 2, 803, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.9.0.2', '', 'https://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
-(4, 2, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
-(5, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/ka-GE_details.xml', '', ''),
-(6, 1, 700, 'Joomla', '', 'joomla', 'file', '', 0, '3.9.0', '', 'https://update.joomla.org/core/sts/extension_sts.xml', '', ''),
-(7, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
-(8, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
-(9, 2, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
-(10, 2, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/bn-BD_details.xml', '', ''),
-(11, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
-(12, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.8.12.1', '', 'https://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
-(13, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.7.5.1', '', 'https://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
-(14, 2, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
-(15, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
-(16, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
-(17, 2, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
-(18, 2, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.8.5.1', '', 'https://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
-(19, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.9.0.7', '', 'https://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
-(20, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.9.0.7', '', 'https://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
-(21, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.9.0.2', '', 'https://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
-(22, 2, 0, 'Esperanto', '', 'pkg_eo-XX', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/eo-XX_details.xml', '', ''),
-(23, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
-(24, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
-(25, 2, 0, 'Khmer', '', 'pkg_km-KH', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/km-KH_details.xml', '', ''),
-(26, 2, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.8.9.1', '', 'https://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
-(27, 2, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.7.3.1', '', 'https://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
-(28, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '3.8.10.1', '', 'https://update.joomla.org/language/details3/lt-LT_details.xml', '', ''),
-(29, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
-(30, 2, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
-(31, 2, 0, 'Norwegian Nynorsk', '', 'pkg_nn-NO', 'package', '', 0, '3.4.2.1', '', 'https://update.joomla.org/language/details3/nn-NO_details.xml', '', ''),
-(32, 2, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
-(33, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
-(34, 2, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
-(35, 2, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.8.12.1', '', 'https://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
-(36, 2, 0, 'English AU', '', 'pkg_en-AU', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
-(37, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
-(38, 2, 0, 'English US', '', 'pkg_en-US', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/en-US_details.xml', '', ''),
-(39, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
-(40, 2, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
-(41, 2, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
-(42, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
-(43, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.8.2.1', '', 'https://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
-(44, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.7.1.1', '', 'https://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
-(45, 2, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.7.5.1', '', 'https://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
-(46, 2, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.2', '', 'https://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
-(47, 2, 0, 'Basque', '', 'pkg_eu-ES', 'package', '', 0, '3.7.5.1', '', 'https://update.joomla.org/language/details3/eu-ES_details.xml', '', ''),
-(48, 2, 0, 'Hindi', '', 'pkg_hi-IN', 'package', '', 0, '3.3.6.2', '', 'https://update.joomla.org/language/details3/hi-IN_details.xml', '', ''),
-(49, 2, 0, 'German DE', '', 'pkg_de-DE', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
-(50, 2, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
-(51, 2, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
-(52, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
-(53, 2, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.8.12.1', '', 'https://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
-(54, 2, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
-(55, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.2', '', 'https://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
-(56, 2, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
-(57, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.8.1.1', '', 'https://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
-(58, 2, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
-(59, 2, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
-(60, 2, 0, 'English CA', '', 'pkg_en-CA', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
-(61, 2, 0, 'French CA', '', 'pkg_fr-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
-(62, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.9.0.3', '', 'https://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
-(63, 2, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
-(64, 2, 0, 'Dari Persian', '', 'pkg_prs-AF', 'package', '', 0, '3.4.4.2', '', 'https://update.joomla.org/language/details3/prs-AF_details.xml', '', ''),
-(65, 2, 0, 'Turkmen', '', 'pkg_tk-TM', 'package', '', 0, '3.5.0.2', '', 'https://update.joomla.org/language/details3/tk-TM_details.xml', '', ''),
-(66, 2, 0, 'Irish', '', 'pkg_ga-IE', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/ga-IE_details.xml', '', ''),
-(67, 2, 0, 'Dzongkha', '', 'pkg_dz-BT', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/dz-BT_details.xml', '', ''),
-(68, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '3.9.0.2', '', 'https://update.joomla.org/language/details3/sl-SI_details.xml', '', ''),
-(69, 2, 0, 'Spanish CO', '', 'pkg_es-CO', 'package', '', 0, '3.8.11.1', '', 'https://update.joomla.org/language/details3/es-CO_details.xml', '', ''),
-(70, 2, 0, 'German CH', '', 'pkg_de-CH', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/de-CH_details.xml', '', ''),
-(71, 2, 0, 'German AT', '', 'pkg_de-AT', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/de-AT_details.xml', '', ''),
-(72, 2, 0, 'German LI', '', 'pkg_de-LI', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/de-LI_details.xml', '', ''),
-(73, 2, 0, 'German LU', '', 'pkg_de-LU', 'package', '', 0, '3.9.0.1', '', 'https://update.joomla.org/language/details3/de-LU_details.xml', '', ''),
-(74, 2, 0, 'English NZ', '', 'pkg_en-NZ', 'package', '', 0, '3.8.13.1', '', 'https://update.joomla.org/language/details3/en-NZ_details.xml', '', '');
+(0, 1, 700, 'Joomla', '', 'joomla', 'file', '', 0, '3.9.0', '', 'https://update.joomla.org/core/sts/extension_sts.xml', '', '');
 
 -- --------------------------------------------------------
 
@@ -2458,9 +2480,9 @@ CREATE TABLE `footregion_update_sites` (
 --
 
 INSERT INTO `footregion_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1541512545, ''),
-(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1541512550, ''),
-(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1541512551, '');
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1542007431, ''),
+(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 0, ''),
+(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -2549,7 +2571,7 @@ CREATE TABLE `footregion_users` (
 --
 
 INSERT INTO `footregion_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(35, 'Super Utilisateur', 'SLAM', 'emmanuel.derome@gmail.com', '$2y$10$APeo8djvfrcyyHIi8PuLt.wDSnBqw8m.vcEOmkGy2A.MAjIfcH2Ga', 0, 1, '2018-09-25 08:04:35', '2018-11-06 15:26:38', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
+(35, 'Super Utilisateur', 'SLAM', 'emmanuel.derome@gmail.com', '$2y$10$APeo8djvfrcyyHIi8PuLt.wDSnBqw8m.vcEOmkGy2A.MAjIfcH2Ga', 0, 1, '2018-09-25 08:04:35', '2018-11-12 07:23:45', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
 (36, 'Marcel DUPOND', 'mdupond', 'mdupond@footregion.fr', '$2y$10$xf5PRJXfQSdBxh4zrmEczOQpIOWWYHvORXKwpYKdAsbvQhx17yUGa', 0, 0, '2018-09-25 08:17:06', '2018-09-25 09:37:14', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (37, 'Alphonse DURAND', 'adurand', 'adurand@footregion.fr', '$2y$10$bQEFQi2oRJq1wTeLNonPuudzAZOgGj6FC76yhoml1JWitZx6b79Y2', 0, 0, '2018-10-24 16:03:49', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (38, 'Pierre NALTY', 'pnalty', 'pnalty@footregion.fr', '$2y$10$yebGpgQTgZPSNC/iNYN7q.NbQSviN03viEkCi2F8BaIpjDD76eofu', 0, 0, '2018-10-24 16:12:38', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
@@ -3455,408 +3477,224 @@ ALTER TABLE `footregion_viewlevels`
 --
 ALTER TABLE `footregion_annuaire_civilites`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_annuaire_contacts`
 --
 ALTER TABLE `footregion_annuaire_contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_annuaire_entreprises`
 --
 ALTER TABLE `footregion_annuaire_entreprises`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_annuaire_pays`
 --
 ALTER TABLE `footregion_annuaire_pays`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_annuaire_typescontacts`
 --
 ALTER TABLE `footregion_annuaire_typescontacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_assets`
 --
 ALTER TABLE `footregion_assets`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=75;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_banners`
 --
 ALTER TABLE `footregion_banners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_banner_clients`
 --
 ALTER TABLE `footregion_banner_clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_categories`
 --
 ALTER TABLE `footregion_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_contact_details`
 --
 ALTER TABLE `footregion_contact_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_content`
 --
 ALTER TABLE `footregion_content`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_content_types`
 --
 ALTER TABLE `footregion_content_types`
   MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_extensions`
 --
 ALTER TABLE `footregion_extensions`
   MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=818;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_fields`
 --
 ALTER TABLE `footregion_fields`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_fields_groups`
 --
 ALTER TABLE `footregion_fields_groups`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_finder_filters`
 --
 ALTER TABLE `footregion_finder_filters`
   MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_finder_links`
 --
 ALTER TABLE `footregion_finder_links`
   MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_finder_taxonomy`
 --
 ALTER TABLE `footregion_finder_taxonomy`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_finder_terms`
 --
 ALTER TABLE `footregion_finder_terms`
   MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_finder_types`
 --
 ALTER TABLE `footregion_finder_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_arbitres`
 --
 ALTER TABLE `footregion_footregion_arbitres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_categories`
 --
 ALTER TABLE `footregion_footregion_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_clubs`
 --
 ALTER TABLE `footregion_footregion_clubs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_directeurs`
 --
 ALTER TABLE `footregion_footregion_directeurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_discussions`
 --
 ALTER TABLE `footregion_footregion_discussions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_entraineurs`
 --
 ALTER TABLE `footregion_footregion_entraineurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_equipes`
 --
 ALTER TABLE `footregion_footregion_equipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_joueurs`
 --
 ALTER TABLE `footregion_footregion_joueurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_matchs`
 --
 ALTER TABLE `footregion_footregion_matchs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_matchs_arbitres`
 --
 ALTER TABLE `footregion_footregion_matchs_arbitres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_messages`
 --
 ALTER TABLE `footregion_footregion_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_signalements`
 --
 ALTER TABLE `footregion_footregion_signalements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_statuts`
 --
 ALTER TABLE `footregion_footregion_statuts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_tournois`
 --
 ALTER TABLE `footregion_footregion_tournois`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `footregion_footregion_utilisateurs`
 --
 ALTER TABLE `footregion_footregion_utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT pour la table `footregion_languages`
 --
 ALTER TABLE `footregion_languages`
   MODIFY `lang_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_menu`
 --
 ALTER TABLE `footregion_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_menu_types`
 --
 ALTER TABLE `footregion_menu_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_messages`
 --
 ALTER TABLE `footregion_messages`
   MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_modules`
 --
 ALTER TABLE `footregion_modules`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_newsfeeds`
 --
 ALTER TABLE `footregion_newsfeeds`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_overrider`
 --
 ALTER TABLE `footregion_overrider`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
-
 --
 -- AUTO_INCREMENT pour la table `footregion_postinstall_messages`
 --
 ALTER TABLE `footregion_postinstall_messages`
   MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_redirect_links`
 --
 ALTER TABLE `footregion_redirect_links`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `footregion_tags`
 --
 ALTER TABLE `footregion_tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
---
--- AUTO_INCREMENT pour la table `footregion_template_styles`
---
-ALTER TABLE `footregion_template_styles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT pour la table `footregion_ucm_content`
---
-ALTER TABLE `footregion_ucm_content`
-  MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `footregion_ucm_history`
---
-ALTER TABLE `footregion_ucm_history`
-  MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT pour la table `footregion_updates`
---
-ALTER TABLE `footregion_updates`
-  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
-
---
--- AUTO_INCREMENT pour la table `footregion_update_sites`
---
-ALTER TABLE `footregion_update_sites`
-  MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT pour la table `footregion_usergroups`
---
-ALTER TABLE `footregion_usergroups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT pour la table `footregion_users`
---
-ALTER TABLE `footregion_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
---
--- AUTO_INCREMENT pour la table `footregion_user_keys`
---
-ALTER TABLE `footregion_user_keys`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `footregion_user_notes`
---
-ALTER TABLE `footregion_user_notes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `footregion_viewlevels`
---
-ALTER TABLE `footregion_viewlevels`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=12;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `footregion_annuaire_contacts`
---
-ALTER TABLE `footregion_annuaire_contacts`
-  ADD CONSTRAINT `fk_footregion_annuaire_civilites_id` FOREIGN KEY (`civilites_id`) REFERENCES `footregion_annuaire_civilites` (`id`),
-  ADD CONSTRAINT `fk_footregion_annuaire_entreprises_id` FOREIGN KEY (`entreprises_id`) REFERENCES `footregion_annuaire_entreprises` (`id`),
-  ADD CONSTRAINT `fk_footregion_annuaire_typescontacts_id` FOREIGN KEY (`typescontacts_id`) REFERENCES `footregion_annuaire_typescontacts` (`id`);
-
---
--- Contraintes pour la table `footregion_annuaire_entreprises`
---
-ALTER TABLE `footregion_annuaire_entreprises`
-  ADD CONSTRAINT `fk_footregion_annuaire_pays_id` FOREIGN KEY (`pays_id`) REFERENCES `footregion_annuaire_pays` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_clubs`
---
-ALTER TABLE `footregion_footregion_clubs`
-  ADD CONSTRAINT `fk_footregion_footregion_clubs_directeurs_id` FOREIGN KEY (`directeurs_id`) REFERENCES `footregion_footregion_directeurs` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_discussions`
---
-ALTER TABLE `footregion_footregion_discussions`
-  ADD CONSTRAINT `fk_footregion_footregion_discussions_utilisateurs_id` FOREIGN KEY (`utilisateurs_id`) REFERENCES `footregion_footregion_utilisateurs` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_equipes`
---
-ALTER TABLE `footregion_footregion_equipes`
-  ADD CONSTRAINT `fk_footregion_footregion_equipes_categories_id` FOREIGN KEY (`categories_id`) REFERENCES `footregion_footregion_categories` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_equipes_clubs_id` FOREIGN KEY (`clubs_id`) REFERENCES `footregion_footregion_clubs` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_equipes_entraineurs_id` FOREIGN KEY (`entraineurs_id`) REFERENCES `footregion_footregion_entraineurs` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_joueurs`
---
-ALTER TABLE `footregion_footregion_joueurs`
-  ADD CONSTRAINT `fk_footregion_footregion_joueurs_equipes_id` FOREIGN KEY (`equipes_id`) REFERENCES `footregion_footregion_equipes` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_matchs`
---
-ALTER TABLE `footregion_footregion_matchs`
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_entraineurs_initiateur_id` FOREIGN KEY (`entraineurs_initiateur_id`) REFERENCES `footregion_footregion_entraineurs` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_entraineurs_invite_id` FOREIGN KEY (`entraineurs_invite_id`) REFERENCES `footregion_footregion_entraineurs` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_equipes_domicile_id` FOREIGN KEY (`equipes_domicile_id`) REFERENCES `footregion_footregion_equipes` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_equipes_invite_id` FOREIGN KEY (`equipes_invite_id`) REFERENCES `footregion_footregion_equipes` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_statuts_id` FOREIGN KEY (`statuts_id`) REFERENCES `footregion_footregion_statuts` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_tournois_id` FOREIGN KEY (`tournois_id`) REFERENCES `footregion_footregion_tournois` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_matchs_arbitres`
---
-ALTER TABLE `footregion_footregion_matchs_arbitres`
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_arbitres_arbitres_id` FOREIGN KEY (`arbitres_id`) REFERENCES `footregion_footregion_arbitres` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_matchs_arbitres_matchs_id` FOREIGN KEY (`matchs_id`) REFERENCES `footregion_footregion_matchs` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_messages`
---
-ALTER TABLE `footregion_footregion_messages`
-  ADD CONSTRAINT `fk_footregion_footregion_messages_discussions_id` FOREIGN KEY (`discussions_id`) REFERENCES `footregion_footregion_discussions` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_messages_utilisateurs_id` FOREIGN KEY (`utilisateurs_id`) REFERENCES `footregion_footregion_utilisateurs` (`id`);
-
---
--- Contraintes pour la table `footregion_footregion_signalements`
---
-ALTER TABLE `footregion_footregion_signalements`
-  ADD CONSTRAINT `fk_footregion_footregion_signalements_arbitres_id` FOREIGN KEY (`arbitres_id`) REFERENCES `footregion_footregion_arbitres` (`id`),
-  ADD CONSTRAINT `fk_footregion_footregion_signalements_entraineurs_id	` FOREIGN KEY (`entraineurs_id`) REFERENCES `footregion_footregion_entraineurs` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
