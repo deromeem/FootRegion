@@ -14,6 +14,12 @@ class FootregionModelMatches extends JModelList
 				'scoreDomicile', 'm.score_domicile',
 				'scoreInvite', 'm.score_invite',
 				'adresse', 'm.adr_rue',
+				'tournoi', 'm.tournois_id',
+				'equipeVisiteur', 'equipes_domicile_id',
+				'equipeLocale', 'equipes_invite_id',
+				'nom_equipe_locale', 'ed.nom',
+				'nom_equipe_invite', 'e.nom',
+				'nom_tournoi', 't.nom',
 				'ville', 'm.adr_ville',
 				'codePostale', 'm.adr_cp',
 				'coordgps', 'm.coord_gps',
@@ -44,7 +50,7 @@ class FootregionModelMatches extends JModelList
 	{
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
-		$query->select('m.id, m.nom, m.score_domicile, m.score_invite, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.published, m.hits, m.modified');
+		$query->select('m.id, m.nom, m.score_domicile, m.score_invite, m.tournois_id, equipes_domicile_id, equipes_invite_id, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.published, m.hits, m.modified');
 		$query->from('#__footregion_matchs m');
 
 		// joint la table pays

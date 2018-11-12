@@ -13,13 +13,13 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_NOM', 'm.nom', $listDirn, $listOrder) ?>
         </th>
         <th width="35%">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX', 'm.equipe_domicile', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX', 'ed.nom', $listDirn, $listOrder) ?>
         </th>
         <th width="35%" class="nowrap hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS', 'm.equipe_invite', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS', 'e.nom', $listDirn, $listOrder) ?>
         </th>
         <th class="nowrap center hidden-tablet hidden-phone">
-                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_TOURNOI', 'm.tournoi', $listDirn, $listOrder) ?>
+                <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_MATCHS_TOURNOI', 't.nom', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:55px" class="nowrap center ">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'm.published', $listDirn, $listOrder) ?>
