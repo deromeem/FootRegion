@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewMatchs extends JViewLegacy
+class FootregionViewMatches extends JViewLegacy
 {
 	function display($tpl = null) 
 	{

@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
 
-class FootregionModelMatchs extends JModelList
+class FootregionModelMatches extends JModelList
 {
 	public function __construct($config = array())
 	{
