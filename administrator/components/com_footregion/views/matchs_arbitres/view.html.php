@@ -46,14 +46,14 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_MATCHS_ARBITRES'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('match_arbitre.add');
-		JToolBarHelper::editList('match_arbitre.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'match_arbitres.delete');
-		JToolbarHelper::publish('match_arbitres.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('match_arbitres.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('match_arbitres.archive');
-		JToolbarHelper::checkin('match_arbitres.checkin');
-		JToolbarHelper::trash('match_arbitres.trash');
+		JToolBarHelper::addNew('matchs_arbitre.add');
+		JToolBarHelper::editList('matchs_arbitre.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'matchs_arbitres.delete');
+		JToolbarHelper::publish('matchs_arbitres.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('matchs_arbitres.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('matchs_arbitres.archive');
+		JToolbarHelper::checkin('matchs_arbitres.checkin');
+		JToolbarHelper::trash('matchs_arbitres.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
@@ -86,6 +86,8 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'),
+			'a.email' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES'),
+			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_MATCHS'),
 			'ma.published' => JText::_('JSTATUS'),
 			'ma.modified' => JText::_('JDATE'),
 			'ma.id' => "Id"
