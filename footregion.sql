@@ -1409,7 +1409,7 @@ CREATE TABLE `footregion_footregion_clubs` (
 
 INSERT INTO `footregion_footregion_clubs` (`id`, `sigle`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `directeurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'UFBSJA', 'Union Football Belleville Saint Jean d Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (13, 'FCA', 'FC Annecy', '24 Rue du Commandant Guilbaud', 'Annecy', '74000', 12, 'fc-annecy', 1, '2018-11-08 13:17:24', 35, '2018-11-08 13:30:58', 35, 0),
 (14, 'FSR', 'Fréjus-Saint-Raphaël', '10 Avenue Simone Veil ', 'Saint-Raphaël', '83600', 13, 'frejus-saint-raphael', 1, '2018-11-08 13:19:02', 35, '2018-11-08 13:31:07', 35, 0),
 (15, 'HFC', 'Hyères FC', '24 Rue Charles de Gaulle', 'Hyères', '83400', 11, 'hyeres-fc', 1, '2018-11-08 13:20:07', 35, '2018-11-08 13:31:15', 35, 0),
@@ -1689,7 +1689,7 @@ CREATE TABLE `footregion_footregion_messages` (
 
 INSERT INTO `footregion_footregion_messages` (`id`, `libelle`, `discussions_id`, `utilisateurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'Bonjour, pour ceux que cela intéresse, j\'ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0),
+(2, 'Bonjour, pour ceux que cela intéresse, j ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0),
 (3, 'Etre jeune, Avoir du fun, Tester ballon', 3, 2, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
 (4, 'Pour vous, Foot est inépuisable', 3, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
 (5, 'massacre n a pas de prix', 3, 10, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
@@ -2074,7 +2074,7 @@ INSERT INTO `footregion_modules` (`id`, `asset_id`, `title`, `note`, `content`, 
 (2, 40, 'Connexion', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 41, 'Articles populaires', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{\"count\":\"5\",\"catid\":\"\",\"user_id\":\"0\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\",\"automatic_title\":\"1\"}', 1, '*'),
 (4, 42, 'Articles les plus récents', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{\"count\":\"5\",\"ordering\":\"c_dsc\",\"catid\":\"\",\"user_id\":\"0\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\",\"automatic_title\":\"1\"}', 1, '*'),
-(8, 43, 'Barre d\'outils', '', '', 1, 'toolbar', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_toolbar', 3, 1, '', 1, '*'),
+(8, 43, 'Barre d outils', '', '', 1, 'toolbar', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_toolbar', 3, 1, '', 1, '*'),
 (9, 44, 'Icônes de raccourcis', '', '', 1, 'icon', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_quickicon', 3, 1, '', 1, '*'),
 (10, 45, 'Utilisateurs connectés', '', '', 2, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_logged', 3, 1, '{\"count\":\"5\",\"name\":\"1\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\",\"automatic_title\":\"1\"}', 1, '*'),
 (12, 46, 'Menu principal', '', '', 1, 'menu', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 3, 1, '{\"layout\":\"\",\"moduleclass_sfx\":\"\",\"shownew\":\"1\",\"showhelp\":\"1\",\"cache\":\"0\"}', 1, '*'),
