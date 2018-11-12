@@ -60,7 +60,7 @@ class FootregionViewArbitres extends JViewLegacy
 	protected function prepareSideBar()
 	{
 		// definit l'action du formulaire sidebar
-		JHtmlSidebar::setAction('index.php?option=com_footregion');
+		JHtmlSidebar::setAction('index.php?option=com_footregion&view=arbitres');
 		
 		// ajoute le filtre standard des statuts dans le bloc des sous-menus
 		JHtmlSidebar::addFilter( JText::_('JOPTION_SELECT_PUBLISHED'), 'filter_published',

@@ -25,10 +25,10 @@ if ($saveOrder)
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->utilisateurs_id; ?>
+			<?php echo $item->nom; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->discussions_id; ?>
+			<?php echo $item->theme; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'messages.', true); ?>

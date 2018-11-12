@@ -62,7 +62,6 @@ class FootregionModelMatchs_arbitres extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'ma.role LIKE '.$search;
-				$searches[]	= 'ma.matchs.id LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -81,7 +80,7 @@ class FootregionModelMatchs_arbitres extends JModelList
 		}
 		elseif ($published === '') {
 			// si aucune sélection, on n'affiche que les publiés et dépubliés
-			$query->where('(ma.published=0 OR m.published=1)');
+			$query->where('(ma.published=0 OR ma.published=1)');
 		}
 
 		// tri des colonnes
@@ -89,7 +88,7 @@ class FootregionModelMatchs_arbitres extends JModelList
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 
