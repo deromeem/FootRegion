@@ -7,7 +7,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=equipes.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_footregion&task=joueurs.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -19,13 +19,10 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=equipe.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->id); ?>
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=joueur.edit&id='.(int) $item->id); ?>">
+				<?php echo $item->email; ?>
 				</a>
 			</div>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->email; ?>
 		</td>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->poste; ?>
@@ -37,7 +34,7 @@ if ($saveOrder)
 			<?php echo $item->date_naiss; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->equipes_id; ?>
+			<?php echo $item->nom_equipes; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?>

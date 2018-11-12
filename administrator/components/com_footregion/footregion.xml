@@ -24,6 +24,9 @@
 		<menu>com_footregion</menu>
 		<submenu>
 			<menu link="option=com_footregion&amp;view=utilisateurs">com_footregion_utilisateurs</menu>
+			<menu link="option=com_footregion&amp;view=joueurs">com_footregion_joueurs</menu>
+			<menu link="option=com_footregion&amp;view=entraineurs">com_footregion_entraineurs</menu>
+			<menu link="option=com_footregion&amp;view=equipes">com_footregion_equipes</menu>
 			<menu link="option=com_footregion&amp;view=discussions">com_footregion_discussions</menu>
 			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
 			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>

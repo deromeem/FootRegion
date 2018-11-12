@@ -17,14 +17,17 @@ if ($saveOrder)
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
-		<td class="center hidden-phone">
-			<?php echo (int) $item->id; ?>
-		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->email; ?>
-		</td>
+		<td class="wrap has-context">
+			<div class="pull-left">
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=entraineur.edit&id='.(int) $item->id); ?>">
+				<?php echo $item->email; ?>
+				</a>
+			</div>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->num_licence; ?>
+		</td>
+		<td class="center hidden-phone">
+			<?php echo $item->nom_entraineurs?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'entraineurs.', true); ?>

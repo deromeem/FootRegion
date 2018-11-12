@@ -46,7 +46,7 @@ class FootregionModelJoueurs extends JModelList
 		$query->from('#__footregion_Joueurs j');
 
 		// joint la table pays
-		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
+		$query->select('eq.nom AS nom_equipes')->join('LEFT', '#__footregion_equipes AS eq ON eq.id = j.id');
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');

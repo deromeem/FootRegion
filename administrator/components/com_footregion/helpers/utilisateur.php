@@ -61,7 +61,7 @@ class UtilisateurHelper extends JHelperContent
 		
 		JHtmlSidebar::addEntry(
 			JText::_('Matchs'),
-			'index.php?option=com_footregion&view=matchs',
+			'index.php?option=com_footregion&view=matches',
 			$vName == 'matchs'
 		);
 

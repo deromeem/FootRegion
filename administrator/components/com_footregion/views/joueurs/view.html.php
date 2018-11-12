@@ -86,11 +86,11 @@ class FootregionViewJoueurs extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			'j.id' => JText::_('COM_FOOTREGION_JOUEURS_ID'),
-			'j.email' => JText::_('COM_FOOTREGION_EMAIL'),
-			'j.poste' => JText::_('COM_FOOTREGION_POSTE'),
-			'j.num_licence' => JText::_('COM_FOOTREGION_NUM_LICENCE'),
-			'j.date_naiss' => JText::_('COM_FOOTREGION_DATE_NAISS'),
-			'j.equipes_id' => JText::_('COM_FOOTREGION_EQUIPES_ID'),
+			'j.email' => JText::_('COM_FOOTREGION_JOUEURS_EMAIL'),
+			'j.poste' => JText::_('COM_FOOTREGION_JOUEURS_POSTE'),
+			'j.num_licence' => JText::_('COM_FOOTREGION_JOUEURS_NUM_LICENCE'),
+			'j.date_naiss' => JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'),
+			'j.equipes_id' => JText::_('COM_FOOTREGION_JOUEURS_EQUIPES_ID'),
 			'j.published' => JText::_('JSTATUS'),
 			'j.modified' => JText::_('JDATE'),
 			'j.id' => "Id"
