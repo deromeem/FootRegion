@@ -20,14 +20,14 @@ if ($saveOrder)
 		<td class="wrap has-context">
 			<div class="pull-left">
 				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=entraineur.edit&id='.(int) $item->id); ?>">
-				<?php echo $item->email; ?>
+				<?php echo $item->nom_entraineurs; ?>
 				</a>
 			</div>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->num_licence; ?>
 		</td>
-		<td class="center hidden-phone">
-			<?php echo $item->nom_entraineurs?>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->email?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'entraineurs.', true); ?>
