@@ -43,7 +43,7 @@ class FootregionModelEntraineurs extends JModelList
 		$query->from('#__footregion_Entraineurs en');
 
 		// joint la table pays
-		$query->select('u.nom AS nom_entraineurs')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id = en.id');
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS nom_entraineurs')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id = en.id');
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
