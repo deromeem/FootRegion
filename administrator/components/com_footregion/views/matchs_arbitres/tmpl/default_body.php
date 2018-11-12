@@ -24,11 +24,11 @@ if ($saveOrder)
 				</a>
 			</div>
 		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->nommatch; ?>
-		</td>
 		<td class="nowrap hidden-tablet hidden-phone">
 			<?php echo $item->emailarbitre; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->nommatch; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'matchs_arbitres.', true); ?>
