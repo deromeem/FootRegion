@@ -86,7 +86,7 @@ class FootregionModelSignalements extends JModelList
 
 		// tri des colonnes
 		$orderCol = $this->state->get('list.ordering', 's.libelle');
-		$orderCol = $this->state->get('list.ordering', 's.nom');
+		$orderCol = $this->state->get('list.ordering', 'a.email');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 

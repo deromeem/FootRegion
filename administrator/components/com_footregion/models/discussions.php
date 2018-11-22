@@ -11,7 +11,7 @@ class FootregionModelDiscussions extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
-				'uitilisateurs_id', 'd.utilisateurs_id',
+				'utilisateurs_id', 'd.uilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
 				'created', 'd.created',
@@ -30,8 +30,8 @@ class FootregionModelDiscussions extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
-		$this->setState('filter.pay', $pay);
+		$pay = $this->getUserStateFromRequest($this->context.'.filter.nom', 'filter_nom', '');
+		$this->setState('filter.nom', $nom);
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
 		$this->setState('filter.published', $published);
@@ -46,8 +46,8 @@ class FootregionModelDiscussions extends JModelList
 		$query->select('d.id, d.theme, d.utilisateurs_id, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
 		$query->from('#__footregion_discussions d');
 
-		// joint la table pays
-		// $query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
+		// joint la table utilisateurs
+		$query->select('d.noms AS utlisateurs')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
@@ -69,10 +69,10 @@ class FootregionModelDiscussions extends JModelList
 		}
 
 		// filtre selon l'état du filtre 'filter_pay'
-		// $pay = $this->getState('filter.pay');
-		// if (is_numeric($pay)) {
-		// 	$query->where('e.pays_id=' . (int) $pay);
-		// }
+		$nom = $this->getState('filter.nom');
+		f (is_numeric($nom)) {
+		$query->where('d.noms_id=' . (int) $pay);
+		}
 		
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
@@ -93,15 +93,15 @@ class FootregionModelDiscussions extends JModelList
 		return $query;
 	}
 
-	// public function getPays()
-	// {
-		// $query = $this->_db->getQuery(true);
-		// $query->select('id, pays');
-		// $query->from('#__annuaire_pays');
-		// $query->where('published=1');
-		// $query->order('pays ASC');
-		// $this->_db->setQuery($query);
-		// $pays = $this->_db->loadObjectList();
-		// return $pays;
-	// }	
+	/*public function getNoms()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, nom');
+		$query->from('#__footregion_utilisateurs');
+		$query->where('published=1');
+		$this->_db->setQuery($query);
+		$noms = $this->_db->loadObjectList();
+		return $noms;
+	}	
+	*/
 }

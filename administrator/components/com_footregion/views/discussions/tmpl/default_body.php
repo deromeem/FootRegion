@@ -25,7 +25,7 @@ if ($saveOrder)
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->utilisateurs_id; ?>
+			<?php echo $item->nom; ?>
 		</td>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->alias; ?>
