@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class AnnuaireControllerContact extends JControllerForm
+class FootregionControllerClub extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
 	protected $view_item = 'form_c';
@@ -56,7 +56,7 @@ class AnnuaireControllerContact extends JControllerForm
 		// {
 			// return base64_decode($return);
 		// }
-		return JURI::base()."/index.php?option=com_annuaire&view=contacts";		
+		return JURI::base()."/index.php?option=com_footregion&view=clubs";		
 	}
 
 	public function getModel($name = 'form_c', $prefix = '', $config = array('ignore_request' => true))
