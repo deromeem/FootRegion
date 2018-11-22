@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewDiscussions extends JViewLegacy
+class AnnuaireViewEntreprises extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -31,7 +31,7 @@ class FootregionViewDiscussions extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('Utilisateurs');
+		EntrepriseHelper::addSubmenu('entreprises');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,18 +43,18 @@ class FootregionViewDiscussions extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_DISCUSSIONS'));
+		JToolBarHelper::title(JText::_('COM_ANNUAIRE_ENTREPRISES'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('discussion.add');
-		JToolBarHelper::editList('discussion.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'discussions.delete');
-		JToolbarHelper::publish('discussions.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('discussions.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('discussions.archive');
-		JToolbarHelper::checkin('discussions.checkin');
-		JToolbarHelper::trash('discussions.trash');
-		JToolbarHelper::preferences('com_footregion');
+		JToolBarHelper::addNew('entreprise.add');
+		JToolBarHelper::editList('entreprise.edit');
+		JToolBarHelper::deleteList('Etes vous sur ?', 'entreprises.delete');
+		JToolbarHelper::publish('entreprises.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('entreprises.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('entreprises.archive');
+		JToolbarHelper::checkin('entreprises.checkin');
+		JToolbarHelper::trash('entreprises.trash');
+		JToolbarHelper::preferences('com_annuaire');
 	}
 
 	protected function prepareSideBar()
@@ -69,27 +69,27 @@ class FootregionViewDiscussions extends JViewLegacy
 		);
 
 		// ajoute le filtre spécifique pour les pays
-		// $this->pays = $this->get('Pays');
-		// $options3	= array();
-		// foreach ($this->pays as $pay) {
-			// $options3[]	= JHtml::_('select.option', $pay->id,  $pay->pays);
-		// }
-		// $this->pay = $options3;
-		// JHtmlSidebar::addFilter("- ".JText::_('COM_ANNUAIRE_SELECT_PAYS')." -", 'filter_pay',
-			// JHtml::_('select.options', $this->pay,
-			// 'value', 'text', $this->state->get('filter.pay'))
-		// );
+		$this->pays = $this->get('Pays');
+		$options3	= array();
+		foreach ($this->pays as $pay) {
+			$options3[]	= JHtml::_('select.option', $pay->id,  $pay->pays);
+		}
+		$this->pay = $options3;
+		JHtmlSidebar::addFilter("- ".JText::_('COM_ANNUAIRE_SELECT_PAYS')." -", 'filter_pay',
+			JHtml::_('select.options', $this->pay,
+			'value', 'text', $this->state->get('filter.pay'))
+		);
 	}
 
  	protected function getSortFields()
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'd.theme' => JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'),
-			'd.nom' => JText::_('COM_FOOTREGION_UTILISATEURS_NOM'),
-			'd.published' => JText::_('JSTATUS'),
-			'd.modified' => JText::_('JDATE'),
-			'd.id' => "Id"
+			'e.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
+			'e.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
+			'e.published' => JText::_('JSTATUS'),
+			'e.modified' => JText::_('JDATE'),
+			'e.id' => "Id"
 		);
 	}  
 	

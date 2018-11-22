@@ -7,7 +7,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=discussions.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_footregion&task=utilisateurs.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -19,19 +19,22 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=discussion.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->theme); ?>
+				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=utilisateur.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->nom); ?>
 				</a>
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->nom; ?>
+			<?php echo $item->prenom; ?>
 		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->alias; ?>
+		<td class="nowrap hidden-tablet hidden-phone">
+			<?php echo $item->email; ?>
+		</td>
+		<td class="nowrap center hidden-tablet hidden-phone">
+			<?php echo $item->mobile; ?>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'discussions.', true); ?>
+			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'utilisateurs.', true); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo JHtml::_('date', $item->modified, $this->paramDateFmt); ?>
