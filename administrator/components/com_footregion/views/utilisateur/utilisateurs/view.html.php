@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionViewDiscussions extends JViewLegacy
+class FootregionViewUtilisateurs extends JViewLegacy
 {
 	function display($tpl = null) 
 	{
@@ -31,7 +31,7 @@ class FootregionViewDiscussions extends JViewLegacy
 		// ajoute la toolbar contenant les boutons d'actions
 		$this->addToolBar();
 		// invoque la méthode addSubmenu du fichier de soutien (helper)
-		UtilisateurHelper::addSubmenu('Utilisateurs');
+		UtilisateurHelper::addSubmenu('utilisateurs');
 		// prépare et affuche la sidebar à gauche de la liste
 		$this->prepareSideBar();
 		$this->sidebar = JHtmlSidebar::render();
@@ -43,17 +43,17 @@ class FootregionViewDiscussions extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_DISCUSSIONS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_UTILISATEURS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('discussion.add');
-		JToolBarHelper::editList('discussion.edit');
-		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'discussions.delete');
-		JToolbarHelper::publish('discussions.publish', 'JTOOLBAR_PUBLISH', true);
-		JToolbarHelper::unpublish('discussions.unpublish', 'JTOOLBAR_UNPUBLISH', true);
-		JToolbarHelper::archiveList('discussions.archive');
-		JToolbarHelper::checkin('discussions.checkin');
-		JToolbarHelper::trash('discussions.trash');
+		JToolBarHelper::addNew('utilisateur.add');
+		JToolBarHelper::editList('utilisateur.edit');
+		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'utilisateurs.delete');
+		JToolbarHelper::publish('utilisateurs.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('utilisateurs.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::archiveList('utilisateurs.archive');
+		JToolbarHelper::checkin('utilisateurs.checkin');
+		JToolbarHelper::trash('utilisateurs.trash');
 		JToolbarHelper::preferences('com_footregion');
 	}
 
@@ -85,11 +85,11 @@ class FootregionViewDiscussions extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'd.theme' => JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'),
-			'd.nom' => JText::_('COM_FOOTREGION_UTILISATEURS_NOM'),
-			'd.published' => JText::_('JSTATUS'),
-			'd.modified' => JText::_('JDATE'),
-			'd.id' => "Id"
+			'u.nom' => JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'),
+			'u.siteWeb' => JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'),
+			'u.published' => JText::_('JSTATUS'),
+			'u.modified' => JText::_('JDATE'),
+			'u.id' => "Id"
 		);
 	}  
 	

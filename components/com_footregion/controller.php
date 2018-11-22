@@ -11,6 +11,10 @@ class FootregionController extends JControllerLegacy
 
 		$vName = $this->input->get('view', 'entreprises');
 
+		$vName = $this->input->get('view', 'discussions');
+
+		$vName = $this->input->get('view', 'entreprises');
+
 		$this->input->set('view', $vName);
 		
 		parent::display($cachable, false);

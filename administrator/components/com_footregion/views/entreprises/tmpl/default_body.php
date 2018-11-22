@@ -7,7 +7,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $saveOrder	= $listOrder == 'ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_footregion&task=discussions.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_annuaire&task=entreprises.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'articleList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 ?>
@@ -19,19 +19,34 @@ if ($saveOrder)
 		</td>
 		<td class="wrap has-context">
 			<div class="pull-left">
-				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=discussion.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->theme); ?>
+				<a href="<?php echo JRoute::_('index.php?option=com_annuaire&task=entreprise.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->nom); ?>
 				</a>
 			</div>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->nom; ?>
+			<?php 
+
+			$img = "../images/annuaire/logo/$item->logo";
+
+			echo '<img src="'.$img.'" '."\n";
+
+			?>                                                                                                                                                                                     " />
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->alias; ?>
+			<?php echo $item->siteWeb; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->commentaire; ?>
+		</td>
+		<td class="nowrap hidden-phone">
+			<?php echo $item->CodeAPE; ?>
+		</td>
+		<td class="nowrap center hidden-tablet hidden-phone">
+			<?php echo $item->pays; ?>
 		</td>
 		<td class="center hidden-phone">
-			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'discussions.', true); ?>
+			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?>
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo JHtml::_('date', $item->modified, $this->paramDateFmt); ?>
