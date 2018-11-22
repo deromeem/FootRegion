@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+ 	<name>com_footregion</name>
+	<creationDate>Octobre 2018</creationDate>
+	<author>Emmanuel DEROME</author>
+	<authorEmail>emmanuel.derome@gmail.com</authorEmail>
+	<copyright>All rights reserved</copyright>
+	<license>GNU/GPL</license>
+	<version>0.1</version>
+	<description>com_footregion_descr</description>
+
+	<install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>footregion.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_footregion.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.com_footregion.ini</language>
+	</languages>
+
+	<administration>
+		<menu>com_footregion</menu>
+		<submenu>
+			<menu link="option=com_footregion&amp;view=utilisateurs">com_footregion_utilisateurs</menu>
+			<menu link="option=com_footregion&amp;view=joueurs">com_footregion_joueurs</menu>
+			<menu link="option=com_footregion&amp;view=entraineurs">com_footregion_entraineurs</menu>
+			<menu link="option=com_footregion&amp;view=equipes">com_footregion_equipes</menu>
+			<menu link="option=com_footregion&amp;view=discussions">com_footregion_discussions</menu>
+			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
+			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>
+			<menu link="option=com_footregion&amp;view=directeurs">com_footregion_directeurs</menu>
+			<menu link="option=com_footregion&amp;view=statuts">com_footregion_statuts</menu>
+			<menu link="option=com_footregion&amp;view=matchs">com_footregion_matchs</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>footregion.php</filename>
+			<filename>footregion.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+		</files>                
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_footregion.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_footregion.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_footregion.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_footregion.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

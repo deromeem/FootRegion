@@ -1,0 +1,25 @@
+<?php
+defined('_JEXEC') or die('Restricted access');
+ 
+// récupère une instance du contrôleur préfixé par le nom du composant
+<<<<<<< HEAD:components/com_footregion/annuaire.php
+<<<<<<< HEAD
+$controller = JControllerLegacy::getInstance('annuaire');
+=======
+<<<<<<< HEAD
+$controller = JControllerLegacy::getInstance('footregion');
+=======
+$controller = JControllerLegacy::getInstance('annuaire');
+>>>>>>> 8ac9dd57608b1f193da2cc743d0f188d43be714a
+>>>>>>> 2bca2880384ad9920075063e1855712b08fecf20
+=======
+$controller = JControllerLegacy::getInstance('footregion');
+>>>>>>> 8e5b7b94f633982835a55546c6429a2042951d67:components/com_footregion/footregion.php~6b88f80f4ad70354ebe1877b8d5311db26b30a24
+ 
+// exécute la tâche demandée
+$input = JFactory::getApplication()->input;
+$task = $input->get('task', 'cmd');
+$controller->execute($task);
+ 
+// exécute la redirection prévue par le contrôleur
+$controller->redirect();

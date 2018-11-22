@@ -2,6 +2,7 @@
 defined('_JEXEC') or die;
 
 class AnnuaireViewForm_c extends JViewLegacy
+class FootregionViewForm_c extends JViewLegacy
 {
 	protected $form;
 	protected $item;

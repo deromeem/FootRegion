@@ -3,6 +3,9 @@ defined('_JEXEC') or die('Restricted access');
  
 // récupère une instance du contrôleur préfixé par le nom du composant
 $controller = JControllerLegacy::getInstance('footregion');
+$controller = JControllerLegacy::getInstance('annuaire');
+
+$controller = JControllerLegacy::getInstance('footregion');
  
 // exécute la tâche demandée
 $input = JFactory::getApplication()->input;
