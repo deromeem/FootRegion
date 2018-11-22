@@ -18,7 +18,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
         <th class="nowrap hidden-tablet hidden-phone">
                 <?php echo JHtml::_('grid.sort', 'COM_FOOTREGION_ENTRAINEURS_EMAIL', 'en.email', $listDirn, $listOrder) ?>
         </th>
-        <th class="nowrap" width="1%" style="min-width:55px">
+        <th width="1%" style="min-width:55px" class="nowrap center ">
                 <?php echo JHtml::_('grid.sort', 'Publié', 'en.published', $listDirn, $listOrder) ?>
         </th>
         <th width="1%" style="min-width:120px">
