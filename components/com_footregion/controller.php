@@ -2,10 +2,6 @@
 defined('_JEXEC') or die('Restricted access');
  
 class FootregionController extends JControllerLegacy
-<<<<<<< HEAD
-class AnnuaireController extends JControllerLegacy
-=======
->>>>>>> 6b88f80f4ad70354ebe1877b8d5311db26b30a24
 {
 	public function display($cachable = false, $urlparams = false)
 	{
