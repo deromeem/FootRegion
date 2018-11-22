@@ -7,6 +7,8 @@
 		
 		<field name="nom" type="text" label="COM_ANNUAIRE_CONTACTS_NOM"
 			description="COM_ANNUAIRE_CONTACTS_NOM"
+		<field name="nom" type="text" label="COM_FOOTREGION_DISCUSSION_NOM"
+			description="COM_FOOTREGION_DISCUSSION_NOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
 		<field name="alias" type="text"

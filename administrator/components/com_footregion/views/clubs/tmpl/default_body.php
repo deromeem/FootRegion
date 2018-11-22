@@ -26,9 +26,7 @@ if ($saveOrder)
 		<td class="nowrap hidden-phone">
 			<?php echo $item->sigle; ?>
 		</td>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->adr_rue; ?>
-		</td>
+		
 		<td class="nowrap hidden-phone">
 			<?php echo $item->adr_ville; ?>
 		</td>
