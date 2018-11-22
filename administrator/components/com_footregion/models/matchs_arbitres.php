@@ -62,6 +62,8 @@ class FootregionModelMatchs_arbitres extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'ma.role LIKE '.$search;
+				$searches[]	= 'a.email LIKE '.$search;
+				$searches[]	= 'm.nom LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -88,7 +90,7 @@ class FootregionModelMatchs_arbitres extends JModelList
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 

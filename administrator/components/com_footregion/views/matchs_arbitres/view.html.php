@@ -85,7 +85,7 @@ class FootregionViewMatchs_arbitres extends JViewLegacy
 	{
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
-			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'),
+			'ma.role' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_LIBELLE'),
 			'a.email' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ARBITRES'),
 			'm.nom' => JText::_('COM_FOOTREGION_MATCHS_ARBITRES_MATCHS'),
 			'ma.published' => JText::_('JSTATUS'),
