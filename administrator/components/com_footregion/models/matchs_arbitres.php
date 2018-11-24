@@ -62,7 +62,8 @@ class FootregionModelMatchs_arbitres extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'ma.role LIKE '.$search;
-				$searches[]	= 'ma.matchs.id LIKE '.$search;
+				$searches[]	= 'a.email LIKE '.$search;
+				$searches[]	= 'm.nom LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -81,7 +82,7 @@ class FootregionModelMatchs_arbitres extends JModelList
 		}
 		elseif ($published === '') {
 			// si aucune sélection, on n'affiche que les publiés et dépubliés
-			$query->where('(ma.published=0 OR m.published=1)');
+			$query->where('(ma.published=0 OR ma.published=1)');
 		}
 
 		// tri des colonnes

@@ -86,7 +86,7 @@ class FootregionViewDiscussions extends JViewLegacy
 		// prépare l'affichage des colonnes de tri du calque
 		return array(
 			'd.theme' => JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'),
-			'd.utilisateurs_id' => JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID'),
+			'd.nom' => JText::_('COM_FOOTREGION_UTILISATEURS_NOM'),
 			'd.published' => JText::_('JSTATUS'),
 			'd.modified' => JText::_('JDATE'),
 			'd.id' => "Id"
