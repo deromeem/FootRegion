@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
  	<name>com_footregion</name>
-	<creationDate>Octobre 2018</creationDate>
+	<creationDate>Novembre 2018</creationDate>
 	<author>Emmanuel DEROME</author>
 	<authorEmail>emmanuel.derome@gmail.com</authorEmail>
 	<copyright>All rights reserved</copyright>
 	<license>GNU/GPL</license>
-	<version>0.1</version>
+	<version>0.4</version>
 	<description>com_footregion_descr</description>
 
 	<install>
@@ -20,19 +20,38 @@
         </sql>
     </uninstall>
 
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>footregion.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_footregion.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.com_footregion.ini</language>
+	</languages>
+
 	<administration>
 		<menu>com_footregion</menu>
 		<submenu>
-			<menu link="option=com_footregion&amp;view=utilisateurs">com_footregion_utilisateurs</menu>
-			<menu link="option=com_footregion&amp;view=joueurs">com_footregion_joueurs</menu>
+			<menu link="option=com_footregion&amp;view=arbitres">com_footregion_arbitres</menu>
+			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>
+			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
+			<menu link="option=com_footregion&amp;view=directeurs">com_footregion_directeurs</menu>
+			<menu link="option=com_footregion&amp;view=discussions">com_footregion_discussions</menu>
 			<menu link="option=com_footregion&amp;view=entraineurs">com_footregion_entraineurs</menu>
 			<menu link="option=com_footregion&amp;view=equipes">com_footregion_equipes</menu>
-			<menu link="option=com_footregion&amp;view=discussions">com_footregion_discussions</menu>
-			<menu link="option=com_footregion&amp;view=clubs">com_footregion_clubs</menu>
-			<menu link="option=com_footregion&amp;view=categories">com_footregion_categories</menu>
-			<menu link="option=com_footregion&amp;view=directeurs">com_footregion_directeurs</menu>
-			<menu link="option=com_footregion&amp;view=statuts">com_footregion_statuts</menu>
+			<menu link="option=com_footregion&amp;view=joueurs">com_footregion_joueurs</menu>
 			<menu link="option=com_footregion&amp;view=matchs">com_footregion_matchs</menu>
+			<menu link="option=com_footregion&amp;view=matchs_arbitres">com_footregion_matchs_arbitres</menu>
+			<menu link="option=com_footregion&amp;view=messages">com_footregion_messages</menu>
+			<menu link="option=com_footregion&amp;view=signalements">com_footregion_signalements</menu>
+			<menu link="option=com_footregion&amp;view=statuts">com_footregion_statuts</menu>
+			<menu link="option=com_footregion&amp;view=tournois">com_footregion_tournois</menu>
+			<menu link="option=com_footregion&amp;view=utilisateurs">com_footregion_utilisateurs</menu>
 		</submenu>
 		<files folder="admin">
 			<folder>controllers</folder>

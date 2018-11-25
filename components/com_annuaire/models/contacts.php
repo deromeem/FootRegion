@@ -7,7 +7,7 @@ class AnnuaireModelContacts extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// pr�cise les colonnes activant le tri
+		// précise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
@@ -52,7 +52,7 @@ class AnnuaireModelContacts extends JModelList
 
 	protected function _getListQuery()
 	{
-		// construit la requ�te d'affichage de la liste
+		// construit la requête d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
 		$query->select('c.id, c.nom, c.prenom, c.civilites_id, c.typescontacts_id, c.entreprises_id, c.fonction, c.email, c.mobile, c.tel, c.published, c.hits, c.modified');
 		$query->from('#__annuaire_contacts c');
@@ -66,12 +66,12 @@ class AnnuaireModelContacts extends JModelList
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefix�e par 'id:'
+			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
 				$query->where('c.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans pr�fixe)
+				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
@@ -79,12 +79,12 @@ class AnnuaireModelContacts extends JModelList
 				$searches[]	= 'c.prenom LIKE '.$search;
 				$searches[]	= 't.typeContact LIKE '.$search;
 				$searches[]	= 'e.nom LIKE '.$search;
-				// Ajoute les clauses � la requ�te
+				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 		
-		// filtre les �l�ments publi�s
+		// filtre les éléments publiés
 		$query->where('c.published=1');
 		
 		// tri des colonnes
@@ -92,7 +92,7 @@ class AnnuaireModelContacts extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

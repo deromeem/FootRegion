@@ -13,6 +13,7 @@ class AnnuaireControllerEntreprise extends JControllerForm
 	{
 		if (!parent::add())
 		{
+			// redirige à la page de retour
 			$this->setRedirect($this->getReturnPage());
 		}
 	}

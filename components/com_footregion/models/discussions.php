@@ -7,13 +7,13 @@ class FootregionModelDiscussions extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// pr�cise les colonnes activant le tri
+		// précise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
-				'utilisateurs_id', 'd.uilisateurs_id',
+				'utilisateur', 'd.utilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
 				'created', 'd.created',
@@ -47,36 +47,39 @@ class FootregionModelDiscussions extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('theme', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
-		// construit la requ�te d'affichage de la liste
+		// construit la requête d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('d.id, d.theme, d.utilisateur_id, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
-		$query->from('#__footegion_discussions d');
+		$query->select('d.id, d.theme, d.utilisateurs_id, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
+		$query->from('#__footregion_discussions d');
+
+		// joint la table utilisateurs
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefix�e par 'id:'
+			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
 				$query->where('d.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans pr�fixe)
+				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'd.theme LIKE '.$search;
-				$searches[]	= 'd.utilisateur_id LIKE '.$search;
-				// Ajoute les clauses � la requ�te
+				$searches[]	= 'u.nom LIKE '.$search;
+				// Ajoute les clauses é la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 
-		// filtre les �l�ments publi�s
+		// filtre les éléments publics
 		$query->where('d.published=1');
 		
 		// tri des colonnes
@@ -84,7 +87,7 @@ class FootregionModelDiscussions extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

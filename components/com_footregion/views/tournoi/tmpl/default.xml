@@ -9,7 +9,7 @@
 	<fields name="request">
 		<fieldset name="request">
 			<field name="id" type="text"
-				label="ID match"
+				label="ID tournoi"
 				description="Saisir l'ID du tournoi à lier à ce menu"
 				required="true" edit="false" clear="true"                         
 			/>

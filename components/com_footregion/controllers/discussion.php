@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 class FootregionControllerDiscussion extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form';
+	protected $view_item = 'form_discussion';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -13,6 +13,7 @@ class FootregionControllerDiscussion extends JControllerForm
 	{
 		if (!parent::add())
 		{
+			// redirige à la page de retour
 			$this->setRedirect($this->getReturnPage());
 		}
 	}

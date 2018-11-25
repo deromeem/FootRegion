@@ -4,17 +4,15 @@ defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.framework'); 				// javascript Joomla object for grid.sort !
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdm = (in_array('11', $user->groups));		// sets flag when user group is '11' that is 'FootRegion Administrateur 
+$isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur 
 ?>
 
-<?php if (!$isAdmin) : ?>
+<?php if (!$isAdm && !$isDir) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_FOOTREGION_OPTIONS')." : ".JText::_('COM_FOOTREGION_DISCUSSIONS')." - "; ?>
-		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=discussions'); ?>">
-			<?php echo JText::_('COM_FOOTREGION_DISCUSSIONS'); ?>
-		</a>
+	<h2><?php echo JText::_('COM_FOOTREGION_DISCUSSIONS'); ?>
 	</h2>
 
 	<?php echo $this->loadTemplate('items'); ?>

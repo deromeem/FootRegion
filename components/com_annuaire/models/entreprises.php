@@ -7,7 +7,7 @@ class AnnuaireModelEntreprises extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// précise les colonnes activant le tri
+		// prÃ©cise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
@@ -51,7 +51,7 @@ class AnnuaireModelEntreprises extends JModelList
 
 	protected function _getListQuery()
 	{
-		// construit la requête d'affichage de la liste
+		// construit la requÃªte d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
 		$query->select('e.id, e.nom, e.alias, e.logo, e.codeAPE_NAF, e.pays_id, e.siteWeb, e.published, e.hits, e.modified');
 		$query->from('#__annuaire_entreprises e');
@@ -59,24 +59,24 @@ class AnnuaireModelEntreprises extends JModelList
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefixée par 'id:'
+			// recherche prefixÃ©e par 'id:'
 			if (stripos($search, 'id:') === 0) {
 				$query->where('e.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans préfixe)
+				// recherche textuelle classique (sans prÃ©fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'e.nom LIKE '.$search;
 				$searches[]	= 'e.codeAPE_NAF LIKE '.$search;
 				$searches[]	= 'e.siteWeb LIKE '.$search;
-				// Ajoute les clauses à la requête
+				// Ajoute les clauses Ã  la requÃªte
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 
-		// filtre les éléments publiés
+		// filtre les Ã©lÃ©ments publics
 		$query->where('e.published=1');
 		
 		// tri des colonnes
@@ -84,7 +84,7 @@ class AnnuaireModelEntreprises extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

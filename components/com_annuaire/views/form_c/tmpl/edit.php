@@ -7,7 +7,7 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('11', $user->groups));		// sets flag when user group is '11' that is 'FootRegion Administrateur' 
 ?>
 
 <?php if (!$isAdmin) : ?>

@@ -47,7 +47,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEUR_ID'), 'utilisateur_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEUR'), 'utilisateur_id', $listDirn, $listOrder) ?>
 				</th>
 			</tr>
 		</thead>
@@ -59,7 +59,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->theme ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'discussions.', true); ?></td> -->
-					<td><?php echo $item->utilisateur_id ?></td>
+					<td><?php echo $item->utilisateur ?></td>
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>
