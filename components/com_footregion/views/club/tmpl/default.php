@@ -49,7 +49,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_TYPECLUB'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_ADR_VILLE'); ?></span>
 					</td>
 					<td width="30%">
 						<?php echo $this->item->adr_ville ?>

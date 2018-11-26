@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class AnnuaireModelContacts extends JModelList
+class FootregionModelArbitres extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -43,7 +43,7 @@ class AnnuaireModelContacts extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('email', 'ASC');
 	}
 
 	protected function _getListQuery()
@@ -51,7 +51,7 @@ class AnnuaireModelContacts extends JModelList
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
 		$query->select('a.id, a.email, a.alias, a.published, a.hits, a.modified');
-		$query->from('#__footregion_arbitres c');
+		$query->from('#__footregion_arbitres a');
 
 		// joint la table typescontacts
 		// $query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=c.typescontacts_id');

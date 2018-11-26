@@ -11,10 +11,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_FOOTREGION_OPTIONS')." : ".JText::_('COM_FOOTREGION_JOUEURS')." - "; ?>
-		<a href="<?php echo JRoute::_('index.php?option=com_FOOTREGION&view=contacts'); ?>">
-			<?php echo JText::_('COM_FOOTREGION_CONTACTS'); ?>
-		</a>
+	<h2><?php echo JText::_('COM_FOOTREGION_JOUEURS'); ?>
 	</h2>
 
 	<?php echo $this->loadTemplate('items'); ?>

@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/joueur.php';
 
-class FootRegionModelForm_c extends FootRegionModeljoueur
+class FootregionModelForm_joueur extends FootRegionModeljoueur
 {
 	protected $_context = 'joueur';
 
