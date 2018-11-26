@@ -67,7 +67,6 @@ class FootregionModelProfil extends JModelList
 		
 		// joint la table directeurs
 		$query->select('d.id AS id_directeurs')->join('LEFT', '#__footregion_directeurs AS d ON d.email=u.email');
-
 		
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
@@ -98,25 +97,25 @@ class FootregionModelProfil extends JModelList
 		//filtre selon l'état du filtre 'filter_joueur'
 		$joueur = $this->getState('filter_joueur');
 		if (is_numeric($joueur)) {
-			$query->where('j.nom=' . (int) $joueur);
+			$query->where('j.email=' . (int) $joueur);
 		}
 
 		//filtre selon l'état du filtre 'filter_entraineur'
 		$entraineur = $this->getState('filter_entraineur');
 		if (is_numeric($entraineur)) {
-			$query->where('e.nom=' . (int) $entraineur);
+			$query->where('e.email=' . (int) $entraineur);
 		}
 
 		//filtre selon l'état du filtre 'filter_arbitre'
 		$arbitre = $this->getState('filter_arbitre');
 		if (is_numeric($arbitre)) {
-			$query->where('a.nom=' . (int) $arbitre);
+			$query->where('a.email=' . (int) $arbitre);
 		}
 
 		//filtre selon l'état du filtre 'filter_directeur'
 		$directeur = $this->getState('filter_directeur');
 		if (is_numeric($directeur)) {
-			$query->where('d.nom=' . (int) $directeur);
+			$query->where('d.email=' . (int) $directeur);
 		}
 
 		// filtre selon l'état du filtre 'filter_published'
@@ -142,7 +141,7 @@ class FootregionModelProfil extends JModelList
 	public function getDirecteurs()
 	{
 		$query = $this->_db->getQuery(true);
-		$query->select('id, nom');
+		$query->select('id, email');
 		$query->from('#__footregion_directeurs');
 		$query->where('published=1');
 		$query->order('nom ASC');
@@ -153,7 +152,7 @@ class FootregionModelProfil extends JModelList
 	public function getEntraineurs()
 	{
 		$query = $this->_db->getQuery(true);
-		$query->select('id, nom');
+		$query->select('id, email');
 		$query->from('#__footregion_entraineurs');
 		$query->where('published=1');
 		$query->order('nom ASC');
@@ -164,7 +163,7 @@ class FootregionModelProfil extends JModelList
 	public function getJoueurs()
 	{
 		$query = $this->_db->getQuery(true);
-		$query->select('id, nom');
+		$query->select('id, email');
 		$query->from('#__footregion_joueurs');
 		$query->where('published=1');
 		$query->order('nom ASC');
@@ -175,7 +174,7 @@ class FootregionModelProfil extends JModelList
 	public function getArbitres()
 	{
 		$query = $this->_db->getQuery(true);
-		$query->select('id, theme');
+		$query->select('id, email');
 		$query->from('#__footregion_arbitres');
 		$query->where('published=1');
 		$query->order('theme ASC');
