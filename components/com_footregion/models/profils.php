@@ -3,11 +3,11 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class AnnuaireModelContacts extends JModelList
+class FootregionModelProfil extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// pr�cise les colonnes activant le tri
+		// précise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
@@ -30,31 +30,28 @@ class AnnuaireModelContacts extends JModelList
 
 	protected function populateState($ordering = null, $direction = null)
 	{
-		$app = JFactory::getApplication();
-
-		// informations de pagination de la liste
-		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'), 'uint');
-		$this->setState('list.limit', $limit);
-
-		$limitstart = $app->input->get('limitstart', 0, 'uint');
-		$this->setState('list.start', $limitstart);
-
-		// informations du tri de la liste
-		$orderCol = $app->input->get('filter_order', $ordering);
-		$this->setState('list.ordering', $orderCol);
-
-		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
-
+		// récupère les informations de la session utilisateur nécessaires au paramétrage de l'écran
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
-	}
+		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
+		$this->setState('filter.pay', $pay);
 
-	protected function _getListQuery()
+		$user = $this->getUserStateFromRequest($this->context.'.filter.user', 'filter_user', '');
+		$this->setState('filter.user', $user);
+
+		$discussion = $this->getUserStateFromRequest($this->context.'.filter.discussion', 'filter_discussion', '');
+		$this->setState('filter.discussion', $discussion);
+
+		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
+		$this->setState('filter.published', $published);
+
+		parent::populateState('modified', 'desc');
+	}
+	
+	protected function getListQuery()
 	{
-		// construit la requ�te d'affichage de la liste
+		// construit la requete d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
 		$query->select('u.id, u.nom, u.prenom, u.mobile, u.email, u.alias, u.published, u.created, u.modified, u.hits, u.created_by, u.modified_by');
 		$query->from('#__footregion_utilisateurs u');
@@ -64,50 +61,127 @@ class AnnuaireModelContacts extends JModelList
 
 		// joint la table entraineurs
 		$query->select('e.id AS id_entraineurs')->join('LEFT', '#__footregion_entraineurs AS e ON e.email=u.email');
-		
+				
 		// joint la table arbitres
 		$query->select('a.id AS id_arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.email=u.email');
-
+		
 		// joint la table directeurs
 		$query->select('d.id AS id_directeurs')->join('LEFT', '#__footregion_directeurs AS d ON d.email=u.email');
 
-		// joint la table typescontacts
-		//$query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=u.typescontacts_id');
-
-		// joint la table entreprises
-		//$query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=u.entreprises_id');		
 		
-		// filtre de recherche rapide textuelle
+		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefix�e par 'id:'
+			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
 				$query->where('u.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans pr�fixe)
+				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'u.nom LIKE '.$search;
-				$searches[]	= 'u.prenom LIKE '.$search;
-				$searches[]	= 'u.mobile LIKE '.$search;
-				$searches[]	= 'u.email LIKE '.$search;
-				$searches[]	= 'u.alias LIKE '.$search;
-				// Ajoute les clauses � la requ�te
+				//$searches[]	= 'u.prenom LIKE '.$search;
+				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
+
+
+		//filtre selon l'état du filtre 'filter_user'
+		$user = $this->getState('filter.user');
+		if (is_numeric($user)) {
+			$query->where('u.nom=' . (int) $user);
+		}
 		
-		// filtre les �l�ments publi�s
-		$query->where('u.published=1');
-		
+		//filtre selon l'état du filtre 'filter_joueur'
+		$joueur = $this->getState('filter_joueur');
+		if (is_numeric($joueur)) {
+			$query->where('j.nom=' . (int) $joueur);
+		}
+
+		//filtre selon l'état du filtre 'filter_entraineur'
+		$entraineur = $this->getState('filter_entraineur');
+		if (is_numeric($entraineur)) {
+			$query->where('e.nom=' . (int) $entraineur);
+		}
+
+		//filtre selon l'état du filtre 'filter_arbitre'
+		$arbitre = $this->getState('filter_arbitre');
+		if (is_numeric($arbitre)) {
+			$query->where('a.nom=' . (int) $arbitre);
+		}
+
+		//filtre selon l'état du filtre 'filter_directeur'
+		$directeur = $this->getState('filter_directeur');
+		if (is_numeric($directeur)) {
+			$query->where('d.nom=' . (int) $directeur);
+		}
+
+		// filtre selon l'état du filtre 'filter_published'
+		$published = $this->getState('filter.published');
+		if (is_numeric($published)) {
+			$query->where('u.published=' . (int) $published);
+		}
+		elseif ($published === '') {
+			// si aucune sélection, on n'affiche que les publiés et dépubliés
+			$query->where('(u.published=0 OR u.published=1)');
+		}
+
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
-		$orderDirn = $this->getState('list.direction', 'ASC');
+		$orderCol = $this->state->get('list.ordering', 'u.nom');
+		$orderCol = $this->state->get('list.ordering', 'u.libelle');
+		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
+	}
+
+	public function getDirecteurs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, nom');
+		$query->from('#__footregion_directeurs');
+		$query->where('published=1');
+		$query->order('nom ASC');
+		$this->_db->setQuery($query);
+		$directeurs = $this->_db->loadObjectList();
+		return $directeurs;
+	}	
+	public function getEntraineurs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, nom');
+		$query->from('#__footregion_entraineurs');
+		$query->where('published=1');
+		$query->order('nom ASC');
+		$this->_db->setQuery($query);
+		$entraineurs = $this->_db->loadObjectList();
+		return $entraineurs;
+	}	
+	public function getJoueurs()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, nom');
+		$query->from('#__footregion_joueurs');
+		$query->where('published=1');
+		$query->order('nom ASC');
+		$this->_db->setQuery($query);
+		$joueurs = $this->_db->loadObjectList();
+		return $joueurs;
+	}	
+	public function getArbitres()
+	{
+		$query = $this->_db->getQuery(true);
+		$query->select('id, theme');
+		$query->from('#__footregion_arbitres');
+		$query->where('published=1');
+		$query->order('theme ASC');
+		$this->_db->setQuery($query);
+		$arbitres = $this->_db->loadObjectList();
+		return $arbitres;
+	}	
 	}
 }
