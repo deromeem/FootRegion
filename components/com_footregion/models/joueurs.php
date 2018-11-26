@@ -16,7 +16,7 @@ class FootRegionModelJoueurs extends JModelList
 				'poste', 'j.poste',
 				'num_licence', 'j.num_licence',
 				'date_naiss', 'j.date_naiss',
-				'equipe_id', 'j.equipes_id',
+				'equipes_id', 'j.equipes_id',
 				'published', 'j.published',
 				'hits', 'j.hits',
 				'modified', 'j.modified'
@@ -57,12 +57,11 @@ class FootRegionModelJoueurs extends JModelList
 		$query->from('#__Footregion_Joueurs j');
 
 		// joint la table utilisateurs
-		$query->select('u.nom, " ", u.prenom AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
 		
 		// joint la table equipes
-		$query->select('e.id AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
+		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
 		
-		$query->from('#__FootRegion_Joueurs j');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');

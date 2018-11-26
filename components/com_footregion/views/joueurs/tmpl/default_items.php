@@ -52,8 +52,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naiss', $listDirn, $listOrder) ?>
 				</th>
-				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
-			</tr>
+				</tr>
 		</thead>
 
 		<tbody>
@@ -64,9 +63,8 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'joueurs.', true); ?></td> -->
 					<td><?php echo $item->poste ?></td>
-					<td><?php echo $item->date_naissance ?></td>
-					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
-				</tr>			
+					<td><?php echo $item->date_naiss ?></td>
+					</tr>			
 			<?php endforeach; ?>
 		</tbody>
 	</table>
