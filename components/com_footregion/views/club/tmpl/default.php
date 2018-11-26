@@ -17,7 +17,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 				<span class="icon-cancel"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_cl&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
 		</div>	
 	</div>
 	<div>
@@ -49,7 +49,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_TYPECLUB'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_ADR_VILLE'); ?></span>
 					</td>
 					<td width="30%">
 						<?php echo $this->item->adr_ville ?>
