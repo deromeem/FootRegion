@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class AnnuaireModelEntreprise extends JModelItem
+class FootRegionModelJoueur extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_annuaire.entreprise';
+	protected $_context = 'com_footregion.joueur';
 
 	protected function populateState()
 	{
@@ -25,13 +25,12 @@ class AnnuaireModelEntreprise extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('e.id, e.nom, e.alias, e.logo, e.activite, e.codeAPE_NAF, e.numSIREN, e.numTVAintra, e.pays_id, e.siteWeb, e.adrRue, e.adrVille, e.adrCP, e.commentaire');
-			$query->from('#__annuaire_entreprises e');
+			$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.alias, j.published, j.hits, j.modified');
+			$query->from('#__footregion_joueurs j');
 
-			// joint la table pays
-			$query->select('p.pays AS pays')->join('LEFT', '#__annuaire_pays AS p ON p.id=e.pays_id');
-		
-			$query->where('e.id = ' . (int) $pk);
+			$query->select('eq.nom AS nom_equipes')->join('LEFT', '#__footregion_equipes AS eq ON eq.id = j.id');
+
+			$query->where('j.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;
