@@ -16,7 +16,7 @@ class FootRegionModelJoueurs extends JModelList
 				'poste', 'j.poste',
 				'num_licence', 'j.num_licence',
 				'date_naiss', 'j.date_naiss',
-				'equipes_id', 'j.equipes_id',
+				'equipe_id', 'j.equipes_id',
 				'published', 'j.published',
 				'hits', 'j.hits',
 				'modified', 'j.modified'
@@ -46,7 +46,7 @@ class FootRegionModelJoueurs extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('email', 'ASC');
 	}
 
 	protected function _getListQuery()
@@ -62,6 +62,7 @@ class FootRegionModelJoueurs extends JModelList
 		// joint la table equipes
 		$query->select('e.id AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
 		
+		$query->from('#__FootRegion_Joueurs j');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');

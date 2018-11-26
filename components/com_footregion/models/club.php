@@ -30,7 +30,7 @@ class FootregionModelClub extends JModelItem
 
 			// joint la table civilites
 			$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
-			s$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
+			$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 
 			
 			$query->where('c.id = ' . (int) $pk);

@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -27,7 +27,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_NOM'); ?></span>
 					</td>
-					<td width="80%">
+					<td width="30%">
 						<h4><?php echo $this->item->nom ?></h4>
 					</td>
 				</tr>
@@ -35,7 +35,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_SIGLE'); ?></span>
 					</td>
-					<td width="80%">
+					<td width="30%">
 						<?php echo $this->item->sigle ?>
 					</td>
 				</tr>
@@ -43,7 +43,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_ADR_RUE'); ?></span>
 					</td>
-					<td width="80%">
+					<td width="30%">
 						<?php echo $this->item->adr_rue ?>
 					</td>
 				</tr>
@@ -51,16 +51,8 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_TYPECLUB'); ?></span>
 					</td>
-					<td width="80%">
+					<td width="30%">
 						<?php echo $this->item->adr_ville ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_ENTREPRISE'); ?></span>
-					</td>
-					<td width="80%">
-						<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=entreprise&id='.(int) $this->item->directeurs_id); ?>"><?php echo $this->item->entreprise ?></a>
 					</td>
 				</tr>
 			</tbody>
