@@ -79,9 +79,7 @@ class FootregionModelClubs extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'c.nom LIKE '.$search;
-				$searches[]	= 'c.prenom LIKE '.$search;
-				$searches[]	= 't.typeContact LIKE '.$search;
-				$searches[]	= 'e.nom LIKE '.$search;
+				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -95,7 +93,7 @@ class FootregionModelClubs extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+	    // echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
