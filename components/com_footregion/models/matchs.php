@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootregionModelArbitres extends JModelList
+class FootregionModelMatchs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -11,12 +11,24 @@ class FootregionModelArbitres extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'a.id',
-				'email', 'a.email',
-				'alias', 'a.alias',
-				'published', 'a.published',
-				'hits', 'a.hits',
-				'modified', 'a.modified'
+				'id', 'm.id',
+				'date_heure', 'm.date_heure',
+				'score_domicile', 'm.score_domicile',
+				'score_invite', 'm.score_invite',
+				'nom', 'm.nom', 
+				'adr_rue', 'm.adr_rue',
+				'adr_ville', 'm.adr_ville',
+				'adr_cp', 'm.adr_cp',
+				'coord_gps', 'm.coord_gps',
+				'equipes_invite_id', 'm.equipes_invite_id',
+				'equipes_domicile_id', 'm.equipes_domicile_id',
+				'entraineurs_invite_id', 'm.entraineurs_invite_id',
+				'entraineurs_initiateur_id', 'm.entraineurs_initiateur_id',
+				'tournois_id', 'm.tournois_id',
+				'statuts_id', 'm.statuts_id',
+				'published', 'm.published',
+				'hits', 'm.hits',
+				'modified', 'm.modified'
 			);
 		}
 		parent::__construct($config);
@@ -43,45 +55,48 @@ class FootregionModelArbitres extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('email', 'ASC');
+		parent::populateState('nom', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('a.id, a.email, a.alias, a.published, a.hits, a.modified');
-		$query->from('#__footregion_arbitres a');
+		$query->select('m.id, m.date_heure, m.date_heure, m.score_domicile, m.score_invite, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.equipes_invite_id, m.equipes_domicile_id, m.entraineurs_invite_id, m.entraineurs_initiateur_id, m.tournois_id, m.statuts_id, m.nom, m.published, m.hits, m.modified');
+		$query->from('#__footregion_matchs m');
 
-		// joint la table typescontacts
-		// $query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=c.typescontacts_id');
+		// joint la table typesmatchs
+		//$query->select('t.typematch AS typematch')->join('LEFT', '#__footregion_typesmatchs AS t ON t.id=m.typesmatchs_id');
 
-		// joint la table entreprises
-		// $query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=c.entreprises_id');		
+		// joint la table statut
+		$query->select('s.statut AS statut')->join('LEFT', '#__footregion_statuts AS s ON s.id=m.statuts_id');		
 		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefix�e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('a.id = '.(int) substr($search, 3));
+				$query->where('m.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans pr�fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'a.email LIKE '.$search;
+				$searches[]	= 'm.nom LIKE '.$search;
+				$searches[]	= 'm.prenom LIKE '.$search;
+				$searches[]	= 't.typematch LIKE '.$search;
+				$searches[]	= 'e.nom LIKE '.$search;
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 		
 		// filtre les �l�ments publi�s
-		$query->where('a.published=1');
+		$query->where('m.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'email');
+		$orderCol = $this->getState('list.ordering', 'nom');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 

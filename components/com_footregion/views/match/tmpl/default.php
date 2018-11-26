@@ -2,31 +2,38 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isPublic = (in_array('10', $user->groups));
+$isAdm = (in_array('11', $user->groups));
+$isArb = (in_array('12', $user->groups));	
+$isDir = (in_array('13', $user->groups));	
+$isEnt = (in_array('14', $user->groups));	
+$isJou = (in_array('15', $user->groups));			
 ?>
 
-<?php if (!$isAdmin) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_ANNUAIRE_RESTRICTED_ACCESS') ); ?>
+<?php if (!$isArb && !$isArb && !$isDir && !$isEnt && !$isJou && !$isAdm) : ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_footregion_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 	<div class="form-inline form-inline-header">
 		<div class="btn-group pull-left">
-			<h2><?php echo JText::_('COM_ANNUAIRE_ENTREPRISE'); ?></h2>
+			<h2><?php echo JText::_('COM_FOOTREGION_MATCH'); ?></h2>
 		</div>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_annuaire&view=entreprises'); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=matchs'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
 		</div>	
+		<?php if (!$isArb && !$isArb && !$isDir && !$isEnt && !$isJou) : ?>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_annuaire&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
+		<?php endif; ?>
 	</div>	
 	<div>
 		<table class="table">
 			<tbody>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_NOM'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_NOM'); ?></span>
 					</td>
 					<td width="80%">
 						<h4><?php echo $this->item->nom ?></h4>
@@ -34,92 +41,98 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_LOGO'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_DATE_HEURE'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo "<img src='" . JURI::root() . "images/annuaire/logos/" . $this->item->logo . "' border='0' />"; ?>
+						<h4><?php echo $this->item->date_heure ?></h4>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_ACTIVITE'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_SCORE_DOM'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->activite ?>
+						<?php echo $this->item->score_domicile; ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_CODEAPE'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_SCORE_INV'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->codeAPE_NAF ?>
+						<?php echo $this->item->score_invite; ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_SITEWEB'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_ADR_RUE'); ?></span>
 					</td>
 					<td width="80%">
-						<a href="http://<?php echo $this->item->siteWeb; ?>" target="_blank">
-							<?php echo $this->item->siteWeb; ?>
-						</a>
+						<?php echo $this->item->adr_rue ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_NUMSIREN'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_ADR_VILLE'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->numSIREN ?>
+						<?php echo $this->item->adr_ville ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_NUMTVAINTRA'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_ADR_CP'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->numTVAintra ?>
+						<?php echo $this->item->adr_cp ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_ADR_RUE'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_COORD_GPS'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->adrRue ?>
+						<?php echo $this->item->coord_gps ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_ADR_VILLE'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->adrVille ?>
+						<?php echo $this->item->equipe_invite ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_ADR_CP'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->adrCP ?>
+						<?php echo $this->item->equipe_domicile ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_ENTREPRISES_ADR_PAYS'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->pays ?>
+						<?php echo $this->item->entraineur_initiateur ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_ANNUAIRE_COMMENT'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->commentaire ?>
+						<?php echo $this->item->entraineur_invite?>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_TOURNOI'); ?></span>
+					</td>
+					<td width="80%">
+						<?php echo $this->item->tournoi?>
 					</td>
 				</tr>
 			</tbody>

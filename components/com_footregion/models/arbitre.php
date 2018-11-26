@@ -25,8 +25,8 @@ class FootregionModelArbitre extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('a.id, a.nom, a.prenom, a.civilites_id, a.typescontacts_id, a.entreprises_id, a.fonction, a.email, a.mobile, a.tel, a.commentaire');
-			$query->from('#__footregion_arbitre AS a');
+			$query->select('a.id, a.email, a.published, a.modified, a.hits');
+			$query->from('#__footregion_arbitres AS a');
 
 			// joint la table civilites
 			// $query->select('m.civilite AS civilite')->join('LEFT', '#__annuaire_civilites AS m ON m.id=a.civilites_id');
