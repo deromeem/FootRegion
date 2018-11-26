@@ -50,7 +50,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_POSTE'), 'poste', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naissance', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naiss', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>

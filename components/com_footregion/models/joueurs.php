@@ -16,7 +16,7 @@ class FootRegionModelJoueurs extends JModelList
 				'poste', 'j.poste',
 				'num_licence', 'j.num_licence',
 				'date_naiss', 'j.date_naiss',
-				'equipe_id', 'j.equipe_id',
+				'equipe_id', 'j.equipes_id',
 				'published', 'j.published',
 				'hits', 'j.hits',
 				'modified', 'j.modified'
@@ -46,15 +46,23 @@ class FootRegionModelJoueurs extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('email', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipe_id, j.alias, j.published, j.hits, j.modified');
-		$query->from('#__FootRegion_Joueurs e');
+		$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.alias, j.published, j.hits, j.modified');
+		$query->from('#__Footregion_Joueurs j');
+
+		// joint la table utilisateurs
+		$query->select('u.nom, " ", u.prenom AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
+		
+		// joint la table equipes
+		$query->select('e.id AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
+		
+		$query->from('#__FootRegion_Joueurs j');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
@@ -71,6 +79,9 @@ class FootRegionModelJoueurs extends JModelList
 				$searches[]	= 'j.email LIKE '.$search;
 				$searches[]	= 'j.poste LIKE '.$search;
 				$searches[]	= 'j.date_naiss LIKE '.$search;
+				$searches[]	= 'u.nom LIKE '.$search;
+				$searches[]	= 'u.prenom LIKE '.$search;
+				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -80,11 +91,11 @@ class FootRegionModelJoueurs extends JModelList
 		$query->where('j.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
+		$orderCol = $this->getState('list.ordering', 'email');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
