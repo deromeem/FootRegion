@@ -43,17 +43,17 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_ANNUAIRE_CONTACTS_NOM'), 'nom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_ANNUAIRE_CONTACTS_PRENOM'), 'prenom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_SIGLE'), 'sigle', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_ANNUAIRE_CONTACTS_TYPECONTACT'), 'typecontact', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_ADR_RUE'), 'adr_rue', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_ANNUAIRE_CONTACTS_ENTREPRISE'), 'entreprise', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_ADR_RUE'), 'adr_ville', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
@@ -66,11 +66,11 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
 					</td>
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->prenom ?></a>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->sigle ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
-					<td><?php echo $item->typecontact ?></td>
-					<td><?php echo $item->entreprise ?></td>
+					<td><?php echo $item->adr_rue ?></td>
+					<td><?php echo $item->adr_ville ?></td>
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
 			<?php endforeach; ?>

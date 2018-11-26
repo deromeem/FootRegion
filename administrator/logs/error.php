@@ -7,3 +7,4 @@
 2018-11-18T16:42:27+00:00	INFO ::1	joomlafailure	Vous devez indiquer un mot de passe!
 2018-11-25T16:24:05+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
 2018-11-25T17:55:06+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
+2018-11-26T08:35:09+00:00	INFO ::1	joomlafailure	Mot de passe invalide
