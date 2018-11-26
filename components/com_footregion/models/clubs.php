@@ -3,24 +3,30 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class AnnuaireModelContacts extends JModelList
+class FootregionModelClubs extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// précise les colonnes activant le tri
+		// prï¿½cise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
 				'id', 'c.id',
 				'nom', 'c.nom',
-				'prenom', 'c.prenom',
-				'fonction', 'c.fonction',
-				'typecontact', 'c.contact_id',
-				'entreprise', 'c.entreprise_id',
-				'email', 'c.email',
+				'sigle','c.sigle',
+				'adr_rue', 'c.adr_rue',
+				'adr_ville', 'c.adr_ville',
+				'adr_cp', 'c.adr_cp',
+				'nom','c.nomDirecteur',
+				'prenom','c.prenomDirecteur',
+				'directeurs_id', 'c.directeurs_id',
+				'alias','c.alias',
 				'published', 'c.published',
-				'hits', 'c.hits',
-				'modified', 'c.modified'
+				'created', 'c.created',
+				'created_by', 'c.created_by',
+				'modified', 'c.modified',
+				'modified_by', 'c.modified_by',
+				'hits', 'c.hits'
 			);
 		}
 		parent::__construct($config);
@@ -52,26 +58,23 @@ class AnnuaireModelContacts extends JModelList
 
 	protected function _getListQuery()
 	{
-		// construit la requête d'affichage de la liste
+		// construit la requï¿½te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('c.id, c.nom, c.prenom, c.civilites_id, c.typescontacts_id, c.entreprises_id, c.fonction, c.email, c.mobile, c.tel, c.published, c.hits, c.modified');
-		$query->from('#__annuaire_contacts c');
+		$query->select('c.id, c.nom, c.adr_rue,c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
+		$query->from('#__footregion_clubs c');
 
-		// joint la table typescontacts
-		$query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=c.typescontacts_id');
-
-		// joint la table entreprises
-		$query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=c.entreprises_id');		
+		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
+		$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefixée par 'id:'
+			// recherche prefixï¿½e par 'id:'
 			if (stripos($search, 'id:') === 0) {
 				$query->where('c.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans préfixe)
+				// recherche textuelle classique (sans prï¿½fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
@@ -79,12 +82,12 @@ class AnnuaireModelContacts extends JModelList
 				$searches[]	= 'c.prenom LIKE '.$search;
 				$searches[]	= 't.typeContact LIKE '.$search;
 				$searches[]	= 'e.nom LIKE '.$search;
-				// Ajoute les clauses à la requête
+				// Ajoute les clauses ï¿½ la requï¿½te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 		
-		// filtre les éléments publiés
+		// filtre les ï¿½lï¿½ments publiï¿½s
 		$query->where('c.published=1');
 		
 		// tri des colonnes
