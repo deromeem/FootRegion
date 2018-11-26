@@ -77,34 +77,34 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('civilites_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Mobile'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('civilites_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Mobile'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('typesprofils_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Alias'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('typesprofils_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Alias'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('entreprises_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('entreprises_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('fonction'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('fonction'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -132,10 +132,18 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Equipe'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Equipe'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('Poste'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('Poste'); ?></div>
 									</td>
 								</tr>
 							</tbody>
