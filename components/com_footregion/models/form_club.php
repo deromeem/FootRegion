@@ -4,16 +4,15 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/contact.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/club.php';
 
-class AnnuaireModelForm_c extends AnnuaireModelContact
+<<<<<<< HEAD:components/com_footregion/models/form_club.php
+class FootregionModelForm_club extends FootregionModelClub
+=======
+class FootregionModelForm_cl extends FootregionModelClub
+>>>>>>> f023c4bd0903c2a2d4609351f6a4ed373c30e0e4:components/com_footregion/models/form_cl.php
 {
-	protected $_context = 'contact';
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/tournoi.php';
-
-class FootregionModelForm_c extends FootregionModelTournoi
-{
-	protected $_context = 'tournoi';
+	protected $_context = 'club';
 
 	protected function populateState()
 	{
@@ -21,8 +20,7 @@ class FootregionModelForm_c extends FootregionModelTournoi
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('contact.id', $pk);
-		$this->setState('tournoi.id', $pk);
+		$this->setState('club.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -34,8 +32,7 @@ class FootregionModelForm_c extends FootregionModelTournoi
 	
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('contact.id');
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('tournoi.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('club.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne
