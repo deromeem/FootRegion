@@ -43,6 +43,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_ID'), 'id', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
@@ -53,14 +56,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->id ?></a>
 					</td>
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->prenom ?></a>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'arbitres.', true); ?></td> -->
-					<td><?php echo $item->typecontact ?></td>
-					<td><?php echo $item->entreprise ?></td>
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
 			<?php endforeach; ?>

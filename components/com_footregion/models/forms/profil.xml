@@ -19,21 +19,7 @@
 			description="COM_FOOTREGION_PROFILS_PRENOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
-		<field name="civilites_id" type="sql" default="" label="COM_FOOTREGION_PROFILS_CIVILITE" 
-			description="COM_FOOTREGION_PROFILS_CIVILITE"
-			query="SELECT id, civilite FROM #__annuaire_civilites ORDER BY civilite" 
-			key_field="id" value_field="civilite" required="false"
-		/>
-		<field name="typescontacts_id" type="sql" default="" label="COM_FOOTREGION_PROFILS_TYPECONTACT" 
-			description="COM_FOOTREGION_PROFILS_TYPECONTACT"
-			query="SELECT id, typeContact FROM #__annuaire_typescontacts ORDER BY typeContact" 
-			key_field="id" value_field="typeContact" required="false"
-		/>
-		<field name="entreprises_id" type="sql" default="" label="COM_FOOTREGION_PROFILS_ENTREPRISE" 
-			description="COM_FOOTREGION_PROFILS_ENTREPRISE"
-			query="SELECT id, nom FROM #__annuaire_entreprises ORDER BY nom" 
-			key_field="id" value_field="nom" required="false"
-		/>
+
 		<field name="fonction" type="text" label="COM_FOOTREGION_PROFILS_FONCTION"
 			description="COM_FOOTREGION_PROFILS_FONCTION"
 			size="40" class="inputbox" default="" required="false"
@@ -46,13 +32,10 @@
 			description="COM_FOOTREGION_PROFILS_MOBILE"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="tel" type="text" label="COM_FOOTREGION_PROFILS_TEL"
-			description="COM_FOOTREGION_PROFILS_TEL"
-			size="40" class="inputbox" default="" required="false"
-		/>
+
 		<field
-			name="commentaire" type="editor" label="COM_FOOTREGION_COMMENT"
-			description="COM_FOOTREGION_COMMENT"
+			name="commentaire" type="editor" label="COM_FOOTREGION_PROFILS_COMMENT"
+			description="COM_FOOTREGION_PROFILS_COMMENT"
 			class="inputbox"
 			filter="JComponentHelper::filterText"
 			buttons="true"

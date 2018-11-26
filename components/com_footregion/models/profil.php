@@ -25,19 +25,19 @@ class FootregionModelProfil extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('c.id, c.nom, c.prenom, c.mobile, c.email, c.alias, c.published, c.created, c.modified, c.hits, c.created_by, c.modified_by');
-			$query->from('#__footregion_utilisateurs AS c');
+			$query->select('u.id, u.nom, u.prenom, u.mobile, u.email, u.alias, j.poste, j.num_licence, j.date_naiss, j.equipe_id ,e.num_licence, eq.clubs_id, eq.nom, cl.id, cl.nom, cl.sigle, cat.id, cat.nom, d.date_affectation, u.published, u.created, u.modified, u.hits, u.created_by, u.modified_by');
+			$query->from('#__footregion_utilisateurs AS u, #__footregion_joueurs AS j, #__footregion_entraineurs AS e,#__footregion_equipes AS eq, #__footregion_clubs AS cl, #__footregion_categories AS cat, #__footregion_directeurs AS d');
 
-			// joint la table civilites
-			// $query->select('m.civilite AS civilite')->join('LEFT', '#__footregion_civilites AS m ON m.id=c.civilites_id');
+			// joint la table equipes
+			$query->select('eq.nom AS equipe')->join('LEFT', '#__footregion_equipes AS eq ON eq.entraineurs_id=e.id');
 
-			// joint la table typesutilisateurs
-			// $query->select('t.typeutilisateur AS typeutilisateur')->join('LEFT', '#__footregion_typesutilisateurs AS t ON t.id=c.typesutilisateurs_id');
+			// joint la table clubs
+			$query->select('cl.nom AS club')->join('LEFT', '#__footregion_clubs AS cl ON cl.directeurs_id=d.id');
 
-			// joint la table entreprises
-			// $query->select('e.nom AS entreprise')->join('LEFT', '#__footregion_entreprises AS e ON e.id=c.entreprises_id');		
+			// joint la table categories
+			$query->select('cat.nom AS categorie')->join('LEFT', '#__footregion_categories AS cat ON cat.id=eq.categories_id');		
 					
-			$query->where('c.id = ' . (int) $pk);
+			$query->where('u.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;
