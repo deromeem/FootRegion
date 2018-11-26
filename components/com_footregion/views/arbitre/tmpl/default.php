@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -17,7 +17,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 				<span class="icon-cancel"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_c&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_a&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
 		</div>	
 	</div>
 	<div>
@@ -25,42 +25,10 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 			<tbody>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_NOM'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_ID'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->nom ?></h4>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_PRENOM'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->prenom ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_CIVILITE'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->civilite ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_TYPEARBITRE'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->typearbitre ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_ENTREPRISE'); ?></span>
-					</td>
-					<td width="80%">
-						<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=entreprise&id='.(int) $this->item->entreprises_id); ?>"><?php echo $this->item->entreprise ?></a>
+						<h4><?php echo $this->item->id ?></h4>
 					</td>
 				</tr>
 				<tr>
@@ -69,6 +37,10 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					</td>
 					<td width="80%">
 						<?php echo $this->item->email ?>
+					</td>
+				</tr>
+					<td width="80%">
+						<!--<a href="<?php // echo JRoute::_('index.php?option=com_footregion&view=arbitre&id='.(int) $this->item->entreprises_id); ?>"><?php // echo $this->item->entreprise ?></a>-->
 					</td>
 				</tr>
 			</tbody>
