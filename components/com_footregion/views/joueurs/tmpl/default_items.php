@@ -52,7 +52,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naiss', $listDirn, $listOrder) ?>
 				</th>
-				</tr>
+			</tr>
 		</thead>
 
 		<tbody>
