@@ -16,6 +16,8 @@
 			class="inputbox" size="45"
 		/>
         <field name="date_heure" type="calendar" label="COM_FOOTREGION_MATCHS_DATE_HEURE"
+		format="%Y-%m-%d %H:%M"
+	singleheader="true" showtime="true" timeformat="24"
             description="COM_FOOTREGION_MATCHS_DATE_HEURE"
             query="SELECT id, date_heure FROM #__footregion_matchs ORDER BY date_heure" 
 			key_field="id" value_field="date_heure" required="false"
