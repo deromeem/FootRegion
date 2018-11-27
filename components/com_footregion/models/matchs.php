@@ -3,23 +3,32 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class AnnuaireModelEntreprises extends JModelList
+class FootregionModelMatchs extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// précise les colonnes activant le tri
+		// prï¿½cise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'e.id',
-				'nom', 'e.nom',
-				'logo', 'e.logo',
-				'codeAPE_NAF', 'e.codeAPE_NAF',
-				'pays', 'e.pays',
-				'siteWeb', 'e.siteWeb',
-				'published', 'e.published',
-				'hits', 'e.hits',
-				'modified', 'e.modified'
+				'id', 'm.id',
+				'date_heure', 'm.date_heure',
+				'score_domicile', 'm.score_domicile',
+				'score_invite', 'm.score_invite',
+				'nom', 'm.nom', 
+				'adr_rue', 'm.adr_rue',
+				'adr_ville', 'm.adr_ville',
+				'adr_cp', 'm.adr_cp',
+				'coord_gps', 'm.coord_gps',
+				'equipes_invite_id', 'm.equipes_invite_id',
+				'equipes_domicile_id', 'm.equipes_domicile_id',
+				'entraineurs_invite_id', 'm.entraineurs_invite_id',
+				'entraineurs_initiateur_id', 'm.entraineurs_initiateur_id',
+				'tournois_id', 'm.tournois_id',
+				'statuts_id', 'm.statuts_id',
+				'published', 'm.published',
+				'hits', 'm.hits',
+				'modified', 'm.modified'
 			);
 		}
 		parent::__construct($config);
@@ -41,8 +50,8 @@ class AnnuaireModelEntreprises extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder);
-		
+		$this->setState('list.direction', $listOrder); 
+
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
@@ -51,33 +60,40 @@ class AnnuaireModelEntreprises extends JModelList
 
 	protected function _getListQuery()
 	{
-		// construit la requête d'affichage de la liste
+		// construit la requï¿½te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('e.id, e.nom, e.alias, e.logo, e.codeAPE_NAF, e.pays_id, e.siteWeb, e.published, e.hits, e.modified');
-		$query->from('#__annuaire_entreprises e');
+		$query->select('m.id, m.date_heure, m.date_heure, m.score_domicile, m.score_invite, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.equipes_invite_id, m.equipes_domicile_id, m.entraineurs_invite_id, m.entraineurs_initiateur_id, m.tournois_id, m.statuts_id, m.nom, m.published, m.hits, m.modified');
+		$query->from('#__footregion_matchs m');
 
+		// joint la table typesmatchs
+		//$query->select('t.typematch AS typematch')->join('LEFT', '#__footregion_typesmatchs AS t ON t.id=m.typesmatchs_id');
+
+		// joint la table statut
+		$query->select('s.statut AS statut')->join('LEFT', '#__footregion_statuts AS s ON s.id=m.statuts_id');		
+		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefixée par 'id:'
+			// recherche prefixï¿½e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('e.id = '.(int) substr($search, 3));
+				$query->where('m.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans préfixe)
+				// recherche textuelle classique (sans prï¿½fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
+				$searches[]	= 'm.nom LIKE '.$search;
+				$searches[]	= 'm.prenom LIKE '.$search;
+				$searches[]	= 't.typematch LIKE '.$search;
 				$searches[]	= 'e.nom LIKE '.$search;
-				$searches[]	= 'e.codeAPE_NAF LIKE '.$search;
-				$searches[]	= 'e.siteWeb LIKE '.$search;
-				// Ajoute les clauses à la requête
+				// Ajoute les clauses ï¿½ la requï¿½te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-
-		// filtre les éléments publiés
-		$query->where('e.published=1');
+		
+		// filtre les ï¿½lï¿½ments publiï¿½s
+		$query->where('m.published=1');
 		
 		// tri des colonnes
 		$orderCol = $this->getState('list.ordering', 'nom');

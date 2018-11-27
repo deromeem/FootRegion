@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/contact.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/arbitre.php';
 
-class AnnuaireModelForm_c extends AnnuaireModelContact
+class FootregionModelForm_arbitre extends FootregionModelArbitre
 {
-	protected $_context = 'contact';
+	protected $_context = 'arbitre';
 
 	protected function populateState()
 	{
@@ -16,7 +16,7 @@ class AnnuaireModelForm_c extends AnnuaireModelContact
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('contact.id', $pk);
+		$this->setState('arbitre.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -28,7 +28,7 @@ class AnnuaireModelForm_c extends AnnuaireModelContact
 	
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('contact.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('arbitre.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne

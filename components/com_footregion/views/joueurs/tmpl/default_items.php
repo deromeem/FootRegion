@@ -42,6 +42,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	<table class="table table-striped" id="articleList">
 		<thead>
 			<tr>
+			<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_NOM'), 'nom', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_NOM'), 'nom_equipe', $listDirn, $listOrder) ?>
+				</th>
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
@@ -52,21 +58,21 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naiss', $listDirn, $listOrder) ?>
 				</th>
-				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
 		</thead>
 
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
+					<td><?php echo $item->utilisateur ?></td>
+					<td><?php echo $item->equipe ?></td>
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'joueurs.', true); ?></td> -->
 					<td><?php echo $item->poste ?></td>
-					<td><?php echo $item->date_naissance ?></td>
-					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
-				</tr>			
+					<td><?php echo $item->date_naiss ?></td>
+					</tr>			
 			<?php endforeach; ?>
 		</tbody>
 	</table>

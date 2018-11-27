@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.view');
  
-class FootregionViewProfils extends JViewLegacy
+class FootregionViewUtilisateurs extends JViewLegacy
 {
 	protected $items;
 	

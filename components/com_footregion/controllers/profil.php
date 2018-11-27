@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionControllerProfil extends JControllerForm
+class FootregionControllerUtilisateur extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
 	protected $view_item = 'form_profil';
@@ -56,7 +56,7 @@ class FootregionControllerProfil extends JControllerForm
 		// {
 			// return base64_decode($return);
 		// }
-		return JURI::base()."/index.php?option=com_footregion&view=profils";		
+		return JURI::base()."/index.php?option=com_footregion&view=utilisateur";		
 	}
 
 	public function getModel($name = 'form_profil', $prefix = '', $config = array('ignore_request' => true))

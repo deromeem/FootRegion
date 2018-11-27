@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class AnnuaireViewTournoi extends JViewLegacy
+class FootregionViewTournoi extends JViewLegacy
 {
 	protected $item;
 	

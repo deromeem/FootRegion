@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionModelProfil extends JModelItem
+class FootregionModelsignalement extends JModelItem
 {
 	protected $_item = null;
 	protected $_context = 'com_footregion.utilisateur';
@@ -25,19 +25,14 @@ class FootregionModelProfil extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('c.id, c.nom, c.prenom, c.mobile, c.email, c.alias, c.published, c.created, c.modified, c.hits, c.created_by, c.modified_by');
-			$query->from('#__footregion_utilisateurs AS c');
+			$query->select('s.id, s.libelle, s.arbitres_id, s.entraineurs_id, s.alias, s.published, s.created, s.created_by, s.modified, s.modified_by, s.hits');
+			$query->from('#__footregion_signalements s');
 
-			// joint la table civilites
-			// $query->select('m.civilite AS civilite')->join('LEFT', '#__footregion_civilites AS m ON m.id=c.civilites_id');
-
-			// joint la table typesutilisateurs
-			// $query->select('t.typeutilisateur AS typeutilisateur')->join('LEFT', '#__footregion_typesutilisateurs AS t ON t.id=c.typesutilisateurs_id');
-
-			// joint la table entreprises
-			// $query->select('e.nom AS entreprise')->join('LEFT', '#__footregion_entreprises AS e ON e.id=c.entreprises_id');		
+			// joint la table equipes
+			$query->select('a.email AS arbitre')->join('LEFT', '#__footregion_arbitres AS a ON s.arbitres_id=a.id');
+			$query->select('e.email AS entraineur')->join('LEFT', '#__footregion_entraineurs AS e ON s.entraineurs_id=e.id');
 					
-			$query->where('c.id = ' . (int) $pk);
+			$query->where('s.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;

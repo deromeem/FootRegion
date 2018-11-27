@@ -7,11 +7,19 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
+<<<<<<< HEAD
 $isAdmin = (in_array('10', $user->groups));	
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
 $isEntraineur = (in_array('14', $user->groups));
 $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+=======
+$isAdmin = (in_array('10', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+$isArbitre = (in_array('12', $user->groups));
+$isDirecteur = (in_array('13', $user->groups));
+$isEntraineur = (in_array('14', $user->groups));	
+$isJoueur = (in_array('15', $user->groups));
+>>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
 ?>
 
 <?php if (!$isAdmin && !$isArbitre && !$isDirecteur && !$isEntraineur && !$isJoueur) : ?>
@@ -81,43 +89,20 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('civilites_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Mobile'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('civilites_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Mobile'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('typesprofils_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Alias'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('typesprofils_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Alias'); ?></div>
 									</td>
 								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('entreprises_id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('entreprises_id'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('fonction'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('fonction'); ?></div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
@@ -134,15 +119,62 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
 									</td>
 								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tab-pane" id="avance">
+						<table class="table">
+							<tbody>
+							<?php if ($isDirecteur) : ?>
+								<tr>
+										<td width="20%" class="nowrap right">
+											<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
+										</td>
+										<td width="80%">
+											<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
+										</td>
+									</tr>
+							<?php endif; ?>
+							<?php if ($isJoueur) : ?>
+								
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
 									</td>
 								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('Poste'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('Poste'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
+							<?php if ($isEntraineur) : ?>
+							<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
 							</tbody>
+
 						</table>				
 
 						<input type="hidden" name="task" value="" />

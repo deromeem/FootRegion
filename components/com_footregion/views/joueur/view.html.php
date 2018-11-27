@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class AnnuaireViewEntreprise extends JViewLegacy
+class FootRegionViewJoueur extends JViewLegacy
 {
 	protected $item;
 	

@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class AnnuaireModelContacts extends JModelList
+class FootRegionModelEntraineurs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -11,18 +11,12 @@ class AnnuaireModelContacts extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'u.id',
-				'nom', 'u.nom',
-				'prenom', 'u.prenom',
-				'mobile','u.mobile'
-				'email', 'u.email',
-				'alias', 'u.alias',
-				'published', 'u.published',
-				'created', 'u.created',
-				'modified', 'u.modified',
-				'hits', 'u.hits',
-				'created_by', 'u.created_by',
-				'modified_by', 'u.modified_by'
+				'id', 'en.id',
+				'email', 'en.email',
+				'num_licence', 'en.num_licence',
+				'published', 'en.published',
+				'hits', 'en.hits',
+				'modified', 'en.modified'
 			);
 		}
 		parent::__construct($config);
@@ -44,70 +38,58 @@ class AnnuaireModelContacts extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
-
+		$this->setState('list.direction', $listOrder);
+		
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('email', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('u.id, u.nom, u.prenom, u.mobile, u.email, u.alias, u.published, u.created, u.modified, u.hits, u.created_by, u.modified_by');
-		$query->from('#__footregion_utilisateurs u');
+		$query->select('en.id, en.email, en.num_licence, en.published, en.hits, en.modified');
+		$query->from('#__Footregion_Entraineurs en');
 
-		// joint la table joueurs
-		$query->select('j.id AS id_joueur')->join('LEFT', '#__footregion_joueurs AS j ON j.email=u.email');
-
-		// joint la table entraineurs
-		$query->select('e.id AS id_entraineurs')->join('LEFT', '#__footregion_entraineurs AS e ON e.email=u.email');
+		// joint la table utilisateurs
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=en.email');
+				
+		// joint la table equipes
+		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=en.id');
 		
-		// joint la table arbitres
-		$query->select('a.id AS id_arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.email=u.email');
 
-		// joint la table directeurs
-		$query->select('d.id AS id_directeurs')->join('LEFT', '#__footregion_directeurs AS d ON d.email=u.email');
-
-		// joint la table typescontacts
-		//$query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=u.typescontacts_id');
-
-		// joint la table entreprises
-		//$query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=u.entreprises_id');		
-		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefix�e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('u.id = '.(int) substr($search, 3));
+				$query->where('en.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans pr�fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
+				$searches[]	= 'en.email LIKE '.$search;
 				$searches[]	= 'u.nom LIKE '.$search;
 				$searches[]	= 'u.prenom LIKE '.$search;
-				$searches[]	= 'u.mobile LIKE '.$search;
-				$searches[]	= 'u.email LIKE '.$search;
-				$searches[]	= 'u.alias LIKE '.$search;
+				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-		
+
 		// filtre les �l�ments publi�s
-		$query->where('u.published=1');
+		$query->where('en.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
+		$orderCol = $this->getState('list.ordering', 'email');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

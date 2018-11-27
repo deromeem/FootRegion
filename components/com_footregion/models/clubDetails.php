@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class AnnuaireModelContact extends JModelItem
+class FootregionModelClubDetails extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_annuaire.contact';
+	protected $_context = 'com_footregion.club';
 
 	protected function populateState()
 	{
@@ -13,7 +13,7 @@ class AnnuaireModelContact extends JModelItem
 		// Charge et mémorise l'état (state) de l'id depuis le contexte
 		$pk = $app->input->getInt('id');
 		$this->setState($this->_context.'.id', $pk);
-		// $this->setState('contact.id', $pk);
+		// $this->setState('club.id', $pk);
 	}
 
 	public function getItem($pk = null)
@@ -25,18 +25,14 @@ class AnnuaireModelContact extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('c.id, c.nom, c.prenom, c.civilites_id, c.typescontacts_id, c.entreprises_id, c.fonction, c.email, c.mobile, c.tel, c.commentaire');
-			$query->from('#__annuaire_contacts AS c');
+			$query->select('c.id, c.nom, c.adr_rue, c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
+			$query->from('#__footregion_clubs AS c');
 
 			// joint la table civilites
-			$query->select('m.civilite AS civilite')->join('LEFT', '#__annuaire_civilites AS m ON m.id=c.civilites_id');
+			$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
+			$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 
-			// joint la table typescontacts
-			$query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=c.typescontacts_id');
-
-			// joint la table entreprises
-			$query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=c.entreprises_id');		
-					
+			
 			$query->where('c.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();

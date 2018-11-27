@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-class TournoiControllerTournoi extends JControllerForm
+class FootregionControllerTournoi extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_c';
+	protected $view_item = 'form_tournoi';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'f.id';
@@ -56,7 +56,7 @@ class TournoiControllerTournoi extends JControllerForm
 		// {
 			// return base64_decode($return);
 		// }
-		return JURI::base()."/index.php?option=com_tournoi&view=tournois";		
+		return JURI::base()."/index.php?option=com_footregion&view=tournois";		
 	}
 
 	public function getModel($name = 'form_c', $prefix = '', $config = array('ignore_request' => true))
