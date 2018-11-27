@@ -57,7 +57,7 @@ class FootRegionControllerJoueur extends JControllerForm
 		return JURI::base()."/index.php?option=com_annuaire&view=joueur";		
 	}
 
-	public function getModel($name = 'form', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_joueur', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

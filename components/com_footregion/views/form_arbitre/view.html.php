@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionViewForm_a extends JViewLegacy
+class FootregionViewForm_arbitre extends JViewLegacy
 {
 	protected $form;
 	protected $item;
@@ -13,7 +13,7 @@ class FootregionViewForm_a extends JViewLegacy
 		// initialise les variables
 		$this->state		= $this->get('State');
 		$this->item			= $this->get('Item');
-		$this->form			= $this->get('Form');
+		$this->form			= $this->get('Form_arbitre');
 		$this->return_page	= $this->get('ReturnPage');
 		
 		// contrôle les erreurs

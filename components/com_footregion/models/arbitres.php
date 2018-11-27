@@ -54,7 +54,7 @@ class FootregionModelArbitres extends JModelList
 		$query->from('#__footregion_arbitres a');
 
 		// joint la table typescontacts
-		// $query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=c.typescontacts_id');
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=a.id');
 
 		// joint la table entreprises
 		// $query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=c.entreprises_id');		

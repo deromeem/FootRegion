@@ -11,34 +11,15 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-        <field name="nom" type="sql" default="" label="COM_FOOTREGION_JOUEURS_NOM" 
-			description="COM_FOOTREGION_JOUEURS_NOM"
-			query="SELECT id, nom, prenom FROM #__footregion_utilisateurs" 
-			key_field="id" value_field="nom" required="false"
-		/>  
-        <field name="email" type="text" label="COM_FOOTREGION_JOUEURS_EMAIL"
-            description="COM_FOOTREGION_JOUEURS_EMAIL"
+        
+        <field name="email" type="text" label="COM_FOOTREGION_ENTRAINEURS_EMAIL"
+            description="COM_FOOTREGION_ENTRAINEURS_EMAIL"
             size="40" class="inputbox" default="" required="true"
-        />        
-        <field name="poste" type="text" label="COM_FOOTREGION_JOUEURS_POSTE"
-            description="COM_FOOTREGION_JOUEURS_POSTE"
-            size="40" class="input-large-text" default="" required="false"
-        />        
-        <field name="num_licence" type="text" label="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
-            description="COM_FOOTREGION_JOUEURS_NUM_LICENCE"
+        />                
+        <field name="num_licence" type="text" label="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
+            description="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
             size="40" class="input-large-text" default="" required="true"
-        />     
-		<field name="date_naiss" type="calendar" label="COM_FOOTREGION_JOUEURS_DATE_NAISS"
-            description="COM_FOOTREGION_JOUEURS_DATE_NAISS"
-			class="inputbox" default="" required="false" filter="user_utc" format="%Y-%m-%d"
-			showtime="false" todaybutton="false" filltable="false" translateformat="true"
-        />
-		<field name="equipes_id" type="sql" default="" label="COM_FOOTREGION_JOUEURS_EQUIPES_ID" 
-			description="COM_FOOTREGION_JOUEURS_EQUIPES_ID"
-			query="SELECT id, nom FROM #__footregion_equipes" 
-			key_field="id" value_field="nom" required="false"
-		/>  
-
+        />   
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"

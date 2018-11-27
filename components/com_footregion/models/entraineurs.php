@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootRegionModelJoueurs extends JModelList
+class FootRegionModelEntraineurs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -11,15 +11,12 @@ class FootRegionModelJoueurs extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'j.id',
-				'email', 'j.email',
-				'poste', 'j.poste',
-				'num_licence', 'j.num_licence',
-				'date_naiss', 'j.date_naiss',
-				'equipes_id', 'j.equipes_id',
-				'published', 'j.published',
-				'hits', 'j.hits',
-				'modified', 'j.modified'
+				'id', 'en.id',
+				'email', 'en.email',
+				'num_licence', 'en.num_licence',
+				'published', 'en.published',
+				'hits', 'en.hits',
+				'modified', 'en.modified'
 			);
 		}
 		parent::__construct($config);
@@ -53,14 +50,14 @@ class FootRegionModelJoueurs extends JModelList
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.alias, j.published, j.hits, j.modified');
-		$query->from('#__Footregion_Joueurs j');
+		$query->select('en.id, en.email, en.num_licence, en.published, en.hits, en.modified');
+		$query->from('#__Footregion_Entraineurs en');
 
 		// joint la table utilisateurs
-		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=j.email');
-		
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=en.email');
+				
 		// joint la table equipes
-		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
+		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=en.id');
 		
 
 		// filtre de recherche rapide textuelle
@@ -68,16 +65,14 @@ class FootRegionModelJoueurs extends JModelList
 		if (!empty($search)) {
 			// recherche prefix�e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('j.id = '.(int) substr($search, 3));
+				$query->where('en.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans pr�fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'j.email LIKE '.$search;
-				$searches[]	= 'j.poste LIKE '.$search;
-				$searches[]	= 'j.date_naiss LIKE '.$search;
+				$searches[]	= 'en.email LIKE '.$search;
 				$searches[]	= 'u.nom LIKE '.$search;
 				$searches[]	= 'u.prenom LIKE '.$search;
 				
@@ -87,7 +82,7 @@ class FootRegionModelJoueurs extends JModelList
 		}
 
 		// filtre les �l�ments publi�s
-		$query->where('j.published=1');
+		$query->where('en.published=1');
 		
 		// tri des colonnes
 		$orderCol = $this->getState('list.ordering', 'email');
