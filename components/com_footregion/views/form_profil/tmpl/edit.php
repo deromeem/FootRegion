@@ -7,7 +7,11 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('10', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+$isArbitre = (in_array('12', $user->groups));
+$isDirecteur = (in_array('13', $user->groups));
+$isEntraineur = (in_array('14', $user->groups));	
+$isJoueur = (in_array('15', $user->groups));
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -93,29 +97,6 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 									</td>
 									<td width="80%">
@@ -130,12 +111,31 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
 									</td>
 								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tab-pane" id="avance">
+						<table class="table">
+							<tbody>
+							<?php if ($isDirecteur) : ?>
+								<tr>
+										<td width="20%" class="nowrap right">
+											<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
+										</td>
+										<td width="80%">
+											<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
+										</td>
+									</tr>
+							<?php endif; ?>
+							<?php if ($isJoueur) : ?>
+								
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Equipe'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Equipe'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -146,7 +146,27 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('Poste'); ?></div>
 									</td>
 								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
+							<?php if ($isEntraineur) : ?>
+							<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
 							</tbody>
+
 						</table>				
 
 						<input type="hidden" name="task" value="" />
