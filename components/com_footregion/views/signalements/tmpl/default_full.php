@@ -19,7 +19,7 @@ defined('_JEXEC') or die('Restricted access');
 			<?php foreach($this->tickets as $i => $item) : ?>
 			<tr>
 				<td><?php echo $item->libelle ?></td>
-				<td><?php echo $item->artibre_id ?></td>
+				<td><?php echo $item->artibres_id ?></td>
 				<td><?php echo $item->entraineurs_id ?></td>
 			</tr>			
 			<?php endforeach; ?>

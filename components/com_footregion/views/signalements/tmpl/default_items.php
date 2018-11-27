@@ -47,10 +47,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRE'), 'arbitre_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_SIGNALEMENTS_ARBITRES'), 'arbitre', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEUR'), 'entraineur_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_SIGNALEMENTS_ENTRAINEURS'), 'entraineur', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
@@ -61,6 +61,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<tr class="row<?php echo $i % 2; ?>">
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->libelle ?></a>
+					</td>
+					<td>
+					<?php echo $item->arbitre ?>
+					</td>
+					<td>
+					<?php echo $item->entraineur ?>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'signalements.', true); ?></td> -->
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->

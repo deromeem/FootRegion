@@ -58,11 +58,9 @@ class FootregionModelSignalements extends JModelList
 		$query->select('s.id, s.libelle, s.arbitres_id, s.entraineurs_id, s.alias, s.published, s.created, s.created_by, s.modified, s.modified_by, s.hits');
 		$query->from('#__footregion_signalements s');
 
-		// joint la table artibres
-		$query->select('a.id AS id_arbitres')->join('LEFT', '#__footregion_arbitres AS a ON a.id=s.arbitres_id');
-
-		// joint la table entraineurs
-		$query->select('e.id AS id_entraineurs')->join('LEFT', '#__footregion_entraineurs AS e ON e.id=s.entraineurs_id');
+		// Jointures 
+		$query->select('a.email AS arbitre')->join('LEFT', '#__footregion_arbitres AS a ON s.arbitres_id=a.id');
+		$query->select('e.email AS entraineur')->join('LEFT', '#__footregion_entraineurs AS e ON s.entraineurs_id=e.id');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
