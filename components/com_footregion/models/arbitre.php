@@ -28,8 +28,8 @@ class FootregionModelArbitre extends JModelItem
 			$query->select('a.id, a.email, a.published, a.modified, a.hits');
 			$query->from('#__footregion_arbitres AS a');
 
-			// joint la table civilites
-			// $query->select('m.civilite AS civilite')->join('LEFT', '#__annuaire_civilites AS m ON m.id=a.civilites_id');
+			// joint la table utilisateurs
+			$query->select('u.nom AS nom_util, u.prenom AS prenom_util')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=a.id');
 
 			// joint la table typescontacts
 			// $query->select('t.typeContact AS typecontact')->join('LEFT', '#__annuaire_typescontacts AS t ON t.id=a.typescontacts_id');

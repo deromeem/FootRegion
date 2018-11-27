@@ -88,9 +88,6 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
 					</div>
-					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
-					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>
