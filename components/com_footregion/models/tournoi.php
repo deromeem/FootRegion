@@ -27,7 +27,11 @@ class FootregionModelTournoi extends JModelItem
 			$query = $db->getQuery(true);
 			$query->select('t.id, t.nom');
 			$query->from('#__footregion_tournois AS t');
-					
+			// jointures vers matchs enfin plutot match vers tournoi
+			//$query->select('e.nom AS Equipe_Invite')->join('LEFT', '#__footregion_matchs AS m ON t.id=m.tournois_id')->join('LEFT', '#__footregion_equipes AS e ON m.equipes_invite_id=e.id');	;	
+			$query->select('m.nom AS nomm');
+			$query->from('#__footregion_matchs AS m');
+			
 			$query->where('t.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();

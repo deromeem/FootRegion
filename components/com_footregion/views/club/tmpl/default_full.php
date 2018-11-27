@@ -11,7 +11,6 @@ defined('_JEXEC') or die('Restricted access');
 			<tr>
 			<th class="title">Nom</th>
 			<th class="title">sigle</th>
-			<th class="title">rue</th>
 			<th class="title">Ville</th>
 		</tr>
 		</thead>
@@ -21,7 +20,6 @@ defined('_JEXEC') or die('Restricted access');
 			<tr>
 				<td><?php echo $item->nom ?></td>
 				<td><?php echo $item->sigle ?></td>
-				<td><?php echo $item->adr_vue ?></td>
 				<td><?php echo $item->adr_ville ?></td>
 			</tr>			
 			<?php endforeach; ?>

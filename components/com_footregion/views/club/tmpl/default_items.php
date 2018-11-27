@@ -50,9 +50,6 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_ADR_RUE'), 'adr_rue', $listDirn, $listOrder) ?>
-				</th>
-				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_ADR_VILLE'), 'adr_ville', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
@@ -69,7 +66,6 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->sigle ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
-					<td><?php echo $item->adr_rue ?></td>
 					<td><?php echo $item->adr_ville ?></td>
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
