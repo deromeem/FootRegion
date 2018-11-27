@@ -45,12 +45,11 @@ CREATE TABLE `footregion_footregion_tournois` (
 --
 
 INSERT INTO `footregion_footregion_tournois` (`id`, `nom`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (2, 'Champion', 'champion', 1, '2018-11-06 15:35:47', 35, '0000-00-00 00:00:00', 0, 0),
-(3, 'Intercommunal d\'Iser', 'intercommunal-d-iser', 1, '2018-11-08 14:09:10', 35, '0000-00-00 00:00:00', 0, 0),
+(3, 'Intercommunal d"'""' Iser', 'intercommunal-d-iser', 1, '2018-11-08 14:09:10', 35, '0000-00-00 00:00:00', 0, 0),
 (4, 'Challenge Bouilhaguet', 'challenge-bouilhaguet', 1, '2018-11-08 14:11:29', 35, '0000-00-00 00:00:00', 0, 0),
 (5, 'Tournoi paques', 'tournoi-paques', 1, '2018-11-08 14:11:39', 35, '0000-00-00 00:00:00', 0, 0),
-(6, 'Tournoi Futsal de l\'AFAF', 'tournois-de-foot-foot-en-salle-tournoi-futsal-de-l-afaf', 1, '2018-11-08 14:11:54', 35, '2018-11-08 14:12:23', 35, 0);
+(6, 'Tournoi Futsal AFAF', 'tournois-de-foot-foot-en-salle-tournoi-futsal-de-l-afaf', 1, '2018-11-08 14:11:54', 35, '2018-11-08 14:12:23', 35, 0);
 
 --
 -- Index pour les tables déchargées
