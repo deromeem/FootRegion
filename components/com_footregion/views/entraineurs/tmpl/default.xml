@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <metadata> 
-	<layout title="Liste des entraîneurs"> 
+	<layout title="Liste des entraineurs"> 
 		<message> 
-			<![CDATA[Ecran de liste de tous les entraîneurs]]> 
+			<![CDATA[Ecran de liste de tous les entraineurs]]> 
 		</message> 
 	</layout> 
 </metadata>

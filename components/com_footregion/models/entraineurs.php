@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootregionModelClub extends JModelList
+class FootRegionModelEntraineurs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -11,22 +11,12 @@ class FootregionModelClub extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'c.id',
-				'nom', 'c.nom',
-				'sigle','c.sigle',
-				'adr_rue', 'c.adr_rue',
-				'adr_ville', 'c.adr_ville',
-				'adr_cp', 'c.adr_cp',
-				'nom','c.nomDirecteur',
-				'prenom','c.prenomDirecteur',
-				'directeurs_id', 'c.directeurs_id',
-				'alias','c.alias',
-				'published', 'c.published',
-				'created', 'c.created',
-				'created_by', 'c.created_by',
-				'modified', 'c.modified',
-				'modified_by', 'c.modified_by',
-				'hits', 'c.hits'
+				'id', 'en.id',
+				'email', 'en.email',
+				'num_licence', 'en.num_licence',
+				'published', 'en.published',
+				'hits', 'en.hits',
+				'modified', 'en.modified'
 			);
 		}
 		parent::__construct($config);
@@ -48,54 +38,58 @@ class FootregionModelClub extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
-
+		$this->setState('list.direction', $listOrder);
+		
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('email', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
 		// construit la requ�te d'affichage de la liste
-		$user = JFactory::getUser();
-		$user = $user->email;
 		$query	= $this->_db->getQuery(true);
-		$query->select('c.id, c.nom, c.adr_rue,c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
-		$query->from('#__footregion_clubs c');
+		$query->select('en.id, en.email, en.num_licence, en.published, en.hits, en.modified');
+		$query->from('#__Footregion_Entraineurs en');
 
-		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
-		$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email')->where('d.email='.'"'.$user.'"');
+		// joint la table utilisateurs
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=en.id');
+				
+		// joint la table equipes
+		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=en.id');
 		
+
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefix�e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('c.id = '.(int) substr($search, 3));
+				$query->where('en.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans pr�fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'c.nom LIKE '.$search;
+				$searches[]	= 'en.email LIKE '.$search;
+				$searches[]	= 'u.nom LIKE '.$search;
+				$searches[]	= 'u.prenom LIKE '.$search;
 				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-		
+
 		// filtre les �l�ments publi�s
-		$query->where('c.published=1');
+		$query->where('en.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
+		$orderCol = $this->getState('list.ordering', 'email');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-	    // echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

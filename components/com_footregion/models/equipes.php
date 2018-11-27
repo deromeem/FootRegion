@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootregionModelClub extends JModelList
+class FootRegionModelEquipes extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -11,22 +11,14 @@ class FootregionModelClub extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'c.id',
-				'nom', 'c.nom',
-				'sigle','c.sigle',
-				'adr_rue', 'c.adr_rue',
-				'adr_ville', 'c.adr_ville',
-				'adr_cp', 'c.adr_cp',
-				'nom','c.nomDirecteur',
-				'prenom','c.prenomDirecteur',
-				'directeurs_id', 'c.directeurs_id',
-				'alias','c.alias',
-				'published', 'c.published',
-				'created', 'c.created',
-				'created_by', 'c.created_by',
-				'modified', 'c.modified',
-				'modified_by', 'c.modified_by',
-				'hits', 'c.hits'
+				'id', 'e.id',
+				'nom', 'e.nom',				
+				'clubs_id', 'e.clubs_id',
+				'categories_id', 'e.categories_id',
+				'entraineurs_id', 'e.entraineurs_id',
+				'published', 'e.published',
+				'hits', 'e.hits',
+				'modified', 'e.modified'
 			);
 		}
 		parent::__construct($config);
@@ -48,8 +40,8 @@ class FootregionModelClub extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
-
+		$this->setState('list.direction', $listOrder);
+		
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
@@ -59,43 +51,42 @@ class FootregionModelClub extends JModelList
 	protected function _getListQuery()
 	{
 		// construit la requ�te d'affichage de la liste
-		$user = JFactory::getUser();
-		$user = $user->email;
 		$query	= $this->_db->getQuery(true);
-		$query->select('c.id, c.nom, c.adr_rue,c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
-		$query->from('#__footregion_clubs c');
+		$query->select('e.id, e.nom, clubs_id, e.categories_id, e.entraineurs_id, e.published, e.hits, e.modified');
+		$query->from('#__Footregion_Equipes e');
 
-		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
-		$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email')->where('d.email='.'"'.$user.'"');
-		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
 			// recherche prefix�e par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('c.id = '.(int) substr($search, 3));
+				$query->where('e.id = '.(int) substr($search, 3));
 			}
 			else {
 				// recherche textuelle classique (sans pr�fixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'c.nom LIKE '.$search;
+				$searches[]	= 'e.id LIKE '.$search;
+				$searches[]	= 'e.clubs_id LIKE '.$search;
+				$searches[]	= 'e.equipes_id LIKE '.$search;
+				$searches[]	= 'e.categories_id LIKE '.$search;
+				$searches[]	= 'e.entraineurs_id LIKE '.$search;
 				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-		
+
 		// filtre les �l�ments publi�s
-		$query->where('c.published=1');
+		$query->where('e.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
+		$orderCol = $this->getState('list.ordering', 'email');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-	    // echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

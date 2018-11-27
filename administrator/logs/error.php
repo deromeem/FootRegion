@@ -9,3 +9,5 @@
 2018-11-25T17:55:06+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
 2018-11-26T08:35:09+00:00	INFO ::1	joomlafailure	Mot de passe invalide
 2018-11-27T13:56:16+00:00	INFO ::1	joomlafailure	Mot de passe invalide
+2018-11-27T13:37:09+00:00	INFO ::1	cookiefailure	Un mot de passe vide n'est pas autorisé
+2018-11-27T13:37:09+00:00	INFO ::1	updater	Loading information from update site #1 with name "Joomla! Core" and URL https://update.joomla.org/core/list.xml took 0.12 seconds
