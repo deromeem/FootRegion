@@ -10,10 +10,10 @@ $isPub = (in_array('1', $user->groups));		// set flags when user group is '12' t
 ?>
 
 <?php if (!$isAdmin && !$isAbr) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS')); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_FOOTREGION_TOURNOIS')." - "; ?>
+	<h2><?php echo JText::_('COM_FOOTREGION_TOURNOIS'); ?>
 	</h2>
 
 	<?php echo $this->loadTemplate('items'); ?>
