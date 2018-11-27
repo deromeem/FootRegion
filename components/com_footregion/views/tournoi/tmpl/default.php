@@ -8,7 +8,7 @@ $isPub = (in_array('1', $user->groups));		// set flags when user group is '1' th
 
 ?>
 
-<?php if (!$isAdmin && !$isAbr) : ?>
+<?php if (!$isAdmin && !$isAbr && !$isPub) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 	<div class="form-inline form-inline-header">

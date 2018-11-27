@@ -9,7 +9,7 @@ $isAbr = (in_array('12', $user->groups));		// sets flag when user group is '1' t
 $isPub = (in_array('1', $user->groups));		// set flags when user group is '12' that is 'FootRegion Public
 ?>
 
-<?php if (!$isAdmin && !$isAbr) : ?>
+<?php if (!$isAdmin && !$isAbr && !$isPub) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS')); ?>
 <?php else : ?>
 
