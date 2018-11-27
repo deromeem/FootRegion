@@ -3,19 +3,25 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootregionModelTournois extends JModelList
+class FootregionModelSignalements extends JModelList
 {
 	public function __construct($config = array())
 	{
-		// pr�cise les colonnes activant le tri
+		// précise les colonnes activant le tri
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 't.id',
-				'nom', 't.nom',
-				'published', 't.published',
-				'hits', 't.hits',
-				'modified', 't.modified'
+				'id', 's.id',
+				'libelle', 's.libelle',
+				'arbitres', 's.arbitres_id',
+				'entraineurs', 's.entraineurs_id',
+				'alias', 's.alias',
+				'published', 's.published',
+				'created', 's.created',
+				'created_by', 's.created_by',
+				'modified', 's.modified',
+				'modified_by', 's.modified_by',
+				'hits', 's.hits'
 			);
 		}
 		parent::__construct($config);
@@ -37,53 +43,53 @@ class FootregionModelTournois extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
-
+		$this->setState('list.direction', $listOrder);
+		
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		parent::populateState('nom', 'ASC');
+		parent::populateState('libelle', 'ASC');
 	}
 
 	protected function _getListQuery()
 	{
-		// construit la requ�te d'affichage de la liste
+		// construit la requête d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('t.id, t.nom, t.published, t.hits, t.modified');
-		$query->from('#__footregion_tournois t');
-		
+		$query->select('s.id, s.libelle, s.arbitres_id, s.entraineurs_id, s.alias, s.published, s.created, s.created_by, s.modified, s.modified_by, s.hits');
+		$query->from('#__footregion_signalements s');
+
+		// Jointures 
+		$query->select('a.email AS arbitre')->join('LEFT', '#__footregion_arbitres AS a ON s.arbitres_id=a.id');
+		$query->select('e.email AS entraineur')->join('LEFT', '#__footregion_entraineurs AS e ON s.entraineurs_id=e.id');
+
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
-			// recherche prefix�e par 'id:'
+			// recherche prefixée par 'id:'
 			if (stripos($search, 'id:') === 0) {
-				$query->where('t.id = '.(int) substr($search, 3));
+				$query->where('s.id = '.(int) substr($search, 3));
 			}
 			else {
-				// recherche textuelle classique (sans pr�fixe)
+				// recherche textuelle classique (sans préfixe)
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 't.nom LIKE '.$search;
-				// Ajoute les clauses � la requ�te
+				$searches[]	= 's.libelle LIKE '.$search;
+				$searches[]	= 'u.nom LIKE '.$search;
+				// Ajoute les clauses é la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
 
-		// filtre les �l�ments publi�s
-		$query->where('t.published=1');
+		// filtre les éléments publics
+		$query->where('s.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
+		$orderCol = $this->getState('list.ordering', 'theme');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-//		echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
-
-
-//		$query	= $this->_db->getQuery(true);
-//		$query->select('t.id, t.nom, u.published, u.hits, u.modified');
-//		$query->from('#__footregion_tournois t');

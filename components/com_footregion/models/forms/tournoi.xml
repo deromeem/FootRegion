@@ -15,53 +15,10 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="text" label="COM_FOOTREGION_TOURNOIS_PRENOM"
-			description="COM_FOOTREGION_TOURNOIS_PRENOM"
-			size="40" class="inputbox" default="" required="true"
-		/>
-		<field name="civilites_id" type="sql" default="" label="COM_FOOTREGION_TOURNOIS_CIVILITE" 
-			description="COM_FOOTREGION_TOURNOIS_CIVILITE"
-			query="SELECT id, civilite FROM #__annuaire_civilites ORDER BY civilite" 
-			key_field="id" value_field="civilite" required="false"
-		/>
-		<field name="typestournois_id" type="sql" default="" label="COM_FOOTREGION_TOURNOIS_TYPETOURNOI" 
-			description="COM_FOOTREGION_TOURNOIS_TYPETOURNOI"
-			query="SELECT id, typeTournoi FROM #__annuaire_typestournois ORDER BY typeTournoi" 
-			key_field="id" value_field="typeTournoi" required="false"
-		/>
-		<field name="entreprises_id" type="sql" default="" label="COM_FOOTREGION_TOURNOIS_ENTREPRISE" 
-			description="COM_FOOTREGION_TOURNOIS_ENTREPRISE"
-			query="SELECT id, nom FROM #__annuaire_entreprises ORDER BY nom" 
-			key_field="id" value_field="nom" required="false"
-		/>
-		<field name="fonction" type="text" label="COM_FOOTREGION_TOURNOIS_FONCTION"
-			description="COM_FOOTREGION_TOURNOIS_FONCTION"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="email" type="text" label="COM_FOOTREGION_TOURNOIS_EMAIL"
-			description="COM_FOOTREGION_TOURNOIS_EMAIL"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="mobile" type="text" label="COM_FOOTREGION_TOURNOIS_MOBILE"
-			description="COM_FOOTREGION_TOURNOIS_MOBILE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="tel" type="text" label="COM_FOOTREGION_TOURNOIS_TEL"
-			description="COM_FOOTREGION_TOURNOIS_TEL"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field
-			name="commentaire" type="editor" label="COM_FOOTREGION_COMMENT"
-			description="COM_FOOTREGION_COMMENT"
-			class="inputbox"
-			filter="JComponentHelper::filterText"
-			buttons="true"
-			hide="readmore,pagebreak"
-		/>
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"
-		>
+		/>
 			<option value="1">
 				JPUBLISHED</option>
 			<option value="0">
