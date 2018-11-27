@@ -55,6 +55,10 @@ class FootRegionModelEquipes extends JModelList
 		$query->select('e.id, e.nom, clubs_id, e.categories_id, e.entraineurs_id, e.published, e.hits, e.modified');
 		$query->from('#__Footregion_Equipes e');
 
+		$query->from('#__footregion_entraineurs AS en')->join('LEFT', '#__footregion_joueurs AS j ON en.email=j.email');
+
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=en.email');
+		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
