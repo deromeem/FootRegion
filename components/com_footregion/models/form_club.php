@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/club.php';
 
-class FootregionModelForm_cl extends FootregionModelClub
+class FootregionModelForm_club extends FootregionModelClub
 {
 	protected $_context = 'club';
 

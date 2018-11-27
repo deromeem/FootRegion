@@ -11,7 +11,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 ?>
 
 <?php if (!$isAdmin) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_ANNUAIRE_RESTRICTED_ACCESS') ); ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_footregion_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
 	<script type="text/javascript">
@@ -27,12 +27,12 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 	</script>
 
 	<div class="edit item-page">
-		<form action="<?php echo JRoute::_('index.php?option=com_annuaire&a_id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate form-vertical">
+		<form action="<?php echo JRoute::_('index.php?option=com_footregion&a_id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate form-vertical">
 			
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_ANNUAIRE_CONTACT')." ".($isNew ? JText::_('COM_ANNUAIRE_ADD_PAR'): JText::_('COM_ANNUAIRE_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_footregion_CONTACT')." ".($isNew ? JText::_('COM_footregion_ADD_PAR'): JText::_('COM_footregion_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
@@ -51,9 +51,9 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 
 			<fieldset>
 				<ul class="nav nav-tabs">
-					<li><a href="#contact" data-toggle="tab"><?php echo JText::_('COM_ANNUAIRE_CONTACT'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_ANNUAIRE_ADVANCED'); ?></a></li>
-					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_ANNUAIRE_COMMENT'); ?></a></li>
+					<li><a href="#contact" data-toggle="tab"><?php echo JText::_('COM_footregion_CONTACT'); ?></a></li>
+					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_footregion_ADVANCED'); ?></a></li>
+					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_footregion_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="contact">
