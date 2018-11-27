@@ -13,7 +13,7 @@ class FootregionViewForm_joueur extends JViewLegacy
 		// initialise les variables
 		$this->state		= $this->get('State');
 		$this->item			= $this->get('Item');
-		$this->form			= $this->get('Form');
+		$this->form			= $this->get('Form_joueur');
 		$this->return_page	= $this->get('ReturnPage');
 		
 		// contrôle les erreurs

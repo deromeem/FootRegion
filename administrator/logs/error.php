@@ -8,3 +8,4 @@
 2018-11-25T16:24:05+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
 2018-11-25T17:55:06+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
 2018-11-26T08:35:09+00:00	INFO ::1	joomlafailure	Mot de passe invalide
+2018-11-27T13:56:16+00:00	INFO ::1	joomlafailure	Mot de passe invalide
