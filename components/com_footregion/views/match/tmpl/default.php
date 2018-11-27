@@ -36,7 +36,7 @@ $isJou = (in_array('15', $user->groups));
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_NOM'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->nom ?></h4>
+						<?php echo $this->item->nom ?>
 					</td>
 				</tr>
 				<tr>
@@ -44,7 +44,7 @@ $isJou = (in_array('15', $user->groups));
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_DATE_HEURE'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->date_heure ?></h4>
+						<?php echo $this->item->date_heure ?>
 					</td>
 				</tr>
 				<tr>
