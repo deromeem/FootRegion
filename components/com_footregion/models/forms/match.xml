@@ -5,8 +5,8 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="text" label="COM_FOOTREGION_CLUBS_NOM"
-			description="COM_FOOTREGION_CLUBS_NOM"
+		<field name="nom" type="text" label="COM_footregion_CONTACTS_NOM"
+			description="COM_footregion_CONTACTS_NOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
 		<field name="alias" type="text"
@@ -15,60 +15,44 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="text" label="COM_ANNUAIRE_CONTACTS_PRENOM"
-			description="COM_ANNUAIRE_CONTACTS_PRENOM"
+		<field name="prenom" type="text" label="COM_footregion_CONTACTS_PRENOM"
+			description="COM_footregion_CONTACTS_PRENOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
-		<field name="civilites_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_CIVILITE" 
-			description="COM_ANNUAIRE_CONTACTS_CIVILITE"
-			query="SELECT id, civilite FROM #__annuaire_civilites ORDER BY civilite" 
+		<field name="civilites_id" type="sql" default="" label="COM_footregion_CONTACTS_CIVILITE" 
+			description="COM_footregion_CONTACTS_CIVILITE"
+			query="SELECT id, civilite FROM #__footregion_civilites ORDER BY civilite" 
 			key_field="id" value_field="civilite" required="false"
 		/>
-		<field name="typescontacts_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_TYPECONTACT" 
-			description="COM_ANNUAIRE_CONTACTS_TYPECONTACT"
-			query="SELECT id, typeContact FROM #__annuaire_typescontacts ORDER BY typeContact" 
+		<field name="typescontacts_id" type="sql" default="" label="COM_footregion_CONTACTS_TYPECONTACT" 
+			description="COM_footregion_CONTACTS_TYPECONTACT"
+			query="SELECT id, typeContact FROM #__footregion_typescontacts ORDER BY typeContact" 
 			key_field="id" value_field="typeContact" required="false"
 		/>
-		<field name="entreprises_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_ENTREPRISE" 
-			description="COM_ANNUAIRE_CONTACTS_ENTREPRISE"
-			query="SELECT id, nom FROM #__annuaire_entreprises ORDER BY nom" 
+		<field name="entreprises_id" type="sql" default="" label="COM_footregion_CONTACTS_ENTREPRISE" 
+			description="COM_footregion_CONTACTS_ENTREPRISE"
+			query="SELECT id, nom FROM #__footregion_entreprises ORDER BY nom" 
 			key_field="id" value_field="nom" required="false"
 		/>
-		<field name="fonction" type="text" label="COM_ANNUAIRE_CONTACTS_FONCTION"
-			description="COM_ANNUAIRE_CONTACTS_FONCTION"
+		<field name="fonction" type="text" label="COM_footregion_CONTACTS_FONCTION"
+			description="COM_footregion_CONTACTS_FONCTION"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="email" type="text" label="COM_ANNUAIRE_CONTACTS_EMAIL"
-			description="COM_ANNUAIRE_CONTACTS_EMAIL"
+		<field name="email" type="text" label="COM_footregion_CONTACTS_EMAIL"
+			description="COM_footregion_CONTACTS_EMAIL"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="mobile" type="text" label="COM_ANNUAIRE_CONTACTS_MOBILE"
-			description="COM_ANNUAIRE_CONTACTS_MOBILE"
+		<field name="mobile" type="text" label="COM_footregion_CONTACTS_MOBILE"
+			description="COM_footregion_CONTACTS_MOBILE"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="tel" type="text" label="COM_ANNUAIRE_CONTACTS_TEL"
-			description="COM_ANNUAIRE_CONTACTS_TEL"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="sigle" type="text" label="COM_FOOTREGION_CLUBS_SIGLE"
-			description="COM_FOOTREGION_CLUBS_SIGLE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="adr_rue" type="text" label="COM_FOOTREGION_CLUBS_ADR_RUE"
-			description="COM_FOOTREGION_CLUBS_ADR_RUE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="adr_ville" type="text" label="COM_FOOTREGION_CLUBS_ADR_VILLE"
-			description="COM_FOOTREGION_CLUBS_ADR_VILLE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="adr_cp" type="text" label="COM_FOOTREGION_CLUBS_ADR_CP"
-			description="COM_FOOTREGION_CLUBS_ADR_CP"
+		<field name="tel" type="text" label="COM_footregion_CONTACTS_TEL"
+			description="COM_footregion_CONTACTS_TEL"
 			size="40" class="inputbox" default="" required="false"
 		/>
 		<field
-			name="commentaire" type="editor" label="COM_ANNUAIRE_COMMENT"
-			description="COM_ANNUAIRE_COMMENT"
+			name="commentaire" type="editor" label="COM_footregion_COMMENT"
+			description="COM_footregion_COMMENT"
 			class="inputbox"
 			filter="JComponentHelper::filterText"
 			buttons="true"
