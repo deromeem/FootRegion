@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootRegionViewEntraineur extends JViewLegacy
+class FootregionViewClubDetails extends JViewLegacy
 {
 	protected $item;
 	

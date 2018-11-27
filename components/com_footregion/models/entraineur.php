@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootRegionModelJoueur extends JModelItem
+class FootRegionModelEntraineur extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_footregion.joueur';
+	protected $_context = 'com_footregion.entraineur';
 
 	protected function populateState()
 	{
@@ -25,13 +25,10 @@ class FootRegionModelJoueur extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.alias, j.published, j.hits, j.modified');
-			$query->from('#__footregion_joueurs j');
+			$query->select('en.id, en.email, en.num_licence, en.alias, en.published, en.hits, en.modified');
+			$query->from('#__footregion_entraineurs en');
 
-			$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id = j.equipes_id');
-			$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
-
-			$query->where('j.id = ' . (int) $pk);
+			$query->where('en.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;

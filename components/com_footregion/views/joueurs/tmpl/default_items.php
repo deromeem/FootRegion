@@ -42,6 +42,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	<table class="table table-striped" id="articleList">
 		<thead>
 			<tr>
+			<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_NOM'), 'nom', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_NOM'), 'nom_equipe', $listDirn, $listOrder) ?>
+				</th>
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
@@ -58,6 +64,8 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
+					<td><?php echo $item->utilisateur ?></td>
+					<td><?php echo $item->equipe ?></td>
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
 					</td>

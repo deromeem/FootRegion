@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<metadata> 
+	<layout title="Détail d'un club"> 
+		<message> 
+			<![CDATA[Ecran de détail d'un club]]> 
+		</message> 
+	</layout> 
+
+	<fields name="request">
+		<fieldset name="request">
+			<field name="id" type="text"
+				label="ID club"
+				description="Saisir l'ID du club à lier à ce menu"
+				required="true" edit="false" clear="true"                         
+			/>
+		</fieldset>
+	</fields>
+</metadata>
