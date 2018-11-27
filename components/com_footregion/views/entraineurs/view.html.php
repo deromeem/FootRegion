@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.view');
  
-class AnnuaireViewContacts extends JViewLegacy
+class FootregionViewEntraineurs extends JViewLegacy
 {
 	protected $items;
 	
