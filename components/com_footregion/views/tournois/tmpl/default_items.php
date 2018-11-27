@@ -45,16 +45,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_TOURNOIS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_TOURNOIS_PRENOM'), 'prenom', $listDirn, $listOrder) ?>
-				</th>
 				<!-- <th class="title">Publié</th> -->
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_TOURNOIS_TYPETOURNOI'), 'typetournoi', $listDirn, $listOrder) ?>
-				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_TOURNOIS_ENTREPRISE'), 'entreprise', $listDirn, $listOrder) ?>
-				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
 		</thead>
@@ -65,13 +56,6 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
 					</td>
-					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->prenom ?></a>
-					</td>
-					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
-					<td><?php echo $item->typetournoi ?></td>
-					<td><?php echo $item->entreprise ?></td>
-					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>
