@@ -13,11 +13,6 @@ class FootregionModelTournois extends JModelList
 			$config['filter_fields'] = array(
 				'id', 't.id',
 				'nom', 't.nom',
-				'prenom', 't.prenom',
-				'fonction', 't.fonction',
-				'typetournoi', 't.tournoi_id',
-				'entreprise', 't.entreprise_id',
-				'email', 't.email',
 				'published', 't.published',
 				'hits', 't.hits',
 				'modified', 't.modified'
@@ -54,14 +49,8 @@ class FootregionModelTournois extends JModelList
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('t.id, t.nom, t.prenom, t.civilites_id, t.typestournois_id, t.entreprises_id, t.fonction, t.email, t.mobile, t.tel, t.published, t.hits, t.modified');
-		$query->from('#__footregion_tournois c');
-
-		// joint la table typestournois
-		$query->select('t.typeTournoi AS typetournoi')->join('LEFT', '#__footregion_typestournois AS t ON t.id=t.typestournois_id');
-
-		// joint la table entreprises
-		$query->select('e.nom AS entreprise')->join('LEFT', '#__footregion_entreprises AS e ON e.id=t.entreprises_id');		
+		$query->select('t.id, t.nom, t.published, t.hits, t.modified');
+		$query->from('#__footregion_tournois t');
 		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
@@ -76,14 +65,11 @@ class FootregionModelTournois extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 't.nom LIKE '.$search;
-				$searches[]	= 't.prenom LIKE '.$search;
-				$searches[]	= 't.typeTournoi LIKE '.$search;
-				$searches[]	= 'e.nom LIKE '.$search;
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-		
+
 		// filtre les �l�ments publi�s
 		$query->where('t.published=1');
 		
@@ -92,7 +78,12 @@ class FootregionModelTournois extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+//		echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
+
+
+//		$query	= $this->_db->getQuery(true);
+//		$query->select('t.id, t.nom, u.published, u.hits, u.modified');
+//		$query->from('#__footregion_tournois t');

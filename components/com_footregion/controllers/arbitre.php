@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 class FootregionControllerArbitre extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_a';
+	protected $view_item = 'form_arbitre';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -59,7 +59,7 @@ class FootregionControllerArbitre extends JControllerForm
 		return JURI::base()."/index.php?option=com_footregion&view=arbitres";		
 	}
 
-	public function getModel($name = 'form_a', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_arbitre', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

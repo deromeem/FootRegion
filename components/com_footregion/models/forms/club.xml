@@ -5,8 +5,8 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="text" label="COM_ANNUAIRE_CONTACTS_NOM"
-			description="COM_ANNUAIRE_CONTACTS_NOM"
+		<field name="nom" type="text" label="COM_FOOTREGION_CLUBS_NOM"
+			description="COM_FOOTREGION_CLUBS_NOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
 		<field name="alias" type="text"
@@ -48,6 +48,22 @@
 		/>
 		<field name="tel" type="text" label="COM_ANNUAIRE_CONTACTS_TEL"
 			description="COM_ANNUAIRE_CONTACTS_TEL"
+			size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="sigle" type="text" label="COM_FOOTREGION_CLUBS_SIGLE"
+			description="COM_FOOTREGION_CLUBS_SIGLE"
+			size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="adr_rue" type="text" label="COM_FOOTREGION_CLUBS_ADR_RUE"
+			description="COM_FOOTREGION_CLUBS_ADR_RUE"
+			size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="adr_ville" type="text" label="COM_FOOTREGION_CLUBS_ADR_VILLE"
+			description="COM_FOOTREGION_CLUBS_ADR_VILLE"
+			size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="adr_cp" type="text" label="COM_FOOTREGION_CLUBS_ADR_CP"
+			description="COM_FOOTREGION_CLUBS_ADR_CP"
 			size="40" class="inputbox" default="" required="false"
 		/>
 		<field

@@ -57,7 +57,7 @@ class FootRegionModelJoueurs extends JModelList
 		$query->from('#__Footregion_Joueurs j');
 
 		// joint la table utilisateurs
-		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
+		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=j.email');
 		
 		// joint la table equipes
 		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
