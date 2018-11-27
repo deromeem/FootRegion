@@ -55,6 +55,30 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13
 						<?php echo $this->item->adr_ville ?>
 					</td>
 				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_ADR_cp'); ?></span>
+					</td>
+					<td width="30%">
+						<?php echo $this->item->adr_cp ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_DIRECTEURS_NOM'); ?></span>
+					</td>
+					<td width="30%">
+						<?php echo $this->item->nomDirecteur ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_DIRECTEURS_PRENOM'); ?></span>
+					</td>
+					<td width="30%">
+						<?php echo $this->item->prenomDirecteur ?>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
