@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionModelDiscussion extends JModelItem
+class FootregionModelMessage extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_footregion.discussion';
+	protected $_context = 'com_footregion.message';
 
 	protected function populateState()
 	{
@@ -13,7 +13,7 @@ class FootregionModelDiscussion extends JModelItem
 		// Charge et mémorise l'état (state) de l'id depuis le contexte
 		$pk = $app->input->getInt('id');
 		$this->setState($this->_context.'.id', $pk);
-		$this->setState('discussion.id', $pk);
+		// $this->setState('discussion.id', $pk);
 	}
 
 	public function getItem($pk = null)
@@ -25,13 +25,13 @@ class FootregionModelDiscussion extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('d.theme, u.nom, u.prenom');
-			$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_discussions AS d ON u.id=d.utilisateurs_id');
+			$query->select('m.id, m.libelle, m.discussions_id, m.utilisateurs_id, m.alias, m.published, m.created, m.created_by, m.modified, m.modified_by, m.hits');
+			$query->from('#__footregion_messages m');
 
-			// joint la table message
-			$query->select('m.libelle AS libelle')->join('LEFT', '#__footregion_messages AS m ON d.id=m.discussions_id');
-			
-			$query->where('d.id = ' . (int) $pk);
+			// joint la table utilisateurs
+			//$query->select('u.nom AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=m.discussions_id');
+		
+			$query->where('m.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;

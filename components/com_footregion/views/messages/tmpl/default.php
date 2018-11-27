@@ -8,12 +8,12 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 ?>
 
 <?php if (!$isAdmin) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_ANNUAIRE_RESTRICTED_ACCESS') ); ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_ANNUAIRE_OPTIONS')." : ".JText::_('COM_ANNUAIRE_ENTREPRISES')." - "; ?>
-		<a href="<?php echo JRoute::_('index.php?option=com_annuaire&view=contacts'); ?>">
-			<?php echo JText::_('COM_ANNUAIRE_CONTACTS'); ?>
+	<h2><?php echo JText::_('COM_FOOTREGION_OPTIONS')." : ".JText::_('COM_FOOTREGION_MESSAGES')." - "; ?>
+		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=messages'); ?>">
+			<?php echo JText::_('COM_FOOTREGION_MESSAGES'); ?>
 		</a>
 	</h2>
 

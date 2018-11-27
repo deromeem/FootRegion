@@ -7,7 +7,7 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -69,10 +69,26 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('utilisateur_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('libelle'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('utilisateur_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('libelle'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
 									</td>
 								</tr>
 							</tbody>
