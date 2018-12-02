@@ -13,7 +13,7 @@ class AppFootregionWeb extends JApplicationCms
 		require_once JPATH_CONFIGURATION.'/configuration.php';
 	}
 
-	private function LoadViewResult($view, $id = 0, $email = "")
+	private function LoadViewResult($view, $id = 0, $did = 0, $email = "")
 	{
 		$this->_db = JFactory::getDBO();
 		$query = $this->_db->getQuery(true);
@@ -21,6 +21,9 @@ class AppFootregionWeb extends JApplicationCms
 		$query->from($this->_db->quoteName('#__vue_'.$view));
 		if ($id != 0){
 			$query->where('id = '.$id);
+		}
+		if ($did != 0){
+			$query->where('did = '.$did);
 		}
 		if ($email != ""){
 			$query->where('email = "'.$email.'"');
@@ -39,6 +42,7 @@ class AppFootregionWeb extends JApplicationCms
 		$pwd = "";
 		$task = "";
 		$id = 0;
+		$did = 0;
 		$email = "";
 		
 		// Récupération des paramètres de connexion de l'url (en GET ou POST) :
@@ -60,6 +64,12 @@ class AppFootregionWeb extends JApplicationCms
 			$id = $_GET['id'];
 		} elseif (isset($_POST["id"])) {
 			$id = $_POST['id'];
+		}
+		// Récupération du paramètre did, si existant, de l'url (en GET ou POST) :
+		if (isset($_GET["did"])) {
+			$did = $_GET['did'];
+		} elseif (isset($_POST["did"])) {
+			$did = $_POST['did'];
 		}
 		// echo ("DEBUG login = " . $login . " pwd = " . $pwd . " task =>" . $task . " id =>" . $id . "<");    // TEST/DEBUG
 		
@@ -98,7 +108,13 @@ class AppFootregionWeb extends JApplicationCms
 				
 				// Recherche la vue éventuellement demandée :
 				if ($task !== ""){
-					$response[$task] = $this->LoadViewResult($task, $id, $email);
+					if (($task == "matchs") or ($task == "joueurs")) {
+						$response[$task] = $this->LoadViewResult($task, $id);
+					} elseif ($task == "messages") {
+						$response[$task] = $this->LoadViewResult($task, $id, $did);
+					} else {
+						$response[$task] = $this->LoadViewResult($task, $id, 0, $email);
+					}
 				}
 				echo json_encode($response);
 			}
