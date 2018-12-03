@@ -10,4 +10,4 @@
 2018-11-26T08:35:09+00:00	INFO ::1	joomlafailure	Mot de passe invalide
 2018-11-27T13:56:16+00:00	INFO ::1	joomlafailure	Mot de passe invalide
 2018-11-27T13:37:09+00:00	INFO ::1	cookiefailure	Un mot de passe vide n'est pas autorisé
-2018-11-27T13:37:09+00:00	INFO ::1	updater	Loading information from update site #1 with name "Joomla! Core" and URL https://update.joomla.org/core/list.xml took 0.12 seconds
+2018-11-27T13:37:09+00:00	INFO ::1	updater	Loading information from update site #1 with name "Joomla! Core" and URL https://update.joomla.org/core/list.xml took 0.12 seconds2018-12-03T08:30:37+00:00	INFO ::1	joomlafailure	Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.
