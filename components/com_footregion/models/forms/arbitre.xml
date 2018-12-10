@@ -21,8 +21,8 @@
 			query="SELECT id, prenom FROM #__footregion_utilisateurs ORDER BY prenom" 
 			key_field="id" value_field="prenom" default="" required="true"
 		/>
-		<field name="email" type="text" default="" label="COM_FOOTREGION_EMAIL" 
-			description="COM_FOOTREGION_EMAIL"
+		<field name="email" type="text" default="" label="COM_FOOTREGION_ARBITRES_EMAIL" 
+			description="COM_FOOTREGION_ARBITRES_EMAIL"
 			size="40" class="inputbox" required="false"
 		/>
 		<field

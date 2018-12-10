@@ -29,7 +29,8 @@ class FootRegionModelJoueur extends JModelItem
 			$query->from('#__footregion_joueurs j');
 
 			$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id = j.equipes_id');
-			$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=j.id');
+			$query->select('utilisateurs.nom AS nom')->join('LEFT', '#__footregion_utilisateurs AS utilisateurs ON utilisateurs.email=j.email');
+			$query->select('u.prenom AS prenom')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=j.email');
 
 			$query->where('j.id = ' . (int) $pk);
 			$db->setQuery($query);

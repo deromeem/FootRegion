@@ -7,19 +7,13 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-<<<<<<< HEAD
+
 $isAdmin = (in_array('10', $user->groups));	
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
 $isEntraineur = (in_array('14', $user->groups));
 $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
-=======
-$isAdmin = (in_array('10', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
-$isArbitre = (in_array('12', $user->groups));
-$isDirecteur = (in_array('13', $user->groups));
-$isEntraineur = (in_array('14', $user->groups));	
-$isJoueur = (in_array('15', $user->groups));
->>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
+
 ?>
 
 <?php if (!$isAdmin && !$isArbitre && !$isDirecteur && !$isEntraineur && !$isJoueur) : ?>
@@ -129,10 +123,10 @@ $isJoueur = (in_array('15', $user->groups));
 							<?php if ($isDirecteur) : ?>
 								<tr>
 										<td width="20%" class="nowrap right">
-											<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
+											<div class="control-label"><?php echo $this->form->getLabel('Date_affiliation'); ?></div>
 										</td>
 										<td width="80%">
-											<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
+											<div class="controls"><?php echo $this->form->getInput('Date_affiliation'); ?></div>
 										</td>
 									</tr>
 							<?php endif; ?>
@@ -140,10 +134,10 @@ $isJoueur = (in_array('15', $user->groups));
 								
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -166,10 +160,10 @@ $isJoueur = (in_array('15', $user->groups));
 							<?php if ($isEntraineur) : ?>
 							<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence_j'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('num_licence_j'); ?></div>
 									</td>
 								</tr>
 							<?php endif; ?>

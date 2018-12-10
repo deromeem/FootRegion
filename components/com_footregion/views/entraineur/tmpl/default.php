@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -37,15 +37,6 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 					</td>
 					<td width="80%">
 						<?php echo $this->item->num_licence ?>
-					</td>
-				</tr>
-				
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->commentaire ?>
 					</td>
 				</tr>
 			</tbody>

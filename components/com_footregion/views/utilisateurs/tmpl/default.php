@@ -13,8 +13,8 @@ $isJoueur = (in_array('15', $user->groups));
 <?php else : ?>
 
 	<h2><?php echo JText::_('COM_FOOTREGION_OPTIONS')." : ".JText::_('COM_FOOTREGION_UTILISATEURS')." - "; ?>
-		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=entreprises'); ?>">
-			<?php echo JText::_('COM_FOOTREGION_ENTREPRISES'); ?>
+		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=utilisateur'); ?>">
+			<?php echo JText::_('COM_FOOTREGION_UTILISATEURS'); ?>
 		</a>
 	</h2>
 

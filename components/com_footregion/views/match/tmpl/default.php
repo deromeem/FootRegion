@@ -21,9 +21,9 @@ $isJou = (in_array('15', $user->groups));
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=matchs'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
 		</div>	
-		<?php if (!$isArb && !$isArb && !$isDir && !$isEnt && !$isJou) : ?>
+		<?php if (!$isArb && !$isArb && !$isDir && !$isJou) : ?>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_match&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
 		<?php endif; ?>

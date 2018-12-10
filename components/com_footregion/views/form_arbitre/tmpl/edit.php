@@ -52,7 +52,7 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 			<fieldset>
 				<ul class="nav nav-tabs">
 					<li><a href="#arbitre" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ARBITRE'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
+					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTEGION_ADVANCED'); ?></a></li>
 					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
@@ -61,11 +61,36 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('nom_util'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('nom_util'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
 									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+									</td>
+								</tr>
 								</tr>
 							</tbody>
 						</table>
@@ -76,10 +101,26 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('prenom_util'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('prenom_util'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -87,6 +128,9 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
+					</div>
+					<div class="tab-pane" id="commentaire">
+						<?php echo $this->form->getControlGroup('commentaire'); ?>
 					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>
