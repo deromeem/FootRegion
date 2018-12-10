@@ -28,10 +28,9 @@
             description="COM_FOOTREGION_UTILISATEURS_MOBILE"
             size="40" class="inputbox" default="" required="false"
         />        
-		<field name="date_naiss" type="calendar" label="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
-            description="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
-			class="inputbox" default="" required="false" filter="user_utc" format="%Y-%m-%d"
-			showtime="false" todaybutton="false" filltable="false" translateformat="true"
+		<field name="date_naiss" type="text" label="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
+			description="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
+			size="40" class="inputbox" default="" required="false"
         />
 
 		<field id="published" name="published" type="list"

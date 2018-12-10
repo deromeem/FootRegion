@@ -25,7 +25,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'profil.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'contact.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
@@ -38,16 +38,16 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEURS')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_FOOTREGION_CONTACT')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('profil.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('contact.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('profil.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('contact.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>
@@ -73,6 +73,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
@@ -81,22 +82,25 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Mobile'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Mobile'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Alias'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Alias'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
@@ -105,12 +109,13 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('fonction'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('fonction'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -130,6 +135,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 										</td>
 									</tr>
 							<?php endif; ?>
+
 							<?php if ($isJoueur) : ?>
 								
 								<tr>
@@ -157,6 +163,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 									</td>
 								</tr>
 							<?php endif; ?>
+
 							<?php if ($isEntraineur) : ?>
 							<tr>
 									<td width="20%" class="nowrap right">
@@ -170,7 +177,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 							</tbody>
 
 						</table>				
-
+					</div>
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
 					</div>

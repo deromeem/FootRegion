@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionViewForm_profil extends JViewLegacy
+class FootregionViewform_utilisateur extends JViewLegacy
 {
 	protected $form;
 	protected $item;
