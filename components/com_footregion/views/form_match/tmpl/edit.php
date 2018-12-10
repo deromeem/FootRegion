@@ -7,7 +7,7 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -19,7 +19,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'contact.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'match.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
@@ -32,16 +32,16 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_footregion_CONTACT')." ".($isNew ? JText::_('COM_footregion_ADD_PAR'): JText::_('COM_footregion_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_footregion_match')." ".($isNew ? JText::_('COM_footregion_ADD_PAR'): JText::_('COM_footregion_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('contact.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('match.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('contact.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('match.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>
@@ -51,60 +51,68 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 
 			<fieldset>
 				<ul class="nav nav-tabs">
-					<li><a href="#contact" data-toggle="tab"><?php echo JText::_('COM_footregion_CONTACT'); ?></a></li>
+					<li><a href="#match" data-toggle="tab"><?php echo JText::_('COM_footregion_match'); ?></a></li>
 					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_footregion_ADVANCED'); ?></a></li>
 					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_footregion_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane active" id="contact">
+					<div class="tab-pane active" id="match">
 						<table class="table">
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_rue'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_rue'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('civilites_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_ville'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('civilites_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_ville'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('typescontacts_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_cp'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('typescontacts_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('entreprises_id'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('equipes_invite_id'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('entreprises_id'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('equipes_invite_id'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('fonction'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('equipes_domicile_id'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('fonction'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('equipes_domicile_id'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('entraineurs_visiteur_id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('entraineurs_visiteur_id'); ?></div>
 									</td>
 								</tr>
 							</tbody>

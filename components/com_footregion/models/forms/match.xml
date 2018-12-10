@@ -5,8 +5,8 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="text" label="COM_footregion_CONTACTS_NOM"
-			description="COM_footregion_CONTACTS_NOM"
+		<field name="nom" type="text" label="COM_footregion_matchS_NOM"
+			description="COM_footregion_matchS_NOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
 		<field name="alias" type="text"
@@ -15,39 +15,47 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="text" label="COM_footregion_CONTACTS_PRENOM"
-			description="COM_footregion_CONTACTS_PRENOM"
+		<field name="adr_rue" type="text" label="COM_FOOTREGION_MATCHS_ADR_RUE"
+			description="COM_FOOTREGION_MATCHS_ADR_RUE"
 			size="40" class="inputbox" default="" required="true"
 		/>
-		<field name="civilites_id" type="sql" default="" label="COM_footregion_CONTACTS_CIVILITE" 
-			description="COM_footregion_CONTACTS_CIVILITE"
-			query="SELECT id, civilite FROM #__footregion_civilites ORDER BY civilite" 
-			key_field="id" value_field="civilite" required="false"
+		<field name="adr_ville" type="text" label="COM_FOOTREGION_MATCHS_ADR_VILLE"
+			description="COM_FOOTREGION_MATCHS_ADR_VILLE"
+			size="40" class="inputbox" default="" required="true"
 		/>
-		<field name="typescontacts_id" type="sql" default="" label="COM_footregion_CONTACTS_TYPECONTACT" 
-			description="COM_footregion_CONTACTS_TYPECONTACT"
-			query="SELECT id, typeContact FROM #__footregion_typescontacts ORDER BY typeContact" 
-			key_field="id" value_field="typeContact" required="false"
+		<field name="adr_cp" type="text" label="COM_FOOTREGION_MATCHS_ADR_CP"
+			description="COM_FOOTREGION_MATCHS_ADR_CP"
+			size="40" class="inputbox" default="" required="true"
 		/>
-		<field name="entreprises_id" type="sql" default="" label="COM_footregion_CONTACTS_ENTREPRISE" 
-			description="COM_footregion_CONTACTS_ENTREPRISE"
-			query="SELECT id, nom FROM #__footregion_entreprises ORDER BY nom" 
+		<field name="equipes_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS" 
+			description="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS"
+			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom"
 			key_field="id" value_field="nom" required="false"
 		/>
-		<field name="fonction" type="text" label="COM_footregion_CONTACTS_FONCTION"
-			description="COM_footregion_CONTACTS_FONCTION"
+		<field name="equipes_domicile_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX" 
+			description="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX"
+			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
+		/>
+		<field name="entraineurs_visiteur_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS" 
+			description="COM_FOOTREGION_MATCHS_ENTRAINEURS_VISITEUR"
+			query="SELECT id, email FROM #__footregion_entraineurs ORDER BY email" 
+			key_field="id" value_field="email" required="false"
+		/>
+		<field name="fonction" type="text" label="COM_footregion_matchS_FONCTION"
+			description="COM_footregion_matchS_FONCTION" 
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="email" type="text" label="COM_footregion_CONTACTS_EMAIL"
-			description="COM_footregion_CONTACTS_EMAIL"
+		<field name="email" type="text" label="COM_footregion_matchS_EMAIL"
+			description="COM_footregion_matchS_EMAIL"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="mobile" type="text" label="COM_footregion_CONTACTS_MOBILE"
-			description="COM_footregion_CONTACTS_MOBILE"
+		<field name="mobile" type="text" label="COM_footregion_matchS_MOBILE"
+			description="COM_footregion_matchS_MOBILE"
 			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="tel" type="text" label="COM_footregion_CONTACTS_TEL"
-			description="COM_footregion_CONTACTS_TEL"
+		<field name="tel" type="text" label="COM_footregion_matchS_TEL"
+			description="COM_footregion_matchS_TEL"
 			size="40" class="inputbox" default="" required="false"
 		/>
 		<field
