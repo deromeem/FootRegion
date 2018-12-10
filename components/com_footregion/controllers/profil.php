@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 class FootregionControllerUtilisateur extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_profil';
+	protected $view_item = 'form_utilisateur';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -59,7 +59,7 @@ class FootregionControllerUtilisateur extends JControllerForm
 		return JURI::base()."/index.php?option=com_footregion&view=utilisateur";		
 	}
 
-	public function getModel($name = 'form_profil', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_utilisateur', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;
