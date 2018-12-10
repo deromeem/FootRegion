@@ -61,10 +61,10 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('nom_util'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('nom_util'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -76,10 +76,10 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('prenom_util'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('prenom_util'); ?></div>
 									</td>
 								</tr>
 							</tbody>

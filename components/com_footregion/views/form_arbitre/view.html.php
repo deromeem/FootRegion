@@ -13,7 +13,7 @@ class FootregionViewForm_arbitre extends JViewLegacy
 		// initialise les variables
 		$this->state		= $this->get('State');
 		$this->item			= $this->get('Item');
-		$this->form			= $this->get('Form_arbitre');
+		$this->form			= $this->get('Form_a');
 		$this->return_page	= $this->get('ReturnPage');
 		
 		// contrôle les erreurs
