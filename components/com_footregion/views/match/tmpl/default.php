@@ -21,9 +21,9 @@ $isJou = (in_array('15', $user->groups));
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=matchs'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
 		</div>	
-		<?php if (!$isArb && !$isArb && !$isDir && !$isEnt && !$isJou) : ?>
+		<?php if (!$isArb && !$isArb && !$isDir && !$isJou) : ?>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_match&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
 		<?php endif; ?>
@@ -36,7 +36,7 @@ $isJou = (in_array('15', $user->groups));
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_NOM'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->nom ?></h4>
+						<?php echo $this->item->nom ?>
 					</td>
 				</tr>
 				<tr>
@@ -44,7 +44,7 @@ $isJou = (in_array('15', $user->groups));
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_MATCHS_DATE_HEURE'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->date_heure ?></h4>
+						<?php echo $this->item->date_heure ?>
 					</td>
 				</tr>
 				<tr>

@@ -1,2 +1,52 @@
 http://localhost/footregion/api/index.php?task=joueurs&login=mdupond&pwd=123456
 http://localhost/footregion/api/index.php?task=joueurs&id=2&login=mdupond&pwd=123456
+
+http://localhost/footregion/api/index.php?task=messages&did=5&login=mdupond&pwd=123456
+http://localhost/footregion/api/index.php?task=messages_emis&login=mdupond&pwd=123456
+
+
+footregion_vue_joueurs :
+========================
+select `u`.`id` AS `id`,`u`.`nom` AS `nom`,`u`.`prenom` AS `prenom`,`u`.`email` AS `email`,`j`.`poste` AS `poste`,`j`.`num_licence` AS `licence`,`j`.`date_naiss` AS `date_naiss`,`e`.`nom` AS `equipe`
+from ((`footregion_footregion_utilisateurs` `u`
+join `footregion_footregion_joueurs` `j` on((`u`.`email` = `j`.`email`)))
+join `footregion_footregion_equipes` `e` on((`j`.`equipes_id` = `e`.`id`))) ;
+
+footregion_vue_messages :
+=========================
+SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+FROM footregion_footregion_messages m
+LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
+WHERE m.published=1
+ORDER BY m.discussions_id asc, created desc;
+
+footregion_vue_messages_emis :
+==============================
+SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+FROM footregion_footregion_messages m
+LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
+WHERE m.published=1
+ORDER BY m.discussions_id asc, created desc;
+
+footregion_vue_messages_discussions :
+=====================================
+SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, m.libelle AS message, d.theme AS theme, CONCAT(ud.nom, " ", ud.prenom) AS lanceur
+FROM footregion_footregion_messages m
+LEFT JOIN footregion_footregion_discussions AS d ON d.id=m.discussions_id
+LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
+LEFT JOIN footregion_footregion_utilisateurs AS ud ON ud.id=d.utilisateurs_id
+WHERE m.published=1
+ORDER BY theme asc, created desc;
+
+footregion_vue_matchs :
+=======================
+SELECT m.id, m.nom, m.score_domicile, m.score_invite, m.tournois_id, equipes_domicile_id, equipes_invite_id, m.adr_rue, m.adr_ville, m.adr_cp, m.coord_gps, m.published, m.hits, m.modified,e.nom AS equipe_invite,ed.nom AS equipe_domicile,einv.email AS entraineur_invite,ein.email AS entraineur_initiateur,t.nom AS tournoi,s.statut AS statut
+FROM footregion_footregion_matchs m
+LEFT JOIN footregion_footregion_equipes AS e ON e.id=m.equipes_invite_id
+LEFT JOIN footregion_footregion_equipes AS ed ON ed.id=m.equipes_domicile_id
+LEFT JOIN footregion_footregion_entraineurs AS einv ON einv.id=m.entraineurs_invite_id
+LEFT JOIN footregion_footregion_entraineurs AS ein ON ein.id=m.entraineurs_initiateur_id
+LEFT JOIN footregion_footregion_tournois AS t ON t.id=m.tournois_id
+LEFT JOIN footregion_footregion_statuts AS s ON s.id=m.statuts_id
+WHERE (m.published=0 OR m.published=1)
+ORDER BY modified desc;

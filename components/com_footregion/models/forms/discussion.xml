@@ -15,8 +15,16 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-        <field name="activite" type="text" label="COM_FOOTREGION_DISCUSSIONS_UTILISATEUR_ID"
-            description="COM_FOOTREGION_DISCUSSIONS_UTILISATEUR_ID"
+        <field name="activite" type="text" label="COM_FOOTREGION_MESSAGES_LIBELLE"
+            description="COM_FOOTREGION_MESSAGES_LIBELLE"
+            size="40" class="inputbox" default="" required="false"
+        />
+		<field name="activite" type="text" label="COM_FOOTREGION_UTILISATEURS_NOM"
+            description="COM_FOOTREGION_UTILISATEURS_NOM"
+            size="40" class="inputbox" default="" required="false"
+        />
+		<field name="activite" type="text" label="COM_FOOTREGION_UTILISATEURS_PRENOM"
+            description="COM_FOOTREGION_UTILISATEURS_PRENOM"
             size="40" class="inputbox" default="" required="false"
         />          
 		<field

@@ -17,18 +17,26 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 				<span class="icon-cancel"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_a&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_arbitre&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
 		</div>	
 	</div>
 	<div>
 		<table class="table">
-			<tbody>
+		<tbody>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_ID'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_NOM'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->id ?></h4>
+						<?php echo $this->item->nom_util ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_ARBITRES_PRENOM'); ?></span>
+					</td>
+					<td width="80%">
+						<?php echo $this->item->prenom_util ?>
 					</td>
 				</tr>
 				<tr>
@@ -37,10 +45,6 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 					</td>
 					<td width="80%">
 						<?php echo $this->item->email ?>
-					</td>
-				</tr>
-					<td width="80%">
-						<!--<a href="<?php // echo JRoute::_('index.php?option=com_footregion&view=arbitre&id='.(int) $this->item->entreprises_id); ?>"><?php // echo $this->item->entreprise ?></a>-->
 					</td>
 				</tr>
 			</tbody>

@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionControllerProfil extends JControllerForm
+class FootRegionControllerEquipe extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_profil';
+	protected $view_item = 'form_equipe';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -13,7 +13,6 @@ class FootregionControllerProfil extends JControllerForm
 	{
 		if (!parent::add())
 		{
-			// redirige à la page de retour
 			$this->setRedirect($this->getReturnPage());
 		}
 	}
@@ -47,7 +46,6 @@ class FootregionControllerProfil extends JControllerForm
 	protected function getReturnPage()
 	{
 		// $return = $this->input->get('return', null, 'base64');
-
 		// if (empty($return) || !JUri::isInternal(base64_decode($return)))
 		// {
 			// return JUri::base();
@@ -55,11 +53,11 @@ class FootregionControllerProfil extends JControllerForm
 		// else
 		// {
 			// return base64_decode($return);
-		// }
-		return JURI::base()."/index.php?option=com_footregion&view=profils";		
+		// }		
+		return JURI::base()."/index.php?option=com_annuaire&view=equipe";		
 	}
 
-	public function getModel($name = 'form_profil', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_equipe', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

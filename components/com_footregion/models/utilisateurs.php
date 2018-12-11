@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
  
 jimport('joomla.application.component.modellist');
  
-class FootregionModelProfil extends JModelList
+class FootregionModelUtilisateurs extends JModelList
 {
 	public function __construct($config = array())
 	{
@@ -34,8 +34,8 @@ class FootregionModelProfil extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
-		$this->setState('filter.pay', $pay);
+		//$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
+		//$this->setState('filter.pay', $pay);
 
 		$user = $this->getUserStateFromRequest($this->context.'.filter.user', 'filter_user', '');
 		$this->setState('filter.user', $user);
@@ -53,6 +53,16 @@ class FootregionModelProfil extends JModelList
 	{
 		// construit la requete d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
+
+		$query->select('j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.alias, j.published, j.created, j.modified, j.hits, j.created_by, j.modified_by');
+		$query->from('#__footregion_joueurs AS j');
+
+		$query->select('e.num_licence, e.alias, e.published, e.created, e.modified, e.hits, e.created_by, e.modified_by');
+		$query->from('#__footregion_entraineurs AS e');
+
+		$query->select('d.date_affectation, d.alias, d.published, d.created, d.modified, d.hits, d.created_by, d.modified_by');
+		$query->from('#__footregion_directeurs AS d');
+		
 		$query->select('u.id, u.nom, u.prenom, u.mobile, u.email, u.alias, u.published, u.created, u.modified, u.hits, u.created_by, u.modified_by');
 		$query->from('#__footregion_utilisateurs u');
 

@@ -7,10 +7,16 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+
+$isAdmin = (in_array('10', $user->groups));	
+$isArbitre = (in_array('12', $user->groups));
+$isDirecteur = (in_array('13', $user->groups));
+$isEntraineur = (in_array('14', $user->groups));
+$isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+
 ?>
 
-<?php if (!$isAdmin) : ?>
+<?php if (!$isAdmin && !$isArbitre && !$isDirecteur && !$isEntraineur && !$isJoueur) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
@@ -19,7 +25,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'profil.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'utilisateur.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
@@ -32,16 +38,16 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEURS')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEUR')." ".($isNew ? JText::_('COM_FOOTREGION_MODIF_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('profil.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('utilisateur.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('profil.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('utilisateur.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>
@@ -67,6 +73,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
@@ -75,53 +82,7 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
 									</td>
 								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Mobile'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Mobile'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Alias'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Alias'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Date d affiliation'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Date d affiliation'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Numéro de licence'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Numéro de licence'); ?></div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-									</td>
-								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
@@ -130,12 +91,50 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
 									</td>
 								</tr>
+
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Equipe'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Equipe'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
+									</td>
+								</tr>
+
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tab-pane" id="avance">
+						<table class="table">
+							<tbody>
+							<?php if ($isDirecteur) : ?>
+								<tr>
+										<td width="20%" class="nowrap right">
+											<div class="control-label"><?php echo $this->form->getLabel('Date_affiliation'); ?></div>
+										</td>
+										<td width="80%">
+											<div class="controls"><?php echo $this->form->getInput('Date_affiliation'); ?></div>
+										</td>
+									</tr>
+							<?php endif; ?>
+
+							<?php if ($isJoueur) : ?>
+								
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -146,16 +145,44 @@ $isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('Poste'); ?></div>
 									</td>
 								</tr>
-							</tbody>
-						</table>				
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
 
-						<input type="hidden" name="task" value="" />
-						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
+							<?php if ($isEntraineur) : ?>
+							<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence_j'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('num_licence_j'); ?></div>
+									</td>
+								</tr>
+							<?php endif; ?>
+							</tbody>
+
+						</table>				
 					</div>
+					
 					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
+						<table class="table">
+							<tbody>
+								<div class="tab-pane" id="commentaire">
+								<?php echo $this->form->getControlGroup('commentaire'); ?>
+							</tbody>
+						</table>
 					</div>
-					</div>
+
+					<input type="hidden" name="task" value="" />
+					<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
+
+				</div>
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>
 		</form>

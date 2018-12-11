@@ -11,7 +11,14 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-        
+        <field name="nom" type="text" label="COM_FOOTREGION_UTILISATEURS_NOM"
+            description="COM_FOOTREGION_UTILISATEURS_NOM"
+            size="40" class="inputbox" default="" required="true"
+        />        
+		<field name="prenom" type="text" label="COM_FOOTREGION_UTILISATEURS_PRENOM"
+            description="COM_FOOTREGION_UTILISATEURS_PRENOM"
+            size="40" class="inputbox" default="" required="true"
+        />         
         <field name="email" type="text" label="COM_FOOTREGION_JOUEURS_EMAIL"
             description="COM_FOOTREGION_JOUEURS_EMAIL"
             size="40" class="inputbox" default="" required="true"

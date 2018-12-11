@@ -30,7 +30,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<i class="icon-search"></i></button>
 		</div>
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_a&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_arbitre&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -46,6 +46,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_ID'), 'id', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_NOM'), 'nom', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
@@ -57,6 +60,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<tr class="row<?php echo $i % 2; ?>">
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->id ?></a>
+					</td>
+					<td>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->utilisateur ?></a>
 					</td>
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>

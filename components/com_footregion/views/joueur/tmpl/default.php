@@ -17,13 +17,26 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 				<span class="icon-cancel"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_j&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_joueur&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
 	</div>	
 	<div>
 		<table class="table">
 			<tbody>
+				<tr>
+					<!--<td width="20%" class="nowrap right">
+						<span class="label"><?php // echo JText::_('COM_FOOTREGION_JOUEURS_NOM'); ?></span>
+					</td>-->
+					<td width="80%">
+						<h4><?php echo $this->item->nom; ?></h4>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%">
+						<h4><?php echo $this->item->prenom; ?></h4>
+					</td>
+				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_JOUEURS_EMAIL'); ?></span>
@@ -61,7 +74,7 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_JOUEURS_EQUIPES_ID'); ?></span>
 					</td>
 					<td width="80%">						
-							<?php echo $this->item->equipes_id; ?>
+							<?php echo $this->item->equipe; ?>
 					</td>
 				</tr>
 			</tbody>

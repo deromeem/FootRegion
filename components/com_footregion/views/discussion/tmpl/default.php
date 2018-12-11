@@ -2,8 +2,12 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
+<<<<<<< HEAD
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+=======
 $isAdm = (in_array('11', $user->groups));		// sets flag when user group is '11' that is 'FootRegion Administrateur 
 $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur 
+>>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
 ?>
 
 <?php if (!$isAdm && !$isDir) : ?>
@@ -35,18 +39,26 @@ $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' 
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEUR_ID'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_MESSAGES_LIBELLE'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->utilisateur_id ?></h4>
+						<h4><?php echo $this->item->libelle ?></h4>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_NOM'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->commentaire ?>
+						<h4><?php echo $this->item->nom ?></h4>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" class="nowrap right">
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_PRENOM'); ?></span>
+					</td>
+					<td width="80%">
+						<h4><?php echo $this->item->prenom ?></h4>
 					</td>
 				</tr>
 			</tbody>

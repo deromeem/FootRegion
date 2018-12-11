@@ -61,11 +61,36 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 									</td>
 									<td width="80%">
 										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
 									</td>
+								</tr>
 								</tr>
 							</tbody>
 						</table>
@@ -80,6 +105,22 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 									</td>
 									<td width="80%">
 										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
 									</td>
 								</tr>
 							</tbody>

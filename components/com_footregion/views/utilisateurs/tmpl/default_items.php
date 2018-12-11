@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=utilisateurs&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=utilisateur&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
@@ -30,7 +30,11 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<i class="icon-search"></i></button>
 		</div>
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_c&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+<<<<<<< HEAD
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=Form_utilisateur&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+=======
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_utilisateur&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+>>>>>>> ec5812df77e54b6e399eb9a7a34881e2806eabf1
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -43,17 +47,17 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CONTACTS_NOM'), 'nom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CONTACTS_PRENOM'), 'prenom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_PRENOM'), 'prenom', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CONTACTS_TYPECONTACT'), 'typecontact', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_MOBILE'), 'mobile', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CONTACTS_ENTREPRISE'), 'entreprise', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
@@ -68,9 +72,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->prenom ?></a>
 					</td>
-					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
-					<td><?php echo $item->typecontact ?></td>
-					<td><?php echo $item->entreprise ?></td>
+					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'utilisateurs.', true); ?></td> -->
+					<td><?php echo $item->nom ?></td>
+					<td><?php echo $item->prenom ?></td>
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
 			<?php endforeach; ?>

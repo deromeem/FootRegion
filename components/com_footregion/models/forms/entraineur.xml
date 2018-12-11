@@ -4,43 +4,22 @@
 		<field name="id" type="hidden" />
 
 		<field name="asset_id" type="hidden" filter="unset" />
-		
-		<field name="nom" type="text" label="COM_FOOTREGION_PROFILS_NOM"
-			description="COM_FOOTREGION_PROFILS_NOM"
-			size="40" class="inputbox" default="" required="true"
-		/>
+
 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
 			description="JFIELD_ALIAS_DESC"
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="text" label="COM_FOOTREGION_PROFILS_PRENOM"
-			description="COM_FOOTREGION_PROFILS_PRENOM"
-			size="40" class="inputbox" default="" required="true"
-		/>
-
-		<field name="fonction" type="text" label="COM_FOOTREGION_PROFILS_FONCTION"
-			description="COM_FOOTREGION_PROFILS_FONCTION"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="email" type="text" label="COM_FOOTREGION_PROFILS_EMAIL"
-			description="COM_FOOTREGION_PROFILS_EMAIL"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="mobile" type="text" label="COM_FOOTREGION_PROFILS_MOBILE"
-			description="COM_FOOTREGION_PROFILS_MOBILE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-
-		<field
-			name="commentaire" type="editor" label="COM_FOOTREGION_PROFILS_COMMENT"
-			description="COM_FOOTREGION_PROFILS_COMMENT"
-			class="inputbox"
-			filter="JComponentHelper::filterText"
-			buttons="true"
-			hide="readmore,pagebreak"
-		/>
+        
+        <field name="email" type="text" label="COM_FOOTREGION_ENTRAINEURS_EMAIL"
+            description="COM_FOOTREGION_ENTRAINEURS_EMAIL"
+            size="40" class="inputbox" default="" required="true"
+        />                
+        <field name="num_licence" type="text" label="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
+            description="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
+            size="40" class="input-large-text" default="" required="true"
+        />   
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
 			class="chzn-color-state" size="1" default="1"
@@ -53,12 +32,14 @@
 				JARCHIVED</option>
 			<option value="-2">
 				JTRASHED</option>
-		</field>				
+		</field>		
+		
 		<field
 			name="hits" type="text" label="JGLOBAL_HITS"
 			description="JGLOBAL_HITS"
 			size="6" class="readonly" readonly="true" filter="unset"
-		/>		
+		/>
+		
 		<field
 			name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
 			description="JGLOBAL_FIELD_CREATED_LABEL"
@@ -81,5 +62,6 @@
 			description="JGLOBAL_FIELD_MODIFIED_BY_DESC"
 			class="inputbox" default=""
 		/>
+
 	</fieldset>
 </form>

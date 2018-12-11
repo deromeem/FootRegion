@@ -7,10 +7,10 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isEntraineur = (in_array('14', $user->groups));		// sets flag when user group is '14' that is 'Footregion Entraineur'
 ?>
 
-<?php if (!$isAdmin) : ?>
+<?php if (!$isEntraineur) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
@@ -61,6 +61,21 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="tab-pane" id="avance">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
 									</td>
 									<td width="80%">
@@ -75,21 +90,6 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
 									</td>
 								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('typesjoueurs_id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('typesjoueurs_id'); ?></div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
