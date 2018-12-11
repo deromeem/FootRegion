@@ -6,14 +6,9 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/match.php';
 
-class footregionModelForm_m extends footregionModelmatch
+class footregionModelForm_match extends footregionModelmatch
 {
 	protected $_context = 'match';
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/tournoi.php';
-
-class FootregionModelForm_m extends FootregionModelTournoi
-{
-	protected $_context = 'tournoi';
 
 	protected function populateState()
 	{

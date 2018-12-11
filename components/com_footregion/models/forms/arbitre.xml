@@ -5,9 +5,10 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="text" label="COM_FOOTREGION_ARBITRES_NOM"
+		<field name="nom" type="sql" label="COM_FOOTREGION_ARBITRES_NOM"
 			description="COM_FOOTREGION_ARBITRES_NOM"
-			size="40" class="inputbox" default="" required="true"
+			query="SELECT id, nom FROM #__footregion_utilisateurs ORDER BY nom" 
+			key_field="id" value_field="nom" default="" required="true"
 		/>
 		<field name="alias" type="text"
 			label="JFIELD_ALIAS_LABEL"
@@ -15,17 +16,18 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="text" label="COM_FOOTREGION_ARBITRES_PRENOM"
+		<field name="prenom" type="sql" label="COM_FOOTREGION_ARBITRES_PRENOM"
 			description="COM_FOOTREGION_ARBITRES_PRENOM"
-			size="40" class="inputbox" default="" required="true"
+			query="SELECT id, prenom FROM #__footregion_utilisateurs ORDER BY prenom" 
+			key_field="id" value_field="prenom" default="" required="true"
 		/>
-		<field name="email" type="sql" default="" label="COM_FOOTREGION_ARBITRES_EMAIL" 
+		<field name="email" type="text" default="" label="COM_FOOTREGION_ARBITRES_EMAIL" 
 			description="COM_FOOTREGION_ARBITRES_EMAIL"
-			size="40" class="inputbox" default="" required="true"
+			size="40" class="inputbox" required="false"
 		/>
 		<field
-			name="commentaire" type="editor" label="COM_ANNUAIRE_COMMENT"
-			description="COM_ANNUAIRE_COMMENT"
+			name="commentaire" type="editor" label="COM_FOOTREGION_COMMENT"
+			description="COM_FOOTREGION_COMMENT"
 			class="inputbox"
 			filter="JComponentHelper::filterText"
 			buttons="true"

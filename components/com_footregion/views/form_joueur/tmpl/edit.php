@@ -84,6 +84,14 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 									</td>
 									<td width="80%">

@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/arbitre.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/equipe.php';
 
-class FootregionModelForm_arbitre extends FootregionModelArbitre
+class FootregionModelForm_equipe extends FootRegionModelequipe
 {
-	protected $_context = 'arbitre';
+	protected $_context = 'equipe';
 
 	protected function populateState()
 	{
@@ -16,7 +16,7 @@ class FootregionModelForm_arbitre extends FootregionModelArbitre
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('arbitre.id', $pk);
+		$this->setState('equipe.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -28,9 +28,9 @@ class FootregionModelForm_arbitre extends FootregionModelArbitre
 	
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('arbitre.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('equipe.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
-		
+
 		// Obtient une instance de la ligne
 		$table = $this->getTable();
 
