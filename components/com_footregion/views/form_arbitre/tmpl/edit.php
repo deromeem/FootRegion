@@ -52,7 +52,7 @@ $isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '10
 			<fieldset>
 				<ul class="nav nav-tabs">
 					<li><a href="#arbitre" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ARBITRE'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTEGION_ADVANCED'); ?></a></li>
+					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
 					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
