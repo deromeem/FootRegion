@@ -24,6 +24,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13
 		<table class="table">
 			<tbody>
 				<tr>
+					<!--TEST-->
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_NOM'); ?></span>
 					</td>
