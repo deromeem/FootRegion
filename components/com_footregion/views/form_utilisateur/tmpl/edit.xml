@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="Modifier un profil" option="Accéder">
+	<layout title="Créer un profil" option="Accéder">
 		<message>
-			<![CDATA[Affiche un formulaire pour modifier un profil]]>
+			<![CDATA[Affiche un formulaire pour créer un profil]]>
 		</message>
 	</layout>
 </metadata>
