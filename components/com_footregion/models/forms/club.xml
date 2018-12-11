@@ -17,7 +17,7 @@
 		/>
 		<field name="prenom" type="text" label="COM_ANNUAIRE_CONTACTS_PRENOM"
 			description="COM_ANNUAIRE_CONTACTS_PRENOM"
-			size="40" class="inputbox" default="" required="true"
+			size="40" class="inputbox" default="" required="false"
 		/>
 		<field name="civilites_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_CIVILITE" 
 			description="COM_ANNUAIRE_CONTACTS_CIVILITE"
