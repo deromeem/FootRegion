@@ -25,7 +25,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'contact.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'utilisateur.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
@@ -38,16 +38,16 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_FOOTREGION_CONTACT')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEUR')." ".($isNew ? JText::_('COM_FOOTREGION_MODIF_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('contact.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('utilisateur.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('contact.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('utilisateur.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>
@@ -107,15 +107,6 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 									</td>
 									<td width="80%">
 										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-									</td>
-								</tr>
-
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('fonction'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('fonction'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -178,13 +169,20 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 
 						</table>				
 					</div>
-						<input type="hidden" name="task" value="" />
-						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
-					</div>
+					
 					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
+						<table class="table">
+							<tbody>
+								<div class="tab-pane" id="commentaire">
+								<?php echo $this->form->getControlGroup('commentaire'); ?>
+							</tbody>
+						</table>
 					</div>
-					</div>
+
+					<input type="hidden" name="task" value="" />
+					<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
+
+				</div>
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>
 		</form>
