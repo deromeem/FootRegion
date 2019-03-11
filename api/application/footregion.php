@@ -113,7 +113,7 @@ class AppFootregionWeb extends JApplicationCms
 					} elseif ($task == "messages") {
 						$response[$task] = $this->LoadViewResult($task, $id, $did);
 					} else {
-						$response[$task] = $this->LoadViewResult($task, $id, 0, $email);
+						$response[$task] = $this->LoadViewResult($task, $id);
 					}
 				}
 				echo json_encode($response);
