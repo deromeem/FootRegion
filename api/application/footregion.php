@@ -71,7 +71,7 @@ class AppFootregionWeb extends JApplicationCms
 		} elseif (isset($_POST["did"])) {
 			$did = $_POST['did'];
 		}
-		// echo ("DEBUG login = " . $login . " pwd = " . $pwd . " task =>" . $task . " id =>" . $id . "<");    // TEST/DEBUG
+		 echo ("DEBUG login = " . $login . " pwd = " . $pwd . " task =>" . $task . " id =>" . $id . "<");    // TEST/DEBUG
 		
 		if (($login != "") and ($pwd != "")) {
 
@@ -113,7 +113,7 @@ class AppFootregionWeb extends JApplicationCms
 					} elseif ($task == "messages") {
 						$response[$task] = $this->LoadViewResult($task, $id, $did);
 					} else {
-						$response[$task] = $this->LoadViewResult($task, $id);
+						$response[$task] = $this->LoadViewResult($task, $id, 0, $email);
 					}
 				}
 				echo json_encode($response);
