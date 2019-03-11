@@ -1,8 +1,8 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
- 
+
 jimport('joomla.application.component.modellist');
- 
+
 class FootregionModelClub extends JModelList
 {
 	public function __construct($config = array())
@@ -48,7 +48,7 @@ class FootregionModelClub extends JModelList
 		$this->setState('list.ordering', $orderCol);
 
 		$listOrder = $app->input->get('filter_order_Dir', $direction);
-		$this->setState('list.direction', $listOrder); 
+		$this->setState('list.direction', $listOrder);
 
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
@@ -65,9 +65,11 @@ class FootregionModelClub extends JModelList
 		$query->select('c.id, c.nom, c.adr_rue,c.sigle, c.adr_ville, c.adr_cp, c.directeurs_id, c.alias, c.published, c.created, c.created_by, c.modified, c.modified_by, c.hits');
 		$query->from('#__footregion_clubs c');
 
+
+
 		$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
 		$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email')->where('d.email='.'"'.$user.'"');
-		
+
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
@@ -81,21 +83,21 @@ class FootregionModelClub extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'c.nom LIKE '.$search;
-				
+
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
 			}
 		}
-		
+
 		// filtre les �l�ments publi�s
 		$query->where('c.published=1');
-		
+
 		// tri des colonnes
 		$orderCol = $this->getState('list.ordering', 'nom');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-	    // echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+	    echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
