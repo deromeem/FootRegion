@@ -7,7 +7,7 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -27,9 +27,9 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 	</script>
 
 	<div class="edit item-page">
-		
+
 		<form action="<?php echo JRoute::_('index.php?option=com_footregion&a_id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate form-vertical">
-			
+
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
@@ -100,16 +100,24 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 										<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
 									</td>
 								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('directeurs_id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('directeurs_id'); ?></div> 
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
-					
+
 					<div class="tab-pane" id="avance">
 						<table class="table">
 							<tbody>
-								
+
 							</tbody>
-						</table>				
+						</table>
 
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
