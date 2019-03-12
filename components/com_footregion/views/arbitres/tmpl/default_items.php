@@ -43,13 +43,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_ID'), 'id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_NOM'), 'nommatch', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_NOM'), 'nom', $listDirn, $listOrder) ?>
-				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ARBITRES_EMAIL'), 'email', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_MATCHS_ARBITRES_ROLE'), 'rolematch', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
@@ -59,13 +56,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->id ?></a>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nommatch ?></a>
 					</td>
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->utilisateur ?></a>
-					</td>
-					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->rolematch ?></a>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'arbitres.', true); ?></td> -->
 					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
