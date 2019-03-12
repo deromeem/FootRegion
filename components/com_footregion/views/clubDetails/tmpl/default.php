@@ -2,7 +2,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur 
+$groupeNumb = substr(implode($user->groups),1,2);
+$isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur 
 ?>
 
 <?php if (!$isAdmin) : ?>
