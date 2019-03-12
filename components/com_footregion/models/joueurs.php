@@ -61,6 +61,9 @@ class FootRegionModelJoueurs extends JModelList
 		
 		// joint la table equipes
 		$query->select('e.nom AS equipe')->join('LEFT', '#__footregion_equipes AS e ON e.id=j.equipes_id');
+
+		// // joint la table clubs
+		// $query->select('c.nom AS club')->join('LEFT', '#__footregion_clubs AS c ON c.id=j.clubs_id');
 		
 
 		// filtre de recherche rapide textuelle
