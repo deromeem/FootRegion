@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/utilisateur.php';
 
-class FootregionModelForm_profil extends FootregionModelUtilisateur
+class FootregionModelForm_utilisateur extends FootregionModelUtilisateur
 {
 	protected $_context = 'utilisateur';
 

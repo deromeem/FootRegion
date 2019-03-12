@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fieldset>
-		<field name="id" type="hidden" />
+		<field name="id" type="text" label="COM_FOOTREGION_ARBITRES_ID"
+            description="COM_FOOTREGION_ARBITRES_ID"
+            size="40" class="inputbox" default="" required="true" />
 
 		<field name="asset_id" type="hidden" filter="unset" />
 

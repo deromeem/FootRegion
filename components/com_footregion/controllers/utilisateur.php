@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionControllerArbitre extends JControllerForm
+class FootregionControllerUtilisateur extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_arbitre';
+	protected $view_item = 'Form_utilisateur';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -56,10 +56,10 @@ class FootregionControllerArbitre extends JControllerForm
 		// {
 			// return base64_decode($return);
 		// }
-		return JURI::base()."/index.php?option=com_footregion&view=arbitres";		
+		return JURI::base()."/index.php?option=com_footregion&view=utilisateur";		
 	}
 
-	public function getModel($name = 'form_arbitres', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'Form_utilisateur', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

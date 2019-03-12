@@ -90,7 +90,7 @@ CREATE TABLE `#__footregion_clubs` (
 
 INSERT INTO `#__footregion_clubs` (`id`, `sigle`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `directeurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'UFBSJA', 'Union Football Belleville Saint Jean d Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -330,7 +330,7 @@ CREATE TABLE `#__footregion_messages` (
 
 INSERT INTO `#__footregion_messages` (`id`, `libelle`, `discussions_id`, `utilisateurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'Bonjour, pour ceux que cela intéresse, j\'ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0);
+(2, 'Bonjour, pour ceux que cela intéresse, j ai 3 places dans ma voiture pour aller au match de samedi 27/10.', 2, 8, '', 1, '2018-10-26 11:21:00', 42, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -440,17 +440,41 @@ CREATE TABLE `#__footregion_utilisateurs` (
 -- Déchargement des données de la table `#__footregion_utilisateurs`
 --
 
-INSERT INTO `#__footregion_utilisateurs` (`id`, `nom`, `prenom`, `mobile`, `email`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
+INSERT INTO `footregion_footregion_utilisateurs` (`id`, `nom`, `prenom`, `mobile`, `email`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(2, 'DUPOND', 'Marcel', '0645124578', 'mdupond@footregion.fr', 'dupond-marcel', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:03:26', 35, 0),
+(2, 'DUPOND', 'Marcel', '0645124578', 'mdupond@footregion.fr', 'dupond-marcel', 1, '0000-00-00 00:00:00', 45, '2019-03-11 08:01:02', 36, 0),
 (3, 'DURAND', 'Alphonse', '0689845762', 'adurand@footregion.fr', 'durand-alphonse', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:01:33', 35, 0),
-(4, 'NALTY', 'Pierre', '0678125689', 'pnalty@footregion.fr', 'nalty-pierre', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:04:59', 35, 0),
+(4, 'NALTY', 'Pierre', '0678125689', 'pnalty@footregion.fr', 'nalty-pierre', 1, '0000-00-00 00:00:00', 45, '2018-12-11 15:34:18', 35, 0),
 (5, 'BOSS', 'Hugo', '0604030201', 'hboss@footregion.fr', 'boss', 1, '2018-10-24 14:35:59', 45, '0000-00-00 00:00:00', 0, 0),
 (6, 'NOTE', 'Ivan', '', 'inote@footregion.fr', 'note', 1, '2018-10-24 14:49:00', 45, '0000-00-00 00:00:00', 0, 0),
 (7, 'FRAIS', 'Sami', '', 'sfrais@footregion.fr', 'frais', 1, '2018-10-24 14:49:32', 45, '0000-00-00 00:00:00', 0, 0),
 (8, 'MARQUE', 'Jean', '', 'jmarque@footregion.fr', 'marque', 1, '2018-10-24 14:50:02', 45, '2018-10-24 14:58:41', 35, 0),
 (9, 'BUT', 'Théo', '', 'tbut@footregion.fr', 'but', 1, '2018-10-24 14:50:31', 45, '0000-00-00 00:00:00', 0, 0),
-(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0);
+(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0),
+(11, 'AUBIN', 'Lacaze', '0444754781', 'aubinlacaze@footregion.fr', 'aubin', 1, '2018-11-08 13:57:08', 35, '2018-11-08 14:01:13', 35, 0),
+(12, 'LORRAIN', 'Martin', '0164648210', 'lorrainmartin@footregion.fr', 'lorrain', 1, '2018-11-08 13:57:55', 35, '2018-11-08 14:00:36', 35, 0),
+(13, 'GAUTHIER', 'Samuel', '0567514968', 'gauthiersamuel@footregion.fr', 'gauthier', 1, '2018-11-08 14:00:25', 35, '0000-00-00 00:00:00', 0, 0),
+(14, 'GASTON ', 'Lothaire-Damien', '0105754281', 'gastondamien@footregion.fr', 'gaston', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(15, 'DEMANGE', 'Yannick', '0248453216', 'demangeyannick@footregion.fr', 'demange', 1, '2018-11-08 14:04:42', 35, '0000-00-00 00:00:00', 0, 0),
+(16, 'PARENTEAU', 'Guy', '0444897789', 'guyparenteau@footregion.fr', 'parenteau', 1, '2018-11-08 13:57:08', 35, '2018-11-08 14:01:13', 35, 0),
+(17, 'DAVIGNON', 'Vaden', '0164974410', 'vadendavignon@footregion.fr', 'davignon', 1, '2018-11-08 13:57:55', 35, '2018-11-08 14:00:36', 35, 0),
+(18, 'BARRIENTOS', 'Maurice', '0563550978', 'mauricebarrientos@footregion.fr', 'barrientos', 1, '2018-11-08 14:00:25', 35, '0000-00-00 00:00:00', 0, 0),
+(19, 'AYOT', 'Aleron', '0105573281', 'aleronayot@footregion.fr', 'ayot', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(20, 'CARON', 'Artus', '0247002196', 'artuscaron@footregion.fr', 'caron', 1, '2018-11-08 14:04:42', 35, '0000-00-00 00:00:00', 0, 0),
+(21, 'JOSHUA', 'Barker', '0463446310', 'JoshuaBarker@footregion.fr', 'joshua', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(22, 'CHRISTOPHER', 'Morton', '0240835925', 'ChristopherMorton@footregion.fr', 'christopher', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(23, 'JASON', 'Mitchell', '0423670188', 'JasonMitchell@footregion.fr', 'jason', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(24, 'DANIEL', 'Davison', '0540209485', 'DanielDavison@footregion.fr', 'daniel', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(25, 'JOHN', 'Castro', '0188308420', 'JohnCastro@footregion.fr', 'john', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(26, 'DAVID', 'Parsons', '0599683950', 'DavidParsons@footregion.fr', 'david', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(27, 'ROBERT', 'Higgins', '0421599364', 'RobertHiggins@footregion.fr', 'robert', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(28, 'JOSEPH', 'Frost', '0413941270', 'JosephFrost@footregion.fr', 'joseph', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(29, 'MICHAEL', 'Matthews', '0413991270', 'MichaelMatthews@footregion.fr', 'michael', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(30, 'MATTHEW', 'Houston', '0413941270', 'MatthewHouston@footregion.fr', 'matthew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(31, 'JAMES', 'Mohamed', '0419752827', 'JamesMohamed@footregion.fr', 'james', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(32, 'ANDREW', 'Jackson', '0165237099', 'AndrewJackson@footregion.fr', 'andrew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(33, 'BRION', 'Adjutor', '0785469482', 'brionadjutor@footregion.fr', 'brion', 1, '2019-03-11 08:25:56', 35, '0000-00-00 00:00:00', 0, 0);
+
 
 --
 -- Index pour les tables déchargées

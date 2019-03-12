@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootregionModelTournoi extends JModelItem
+class FootRegionModelEquipe extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_footregion.tournoi';
+	protected $_context = 'com_footregion.equipe';
 
 	protected function populateState()
 	{
@@ -13,7 +13,7 @@ class FootregionModelTournoi extends JModelItem
 		// Charge et mémorise l'état (state) de l'id depuis le contexte
 		$pk = $app->input->getInt('id');
 		$this->setState($this->_context.'.id', $pk);
-		// $this->setState('tournoi.id', $pk);
+		// $this->setState('entreprise.id', $pk);
 	}
 
 	public function getItem($pk = null)
@@ -25,14 +25,14 @@ class FootregionModelTournoi extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('t.id, t.nom');
-			$query->from('#__footregion_tournois AS t');
-			// jointures vers matchs enfin plutot match vers tournoi
-			//$query->select('e.nom AS Equipe_Invite')->join('LEFT', '#__footregion_matchs AS m ON t.id=m.tournois_id')->join('LEFT', '#__footregion_equipes AS e ON m.equipes_invite_id=e.id');	;	
-			$query->select('m.nom AS nomm');
-			$query->from('#__footregion_matchs AS m');
+			$query->select('e.id, e.nom, e.clubs_id, e.categories_id, e.entraineurs_id, j.alias, j.published, j.hits, j.modified');
+			$query->from('#__footregion_equipes e');
 
-			$query->where('t.id = ' . (int) $pk);
+			$query->select('c.nom AS club')->join('LEFT', '#__footregion_clubs AS c ON c.id = e.clubs_id');
+			$query->select('ca.nom AS categorie')->join('LEFT', '#__footregion_categories AS ca ON ca.id=e.categories_id');
+			$query->select('en.nom AS entraineur')->join('LEFT', '#__footregion_entraineurs AS en ON en.id=e.entraineurs_id');
+
+			$query->where('j.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;

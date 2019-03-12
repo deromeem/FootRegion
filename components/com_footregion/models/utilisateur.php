@@ -18,6 +18,10 @@ class FootregionModelUtilisateur extends JModelItem
 
 	public function getItem($pk = null)
 	{
+		// Recherche user courant
+		$user = JFactory::getUser();
+		$email = $user->email;
+		// echo("user email: ".$user->email);
 		// Initialise l'id
 		$pk = (!empty($pk)) ? $pk : (int) $this->getState($this->_context.'.id');
 
@@ -44,12 +48,11 @@ class FootregionModelUtilisateur extends JModelItem
 			}
 			if(in_array('15', $user->groups)){
 				// joint la table joueurs
-				$query->select('j.id AS id_joueur, j.poste AS poste,j.date_naiss AS date_naiss,j.num_licence AS mum_licence')->join('LEFT', '#__footregion_joueurs AS j ON j.email=u.email');
+				$query->select('j.id AS id_joueur, j.poste AS poste,j.date_naiss AS date_naiss,j.num_licence AS num_licence_j')->join('LEFT', '#__footregion_joueurs AS j ON j.email=u.email');
 			}
-
+			$query->where("u.email ='".$email."'");
 			// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 
-			// $query->where('u.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;
