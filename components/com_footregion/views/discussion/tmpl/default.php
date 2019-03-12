@@ -2,12 +2,9 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-<<<<<<< HEAD
 $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
-=======
 $isAdm = (in_array('11', $user->groups));		// sets flag when user group is '11' that is 'FootRegion Administrateur 
-$isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur 
->>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
+$isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur  
 ?>
 
 <?php if (!$isAdm && !$isDir) : ?>
@@ -25,43 +22,32 @@ $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' 
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
-	</div>	
-	<div>
-		<table class="table">
-			<tbody>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_DISCUSSIONS_THEME'); ?></span>
-					</td>
-					<td width="80%">
-						<h4><?php echo $this->item->theme ?></h4>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_MESSAGES_LIBELLE'); ?></span>
-					</td>
-					<td width="80%">
-						<h4><?php echo $this->item->libelle ?></h4>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_NOM'); ?></span>
-					</td>
-					<td width="80%">
-						<h4><?php echo $this->item->nom ?></h4>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_PRENOM'); ?></span>
-					</td>
-					<td width="80%">
-						<h4><?php echo $this->item->prenom ?></h4>
-					</td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
+	<table class="table table-striped" id="articleList">
+		<thead>
+			<tr>
+			<th class="title">
+					<?php echo JText::_('COM_FOOTREGION_MESSAGES_LIBELLE')?>
+				</th>
+				<th class="title">
+					<?php echo JText::_('COM_FOOTREGION_UTILISATEURS_NOM')?>
+				</th>
+				<!-- <th class="title">Publié</th> -->
+				<th class="title">
+					<?php echo JText::_('COM_FOOTREGION_MESSAGES_CREATED')?>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<?php foreach($this->item as $i => $ite) : ?>
+				<tr class="row<?php echo $i % 2; ?>">
+				<?php var_dump($this->item->message) ?>
+					<td><?php echo $this->ite[1]['message'] ?></td>
+					<td><?php echo $this->ite->utilisateur ?></td>
+					<td><?php echo $this->ite->date ?></td>
+				</tr>			
+			<?php endforeach; ?>
+		</tbody>
+	</table>
 <?php endif; ?>

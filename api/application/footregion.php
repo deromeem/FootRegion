@@ -43,7 +43,6 @@ class AppFootregionWeb extends JApplicationCms
 		$task = "";
 		$id = 0;
 		$did = 0;
-		$email = "";
 		
 		// Récupération des paramètres de connexion de l'url (en GET ou POST) :
 		if ((isset($_GET["login"])) and (isset($_GET["pwd"]))) {
@@ -113,7 +112,7 @@ class AppFootregionWeb extends JApplicationCms
 					} elseif ($task == "messages") {
 						$response[$task] = $this->LoadViewResult($task, $id, $did);
 					} else {
-						$response[$task] = $this->LoadViewResult($task, $id, 0, $email);
+						$response[$task] = $this->LoadViewResult($task, $id, 0);
 					}
 				}
 				echo json_encode($response);

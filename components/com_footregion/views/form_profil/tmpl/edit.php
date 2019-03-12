@@ -7,19 +7,16 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-<<<<<<< HEAD
 $isAdmin = (in_array('10', $user->groups));	
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
 $isEntraineur = (in_array('14', $user->groups));
 $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
-=======
 $isAdmin = (in_array('10', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
 $isEntraineur = (in_array('14', $user->groups));	
 $isJoueur = (in_array('15', $user->groups));
->>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
 ?>
 
 <?php if (!$isAdmin && !$isArbitre && !$isDirecteur && !$isEntraineur && !$isJoueur) : ?>
