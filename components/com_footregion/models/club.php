@@ -55,6 +55,12 @@ class FootregionModelClub extends JModelList
 
 		parent::populateState('nom', 'ASC');
 	}
+	
+	protected function deleteItem(){
+		if (!isset($this->_item[$pk])) {
+			echo "item delete ".$pk;
+		}
+	}
 
 	protected function _getListQuery()
 	{
@@ -103,4 +109,5 @@ class FootregionModelClub extends JModelList
 	    //echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
+
 }
