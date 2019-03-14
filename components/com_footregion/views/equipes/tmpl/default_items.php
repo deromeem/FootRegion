@@ -41,10 +41,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	<br />
 	<table class="table table-striped" id="articleList">
 		<thead>
-			<tr>
-			<th class="title">
-				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_ID'), 'id', $listDirn, $listOrder) ?>
-				</th>
+			<tr>	
 				<th class="title">
 				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ENTRAINEURS_ID'), 'nom', $listDirn, $listOrder) ?>
 				</th>
@@ -54,9 +51,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_CLUBS'), 'club', $listDirn, $listOrder) ?>
 				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CATEGORIE'), 'nom_cat', $listDirn, $listOrder) ?>
-				</th>
+				
 				<!-- <th class="title">Publié</th> -->
 			</tr>
 		</thead>
@@ -64,11 +59,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
-					<td><?php echo $item->id ?></td>
 					<td><?php echo $item->utilisateur ?></td>
-					<td><?php echo $item->nom ?></td>
-					<td><?php echo $item->club ?></td>
-					<td><?php echo $item->nom_cat ?></td>
+					<td>
+					<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a></td>
+					<td>
+					<?php echo $item->club ?>
+					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?></td> -->
 					</tr>			
 			<?php endforeach; ?>

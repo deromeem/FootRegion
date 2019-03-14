@@ -7,13 +7,24 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
+<<<<<<< HEAD:components/com_footregion/views/form_profil/tmpl/edit.php
+=======
 
+>>>>>>> 8f44aa818c637f53345ab1d5d19904bed92c1aa0:components/com_footregion/views/form_utilisateur/tmpl/edit.php
 $isAdmin = (in_array('10', $user->groups));	
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
 $isEntraineur = (in_array('14', $user->groups));
 $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+<<<<<<< HEAD:components/com_footregion/views/form_profil/tmpl/edit.php
+$isAdmin = (in_array('10', $user->groups));	// sets flag when user group is '10' that is 'MRH Administrateur 
+$isArbitre = (in_array('12', $user->groups));
+$isDirecteur = (in_array('13', $user->groups));
+$isEntraineur = (in_array('14', $user->groups));	
+$isJoueur = (in_array('15', $user->groups));
+=======
 
+>>>>>>> 8f44aa818c637f53345ab1d5d19904bed92c1aa0:components/com_footregion/views/form_utilisateur/tmpl/edit.php
 ?>
 
 <?php if (!$isAdmin && !$isArbitre && !$isDirecteur && !$isEntraineur && !$isJoueur) : ?>

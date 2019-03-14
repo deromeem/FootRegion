@@ -29,7 +29,7 @@ class FootregionModelMessage extends JModelItem
 			$query->from('#__footregion_messages m');
 
 			// joint la table utilisateurs
-			//$query->select('u.nom AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=m.discussions_id');
+			$query->select('u.nom AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=m.discussions_id');
 		
 			$query->where('m.id = ' . (int) $pk);
 			$db->setQuery($query);

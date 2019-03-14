@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootRegionControllerEquipe extends JControllerForm
+class FootregionControllerEquipe extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
 	protected $view_item = 'form_equipe';
