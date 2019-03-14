@@ -30,80 +30,32 @@ $isAdmin = (in_array($groupnum, $user->groups));		// sets flag when user group i
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_NOM'); ?></span>
 					</td>
 					<td width="80%">
-						<h4><?php echo $this->item->nom ?></h4>
+						<?php echo $this->item->nom ?>
 					</td>
 				</tr>
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ACTIVITE'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_CLUBS_ID'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->activite ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_CODEAPE'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->codeAPE_NAF ?>
+						<?php echo $this->item->club ?>
 					</td>
 				</tr>
 				
-				<tr>
+				<!-- <tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_NUMSIREN'); ?></span>
+						<span class="label"><?php //echo JText::_('COM_FOOTREGION_EQUIPES_CATEGORIES_ID'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->numSIREN ?>
+						<?php// echo $this->item->numSIREN ?>
 					</td>
-				</tr>
+				</tr> -->
 				<tr>
 					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_NUMTVAINTRA'); ?></span>
+						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ENTRAINEURS_ID'); ?></span>
 					</td>
 					<td width="80%">
-						<?php echo $this->item->numTVAintra ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ADR_RUE'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->adrRue ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ADR_VILLE'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->adrVille ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ADR_CP'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->adrCP ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_EQUIPES_ADR_PAYS'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->pays ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->commentaire ?>
+						<?php echo $this->item->entraineur ?>
 					</td>
 				</tr>
 			</tbody>
