@@ -47,7 +47,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEUR'), 'utilisateur_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID'), 'utilisateur_id', $listDirn, $listOrder) ?>
 				</th>
 			</tr>
 		</thead>

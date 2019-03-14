@@ -46,19 +46,16 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_ID'), 'id', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ENTRAINEURS_NOM'), 'nom', $listDirn, $listOrder) ?>
+				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ENTRAINEURS_ID'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
 				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_CLUBS_ID'), 'clubs_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_CLUBS'), 'club', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_CATEGORIES_ID'), 'categories_id', $listDirn, $listOrder) ?>
-				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_ENTRAINEURS_ID'), 'entraineurs_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CATEGORIE'), 'nom_cat', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
 			</tr>
@@ -70,8 +67,8 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<td><?php echo $item->id ?></td>
 					<td><?php echo $item->utilisateur ?></td>
 					<td><?php echo $item->nom ?></td>
-					<td><?php echo $item->clubs_id ?></td>
-					<td><?php echo $item->entraineurs_id ?></td>
+					<td><?php echo $item->club ?></td>
+					<td><?php echo $item->nom_cat ?></td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?></td> -->
 					</tr>			
 			<?php endforeach; ?>

@@ -46,8 +46,8 @@ class FootregionViewJoueurs extends JViewLegacy
 		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_JOUEURS'));
 		
 		// affiche les boutons d'action
-		JToolBarHelper::addNew('equipe.add');
-		JToolBarHelper::editList('equipe.edit');
+		JToolBarHelper::addNew('joueur.add');
+		JToolBarHelper::editList('joueur.edit');
 		JToolBarHelper::deleteList('COM_FOOTREGION_DELETE_CONFIRM', 'joueurs.delete');
 		JToolbarHelper::publish('joueurs.publish', 'JTOOLBAR_PUBLISH', true);
 		JToolbarHelper::unpublish('joueurs.unpublish', 'JTOOLBAR_UNPUBLISH', true);

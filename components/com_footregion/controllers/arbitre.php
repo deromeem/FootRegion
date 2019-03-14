@@ -59,7 +59,7 @@ class FootregionControllerArbitre extends JControllerForm
 		return JURI::base()."/index.php?option=com_footregion&view=arbitres";		
 	}
 
-	public function getModel($name = 'form_arbitre', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_arbitres', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

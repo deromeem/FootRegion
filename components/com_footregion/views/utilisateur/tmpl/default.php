@@ -17,12 +17,8 @@ $isArbitre = (in_array('12', $user->groups));
 			<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEUR'); ?></h2>
 		</div>
 		<div class="btn-group pull-right">
-<<<<<<< HEAD
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=Form_utilisateur&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
-=======
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_utilisateur&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
->>>>>>> ec5812df77e54b6e399eb9a7a34881e2806eabf1
 		</div>	
 	</div>
 	<div>

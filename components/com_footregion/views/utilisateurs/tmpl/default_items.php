@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=utilisateur&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=utilisateurs&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
@@ -30,11 +30,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<i class="icon-search"></i></button>
 		</div>
 		<div class="btn-group pull-left">
-<<<<<<< HEAD
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=Form_utilisateur&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
-=======
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_utilisateur&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
->>>>>>> ec5812df77e54b6e399eb9a7a34881e2806eabf1
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>

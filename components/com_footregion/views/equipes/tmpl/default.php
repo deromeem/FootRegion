@@ -4,11 +4,13 @@ defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.framework'); 				// javascript Joomla object for grid.sort !
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur  
+$groupnum = substr(implode($user->groups),1,2);
+$isAdmin = (in_array($groupnum, $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur
 ?>
 
 <?php if (!$isAdmin) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
+
 <?php else : ?>
 
 	<h2><?php echo JText::_('COM_FOOTREGION_EQUIPES'); ?>
