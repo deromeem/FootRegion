@@ -26,18 +26,17 @@ class FootregionModelDiscussion extends JModelItem
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
 			
-			$query->select('dis.theme, CONCAT(u.nom, u.prenom) as utilisateur, m.created as date');
+			$query->select('dis.theme, CONCAT(u.nom, " ",u.prenom) as utilisateur, m.created as date');
 
 			$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_messages AS m ON u.id= m.utilisateurs_id');
 			// joint la table message
 			$query->select('m.libelle AS message')->join('LEFT', '#__footregion_discussions AS dis ON dis.id = m.discussions_id');
 			
 			$query->where('dis.id = ' . (int) $pk);
-			
+			$query->order('date ASC');
 			//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 			$db->setQuery($query);
 			$data = $db->loadObjectList();
-			print_r($data);
 			$this->_item[$pk] = $data;
 		}
   		return $this->_item[$pk];

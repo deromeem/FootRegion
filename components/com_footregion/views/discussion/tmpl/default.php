@@ -18,10 +18,6 @@ $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' 
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=discussions'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
 		</div>	
-		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
-				<span class="icon-edit"></span></a>
-		</div>	
 	</div>
 	<table class="table table-striped" id="articleList">
 		<thead>
@@ -30,7 +26,7 @@ $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' 
 					<?php echo JText::_('COM_FOOTREGION_MESSAGES_LIBELLE')?>
 				</th>
 				<th class="title">
-					<?php echo JText::_('COM_FOOTREGION_UTILISATEURS_NOM')?>
+					<?php echo JText::_('Utilisateur')?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
@@ -39,13 +35,11 @@ $isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' 
 			</tr>
 		</thead>
 		<tbody>
-		
-			<?php foreach($this->item as $i => $ite) : ?>
-				<tr class="row<?php echo $i % 2; ?>">
-				<?php var_dump($this->item->message) ?>
-					<td><?php echo $this->ite[1]['message'] ?></td>
-					<td><?php echo $this->ite->utilisateur ?></td>
-					<td><?php echo $this->ite->date ?></td>
+			<?php foreach($this->item as $ite) : ?>
+				<tr class="row<?php echo $i = $i + $i;?>">
+					<td><?php echo $ite->message ?></td>
+					<td><?php echo $ite->utilisateur ?></td>
+					<td><?php echo $ite->date; $i++;?></td>
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>
