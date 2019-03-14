@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/discussion.php';
 
-class FootregionModelForm extends FootregionModelDiscussion
+class FootregionModelForm_discussion extends FootregionModelDiscussion
 {
 	protected $_context = 'discussion';
 

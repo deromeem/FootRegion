@@ -20,8 +20,8 @@ JHtml::_('formbehavior.chosen', 'select');
 
 	<div class="form-inline form-inline-header">										
 		<div class="control-group">
-			<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
-			<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
+			<div class="control-label"><?php echo $this->form->getLabel('theme'); ?></div>
+			<div class="controls"><?php echo $this->form->getInput('theme'); ?></div>
 		</div>		
 		<div class="control-group">
 			<div class="control-label"><?php echo $this->form->getLabel('utilisateurs_id'); ?></div>

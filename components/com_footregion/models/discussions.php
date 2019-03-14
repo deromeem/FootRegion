@@ -59,7 +59,7 @@ class FootregionModelDiscussions extends JModelList
 
 		// joint la table utilisateurs
 		$query->select('CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
-
+			
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
