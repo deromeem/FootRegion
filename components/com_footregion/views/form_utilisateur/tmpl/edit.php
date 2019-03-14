@@ -119,10 +119,10 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 							<?php if ($isDirecteur) : ?>
 								<tr>
 										<td width="20%" class="nowrap right">
-											<div class="control-label"><?php echo $this->form->getLabel('Date_affiliation'); ?></div>
+											<div class="control-label"><?php echo $this->form->getLabel('date_aff'); ?></div>
 										</td>
 										<td width="80%">
-											<div class="controls"><?php echo $this->form->getInput('Date_affiliation'); ?></div>
+											<div class="controls"><?php echo $this->form->getInput('date_aff'); ?></div>
 										</td>
 									</tr>
 							<?php endif; ?>
@@ -139,10 +139,10 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('Poste'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('Poste'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -158,10 +158,10 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 							<?php if ($isEntraineur) : ?>
 							<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('num_licence_j'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence_e'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('num_licence_j'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('num_licence_e'); ?></div>
 									</td>
 								</tr>
 							<?php endif; ?>

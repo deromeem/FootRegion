@@ -25,13 +25,11 @@ class FootregionModelDiscussion extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-<<<<<<< HEAD
 			$query->select('d.theme, u.nom, u.prenom');
 			$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_discussions AS d ON u.id=d.utilisateurs_id');
-=======
+			
 			$query->select('d.id, d.theme, d.utilisateurs_id, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
 			$query->from('#__footregion_discussions d');
->>>>>>> a4fd732230b643739c0199de060b26c3398a58b5
 
 			// joint la table message
 			$query->select('m.libelle AS libelle')->join('LEFT', '#__footregion_messages AS m ON d.id=m.discussions_id');
