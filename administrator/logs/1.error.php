@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-#
-#<?php die('Forbidden.'); ?>
-#Date: 2018-12-11 16:03:50 UTC
-#Software: Joomla Platform 13.1.0 Stable [ Curiosity ] 24-Apr-2013 00:00 GMT
-
-#Fields: datetime	priority clientip	category	message
-2018-12-11T16:03:50+00:00	INFO ::1	joomlafailure	Mot de passe invalide
-2018-12-13T15:05:05+00:00	INFO ::1	joomlafailure	Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.
-2018-12-13T15:05:27+00:00	INFO ::1	joomlafailure	Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.
-=======
 <?php die('Forbidden.'); ?>
 
 #Date: 2018-12-11 16:39:25 UTC
@@ -34,4 +23,3 @@
 2018-11-27T13:37:09+00:00	INFO ::1	cookiefailure	Un mot de passe vide n'est pas autorisé
 2018-11-27T13:37:09+00:00	INFO ::1	updater	Loading information from update site #1 with name "Joomla! Core" and URL https://update.joomla.org/core/list.xml took 0.12 seconds2018-12-03T08:30:37+00:00	INFO ::1	joomlafailure	Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.
 2018-12-10T13:52:19+00:00	INFO ::1	joomlafailure	Cet utilisateur n'existe pas
->>>>>>> 8f44aa818c637f53345ab1d5d19904bed92c1aa0
