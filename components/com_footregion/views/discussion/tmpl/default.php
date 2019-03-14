@@ -2,12 +2,14 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
-$isAdm = (in_array('11', $user->groups));		// sets flag when user group is '11' that is 'FootRegion Administrateur 
-$isDir = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'FootRegion Directeur  
+$isAdmin = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isJoueur = (in_array('15', $user->groups));
+$isEntraineur = (in_array('14', $user->groups));
+$isDirecteur = (in_array('13', $user->groups));
+$isArbitre = (in_array('12', $user->groups));
 ?>
 
-<?php if (!$isAdm && !$isDir) : ?>
+<?php if (!$isAdmin && !$isJoueur && !$isArbitre && !$isDirecteur && !$isEntraineur) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 	<div class="form-inline form-inline-header">
