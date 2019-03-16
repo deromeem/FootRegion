@@ -10,7 +10,7 @@ class FootregionModelDiscussion extends JModelAdmin
 	// Surcharges des méthodes de la classe mère pour :
 	
 	// 1) définir la table de soutien à utiliser
-	public function getTable($type = 'Discussion', $prefix = 'FootregionTable', $config = array()) 
+	public function getTable($type = 'discussion', $prefix = 'FootregionTable', $config = array()) 
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

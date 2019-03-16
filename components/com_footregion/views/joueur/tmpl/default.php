@@ -2,7 +2,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$groupnum = substr(implode($user->groups),1,2);
+$isAdmin = (in_array($groupnum, $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -24,12 +25,17 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 	<div>
 		<table class="table">
 			<tbody>
-			<tr>
+				<tr>
 					<!--<td width="20%" class="nowrap right">
 						<span class="label"><?php // echo JText::_('COM_FOOTREGION_JOUEURS_NOM'); ?></span>
 					</td>-->
 					<td width="80%">
-						<h4><?php echo $this->item->utilisateur; ?></h4>
+						<h4><?php echo $this->item->nom; ?></h4>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%">
+						<h4><?php echo $this->item->prenom; ?></h4>
 					</td>
 				</tr>
 				<tr>

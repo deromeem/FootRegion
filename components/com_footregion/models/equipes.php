@@ -52,12 +52,27 @@ class FootRegionModelEquipes extends JModelList
 	{
 		// construit la requ�te d'affichage de la liste
 		$query	= $this->_db->getQuery(true);
-		$query->select('e.id, e.nom, clubs_id, e.categories_id, e.entraineurs_id, e.published, e.hits, e.modified');
-		$query->from('#__Footregion_Equipes e');
+		$query->select('e.id, e.nom, c.nom AS club, cat.nom as nom_cat, e.published, e.hits, e.modified');
+		$query->from('#__footregion_equipes as e');
 
-		$query->from('#__footregion_entraineurs AS en')->join('LEFT', '#__footregion_joueurs AS j ON en.email=j.email');
+
+
+		$query->join('LEFT','#__footregion_entraineurs AS en ON en.id = e.entraineurs_id')->join('LEFT', '#__footregion_joueurs AS j ON en.email=j.email');
+
+		$query->join('LEFT','#__footregion_categories AS cat ON cat.id = e.categories_id');
 
 		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=en.email');
+
+		$query->select(' c.nom AS club')->join('LEFT', '#__footregion_clubs AS c ON c.id=e.clubs_id');
+
+		// SELECT e.id, e.nom, e.categories_id, e.entraineurs_id, e.published, e.hits, e.modified, CONCAT(u.nom, " ", u.prenom) AS utilisateur, c.nom AS club 
+		// FROM footregion_footregion_equipes as e 
+		// LEFT JOIN footregion_footregion_entraineurs AS en on en.id = e.entraineurs_id 
+		// LEFT JOIN footregion_footregion_joueurs AS j ON en.email=j.email 
+		// LEFT JOIN footregion_footregion_utilisateurs AS u ON u.email=en.email 
+		// LEFT JOIN footregion_footregion_clubs AS c ON c.id= e.clubs_id 
+		// WHERE e.published=1 
+		// ORDER BY nom ASC
 		
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
@@ -72,10 +87,9 @@ class FootRegionModelEquipes extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'e.id LIKE '.$search;
-				$searches[]	= 'e.clubs_id LIKE '.$search;
+				$searches[]	= 'club LIKE '.$search;
 				$searches[]	= 'e.equipes_id LIKE '.$search;
-				$searches[]	= 'e.categories_id LIKE '.$search;
-				$searches[]	= 'e.entraineurs_id LIKE '.$search;
+				$searches[]	= 'nom_cat LIKE '.$search;
 				
 				// Ajoute les clauses � la requ�te
 				$query->where('('.implode(' OR ', $searches).')');
@@ -90,7 +104,7 @@ class FootRegionModelEquipes extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		 // echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }

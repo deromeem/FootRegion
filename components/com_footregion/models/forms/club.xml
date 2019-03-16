@@ -4,7 +4,7 @@
 		<field name="id" type="hidden" />
 
 		<field name="asset_id" type="hidden" filter="unset" />
-		
+
 		<field name="nom" type="text" label="COM_FOOTREGION_CLUBS_NOM"
 			description="COM_FOOTREGION_CLUBS_NOM"
 			size="40" class="inputbox" default="" required="true"
@@ -17,21 +17,21 @@
 		/>
 		<field name="prenom" type="text" label="COM_ANNUAIRE_CONTACTS_PRENOM"
 			description="COM_ANNUAIRE_CONTACTS_PRENOM"
-			size="40" class="inputbox" default="" required="true"
+			size="40" class="inputbox" default="" required="false"
 		/>
-		<field name="civilites_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_CIVILITE" 
+		<field name="civilites_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_CIVILITE"
 			description="COM_ANNUAIRE_CONTACTS_CIVILITE"
-			query="SELECT id, civilite FROM #__annuaire_civilites ORDER BY civilite" 
+			query="SELECT id, civilite FROM #__annuaire_civilites ORDER BY civilite"
 			key_field="id" value_field="civilite" required="false"
 		/>
-		<field name="typescontacts_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_TYPECONTACT" 
+		<field name="typescontacts_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_TYPECONTACT"
 			description="COM_ANNUAIRE_CONTACTS_TYPECONTACT"
-			query="SELECT id, typeContact FROM #__annuaire_typescontacts ORDER BY typeContact" 
+			query="SELECT id, typeContact FROM #__annuaire_typescontacts ORDER BY typeContact"
 			key_field="id" value_field="typeContact" required="false"
 		/>
-		<field name="entreprises_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_ENTREPRISE" 
+		<field name="entreprises_id" type="sql" default="" label="COM_ANNUAIRE_CONTACTS_ENTREPRISE"
 			description="COM_ANNUAIRE_CONTACTS_ENTREPRISE"
-			query="SELECT id, nom FROM #__annuaire_entreprises ORDER BY nom" 
+			query="SELECT id, nom FROM #__annuaire_entreprises ORDER BY nom"
 			key_field="id" value_field="nom" required="false"
 		/>
 		<field name="fonction" type="text" label="COM_ANNUAIRE_CONTACTS_FONCTION"
@@ -86,12 +86,12 @@
 				JARCHIVED</option>
 			<option value="-2">
 				JTRASHED</option>
-		</field>				
+		</field>
 		<field
 			name="hits" type="text" label="JGLOBAL_HITS"
 			description="JGLOBAL_HITS"
 			size="6" class="readonly" readonly="true" filter="unset"
-		/>		
+		/>
 		<field
 			name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
 			description="JGLOBAL_FIELD_CREATED_LABEL"
@@ -114,5 +114,9 @@
 			description="JGLOBAL_FIELD_MODIFIED_BY_DESC"
 			class="inputbox" default=""
 		/>
+		<field name="directeurs_id" type="sql" default="" label="COM_FOOTREGION_CLUBS_DIRECTEURS"
+			description="COM_FOOTREGION_CLUBS_DIRECTEURS"
+			query="SELECT id, email FROM #__footregion_directeurs"
+			key_field="id" value_field="email" required="true" />
 	</fieldset>
 </form>

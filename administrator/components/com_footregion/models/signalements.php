@@ -28,8 +28,11 @@ class FootregionModelSignalements extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
-		$this->setState('filter.pay', $pay);
+		$arbitre = $this->getUserStateFromRequest($this->context.'.filter.arbitre', 'filter_arbitre', '');
+		$this->setState('filter.arbitre', $arbitre);
+
+		$entraineur = $this->getUserStateFromRequest($this->context.'.filter.entraineur', 'filter_entraineur', '');
+		$this->setState('filter.entraineur', $entraineur);
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
 		$this->setState('filter.published', $published);
@@ -68,12 +71,18 @@ class FootregionModelSignalements extends JModelList
 			}
 		}
 
-		// filtre selon l'état du filtre 'filter_pay'
-		// $pay = $this->getState('filter.pay');
-		// if (is_numeric($pay)) {
-		// 	$query->where('e.pays_id=' . (int) $pay);
-		// }
+		// filtre selon l'état du filtre 'filter_arbitre'
+		$arbitre = $this->getState('filter.arbitre');
+		if (is_numeric($arbitre)) {
+		$query->where('s.arbitres_id=' . (int) $arbitre);
+		}
 		
+		// filtre selon l'état du filtre 'filter_entraineur'
+		$entraineur = $this->getState('filter.entraineur');
+		if (is_numeric($entraineur)) {
+		$query->where('s.entraineurs_id=' . (int) $entraineur);
+		}
+
 		// filtre selon l'état du filtre 'filter_published'
 		$published = $this->getState('filter.published');
 		if (is_numeric($published)) {
@@ -86,11 +95,10 @@ class FootregionModelSignalements extends JModelList
 
 		// tri des colonnes
 		$orderCol = $this->state->get('list.ordering', 's.libelle');
-		$orderCol = $this->state->get('list.ordering', 'a.email');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 

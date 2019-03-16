@@ -2,7 +2,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur 
+$groupeNumb = substr(implode($user->groups),1,2);
+$isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur 
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -15,15 +16,19 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '13
 		<div class="btn-group pull-right">
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=clubs'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
-		</div>	
+		</div>
 		<div class="btn-group pull-right">
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
-		</div>	
+		</div>
+		<div class="btn-group pull-right">
+		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=delete&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-delete"></span></a>
+		</div>
 	</div>
 	<div>
 		<table class="table">
 			<tbody>
 				<tr>
+					<!--TEST-->
 					<td width="20%" class="nowrap right">
 						<span class="label"><?php echo JText::_('COM_FOOTREGION_CLUBS_NOM'); ?></span>
 					</td>

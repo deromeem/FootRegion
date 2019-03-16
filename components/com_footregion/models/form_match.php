@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/entreprise.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/match.php';
 
-class AnnuaireModelForm extends AnnuaireModelEntreprise
+class footregionModelForm_match extends footregionModelmatch
 {
-	protected $_context = 'entreprise';
+	protected $_context = 'match';
 
 	protected function populateState()
 	{
@@ -16,7 +16,8 @@ class AnnuaireModelForm extends AnnuaireModelEntreprise
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('entreprise.id', $pk);
+		$this->setState('match.id', $pk);
+		$this->setState('tournoi.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -28,7 +29,8 @@ class AnnuaireModelForm extends AnnuaireModelEntreprise
 	
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('entreprise.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('match.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('tournoi.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne

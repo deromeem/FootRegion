@@ -53,7 +53,6 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 				<ul class="nav nav-tabs">
 					<li><a href="#entraineur" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ENTRAINEUR'); ?></a></li>
 					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
-					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="entraineur">
@@ -81,32 +80,11 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 					
 					<div class="tab-pane" id="avance">
 						<table class="table">
-							<tbody>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
-									</td>
-								</tr>
-							</tbody>
+							
 						</table>				
 
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
-					</div>
-					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
-					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>

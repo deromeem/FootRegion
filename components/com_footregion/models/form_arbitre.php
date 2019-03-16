@@ -30,7 +30,7 @@ class FootregionModelForm_arbitre extends FootregionModelArbitre
 	{
 		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('arbitre.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
-
+		
 		// Obtient une instance de la ligne
 		$table = $this->getTable();
 

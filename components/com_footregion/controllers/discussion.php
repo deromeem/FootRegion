@@ -58,7 +58,7 @@ class FootregionControllerDiscussion extends JControllerForm
 		return JURI::base()."/index.php?option=com_footregion&view=discussions";		
 	}
 
-	public function getModel($name = 'form', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_discussion', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

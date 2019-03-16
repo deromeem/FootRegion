@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/utilisateur.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/equipe.php';
 
-class FootregionModelForm_profil extends FootregionModelUtilisateur
+class FootregionModelForm_equipe extends FootRegionModelequipe
 {
-	protected $_context = 'utilisateur';
+	protected $_context = 'equipe';
 
 	protected function populateState()
 	{
@@ -16,7 +16,7 @@ class FootregionModelForm_profil extends FootregionModelUtilisateur
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('utilisateur.id', $pk);
+		$this->setState('equipe.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -28,7 +28,7 @@ class FootregionModelForm_profil extends FootregionModelUtilisateur
 	
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('utilisateur.id');
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('equipe.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne
