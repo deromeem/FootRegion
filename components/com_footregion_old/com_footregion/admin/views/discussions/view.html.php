@@ -16,9 +16,9 @@ class FootregionViewDiscussions extends JViewLegacy
 		$this->listDirn	= $this->escape($this->state->get('list.direction'));			
 
 		// récupère les paramêtres du fichier de configuration config.xml
-		$params = JComponentHelper::getParams('com_annuaire');
-		$this->paramDescShow = $params->get('jannuaire_show_desc', 0);
-		$this->paramDescSize = $params->get('jannuaire_size_desc', 70);
+		$params = JComponentHelper::getParams('com_fooregion');
+		$this->paramDescShow = $params->get('jfootregion_show_desc', 0);
+		$this->paramDescSize = $params->get('jfootregion_size_desc', 70);
 		$this->paramDateFmt = $params->get('jannuaire_date_fmt', "d F Y");
 
 		// affiche les erreurs éventuellement retournées

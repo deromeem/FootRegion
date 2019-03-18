@@ -96,11 +96,11 @@ class FootregionModelMatchs extends JModelList
 		$query->where('m.published=1');
 		
 		// tri des colonnes
-		$orderCol = $this->getState('list.ordering', 'nom');
-		$orderDirn = $this->getState('list.direction', 'ASC');
+		$orderCol = $this->getState('list.ordering', 'date_heure');
+		$orderDirn = $this->getState('list.direction', 'DESC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','egs_',$query));			// TEST/DEBUG
+		//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
