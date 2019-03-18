@@ -13,7 +13,7 @@ class FootregionModelDiscussions extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
-				'utilisateur_id', 'd.utilisateurs_id',
+				'utilisateurs_id', 'd.utilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
 				'created', 'd.created',
@@ -59,7 +59,7 @@ class FootregionModelDiscussions extends JModelList
 
 		// joint la table utilisateurs
 		$query->select('CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
-
+			
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
@@ -73,7 +73,7 @@ class FootregionModelDiscussions extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'd.theme LIKE '.$search;
-				$searches[]	= 'u.nom LIKE '.$search;
+				$searches[]	= 'CONCAT(u.nom, " ", u.prenom) LIKE '.$search;
 				// Ajoute les clauses é la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}

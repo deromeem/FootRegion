@@ -14,19 +14,20 @@ join `footregion_footregion_equipes` `e` on((`j`.`equipes_id` = `e`.`id`))) ;
 
 footregion_vue_messages :
 =========================
-SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+SELECT m.id, m.created AS date, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle, m.discussions_id AS did
 FROM footregion_footregion_messages m
 LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
 WHERE m.published=1
-ORDER BY m.discussions_id asc, created desc;
+ORDER BY did desc, id desc;
 
 footregion_vue_messages_emis :
 ==============================
-SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+SELECT m.id, m.created AS date, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle, d.theme AS discussion
 FROM footregion_footregion_messages m
 LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
+LEFT JOIN footregion_footregion_discussions AS d ON d.id=m.discussions_id
 WHERE m.published=1
-ORDER BY m.discussions_id asc, created desc;
+ORDER BY discussion asc, id desc;
 
 footregion_vue_messages_discussions :
 =====================================

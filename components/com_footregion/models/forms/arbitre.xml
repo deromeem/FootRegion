@@ -5,9 +5,9 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="sql" label="COM_FOOTREGION_ARBITRES_NOM"
-			description="COM_FOOTREGION_ARBITRES_NOM"
-			query="SELECT id, nom FROM #__footregion_utilisateurs ORDER BY nom" 
+		<field name="nom" type="sql" label="COM_FOOTREGION_MATCHS_ARBITRES_MATCHS"
+			description="COM_FOOTREGION_MATCHS_ARBITRES_MATCHS"
+			query="SELECT id, nom FROM #__footregion_matchs ORDER BY nom" 
 			key_field="id" value_field="nom" default="" required="true"
 		/>
 		<field name="alias" type="text"
@@ -16,10 +16,10 @@
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
 		/>
-		<field name="prenom" type="sql" label="COM_FOOTREGION_ARBITRES_PRENOM"
-			description="COM_FOOTREGION_ARBITRES_PRENOM"
-			query="SELECT id, prenom FROM #__footregion_utilisateurs ORDER BY prenom" 
-			key_field="id" value_field="prenom" default="" required="true"
+		<field name="role" type="sql" label="COM_FOOTREGION_MATCHS_ARBITRES_ROLE"
+			description="COM_FOOTREGION_MATCHS_ARBITRES_ROLE"
+			query="SELECT id, role FROM #__footregion_matchs_arbitres ORDER BY role" 
+			key_field="id" value_field="role" default="" required="true"
 		/>
 		<field name="email" type="text" default="" label="COM_FOOTREGION_ARBITRES_EMAIL" 
 			description="COM_FOOTREGION_ARBITRES_EMAIL"

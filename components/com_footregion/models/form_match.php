@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Base ce modèle sur celui du backend.
 require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/match.php';
 
-class footregionModelForm_match extends footregionModelmatch
+class FootregionModelForm_match extends FootregionModelmatch
 {
 	protected $_context = 'match';
 
@@ -17,7 +17,6 @@ class footregionModelForm_match extends footregionModelmatch
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
 		$this->setState('match.id', $pk);
-		$this->setState('tournoi.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
@@ -30,7 +29,6 @@ class footregionModelForm_match extends footregionModelmatch
 	public function getItem($itemId = null)
 	{
 		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('match.id');
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('tournoi.id');
 		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne
