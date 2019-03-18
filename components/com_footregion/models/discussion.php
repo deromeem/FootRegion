@@ -39,7 +39,7 @@ class FootregionModelDiscussion extends JModelItem
 			
 			$query->where('dis.id = ' . (int) $pk);
 			$query->order('date ASC');
-			//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+			echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 			$db->setQuery($query);
 			$data = $db->loadObjectList();
 			$this->_item[$pk] = $data;
