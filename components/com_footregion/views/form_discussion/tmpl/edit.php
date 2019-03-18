@@ -12,7 +12,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 
 <?php if (!$isAdmin) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
-<?php else : ?>
+<?php else : ?> 
 
 	<script type="text/javascript">
 		// fonction javascript pour gérer les actions sur les boutons
@@ -52,8 +52,6 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 			<fieldset>
 				<ul class="nav nav-tabs">
 					<li><a href="#discussion" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_DISCUSSION'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
-					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="discussion">
@@ -69,26 +67,10 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('libelle'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('utilisateur'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('libelle'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('utilisateur'); ?></div>
 									</td>
 								</tr>
 							</tbody>
@@ -103,9 +85,6 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
-					</div>
-					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
 					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>
