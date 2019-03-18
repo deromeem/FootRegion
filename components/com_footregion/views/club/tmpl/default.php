@@ -12,7 +12,7 @@ $isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_FOOTREGION_CLUB')." ";
+	<h2><?php echo JText::_('COM_FOOTREGION_MES_CLUBS')." ";
 	?>
 		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=club'); ?>">
 

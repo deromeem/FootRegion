@@ -14,7 +14,6 @@ $isArbitre = (in_array('12', $user->groups));
 <?php else : ?>
 	<div class="form-inline form-inline-header">
 		<div class="btn-group pull-left">
-			<h2><?php echo JText::_('COM_FOOTREGION_UTILISATEUR'); ?></h2>
 			<?php if ($isEntraineur) : ?>		
 				<h2><?php echo "Entraineur"; ?></h2>
 			<?php endif; ?>
@@ -106,18 +105,13 @@ $isArbitre = (in_array('12', $user->groups));
 							<?php echo $this->item->num_licence; ?>
 						</td>
 					</tr>
-					<tr>
+					<tr>					
 						<td width="20%" class="nowrap right">
 							<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_POSTE'); ?></span>
 						</td>
 						<td width="80%">
 							<?php echo $this->item->poste; ?>
 						</td>
-						<div class="btn-group pull-right">
-								<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=Form_joueur&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
-									<span class="icon-edit"></span>
-								</a>
-						</div>
 					</tr>	
 					<tr>
 						<td width="20%" class="nowrap right">

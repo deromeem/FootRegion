@@ -7,7 +7,6 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-
 $isAdmin = (in_array('10', $user->groups));	
 $isArbitre = (in_array('12', $user->groups));
 $isDirecteur = (in_array('13', $user->groups));
@@ -58,7 +57,6 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 			<fieldset>
 				<ul class="nav nav-tabs">
 					<li><a href="#profil" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_PROFIL'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
 					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
@@ -111,63 +109,6 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 								</tr>
 							</tbody>
 						</table>
-					</div>
-
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
-							<?php if ($isDirecteur) : ?>
-								<tr>
-										<td width="20%" class="nowrap right">
-											<div class="control-label"><?php echo $this->form->getLabel('date_aff'); ?></div>
-										</td>
-										<td width="80%">
-											<div class="controls"><?php echo $this->form->getInput('date_aff'); ?></div>
-										</td>
-									</tr>
-							<?php endif; ?>
-
-							<?php if ($isJoueur) : ?>
-								
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
-									</td>
-								</tr>
-							<?php endif; ?>
-
-							<?php if ($isEntraineur) : ?>
-							<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('num_licence_e'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('num_licence_e'); ?></div>
-									</td>
-								</tr>
-							<?php endif; ?>
-							</tbody>
-
-						</table>				
 					</div>
 					
 					<div class="tab-pane" id="commentaire">

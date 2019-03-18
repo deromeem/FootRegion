@@ -51,7 +51,7 @@ class FootregionModelUtilisateur extends JModelItem
 				$query->select('j.id AS id_joueur, j.poste AS poste,j.date_naiss AS date_naiss,j.num_licence AS num_licence')->join('LEFT', '#__footregion_joueurs AS j ON j.email=u.email');
 			}
 			$query->where("u.email ='".$email."'");
-			 echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+			// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 
 			$db->setQuery($query);
 			$data = $db->loadObject();

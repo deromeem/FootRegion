@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
  
-class FootRegionModelEquipe extends JModelItem
+class FootregionModelEquipe extends JModelItem
 {
 	protected $_item = null;
 	protected $_context = 'com_footregion.equipe';
@@ -25,16 +25,19 @@ class FootRegionModelEquipe extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('e.id, e.nom, e.clubs_id, e.categories_id, e.entraineurs_id, j.alias, j.published, j.hits, j.modified');
+			$query->select('e.id, e.nom as nom, e.clubs_id, e.categories_id, e.entraineurs_id, e.alias, e.published, e.hits, e.modified');
 			$query->from('#__footregion_equipes e');
 
 			$query->select('c.nom AS club')->join('LEFT', '#__footregion_clubs AS c ON c.id = e.clubs_id');
 			$query->select('ca.nom AS categorie')->join('LEFT', '#__footregion_categories AS ca ON ca.id=e.categories_id');
-			$query->select('en.nom AS entraineur')->join('LEFT', '#__footregion_entraineurs AS en ON en.id=e.entraineurs_id');
+			$query->join('LEFT', '#__footregion_entraineurs as en ON en.id = e.entraineurs_id');
+			$query->select('u.nom AS entraineur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=en.email');			
+			// $query->select('en.nom AS entraineur')->join('LEFT', '#__footregion_entraineurs AS en ON en.id=e.entraineurs_id');
 
-			$query->where('j.id = ' . (int) $pk);
+			$query->where('e.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();
+			
 			$this->_item[$pk] = $data;
 		}
   		return $this->_item[$pk];

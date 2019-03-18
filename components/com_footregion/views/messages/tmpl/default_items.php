@@ -39,7 +39,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	</div>			
 	<div class="clearfix"> </div>
 	<br />
-	<table class="table table-striped" id="articleList">
+	<table class="table table-stripped" id="articleList">
 		<thead>
 			<tr>
 				<th class="title">
@@ -55,17 +55,13 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
 			</tr>
 		</thead>
-
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
-				<tr class="row<?php echo $i % 2; ?>">
-					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->libelle ?></a>
-					</td>
-					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'messages.', true); ?></td> -->
+				<tr class="row"<?php echo $i % 4; ?>>
+					<td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'messages.', true); ?></td>
 					<td><?php echo $item->discussions_id ?></td>
-					<td><?php echo $item->utilisateurs_id  ?></td>
-					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
+					<td><?php echo $item->utilisateurs_id ?></td>
+					<td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td>
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>

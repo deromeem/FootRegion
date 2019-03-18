@@ -13,7 +13,7 @@ class FootregionModelDiscussions extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
-				'utilisateur', 'd.utilisateurs_id',
+				'utilisateur_id', 'd.utilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
 				'created', 'd.created',
@@ -59,7 +59,7 @@ class FootregionModelDiscussions extends JModelList
 
 		// joint la table utilisateurs
 		$query->select('CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
-
+			
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
@@ -87,7 +87,6 @@ class FootregionModelDiscussions extends JModelList
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 }
