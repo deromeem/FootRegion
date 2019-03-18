@@ -32,6 +32,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<div class="btn-group pull-left">
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
+		<div class="btn-group pull-left">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=delete'); ?>" class="btn" role="button"><span class="icon-delete"></span></a>
+		</div>
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
 			<?php echo $this->pagination->getLimitBox(); ?>
@@ -42,6 +45,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	<table class="table table-striped" id="articleList">
 		<thead>
 			<tr>
+				<th width="20" class="hidden-phone">
+                	<?php echo JHtml::_('grid.checkall'); ?>
+        		</th>                   
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_CLUBS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
@@ -59,11 +65,14 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
+					<td class="center hidden-phone">
+						<?php echo JHtml::_('grid.id', $i, $item->id); ?>
+					</td>
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
 					</td>
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->sigle ?></a>
+						<?php echo $item->sigle ?>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
 					<td><?php echo $item->adr_ville ?></td>
