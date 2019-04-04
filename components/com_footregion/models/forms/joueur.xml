@@ -55,7 +55,14 @@
 			<option value="-2">
 				JTRASHED</option>
 		</field>		
-		
+		<field
+			name="commentaire" type="editor" label="COM_FOOTREGION_UTILISATEURS_COMMENT"
+			description="COM_FOOTREGION_UTILISATEURS_COMMENT"
+			class="inputbox"
+			filter="JComponentHelper::filterText"
+			buttons="true"
+			hide="readmore,pagebreak"
+		/>
 		<field
 			name="hits" type="text" label="JGLOBAL_HITS"
 			description="JGLOBAL_HITS"

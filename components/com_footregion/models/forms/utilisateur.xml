@@ -33,26 +33,31 @@
 			size="40" class="inputbox" default="" required="false"
 		/>
 
-		<field name="date_naiss" type="text" label="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
+		<field name="date_naiss" type="calendar" label="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
 			description="COM_FOOTREGION_UTILISATEURS_DATE_NAISS"
-			size="40" class="inputbox" default="" required="false"
+			size="40" class="inputbox" default="" required="true"
 		/>
 
 		<field name="poste" type="text" label="COM_FOOTREGION_UTILISATEURS_POSTE"
 			description="COM_FOOTREGION_UTILISATEURS_POSTE"
-			size="40" class="inputbox" default="" required="false"
+			size="40" class="inputbox" default="" required="true"
 		/>
 
-		<field name="date_aff" type="text" label="COM_FOOTREGION_UTILISATEURS_DATE_AFFILIATION"
-			description="COM_FOOTREGION_UTILISATEURS_DATE_AFFILIATION"
-			size="40" class="inputbox" default="" required="false"
+		<field name="date_aff" type="calendar" label="COM_FOOTREGION_UTILISATEURS_DATE_AFFECTATION"
+			description="COM_FOOTREGION_UTILISATEURS_DATE_AFFECTATION"
+			size="40" class="inputbox" default="" required="true"
 		/>
 
 		<field name="num_licence" type="text" label="COM_FOOTREGION_UTILISATEURS_NUM_LICENCE"
 			description="COM_FOOTREGION_UTILISATEURS_NUM_LICENCE"
+			size="40" class="inputbox" default="" required="true"
+		/>
+		
+		<field name="num_licence_e" type="text" label="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
+			description="COM_FOOTREGION_ENTRAINEURS_NUM_LICENCE"
 			size="40" class="inputbox" default="" required="false"
 		/>
-
+		
 		<field name="alias" type="text" label="COM_FOOTREGION_UTILISATEURS_ALIAS"
 			description="COM_FOOTREGION_UTILISATEURS_ALIAS"
 			size="40" class="inputbox" default="" required="false"
