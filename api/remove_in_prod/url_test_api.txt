@@ -62,3 +62,15 @@ left join `footregion`.`footregion_footregion_entraineurs` `ent` on((`ent`.`id` 
 left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) 
 left join `footregion`.`footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) 
 left join `footregion`.`footregion_footregion_utilisateurs` `u` on(((`u`.`email` = `d`.`email`) and (`u`.`email` = `ent`.`email`) and (`u`.`email` = `j`.`email`)))) where (`c`.`published` = 1) order by `c`.`nom`)
+
+footregion_vue_mes_equipes :
+=========================
+(select `e`.`id` AS `id`,`e`.`nom` AS `nom`,`c`.`nom` AS `clubs`,`cat`.`nom` AS `nom_cat`,`e`.`published` AS `published`,`e`.`hits` AS `hits`,`e`.`modified` AS `modified`,concat(`u`.`nom`,' ',`u`.`prenom`) AS `utilisateur`,`c`.`nom` AS `club`,`en`.`email` AS `email` 
+from (((((`footregion`.`footregion_footregion_equipes` `e` 
+left join `footregion`.`footregion_footregion_entraineurs` `en` on((`en`.`id` = `e`.`entraineurs_id`))) 
+left join `footregion`.`footregion_footregion_joueurs` `j` on((`en`.`email` = `j`.`email`))) 
+left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) 
+left join `footregion`.`footregion_footregion_utilisateurs` `u` on((`u`.`email` = `en`.`email`))) 
+left join `footregion`.`footregion_footregion_clubs` `c` on((`c`.`id` = `e`.`clubs_id`))) 
+where (`e`.`published` = 1) 
+order by `e`.`nom`)
