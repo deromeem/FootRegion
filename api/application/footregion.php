@@ -95,15 +95,24 @@ class AppFootregionWeb extends JApplicationCms
 				$response["success"] = 1;
 				$response["message"] = "Connexion reussie";
 				
-				// Recherche le nom et l'email de l'utilisateur connecté :
+				// Recherche le nom, l'email et le groupe de l'utilisateur connecté :
 				$this->_db = JFactory::getDBO();
 				$query = $this->_db->getQuery(true);
-				$query->select('name, email');
-				$query->from($this->_db->quoteName('#__users'));
-				$query->where('username = "'.$login.'"');
+				
+				$query->select('u.id AS uid, u.name AS name, u.email AS email');
+				$query->from('#__users u');
+				$query->select('ugm.group_id AS ugid')->join('LEFT', '#__user_usergroup_map AS ugm ON ugm.user_id=u.id');				
+				$query->select('ug.title AS frgroup')->join('LEFT', '#__usergroups AS ug ON ug.id=ugm.group_id');				
+				$query->where('u.username = "'.$login.'"');
+				$query->where('ugm.group_id > 10');
+				
 				$this->_db->setQuery($query);
 				$response["user"] = $this->_db->loadObject();
 				$email = $response["user"]->email;
+				
+				// Supprime le premier mot ("FootRegion") du nom du groupe :
+				$gwords = explode(" ", $response["user"]->frgroup);
+				$response["user"]->frgroup = $gwords[1];
 				
 				// Recherche la vue éventuellement demandée :
 				if ($task !== ""){

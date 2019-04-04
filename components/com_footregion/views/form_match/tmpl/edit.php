@@ -7,13 +7,12 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
 ?>
 
-<?php if (!$isAdmin) : ?>
+<?php if (!$isEnt) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_footregion_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
-
 	<script type="text/javascript">
 		// fonction javascript pour gérer les actions sur les boutons
 		Joomla.submitbutton = function(task)
@@ -47,7 +46,7 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 					</div>
 				</div>
 			</div>
-			<div class="clearfix"> </div>
+			<div class="clearfix"></div>
 
 			<fieldset>
 				<ul class="nav nav-tabs">
@@ -65,6 +64,14 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 									</td>
 									<td width="80%">
 										<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -118,34 +125,13 @@ $isAdmin = (in_array('14', $user->groups));		// sets flag when user group is '10
 							</tbody>
 						</table>
 					</div>
-					
 					<div class="tab-pane" id="avance">
 						<table class="table">
 							<tbody>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+										<div class="control-label"><?php echo 'Pas de champs à remplir.' ?></div>
 									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('mobile'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('mobile'); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('tel'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('tel'); ?></div>
-									</td>
-								</tr>
 							</tbody>
 						</table>				
 

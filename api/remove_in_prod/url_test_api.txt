@@ -14,19 +14,20 @@ join `footregion_footregion_equipes` `e` on((`j`.`equipes_id` = `e`.`id`))) ;
 
 footregion_vue_messages :
 =========================
-SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+SELECT m.id, m.created AS date, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle, m.discussions_id AS did
 FROM footregion_footregion_messages m
 LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
 WHERE m.published=1
-ORDER BY m.discussions_id asc, created desc;
+ORDER BY did desc, id desc;
 
 footregion_vue_messages_emis :
 ==============================
-SELECT m.id, m.created, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle AS message, m.discussions_id AS did
+SELECT m.id, m.created AS date, CONCAT(u.nom, " ", u.prenom) AS auteur, u.email, m.libelle, d.theme AS discussion
 FROM footregion_footregion_messages m
 LEFT JOIN footregion_footregion_utilisateurs AS u ON u.id=m.utilisateurs_id
+LEFT JOIN footregion_footregion_discussions AS d ON d.id=m.discussions_id
 WHERE m.published=1
-ORDER BY m.discussions_id asc, created desc;
+ORDER BY discussion asc, id desc;
 
 footregion_vue_messages_discussions :
 =====================================
@@ -50,3 +51,14 @@ LEFT JOIN footregion_footregion_tournois AS t ON t.id=m.tournois_id
 LEFT JOIN footregion_footregion_statuts AS s ON s.id=m.statuts_id
 WHERE (m.published=0 OR m.published=1)
 ORDER BY modified desc;
+
+footregion_vue_mes_clubs :
+http://127.0.0.1/footregion/api/index.php?login=mdupond&pwd=123456&task=mess_clubs
+=========================
+(select distinct `c`.`id` AS `id`,`c`.`nom` AS `nom`,`c`.`adr_rue` AS `adr_rue`,`c`.`sigle` AS `sigle`,`c`.`adr_ville` AS `adr_ville`,`c`.`adr_cp` AS `adr_cp`,`d`.`email` AS `email`,`ent`.`email` AS `emailEntraineur`,`j`.`email` AS `emailJoueur`,`u`.`nom` AS `nomDirecteur`,`u`.`prenom` AS `prenomDirecteur` 
+from ((((((`footregion`.`footregion_footregion_clubs` `c` left join `footregion`.`footregion_footregion_directeurs` `d` on((`d`.`id` = `c`.`directeurs_id`))) 
+left join `footregion`.`footregion_footregion_equipes` `e` on((`e`.`clubs_id` = `c`.`id`))) 
+left join `footregion`.`footregion_footregion_entraineurs` `ent` on((`ent`.`id` = `e`.`entraineurs_id`))) 
+left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) 
+left join `footregion`.`footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) 
+left join `footregion`.`footregion_footregion_utilisateurs` `u` on(((`u`.`email` = `d`.`email`) and (`u`.`email` = `ent`.`email`) and (`u`.`email` = `j`.`email`)))) where (`c`.`published` = 1) order by `c`.`nom`)

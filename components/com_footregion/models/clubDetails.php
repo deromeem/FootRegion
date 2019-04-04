@@ -16,6 +16,9 @@ class FootregionModelClubDetails extends JModelItem
 		// $this->setState('club.id', $pk);
 	}
 
+	}
+
+
 	public function getItem($pk = null)
 	{
 		// Initialise l'id

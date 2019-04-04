@@ -30,7 +30,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				<i class="icon-search"></i></button>
 		</div>	
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_discussion&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -47,7 +47,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<!-- <th class="title">Publié</th> -->
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_DISCUSSIONS_UTILISATEURS_ID'), 'utilisateur_id', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('Utilisateur'), 'utilisateur_id', $listDirn, $listOrder) ?>
 				</th>
 			</tr>
 		</thead>

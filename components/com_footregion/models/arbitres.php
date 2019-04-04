@@ -53,11 +53,11 @@ class FootregionModelArbitres extends JModelList
 		$query->select('a.id, a.email, a.alias, a.published, a.hits, a.modified');
 		$query->from('#__footregion_arbitres a');
 
-		// joint la table typescontacts
-		$query->select(' CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=a.id');
+		// joint la table utilisateurs et matchs_arbitres
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS utilisateur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=a.id');
 		$query->select('ma.role AS rolematch')->join('LEFT', '#__footregion_matchs_arbitres AS ma ON ma.id=a.id');
 		$query->select('m.nom AS nommatch')->join('LEFT', '#__footregion_matchs AS m ON m.id=a.id');
-		// $query->select('ma.match_id AS idmatch')->join('LEFT', '#__footregion_matchs_arbitres AS mar ON mar.id=a.id');
+		// $query->select('ma.arbitre_id AS idmatch')->join('LEFT', '#__footregion_matchs_arbitres AS ma ON ma.id=a.id');
 
 		// joint la table entreprises
 		// $query->select('e.nom AS entreprise')->join('LEFT', '#__annuaire_entreprises AS e ON e.id=c.entreprises_id');		
