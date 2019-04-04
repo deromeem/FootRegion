@@ -59,22 +59,7 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 					<div class="tab-pane active" id="joueur">
 						<table class="table">
 							<tbody>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					<div class="tab-pane" id="avance">
-						<table class="table">
-							<tbody>
-								<tr>
+							<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
 									</td>
@@ -98,6 +83,46 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
 									</td>
 								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="tab-pane" id="avance">
+						<table class="table">
+							<tbody>
+							<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
+									</td>
+								</tr>
+								
 							</tbody>
 						</table>				
 
@@ -105,7 +130,12 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
 					</div>
 					<div class="tab-pane" id="commentaire">
-						<?php echo $this->form->getControlGroup('commentaire'); ?>
+						<table class="table">
+							<tbody>
+								<div class="tab-pane" id="commentaire">
+								<?php echo $this->form->getControlGroup('commentaire'); ?>
+							</tbody>
+						</table>
 					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>

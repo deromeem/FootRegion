@@ -18,7 +18,7 @@ $isAdmin = (in_array($groupnum, $user->groups));		// sets flag when user group i
 				<span class="icon-cancel"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_equipe&layout=edit&id='.$this->item->id); ?>" class="btn" role="button">
 				<span class="icon-edit"></span></a>
 		</div>	
 	</div>	
