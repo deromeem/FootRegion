@@ -1479,7 +1479,11 @@ CREATE TABLE `footregion_footregion_arbitres` (
 
 INSERT INTO `footregion_footregion_arbitres` (`id`, `email`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'phochon@footregion.fr', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'phochon@footregion.fr', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'ipage@footregion.fr', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'aball@footregion.fr', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'mlance@footregion.fr', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'arange@footregion.fr', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1511,8 +1515,8 @@ INSERT INTO `footregion_footregion_categories` (`id`, `nom`, `alias`, `published
 (5, 'U16-U17', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (6, 'U18-U19', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (7, 'Seniors', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(8, 'Vétérans', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(9, 'Vétérans +45', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(8, 'V�t�rans', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(9, 'V�t�rans +45', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1543,12 +1547,13 @@ CREATE TABLE `footregion_footregion_clubs` (
 
 INSERT INTO `footregion_footregion_clubs` (`id`, `sigle`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `directeurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardières', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'UFBSJA', 'Union Football Belleville Saint Jean d\'Ardi�res', '', '', '', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (3, 'FCA', 'FC Annecy', '24 Rue du Commandant Guilbaud', 'Annecy', '74000', 2, 'fc-annecy', 1, '2018-11-08 13:17:24', 35, '2018-11-08 13:30:58', 35, 0),
-(4, 'FSR', 'Fréjus-Saint-Raphaël', '10 Avenue Simone Veil ', 'Saint-Raphaël', '83600', 2, 'frejus-saint-raphael', 1, '2018-11-08 13:19:02', 35, '2018-11-08 13:31:07', 35, 0),
-(5, 'HFC', 'Hyères FC', '24 Rue Charles de Gaulle', 'Hyères', '83400', 2, 'hyeres-fc', 1, '2018-11-08 13:20:07', 35, '2018-11-08 13:31:15', 35, 0),
-(6, 'CAP', 'CA Pontarlier', '54 Rue Marpaud', 'Pontarlier', '25300', 2, 'ca-pontarlier', 1, '2018-11-08 13:21:11', 35, '2018-11-08 13:31:23', 35, 0),
-(7, 'TFC', 'Trélissac', '13 Avenue Jean Jaurès', 'Trélissac', '24750', 2, 'trelissac', 1, '2018-11-08 13:22:43', 35, '2018-11-08 13:31:30', 35, 0);
+(4, 'FSR', 'Fr�jus-Saint-Rapha�l', '10 Avenue Simone Veil ', 'Saint-Rapha�l', '83600', 2, 'frejus-saint-raphael', 1, '2018-11-08 13:19:02', 35, '2018-11-08 13:31:07', 35, 0),
+(5, 'HFC', 'Hy�res FC', '24 Rue Charles de Gaulle', 'Hy�res', '83400', 3, 'hyeres-fc', 1, '2018-11-08 13:20:07', 35, '2018-11-08 13:31:15', 35, 0),
+(6, 'CPP', 'CA Pontarlier', '54 Rue Marpaud', 'Pontarlier', '25300', 2, 'ca-pontarlier', 1, '2018-11-08 13:21:11', 35, '2018-12-11 16:30:04', 39, 0),
+(7, 'TFC', 'Tr�lissac', '13 Avenue Jean Jaur�s', 'Tr�lissac', '24750', 2, 'trelissac', 1, '2018-11-08 13:22:43', 35, '2018-11-08 13:31:30', 35, 0),
+(8, 'RMN', 'Real Mandarine', '11 rue jeanne d\'arc', 'Clichy', '92410', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1575,7 +1580,8 @@ CREATE TABLE `footregion_footregion_directeurs` (
 
 INSERT INTO `footregion_footregion_directeurs` (`id`, `email`, `date_affectation`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '0000-00-00', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'hboss@footregion.fr', '0000-00-00', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'hboss@footregion.fr', '0000-00-00', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'lleclerc@footregion.fr', '0000-00-00', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1643,8 +1649,10 @@ CREATE TABLE `footregion_footregion_entraineurs` (
 INSERT INTO `footregion_footregion_entraineurs` (`id`, `email`, `num_licence`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (2, 'inote@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(3, 'sfrais@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
-
+(3, 'sfrais@footregion.fr', '', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(4, 'aubinlacaze@footregion.fr', '0444754781', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'lorrainmartin@footregion.fr', '0164648210', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'gauthiersamuel@footregion.fr', '0567514968', '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 -- --------------------------------------------------------
 
 --
@@ -1672,7 +1680,13 @@ CREATE TABLE `footregion_footregion_equipes` (
 
 INSERT INTO `footregion_footregion_equipes` (`id`, `nom`, `clubs_id`, `categories_id`, `entraineurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(2, 'UFBSJA-Seniors-1', 2, 7, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(2, 'UFBSJA-Seniors-1', 2, 7, 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, 'FCA-U18-U19-1', 3, 6, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'FCA-U14-U15-1', 3, 4, 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'FSR-U10-U11-1', 4, 2, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'FSR-U10-U11-2', 4, 2, 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(7, 'HFC-V�t�rans-1', 5, 8, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(8, 'HFC-V�t�rans+45-1', 5, 9, 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1706,7 +1720,19 @@ INSERT INTO `footregion_footregion_joueurs` (`id`, `email`, `poste`, `num_licenc
 (3, 'tbut@footregion.fr', '', '', '2000-10-07', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (5, 'adurand@footregion.fr', '', '', '2000-05-12', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
 (6, 'mdupond@footregion.fr', '', '', '2000-04-25', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
-(7, 'pnalty@footregion.fr', '', '', '2000-02-04', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(7, 'pnalty@footregion.fr', '', '', '2000-02-04', 2, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(8, 'gastondamien@footregion.fr', 'Gardien', '0105754281', '0000-00-00', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(9, 'demangeyannick@footregion.fr', 'D�fenseur', '0248453216', '0000-00-00', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(10, 'guyparenteau@footregion.fr', 'Milieu', '0444897789', '0000-00-00', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(11, 'vadendavignon@footregion.fr', 'Attaquant', '0164974410', '0000-00-00', 3, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(12, 'mauricebarrientos@footregion.fr', 'Gardien', '0563550978', '0000-00-00', 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(13, 'aleronayot@footregion.fr', 'D�fenseur', '0105573281', '0000-00-00', 4, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(14, 'artuscaron@footregion.fr', 'Milieu', '0247002196', '0000-00-00', 5, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(15, 'JoshuaBarker@footregion.fr', 'Attaquant', '0463446310', '0000-00-00', 6, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(16, 'ChristopherMorton@footregion.fr', 'D�fenseur', '0240835925', '0000-00-00', 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(17, 'JasonMitchell@footregion.fr', 'Milieu', '0423670188', '0000-00-00', 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(18, 'DanielDavison@footregion.fr', 'Gardien', '0540209485', '0000-00-00', 7, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(19, 'JohnCastro@footregion.fr', 'Attaquant', '0188308420', '0000-00-00', 8, '', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1744,8 +1770,10 @@ CREATE TABLE `footregion_footregion_matchs` (
 --
 
 INSERT INTO `footregion_footregion_matchs` (`id`, `date_heure`, `score_domicile`, `score_invite`, `nom`, `adr_rue`, `adr_ville`, `adr_cp`, `coord_gps`, `equipes_invite_id`, `equipes_domicile_id`, `entraineurs_invite_id`, `entraineurs_initiateur_id`, `tournois_id`, `statuts_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '2018-10-24 00:00:00', 0, 0, '-', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 0, '0000-00-00 00:00:00', 45, 0),
-(2, '2018-10-26 13:00:00', 0, 0, 'Match test 1', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(1, '2018-10-24 00:00:00', 0, 0, '-', 'rue', 'ville', 'cp', 'c''est la', 1, 1, 1, 1, 1, 1, 'dd', 1, '2018-10-24 00:00:00', 0, '0000-00-00 00:00:00', 45, 0),
+(2, '2018-10-26 13:00:00', 0, 0, 'Match test 1', '', '', '', '', 1, 1, 1, 1, 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(3, '2019-03-11 10:40:00', 0, 0, 'Romatch', '518 av Lucien Barrault', 'Champigny Sur Marne', '94500', 'c''est ici', 3, 4, 2, 3, 1, 2, 'romatch', 1, '2019-03-11 09:41:11', 35, '0000-00-00 00:00:00', 0, 0),
+(4, '2019-03-11 11:05:00', 1, 1, 'Armatch', '11 rue du sens', 'cervelet sur oise', '200', 'c''est la', 4, 5, 3, 2, 1, 3, 'armatch', 1, '2019-03-11 10:06:46', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1867,7 +1895,10 @@ CREATE TABLE `footregion_footregion_signalements` (
 --
 
 INSERT INTO `footregion_footregion_signalements` (`id`, `libelle`, `arbitres_id`, `entraineurs_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+(1, '-', 1, 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'but non accordé', 2, 2, '', 1, '2019-03-12 13:53:49', 35, '2019-03-14 15:43:02', 35, 0),
+(3, 'déclaration de faute inexistante', 2, 3, '', 1, '2019-04-23 14:54:28', 35, '2019-03-14 15:38:06', 35, 0),
+(4, 'problèmes d''accord sur le règlement', 2, 2, '', 1, '2019-03-14 15:27:23', 35, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1909,6 +1940,7 @@ INSERT INTO `footregion_footregion_statuts` (`id`, `statut`, `alias`, `published
 CREATE TABLE `footregion_footregion_tournois` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
+  `entraineur_id` int(11) NOT NULL,
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
   `published` tinyint(1) NOT NULL DEFAULT '1',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -1918,12 +1950,16 @@ CREATE TABLE `footregion_footregion_tournois` (
   `hits` int(11) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 --
 -- Déchargement des données de la table `footregion_footregion_tournois`
 --
 
-INSERT INTO `footregion_footregion_tournois` (`id`, `nom`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, '-', '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
+INSERT INTO `footregion_footregion_tournois` (`id`, `nom`, `entraineur_id`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
+(1, '-', 1, '', 1, '2018-10-24 00:00:00', 45, '0000-00-00 00:00:00', 0, 0),
+(2, 'Tournois des champions', 2, 'TDC', 1, '2019-03-11 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(4, 'Tournois des SLAMZ', 2, 'Tournois inter-slam', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'Tournois SISR', 2, 'Tournois inter-SISR', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1952,16 +1988,42 @@ CREATE TABLE `footregion_footregion_utilisateurs` (
 
 INSERT INTO `footregion_footregion_utilisateurs` (`id`, `nom`, `prenom`, `mobile`, `email`, `alias`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, '-', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(2, 'DUPOND', 'Marcel', '0645124578', 'mdupond@footregion.fr', 'dupond-marcel', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:03:26', 35, 0),
+(2, 'DUPOND', 'Marcel', '0645124578', 'mdupond@footregion.fr', 'dupond-marcel', 1, '0000-00-00 00:00:00', 45, '2019-03-11 08:01:02', 36, 0),
 (3, 'DURAND', 'Alphonse', '0689845762', 'adurand@footregion.fr', 'durand-alphonse', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:01:33', 35, 0),
-(4, 'NALTY', 'Pierre', '0678125689', 'pnalty@footregion.fr', 'nalty-pierre', 1, '0000-00-00 00:00:00', 45, '2018-10-24 15:04:59', 35, 0),
+(4, 'NALTY', 'Pierre', '0678125689', 'pnalty@footregion.fr', 'nalty-pierre', 1, '0000-00-00 00:00:00', 45, '2018-12-11 15:34:18', 35, 0),
 (5, 'BOSS', 'Hugo', '0604030201', 'hboss@footregion.fr', 'boss', 1, '2018-10-24 14:35:59', 45, '0000-00-00 00:00:00', 0, 0),
 (6, 'NOTE', 'Ivan', '', 'inote@footregion.fr', 'note', 1, '2018-10-24 14:49:00', 45, '0000-00-00 00:00:00', 0, 0),
 (7, 'FRAIS', 'Sami', '', 'sfrais@footregion.fr', 'frais', 1, '2018-10-24 14:49:32', 45, '0000-00-00 00:00:00', 0, 0),
 (8, 'MARQUE', 'Jean', '', 'jmarque@footregion.fr', 'marque', 1, '2018-10-24 14:50:02', 45, '2018-10-24 14:58:41', 35, 0),
-(9, 'BUT', 'Théo', '', 'tbut@footregion.fr', 'but', 1, '2018-10-24 14:50:31', 45, '0000-00-00 00:00:00', 0, 0),
-(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0);
-
+(9, 'BUT', 'Th�o', '', 'tbut@footregion.fr', 'but', 1, '2018-10-24 14:50:31', 45, '0000-00-00 00:00:00', 0, 0),
+(10, 'HOCHON', 'Paul', '', 'phochon@footregion.fr', 'hochon', 1, '2018-10-24 14:51:04', 45, '2018-10-24 14:53:15', 35, 0),
+(11, 'AUBIN', 'Lacaze', '0444754781', 'aubinlacaze@footregion.fr', 'aubin', 1, '2018-11-08 13:57:08', 35, '2018-11-08 14:01:13', 35, 0),
+(12, 'LORRAIN', 'Martin', '0164648210', 'lorrainmartin@footregion.fr', 'lorrain', 1, '2018-11-08 13:57:55', 35, '2018-11-08 14:00:36', 35, 0),
+(13, 'GAUTHIER', 'Samuel', '0567514968', 'gauthiersamuel@footregion.fr', 'gauthier', 1, '2018-11-08 14:00:25', 35, '0000-00-00 00:00:00', 0, 0),
+(14, 'GASTON ', 'Lothaire-Damien', '0105754281', 'gastondamien@footregion.fr', 'gaston', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(15, 'DEMANGE', 'Yannick', '0248453216', 'demangeyannick@footregion.fr', 'demange', 1, '2018-11-08 14:04:42', 35, '0000-00-00 00:00:00', 0, 0),
+(16, 'PARENTEAU', 'Guy', '0444897789', 'guyparenteau@footregion.fr', 'parenteau', 1, '2018-11-08 13:57:08', 35, '2018-11-08 14:01:13', 35, 0),
+(17, 'DAVIGNON', 'Vaden', '0164974410', 'vadendavignon@footregion.fr', 'davignon', 1, '2018-11-08 13:57:55', 35, '2018-11-08 14:00:36', 35, 0),
+(18, 'BARRIENTOS', 'Maurice', '0563550978', 'mauricebarrientos@footregion.fr', 'barrientos', 1, '2018-11-08 14:00:25', 35, '0000-00-00 00:00:00', 0, 0),
+(19, 'AYOT', 'Aleron', '0105573281', 'aleronayot@footregion.fr', 'ayot', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(20, 'CARON', 'Artus', '0247002196', 'artuscaron@footregion.fr', 'caron', 1, '2018-11-08 14:04:42', 35, '0000-00-00 00:00:00', 0, 0),
+(21, 'JOSHUA', 'Barker', '0463446310', 'JoshuaBarker@footregion.fr', 'joshua', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(22, 'CHRISTOPHER', 'Morton', '0240835925', 'ChristopherMorton@footregion.fr', 'christopher', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(23, 'JASON', 'Mitchell', '0423670188', 'JasonMitchell@footregion.fr', 'jason', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(24, 'DANIEL', 'Davison', '0540209485', 'DanielDavison@footregion.fr', 'daniel', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(25, 'JOHN', 'Castro', '0188308420', 'JohnCastro@footregion.fr', 'john', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(26, 'DAVID', 'Parsons', '0599683950', 'DavidParsons@footregion.fr', 'david', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(27, 'ROBERT', 'Higgins', '0421599364', 'RobertHiggins@footregion.fr', 'robert', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(28, 'JOSEPH', 'Frost', '0413941270', 'JosephFrost@footregion.fr', 'joseph', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(29, 'MICHAEL', 'Matthews', '0413991270', 'MichaelMatthews@footregion.fr', 'michael', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(30, 'MATTHEW', 'Houston', '0413941270', 'MatthewHouston@footregion.fr', 'matthew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(31, 'JAMES', 'Mohamed', '0419752827', 'JamesMohamed@footregion.fr', 'james', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(32, 'ANDREW', 'Jackson', '0165237099', 'AndrewJackson@footregion.fr', 'andrew', 1, '2018-11-08 14:02:51', 35, '2018-11-08 14:03:20', 35, 0),
+(33, 'BRION', 'Adjutor', '0785469482', 'brionadjutor@footregion.fr', 'brion', 1, '2019-03-11 08:25:56', 35, '0000-00-00 00:00:00', 0, 0),
+(34, 'PAGE', 'Laurent', '0643927509', 'lpage@footregion.fr', 'page', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(35, 'BALL', 'Antoine', '0651387264', 'aball@footregion.fr', 'ball', 1, '2019-03-18 10:36:22', 0, '0000-00-00 00:00:00', 0, 0),
+(36, 'LANCE', 'Mathieu', '0653847216', 'mlance@footregion.fr', 'lance', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(37, 'RANGE', 'Armand', '0627436852', 'arange@footregion.fr', 'range', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 -- --------------------------------------------------------
 
 --
@@ -3436,7 +3498,8 @@ ALTER TABLE `footregion_footregion_statuts`
 -- Index pour la table `footregion_footregion_tournois`
 --
 ALTER TABLE `footregion_footregion_tournois`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_footregion_footregion_entraineur_id` (`entraineur_id`);
 
 --
 -- Index pour la table `footregion_footregion_utilisateurs`

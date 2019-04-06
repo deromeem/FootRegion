@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 class FootregionControllerMatch extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_m';
+	protected $view_item = 'form_match';
 	
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
@@ -59,7 +59,7 @@ class FootregionControllerMatch extends JControllerForm
 		return JURI::base()."/index.php?option=com_footregion&view=matchs";		
 	}
 
-	public function getModel($name = 'form_m', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_match', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

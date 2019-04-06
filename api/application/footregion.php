@@ -78,7 +78,7 @@ class AppFootregionWeb extends JApplicationCms
 			$did = $_POST['did'];
 		}
 		// echo ("DEBUG login = " . $login . " pwd = " . $pwd . " task =>" . $task . " id =>" . $id . "<");    // TEST/DEBUG
-		
+	
 		if (($login != "") and ($pwd != "")) {
 
 			$credentials = array();
