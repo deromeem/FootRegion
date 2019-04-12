@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 12 avr. 2019 à 10:08
+-- Généré le :  ven. 12 avr. 2019 à 19:47
 -- Version du serveur :  10.1.26-MariaDB
 -- Version de PHP :  7.1.9
 
@@ -563,7 +563,7 @@ CREATE TABLE `footregion_contact_details` (
 --
 
 INSERT INTO `footregion_contact_details` (`id`, `name`, `alias`, `con_position`, `address`, `suburb`, `state`, `country`, `postcode`, `telephone`, `fax`, `misc`, `image`, `email_to`, `default_con`, `published`, `checked_out`, `checked_out_time`, `ordering`, `params`, `user_id`, `catid`, `access`, `mobile`, `webpage`, `sortname1`, `sortname2`, `sortname3`, `language`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `metakey`, `metadesc`, `metadata`, `featured`, `xreference`, `publish_up`, `publish_down`, `version`, `hits`) VALUES
-(1, 'Info FootRegion', 'info-footregion', '', '', '', '', '', '', '', '', '', '', '', 0, 1, 0, '0000-00-00 00:00:00', 1, '{\"show_contact_category\":\"\",\"show_contact_list\":\"\",\"presentation_style\":\"\",\"show_tags\":\"\",\"show_info\":\"\",\"show_name\":\"\",\"show_position\":\"\",\"show_email\":\"\",\"add_mailto_link\":\"\",\"show_street_address\":\"\",\"show_suburb\":\"\",\"show_state\":\"\",\"show_postcode\":\"\",\"show_country\":\"\",\"show_telephone\":\"\",\"show_mobile\":\"\",\"show_fax\":\"\",\"show_webpage\":\"\",\"show_image\":\"\",\"show_misc\":\"\",\"allow_vcard\":\"\",\"show_articles\":\"\",\"articles_display_num\":\"\",\"show_profile\":\"\",\"show_links\":\"\",\"linka_name\":\"\",\"linka\":false,\"linkb_name\":\"\",\"linkb\":false,\"linkc_name\":\"\",\"linkc\":false,\"linkd_name\":\"\",\"linkd\":false,\"linke_name\":\"\",\"linke\":false,\"contact_layout\":\"\",\"show_email_form\":\"\",\"show_email_copy\":\"\",\"banned_email\":\"\",\"banned_subject\":\"\",\"banned_text\":\"\",\"validate_session\":\"\",\"custom_reply\":\"\",\"redirect\":\"\"}', 36, 4, 1, '', '', '', '', '', '*', '2018-09-25 08:20:09', 35, '', '2018-09-25 08:20:09', 0, '', '', '{\"robots\":\"\",\"rights\":\"\"}', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 3);
+(1, 'Info FootRegion', 'info-footregion', '', '', '', '', '', '', '', '', '', '', '', 0, 1, 0, '0000-00-00 00:00:00', 1, '{\"show_contact_category\":\"\",\"show_contact_list\":\"\",\"presentation_style\":\"\",\"show_tags\":\"\",\"show_info\":\"\",\"show_name\":\"\",\"show_position\":\"\",\"show_email\":\"\",\"add_mailto_link\":\"\",\"show_street_address\":\"\",\"show_suburb\":\"\",\"show_state\":\"\",\"show_postcode\":\"\",\"show_country\":\"\",\"show_telephone\":\"\",\"show_mobile\":\"\",\"show_fax\":\"\",\"show_webpage\":\"\",\"show_image\":\"\",\"show_misc\":\"\",\"allow_vcard\":\"\",\"show_articles\":\"\",\"articles_display_num\":\"\",\"show_profile\":\"\",\"show_links\":\"\",\"linka_name\":\"\",\"linka\":false,\"linkb_name\":\"\",\"linkb\":false,\"linkc_name\":\"\",\"linkc\":false,\"linkd_name\":\"\",\"linkd\":false,\"linke_name\":\"\",\"linke\":false,\"contact_layout\":\"\",\"show_email_form\":\"\",\"show_email_copy\":\"\",\"banned_email\":\"\",\"banned_subject\":\"\",\"banned_text\":\"\",\"validate_session\":\"\",\"custom_reply\":\"\",\"redirect\":\"\"}', 36, 4, 1, '', '', '', '', '', '*', '2018-09-25 08:20:09', 35, '', '2018-09-25 08:20:09', 0, '', '', '{\"robots\":\"\",\"rights\":\"\"}', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -611,7 +611,7 @@ CREATE TABLE `footregion_content` (
 
 INSERT INTO `footregion_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`, `note`) VALUES
 (1, 56, 'Bienvenue', 'bienvenue', '<p>Bienvenue sur le site FootRegion de la Fédération française de football FFF.</p>\r\n<p>Ce site permet aux clubs de football d’organiser des tournois amicaux entre clubs de même région.</p>', '', 1, 2, '2018-09-25 08:22:36', 35, '', '2018-09-25 09:24:10', 35, 0, '0000-00-00 00:00:00', '2018-09-25 08:22:36', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 3, 3, '', '', 1, 80, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
-(2, 57, 'FFF', 'fff', '<div class=\"introduction\">\r\n<p><span style=\"font-size: 12pt;\">La FFF compte aujourd\'hui près de 2,2 millions de licenciés dont 400 000 bénévoles et 160 000 féminines.</span></p>\r\n</div>\r\n<ul>\r\n<li>2 160 788 licences dont 159 128 féminines (au 30 juin 2017).</li>\r\n<li>14 993 clubs dont 40 clubs professionnels participant aux championnats de L1 (20 clubs) et de L2 (20 clubs).</li>\r\n<li>836 135 matches par an.</li>\r\n<li>13 ligues régionales + 9 d\'outre-mer.</li>\r\n<li>90 districts.</li>\r\n<li>7 000 salariés.</li>\r\n<li>400 000 bénévoles.</li>\r\n</ul>', '', 1, 2, '2018-09-25 08:33:21', 35, '', '2018-09-25 08:33:21', 0, 0, '0000-00-00 00:00:00', '2018-09-25 08:33:21', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 2, '', '', 1, 3, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
+(2, 57, 'FFF', 'fff', '<div class=\"introduction\">\r\n<p><span style=\"font-size: 12pt;\">La FFF compte aujourd\'hui près de 2,2 millions de licenciés dont 400 000 bénévoles et 160 000 féminines.</span></p>\r\n</div>\r\n<ul>\r\n<li>2 160 788 licences dont 159 128 féminines (au 30 juin 2017).</li>\r\n<li>14 993 clubs dont 40 clubs professionnels participant aux championnats de L1 (20 clubs) et de L2 (20 clubs).</li>\r\n<li>836 135 matches par an.</li>\r\n<li>13 ligues régionales + 9 d\'outre-mer.</li>\r\n<li>90 districts.</li>\r\n<li>7 000 salariés.</li>\r\n<li>400 000 bénévoles.</li>\r\n</ul>', '', 1, 2, '2018-09-25 08:33:21', 35, '', '2018-09-25 08:33:21', 0, 0, '0000-00-00 00:00:00', '2018-09-25 08:33:21', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 2, '', '', 1, 5, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
 (3, 58, 'Tournois', 'tournois', '<p>Les tournois et matches amicaux sont proposés par les entraineurs des clubs aux autres entraineurs qui sont libres d’accepter ou refuser les invitations, en fonction de la disponibilité de leurs équipes.</p>', '', 1, 2, '2018-09-25 08:40:20', 35, '', '2018-09-25 08:40:20', 0, 0, '0000-00-00 00:00:00', '2018-09-25 08:40:20', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 1, '', '', 1, 5, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', ''),
 (4, 59, 'Discussions', 'discussions', '<p>Cette page est réservée aux adhérents (entraîneurs, joueurs, arbitres...).</p>', '', 1, 2, '2018-09-25 08:44:23', 35, '', '2018-09-25 08:44:23', 0, 0, '0000-00-00 00:00:00', '2018-09-25 08:44:23', '0000-00-00 00:00:00', '{\"image_intro\":\"\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}', '{\"urla\":false,\"urlatext\":\"\",\"targeta\":\"\",\"urlb\":false,\"urlbtext\":\"\",\"targetb\":\"\",\"urlc\":false,\"urlctext\":\"\",\"targetc\":\"\"}', '{\"article_layout\":\"\",\"show_title\":\"\",\"link_titles\":\"\",\"show_tags\":\"\",\"show_intro\":\"\",\"info_block_position\":\"\",\"info_block_show_title\":\"\",\"show_category\":\"\",\"link_category\":\"\",\"show_parent_category\":\"\",\"link_parent_category\":\"\",\"show_associations\":\"\",\"show_author\":\"\",\"link_author\":\"\",\"show_create_date\":\"\",\"show_modify_date\":\"\",\"show_publish_date\":\"\",\"show_item_navigation\":\"\",\"show_icons\":\"\",\"show_print_icon\":\"\",\"show_email_icon\":\"\",\"show_vote\":\"\",\"show_hits\":\"\",\"show_noauth\":\"\",\"urls_position\":\"\",\"alternative_readmore\":\"\",\"article_page_title\":\"\",\"show_publishing_options\":\"\",\"show_article_options\":\"\",\"show_urls_images_backend\":\"\",\"show_urls_images_frontend\":\"\"}', 1, 0, '', '', 2, 9, '{\"robots\":\"\",\"author\":\"\",\"rights\":\"\",\"xreference\":\"\"}', 0, '*', '', '');
 
@@ -865,7 +865,7 @@ INSERT INTO `footregion_extensions` (`extension_id`, `package_id`, `name`, `type
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"July 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTH_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{\"name\":\"plg_twofactorauth_yubikey\",\"type\":\"plugin\",\"creationDate\":\"September 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.2.0\",\"description\":\"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"yubikey\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{\"name\":\"plg_search_tags\",\"type\":\"plugin\",\"creationDate\":\"March 2014\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEARCH_TAGS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tags\"}', '{\"search_limit\":\"50\",\"show_tagged_items\":\"1\"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1555054893}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"May 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1555076746}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{\"name\":\"plg_editors-xtd_module\",\"type\":\"plugin\",\"creationDate\":\"October 2015\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_MODULE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"module\"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 0, 1, 0, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"November 2013\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '{\"mode\":3,\"lastrun\":\"\",\"unique_id\":\"d28c6cf7ac9fe5bcd5f11b16123b6cce8813712a\",\"interval\":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{\"name\":\"plg_installer_packageinstaller\",\"type\":\"plugin\",\"creationDate\":\"May 2016\",\"author\":\"Joomla! Project\",\"copyright\":\"Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.6.0\",\"description\":\"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"packageinstaller\"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -2043,7 +2043,8 @@ INSERT INTO `footregion_footregion_utilisateurs` (`id`, `nom`, `prenom`, `mobile
 (34, 'PAGE', 'Laurent', '0643927509', 'lpage@footregion.fr', 'page', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
 (35, 'BALL', 'Antoine', '0651387264', 'aball@footregion.fr', 'ball', 1, '2019-03-18 10:36:22', 0, '0000-00-00 00:00:00', 0, 0),
 (36, 'LANCE', 'Mathieu', '0653847216', 'mlance@footregion.fr', 'lance', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
-(37, 'RANGE', 'Armand', '0627436852', 'arange@footregion.fr', 'range', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
+(37, 'RANGE', 'Armand', '0627436852', 'arange@footregion.fr', 'range', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(38, 'LECLERC', 'Ludovic', '0704030201', 'lleclerc@footregion.fr', 'leclerc-ludovic', 1, '2019-04-12 00:00:00', 45, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2514,8 +2515,9 @@ CREATE TABLE `footregion_session` (
 --
 
 INSERT INTO `footregion_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-(0x666e7169636a766d736e69766e68706434696136746970367430, 0, 1, 1555056449, 'joomla|s:736:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo0O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTU1NTA1NTE4NztzOjQ6Imxhc3QiO2k6MTU1NTA1NjMyOTtzOjM6Im5vdyI7aToxNTU1MDU2NDQ5O31zOjU6InRva2VuIjtzOjMyOiJNUFZ3VVQ4eFVGclU0VldEQ2laS3kxUlhrQ2R6NjVaSSI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
-(0x6a36616c6e726f31666f64307665766b64627131357167626134, 1, 0, 1555056446, 'joomla|s:1240:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo1OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxMTtzOjU6InRva2VuIjtzOjMyOiI5MUQyUkhPYzRjZXNsanF1amRlNGMyNUxSekNTWWtBcyI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTU1MDU2MzA0O3M6NDoibGFzdCI7aToxNTU1MDU2NDQ1O3M6Mzoibm93IjtpOjE1NTUwNTY0NDU7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMzoiY29tX3RlbXBsYXRlcyI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJlZGl0IjtPOjg6InN0ZENsYXNzIjoxOntzOjU6InN0eWxlIjtPOjg6InN0ZENsYXNzIjoyOntzOjI6ImlkIjthOjE6e2k6MDtpOjk7fXM6NDoiZGF0YSI7Tjt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7czoyOiIzNSI7fXM6OToiY29tX21lZGlhIjtPOjg6InN0ZENsYXNzIjoxOntzOjEwOiJyZXR1cm5fdXJsIjtzOjExOToiaW5kZXgucGhwP29wdGlvbj1jb21fbWVkaWEmdmlldz1pbWFnZXMmdG1wbD1jb21wb25lbnQmZmllbGRpZD1qZm9ybV9wYXJhbXNfbG9nb0ZpbGUmZV9uYW1lPSZhc3NldD1jb21fdGVtcGxhdGVzJmF1dGhvcj0iO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 35, 'SLAM');
+(0x357165327034656a6a746b336e623631677670626a7272643374, 0, 1, 1555090402, 'joomla|s:664:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo3O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTU1NTA4NjIwMjtzOjQ6Imxhc3QiO2k6MTU1NTA4OTU2MjtzOjM6Im5vdyI7aToxNTU1MDkwNDAyO319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 0, ''),
+(0x626c6b6e686b6372757239767431333263686231353068757037, 0, 1, 1555091081, 'joomla|s:528:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NzoiY291bnRlciI7aToxO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MDp7fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6MDt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=\";', 0, ''),
+(0x64753132633732393673396e30373735336c706d656f3434766a, 1, 0, 1555080795, 'joomla|s:1816:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTozMDtzOjU6InRva2VuIjtzOjMyOiJhVGprb1RzSWpNc2VlS213SnV0ZXlzUmZtV1NzVzBJQyI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTU1MDgwMzAxO3M6NDoibGFzdCI7aToxNTU1MDgwNzkxO3M6Mzoibm93IjtpOjE1NTUwODA3OTU7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6Mzp7czoxNDoiY29tX2Zvb3RyZWdpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6MTI6InV0aWxpc2F0ZXVycyI7Tzo4OiJzdGRDbGFzcyI6NDp7czo2OiJmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjI6e3M6Njoic2VhcmNoIjtzOjQ6IkxFQ0wiO3M6OToicHVibGlzaGVkIjtzOjA6IiI7fXM6ODoib3JkZXJjb2wiO3M6ODoibW9kaWZpZWQiO3M6OToib3JkZXJkaXJuIjtzOjQ6ImRlc2MiO3M6MTA6ImxpbWl0c3RhcnQiO2k6MDt9fXM6NjoiZ2xvYmFsIjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6Imxpc3QiO086ODoic3RkQ2xhc3MiOjE6e3M6NToibGltaXQiO2k6MjA7fX1zOjk6ImNvbV91c2VycyI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo1OiJ1c2VycyI7Tzo4OiJzdGRDbGFzcyI6MTp7czo3OiJkZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjY6ImZpbHRlciI7YTo2OntzOjY6InNlYXJjaCI7czowOiIiO3M6NToic3RhdGUiO3M6MDoiIjtzOjY6ImFjdGl2ZSI7czowOiIiO3M6ODoiZ3JvdXBfaWQiO3M6MDoiIjtzOjE0OiJsYXN0dmlzaXRyYW5nZSI7czowOiIiO3M6NToicmFuZ2UiO3M6MDoiIjt9czo0OiJsaXN0IjthOjI6e3M6MTI6ImZ1bGxvcmRlcmluZyI7czoxMDoiYS5uYW1lIEFTQyI7czo1OiJsaW1pdCI7czoyOiIyMCI7fXM6MTA6ImxpbWl0c3RhcnQiO2k6MDt9fXM6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJ1c2VyIjtPOjg6InN0ZENsYXNzIjoyOntzOjQ6ImRhdGEiO047czoyOiJpZCI7YTowOnt9fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO3M6MjoiMzUiO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 35, 'SLAM');
 
 -- --------------------------------------------------------
 
@@ -2726,7 +2728,7 @@ CREATE TABLE `footregion_update_sites` (
 --
 
 INSERT INTO `footregion_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1555054922, ''),
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1555076746, ''),
 (2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 0, ''),
 (3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, '');
 
@@ -2817,17 +2819,18 @@ CREATE TABLE `footregion_users` (
 --
 
 INSERT INTO `footregion_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(35, 'Super Utilisateur', 'SLAM', 'emmanuel.derome@gmail.com', '$2y$10$APeo8djvfrcyyHIi8PuLt.wDSnBqw8m.vcEOmkGy2A.MAjIfcH2Ga', 0, 1, '2018-09-25 08:04:35', '2019-04-12 08:05:04', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
+(35, 'Super Utilisateur', 'SLAM', 'emmanuel.derome@gmail.com', '$2y$10$APeo8djvfrcyyHIi8PuLt.wDSnBqw8m.vcEOmkGy2A.MAjIfcH2Ga', 0, 1, '2018-09-25 08:04:35', '2019-04-12 14:45:01', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
 (36, 'Marcel DUPOND', 'mdupond', 'mdupond@footregion.fr', '$2y$10$xf5PRJXfQSdBxh4zrmEczOQpIOWWYHvORXKwpYKdAsbvQhx17yUGa', 0, 0, '2018-09-25 08:17:06', '2018-09-25 09:37:14', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (37, 'Alphonse DURAND', 'adurand', 'adurand@footregion.fr', '$2y$10$bQEFQi2oRJq1wTeLNonPuudzAZOgGj6FC76yhoml1JWitZx6b79Y2', 0, 0, '2018-10-24 16:03:49', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (38, 'Pierre NALTY', 'pnalty', 'pnalty@footregion.fr', '$2y$10$yebGpgQTgZPSNC/iNYN7q.NbQSviN03viEkCi2F8BaIpjDD76eofu', 0, 0, '2018-10-24 16:12:38', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
-(39, 'Hugo BOSS', 'hboss', 'hboss@footregion.fr', '$2y$10$aKubeAch7P/fSNDi9hnsNeozU0Zo1pXmuT24qilVxyLluanWM5OtK', 0, 0, '2018-10-24 16:14:58', '2018-11-25 17:55:14', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
+(39, 'Hugo BOSS', 'hboss', 'hboss@footregion.fr', '$2y$10$aKubeAch7P/fSNDi9hnsNeozU0Zo1pXmuT24qilVxyLluanWM5OtK', 0, 0, '2018-10-24 16:14:58', '2019-04-12 14:29:15', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (40, 'Ivan NOTE', 'inote', 'inote@footregion.fr', '$2y$10$845nBeFftvd92wvMAWuQeODqp06NugG51Dn2LLj2tnH.btO4lTKS6', 0, 0, '2018-10-24 16:15:50', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (41, 'Sami FRAIS', 'sfrais', 'sfrais@footregion.fr', '$2y$10$u8mMSLSdKon020xnlhCRS.ayAtDDACFtove279EfjTifby02G4.zu', 0, 0, '2018-10-24 16:16:31', '2018-11-25 17:54:39', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (42, 'Jean MARQUE', 'jmarque', 'jmarque@footregion.fr', '$2y$10$DF/pwMhXNa.ixIpaZ.7oROd5tssHvCTCLuf6I8ULQvXTeDAkC1jG.', 0, 0, '2018-10-24 16:17:11', '2018-11-25 17:54:56', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (43, 'Théo BUT', 'tbut', 'tbut@footregion.fr', '$2y$10$iU1RjrLZdfSOieQkvySoFuSt1LRgcik4/CAf5/i9gJk4RnScdJ8p2', 0, 0, '2018-10-24 16:17:46', '2018-10-26 13:02:40', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
 (44, 'Paul HOCHON', 'phochon', 'phochon@footregion.fr', '$2y$10$xK/50VKjdamsjSKxeVZWWu7VLKUeD.TsXWHITBFq9Czs0h4aC2SmO', 0, 0, '2018-10-24 16:18:24', '2018-11-25 17:54:25', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
-(45, 'Lucie GERE', 'lgere', 'lgere@footregion.fr', '$2y$10$EGESaEzcOmHYOxocl1A63ei/fsJVo81XgFydOzP4sg.XS.88z/65q', 0, 0, '2018-10-24 16:26:11', '2018-11-25 16:41:06', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0);
+(45, 'Lucie GERE', 'lgere', 'lgere@footregion.fr', '$2y$10$EGESaEzcOmHYOxocl1A63ei/fsJVo81XgFydOzP4sg.XS.88z/65q', 0, 0, '2018-10-24 16:26:11', '2018-11-25 16:41:06', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0),
+(46, 'Ludovic LECLERC', 'lleclerc', 'lleclerc@footregion.fr', '$2y$10$dRVlVLHlCfXMdHtT5CiHUOeYyW3S39VVUdMc4YcVPyMR/cPlP6IRi', 0, 0, '2019-04-12 14:46:31', '0000-00-00 00:00:00', '', '{\"admin_style\":\"\",\"admin_language\":\"\",\"language\":\"\",\"editor\":\"\",\"helpsite\":\"\",\"timezone\":\"\"}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2918,7 +2921,9 @@ INSERT INTO `footregion_user_usergroup_map` (`user_id`, `group_id`) VALUES
 (44, 2),
 (44, 12),
 (45, 2),
-(45, 11);
+(45, 11),
+(46, 2),
+(46, 13);
 
 -- --------------------------------------------------------
 
@@ -2969,6 +2974,22 @@ INSERT INTO `footregion_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Doublure de structure pour la vue `footregion_vue_discussions`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_discussions` (
+`id` int(11)
+,`created` datetime
+,`auteur` varchar(101)
+,`message` text
+,`discussion` varchar(50)
+,`did` int(11)
+,`lanceur` varchar(101)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Doublure de structure pour la vue `footregion_vue_joueurs`
 -- (Voir ci-dessous la vue réelle)
 --
@@ -2986,11 +3007,183 @@ CREATE TABLE `footregion_vue_joueurs` (
 -- --------------------------------------------------------
 
 --
+-- Doublure de structure pour la vue `footregion_vue_matchs`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_matchs` (
+`id` int(11)
+,`nom` varchar(50)
+,`date_heure` datetime
+,`score_domicile` int(11)
+,`score_invite` int(11)
+,`tournois_id` int(11)
+,`equipes_domicile_id` int(11)
+,`equipes_invite_id` int(11)
+,`adr_rue` varchar(50)
+,`adr_ville` varchar(50)
+,`adr_cp` varchar(10)
+,`coord_gps` varchar(50)
+,`equipe_invite` varchar(50)
+,`equipe_domicile` varchar(50)
+,`entraineur_invite` varchar(100)
+,`entraineur_initiateur` varchar(100)
+,`tournoi` varchar(50)
+,`statut` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `footregion_vue_messages`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_messages` (
+`id` int(11)
+,`date` datetime
+,`auteur` varchar(101)
+,`email` varchar(100)
+,`libelle` text
+,`did` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `footregion_vue_messages_emis`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_messages_emis` (
+`id` int(11)
+,`date` datetime
+,`auteur` varchar(101)
+,`email` varchar(100)
+,`libelle` text
+,`discussion` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `footregion_vue_mes_clubs`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_mes_clubs` (
+`id` int(11)
+,`nom` varchar(255)
+,`adr_rue` varchar(50)
+,`sigle` varchar(50)
+,`adr_ville` varchar(50)
+,`adr_cp` varchar(10)
+,`email` varchar(100)
+,`equipe` varchar(50)
+,`emailEntraineur` varchar(100)
+,`emailJoueur` varchar(100)
+,`nomDirecteur` varchar(50)
+,`prenomDirecteur` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `footregion_vue_mes_equipes`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_mes_equipes` (
+`id` int(11)
+,`equipe` varchar(50)
+,`categorie` varchar(50)
+,`entraineur` varchar(101)
+,`club` varchar(255)
+,`email` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `footregion_vue_mon_equipe`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `footregion_vue_mon_equipe` (
+`id` int(11)
+,`equipe` varchar(50)
+,`categorie` varchar(50)
+,`club` varchar(255)
+,`entraineur` varchar(101)
+,`joueur` varchar(101)
+,`email` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_discussions`
+--
+DROP TABLE IF EXISTS `footregion_vue_discussions`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_discussions`  AS  select `m`.`id` AS `id`,`m`.`created` AS `created`,concat(`u`.`nom`,' ',`u`.`prenom`) AS `auteur`,`m`.`libelle` AS `message`,`d`.`theme` AS `discussion`,`d`.`id` AS `did`,concat(`ud`.`nom`,' ',`ud`.`prenom`) AS `lanceur` from (((`footregion_footregion_messages` `m` left join `footregion_footregion_discussions` `d` on((`d`.`id` = `m`.`discussions_id`))) left join `footregion_footregion_utilisateurs` `u` on((`u`.`id` = `m`.`utilisateurs_id`))) left join `footregion_footregion_utilisateurs` `ud` on((`ud`.`id` = `d`.`utilisateurs_id`))) where (`m`.`published` = 1) order by `d`.`theme`,`m`.`created` desc ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la vue `footregion_vue_joueurs`
 --
 DROP TABLE IF EXISTS `footregion_vue_joueurs`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_joueurs`  AS  select `u`.`id` AS `id`,`u`.`nom` AS `nom`,`u`.`prenom` AS `prenom`,`u`.`email` AS `email`,`j`.`poste` AS `poste`,`j`.`num_licence` AS `licence`,`j`.`date_naiss` AS `date_naiss`,`e`.`nom` AS `equipe` from ((`footregion_footregion_utilisateurs` `u` join `footregion_footregion_joueurs` `j` on((`u`.`email` = `j`.`email`))) join `footregion_footregion_equipes` `e` on((`j`.`equipes_id` = `e`.`id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_matchs`
+--
+DROP TABLE IF EXISTS `footregion_vue_matchs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_matchs`  AS  select `m`.`id` AS `id`,`m`.`nom` AS `nom`,`m`.`date_heure` AS `date_heure`,`m`.`score_domicile` AS `score_domicile`,`m`.`score_invite` AS `score_invite`,`m`.`tournois_id` AS `tournois_id`,`m`.`equipes_domicile_id` AS `equipes_domicile_id`,`m`.`equipes_invite_id` AS `equipes_invite_id`,`m`.`adr_rue` AS `adr_rue`,`m`.`adr_ville` AS `adr_ville`,`m`.`adr_cp` AS `adr_cp`,`m`.`coord_gps` AS `coord_gps`,`e`.`nom` AS `equipe_invite`,`ed`.`nom` AS `equipe_domicile`,`einv`.`email` AS `entraineur_invite`,`ein`.`email` AS `entraineur_initiateur`,`t`.`nom` AS `tournoi`,`s`.`statut` AS `statut` from ((((((`footregion_footregion_matchs` `m` left join `footregion_footregion_equipes` `e` on((`e`.`id` = `m`.`equipes_invite_id`))) left join `footregion_footregion_equipes` `ed` on((`ed`.`id` = `m`.`equipes_domicile_id`))) left join `footregion_footregion_entraineurs` `einv` on((`einv`.`id` = `m`.`entraineurs_invite_id`))) left join `footregion_footregion_entraineurs` `ein` on((`ein`.`id` = `m`.`entraineurs_initiateur_id`))) left join `footregion_footregion_tournois` `t` on((`t`.`id` = `m`.`tournois_id`))) left join `footregion_footregion_statuts` `s` on((`s`.`id` = `m`.`statuts_id`))) where ((`m`.`published` = 0) or (`m`.`published` = 1)) order by `m`.`date_heure` desc ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_messages`
+--
+DROP TABLE IF EXISTS `footregion_vue_messages`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_messages`  AS  select `m`.`id` AS `id`,`m`.`created` AS `date`,concat(`u`.`nom`,' ',`u`.`prenom`) AS `auteur`,`u`.`email` AS `email`,`m`.`libelle` AS `libelle`,`m`.`discussions_id` AS `did` from (`footregion_footregion_messages` `m` left join `footregion_footregion_utilisateurs` `u` on((`u`.`id` = `m`.`utilisateurs_id`))) where (`m`.`published` = 1) order by `m`.`discussions_id` desc,`m`.`id` desc ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_messages_emis`
+--
+DROP TABLE IF EXISTS `footregion_vue_messages_emis`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_messages_emis`  AS  select `m`.`id` AS `id`,`m`.`created` AS `date`,concat(`u`.`nom`,' ',`u`.`prenom`) AS `auteur`,`u`.`email` AS `email`,`m`.`libelle` AS `libelle`,`d`.`theme` AS `discussion` from ((`footregion_footregion_messages` `m` left join `footregion_footregion_utilisateurs` `u` on((`u`.`id` = `m`.`utilisateurs_id`))) left join `footregion_footregion_discussions` `d` on((`d`.`id` = `m`.`discussions_id`))) where (`m`.`published` = 1) order by `d`.`theme`,`m`.`id` desc ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_mes_clubs`
+--
+DROP TABLE IF EXISTS `footregion_vue_mes_clubs`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_mes_clubs`  AS  (select distinct `c`.`id` AS `id`,`c`.`nom` AS `nom`,`c`.`adr_rue` AS `adr_rue`,`c`.`sigle` AS `sigle`,`c`.`adr_ville` AS `adr_ville`,`c`.`adr_cp` AS `adr_cp`,`d`.`email` AS `email`,`e`.`nom` AS `equipe`,`ent`.`email` AS `emailEntraineur`,`j`.`email` AS `emailJoueur`,`u`.`nom` AS `nomDirecteur`,`u`.`prenom` AS `prenomDirecteur` from ((((((`footregion_footregion_clubs` `c` left join `footregion_footregion_directeurs` `d` on((`d`.`id` = `c`.`directeurs_id`))) left join `footregion_footregion_equipes` `e` on((`e`.`clubs_id` = `c`.`id`))) left join `footregion_footregion_entraineurs` `ent` on((`ent`.`id` = `e`.`entraineurs_id`))) left join `footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) left join `footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) left join `footregion_footregion_utilisateurs` `u` on((`u`.`email` = `d`.`email`))) where (`c`.`published` = 1) order by `c`.`nom`) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_mes_equipes`
+--
+DROP TABLE IF EXISTS `footregion_vue_mes_equipes`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_mes_equipes`  AS  (select `e`.`id` AS `id`,`e`.`nom` AS `equipe`,`cat`.`nom` AS `categorie`,concat(`u`.`nom`,' ',`u`.`prenom`) AS `entraineur`,`c`.`nom` AS `club`,`en`.`email` AS `email` from (((((`footregion_footregion_equipes` `e` left join `footregion_footregion_entraineurs` `en` on((`en`.`id` = `e`.`entraineurs_id`))) left join `footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) left join `footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) left join `footregion_footregion_utilisateurs` `u` on((`u`.`email` = `en`.`email`))) left join `footregion_footregion_clubs` `c` on((`c`.`id` = `e`.`clubs_id`))) where (`e`.`published` = 1) order by `e`.`nom`) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `footregion_vue_mon_equipe`
+--
+DROP TABLE IF EXISTS `footregion_vue_mon_equipe`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `footregion_vue_mon_equipe`  AS  (select `e`.`id` AS `id`,`e`.`nom` AS `equipe`,`cat`.`nom` AS `categorie`,`c`.`nom` AS `club`,concat(`uen`.`nom`,' ',`uen`.`prenom`) AS `entraineur`,concat(`uj2`.`nom`,' ',`uj2`.`prenom`) AS `joueur`,`j1`.`email` AS `email` from (((((((`footregion_footregion_equipes` `e` join `footregion_footregion_joueurs` `j1` on((`j1`.`equipes_id` = `e`.`id`))) left join `footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) left join `footregion_footregion_clubs` `c` on((`c`.`id` = `e`.`clubs_id`))) left join `footregion_footregion_entraineurs` `en` on((`en`.`id` = `e`.`entraineurs_id`))) left join `footregion_footregion_utilisateurs` `uen` on((`uen`.`email` = `en`.`email`))) left join `footregion_footregion_joueurs` `j2` on((`j2`.`equipes_id` = `e`.`id`))) left join `footregion_footregion_utilisateurs` `uj2` on((`uj2`.`email` = `j2`.`email`))) where (`e`.`published` = 1) order by `uj2`.`nom`) ;
 
 --
 -- Index pour les tables déchargées
@@ -4013,7 +4206,7 @@ ALTER TABLE `footregion_footregion_tournois`
 -- AUTO_INCREMENT pour la table `footregion_footregion_utilisateurs`
 --
 ALTER TABLE `footregion_footregion_utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT pour la table `footregion_languages`
@@ -4127,7 +4320,7 @@ ALTER TABLE `footregion_usergroups`
 -- AUTO_INCREMENT pour la table `footregion_users`
 --
 ALTER TABLE `footregion_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `footregion_user_keys`
