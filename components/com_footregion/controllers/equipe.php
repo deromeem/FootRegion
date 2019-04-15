@@ -54,7 +54,7 @@ class FootregionControllerEquipe extends JControllerForm
 		// {
 			// return base64_decode($return);
 		// }		
-		return JURI::base()."/index.php?option=com_annuaire&view=equipe";		
+		return JURI::base()."/index.php?option=com_footregion&view=equipe";		
 	}
 
 	public function getModel($name = 'form_equipe', $prefix = '', $config = array('ignore_request' => true))

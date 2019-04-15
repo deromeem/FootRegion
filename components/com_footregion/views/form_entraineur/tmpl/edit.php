@@ -19,7 +19,7 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'contact.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'entraineur.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
