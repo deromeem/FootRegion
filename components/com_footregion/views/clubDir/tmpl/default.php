@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();               		// gets current user object
 $groupeNumb = substr(implode($user->groups),1,2);
-$isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur 
+$isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group is '13' that is 'Footregion Directeur
 ?>
 
 <?php if (!$isAdmin) : ?>
@@ -14,14 +14,14 @@ $isAdmin = (in_array($groupeNumb, $user->groups));		// sets flag when user group
 			<h2><?php echo JText::_('COM_FOOTREGION_CLUB'); ?></h2>
 		</div>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=clubs'); ?>" class="btn" role="button">
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=clubsDir'); ?>" class="btn" role="button">
 				<span class="icon-cancel"></span></a>
 		</div>
 		<div class="btn-group pull-right">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_clubDir&layout=edit&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-edit"></span></a>
 		</div>
 		<div class="btn-group pull-right">
-		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_club&layout=delete&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-delete"></span></a>
+		<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_clubDir&layout=delete&id='.$this->item->id); ?>" class="btn" role="button"><span class="icon-delete"></span></a>
 		</div>
 	</div>
 	<div>

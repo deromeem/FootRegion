@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=clubDetails&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=club&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));

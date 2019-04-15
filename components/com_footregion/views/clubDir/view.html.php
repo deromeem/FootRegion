@@ -1,11 +1,11 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
- 
-class FootregionViewClubDetails extends JViewLegacy
+
+class FootregionViewClubDir extends JViewLegacy
 {
 	protected $item;
-	
-	function display($tpl = null) 
+
+	function display($tpl = null)
 	{
 		// initialise les variables
 		$this->item = $this->get('Item');
