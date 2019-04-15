@@ -16,7 +16,7 @@ class FootregionModelForm_discussion extends FootregionModelDiscussion
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('discusion.id', $pk);
+		$this->setState('discussion.id', $pk);
 		
 		$this->setState($this->_context.'id', $pk);
 
