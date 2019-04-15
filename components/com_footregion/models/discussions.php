@@ -13,7 +13,7 @@ class FootregionModelDiscussions extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
-				'utilisateur_id', 'd.utilisateurs_id',
+				'utilisateurs_id', 'd.utilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
 				'created', 'd.created',
@@ -73,7 +73,7 @@ class FootregionModelDiscussions extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'd.theme LIKE '.$search;
-				$searches[]	= 'u.nom LIKE '.$search;
+				$searches[]	= 'CONCAT(u.nom, " ", u.prenom) LIKE '.$search;
 				// Ajoute les clauses é la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -81,7 +81,7 @@ class FootregionModelDiscussions extends JModelList
 
 		// filtre les éléments publics
 		$query->where('d.published=1');
-		
+		echo nl2br(str_replace('#__','footregion_',$query));	  
 		// tri des colonnes
 		$orderCol = $this->getState('list.ordering', 'theme');
 		$orderDirn = $this->getState('list.direction', 'ASC');

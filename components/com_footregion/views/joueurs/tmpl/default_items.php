@@ -34,8 +34,13 @@ $isAdmin = (in_array('11', $user->groups));
 				<i class="icon-search"></i></button>
 		</div>
 		<div class="btn-group pull-left">
+<<<<<<< HEAD
 			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit'); ?>" class="btn" role="button" <?php if (!$isEnt && !$isAdmin)?> type="hidden" <?php ?> <span class="icon-plus"></span></a>
 		</div>
+=======
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_joueur&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+		</div>	
+>>>>>>> 6e1d05af6b5db2efd3d130dd513b0b1de4b9bcd4
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
 			<?php echo $this->pagination->getLimitBox(); ?>
@@ -68,10 +73,12 @@ $isAdmin = (in_array('11', $user->groups));
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
-					<td><?php echo $item->utilisateur ?></td>
+					<td>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->utilisateur ?></a>
+					</td>
 					<td><?php echo $item->equipe ?></td>
 					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
+						<?php echo $item->email ?>
 					</td>
 					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'joueurs.', true); ?></td> -->
 					<td><?php echo $item->poste ?></td>
