@@ -7,10 +7,10 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isEntraineur = (in_array('14', $user->groups));		// sets flag when user group is '14' that is 'Footregion Entraineur'
+$isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur
 ?>
 
-<?php if (!$isEntraineur) : ?>
+<?php if (!$isAdmin) : ?>
 	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
@@ -19,7 +19,7 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 		Joomla.submitbutton = function(task)
 		{
 			// si bouton 'Annuler' ou si les champs du formulaire sont valides alors on envoie le formulaire
-			if (task == 'joueur.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
+			if (task == 'club.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
 			{
 				Joomla.submitform(task);
 			}
@@ -27,21 +27,22 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 	</script>
 
 	<div class="edit item-page">
+
 		<form action="<?php echo JRoute::_('index.php?option=com_footregion&a_id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate form-vertical">
-			
+
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_FOOTREGION_JOUEUR')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_FOOTREGION_CLUB')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('joueur.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('club.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('joueur.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('club.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>
@@ -51,15 +52,15 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 
 			<fieldset>
 				<ul class="nav nav-tabs">
-					<li><a href="#joueur" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_JOUEUR'); ?></a></li>
+					<li><a href="#contact" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_CLUB'); ?></a></li>
 					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
 					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane active" id="joueur">
+					<div class="tab-pane active" id="contact">
 						<table class="table">
 							<tbody>
-							<tr>
+								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
 									</td>
@@ -69,73 +70,60 @@ $isEntraineur = (in_array('14', $user->groups));		// sets flag when user group i
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('prenom'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('sigle'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('prenom'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('sigle'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_rue'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('email'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_rue'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('poste'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_ville'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('poste'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_ville'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('num_licence'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('adr_cp'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('num_licence'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
 									</td>
 								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('date_naiss'); ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('directeurs_id'); ?></div>
 									</td>
 									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('date_naiss'); ?></div>
+										<div class="controls"><?php echo $this->form->getInput('directeurs_id'); ?></div>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					
+
 					<div class="tab-pane" id="avance">
 						<table class="table">
 							<tbody>
-							<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('equipes_id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('equipes_id'); ?></div>
-									</td>
-								</tr>
-								
+
 							</tbody>
-						</table>				
+						</table>
 
 						<input type="hidden" name="task" value="" />
 						<input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
 					</div>
 					<div class="tab-pane" id="commentaire">
-						<table class="table">
-							<tbody>
-								<div class="tab-pane" id="commentaire">
-								<?php echo $this->form->getControlGroup('commentaire'); ?>
-							</tbody>
-						</table>
+						<?php echo $this->form->getControlGroup('commentaire'); ?>
 					</div>
 					</div>
 				<?php echo JHtml::_('form.token'); ?>

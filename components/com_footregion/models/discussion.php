@@ -25,21 +25,17 @@ class FootregionModelDiscussion extends JModelItem
 		if (!isset($this->_item[$pk])) {
 			$db = $this->getDbo();
 			$query = $db->getQuery(true);
-			$query->select('d.theme, u.nom, u.prenom');
-			$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_discussions AS d ON u.id=d.utilisateurs_id');
-			
-			$query->select('d.id, d.theme, d.utilisateurs_id, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
-			$query->from('#__footregion_discussions d');
-			
+			//$query->select('d.theme, u.nom, u.prenom');
+			//$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_discussions AS d ON u.id=d.utilisateurs_id');
+						
 			$query->select('dis.theme, CONCAT(u.nom, " ",u.prenom) as utilisateur, m.created as date');
-
 			$query->from('#__footregion_utilisateurs AS u')->join('LEFT', '#__footregion_messages AS m ON u.id= m.utilisateurs_id');
 			// joint la table message
 			$query->select('m.libelle AS message')->join('LEFT', '#__footregion_discussions AS dis ON dis.id = m.discussions_id');
 			
 			$query->where('dis.id = ' . (int) $pk);
 			$query->order('date ASC');
-			echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+			//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 			$db->setQuery($query);
 			$data = $db->loadObjectList();
 			$this->_item[$pk] = $data;

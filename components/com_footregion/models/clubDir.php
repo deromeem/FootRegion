@@ -1,23 +1,20 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
- 
-class FootregionModelClubDetails extends JModelItem
+
+class FootregionModelClubDir extends JModelItem
 {
 	protected $_item = null;
-	protected $_context = 'com_footregion.club';
+	protected $_context = 'com_footregion.clubDir';
 
 	protected function populateState()
 	{
 		$app = JFactory::getApplication('site');
-		
+
 		// Charge et mémorise l'état (state) de l'id depuis le contexte
 		$pk = $app->input->getInt('id');
 		$this->setState($this->_context.'.id', $pk);
 		// $this->setState('club.id', $pk);
 	}
-
-	}
-
 
 	public function getItem($pk = null)
 	{
@@ -35,7 +32,7 @@ class FootregionModelClubDetails extends JModelItem
 			$query->select('d.email AS email')->join('LEFT', '#__footregion_directeurs AS d ON d.id=c.directeurs_id');
 			$query->select('u.nom AS nomDirecteur, u.prenom AS prenomDirecteur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 
-			
+
 			$query->where('c.id = ' . (int) $pk);
 			$db->setQuery($query);
 			$data = $db->loadObject();

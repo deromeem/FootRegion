@@ -1,13 +1,13 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionViewForm_equipe extends JViewLegacy
+class FootregionViewForm_clubDir extends JViewLegacy
 {
 	protected $form;
 	protected $item;
 	protected $return_page;
 	protected $state;
-	
+
 	public function display($tpl = null)
 	{
 		// initialise les variables
@@ -15,7 +15,7 @@ class FootregionViewForm_equipe extends JViewLegacy
 		$this->item			= $this->get('Item');
 		$this->form			= $this->get('Form');
 		$this->return_page	= $this->get('ReturnPage');
-		
+
 		// contrôle les erreurs
 		if (count($errors = $this->get('Errors')))
 		{

@@ -1,18 +1,19 @@
 <?php
 defined('_JEXEC') or die;
 
-class FootregionControllerEquipe extends JControllerForm
+class FootregionControllerClubDir extends JControllerForm
 {
 	// précise la vue (formulaire de saisie) à afficher
-	protected $view_item = 'form_equipe';
-	
+	protected $view_item = 'form_clubDir';
+
 	// précise la variable d'édition URL
 	protected $urlVar = 'a.id';
-	
+
 	public function add()
 	{
 		if (!parent::add())
 		{
+			// redirige à la page de retour
 			$this->setRedirect($this->getReturnPage());
 		}
 	}
@@ -46,6 +47,7 @@ class FootregionControllerEquipe extends JControllerForm
 	protected function getReturnPage()
 	{
 		// $return = $this->input->get('return', null, 'base64');
+
 		// if (empty($return) || !JUri::isInternal(base64_decode($return)))
 		// {
 			// return JUri::base();
@@ -53,11 +55,11 @@ class FootregionControllerEquipe extends JControllerForm
 		// else
 		// {
 			// return base64_decode($return);
-		// }		
-		return JURI::base()."/index.php?option=com_footregion&view=equipe";		
+		// }
+		return JURI::base()."/index.php?option=com_footregion&view=clubsDir";
 	}
 
-	public function getModel($name = 'form_equipe', $prefix = '', $config = array('ignore_request' => true))
+	public function getModel($name = 'form_clubDir', $prefix = '', $config = array('ignore_request' => true))
 	{
 		$model = parent::getModel($name, $prefix, $config);
 		return $model;

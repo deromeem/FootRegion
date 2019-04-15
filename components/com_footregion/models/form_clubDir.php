@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/discussion.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/clubDir.php';
 
-class FootregionModelForm_discussion extends FootregionModelDiscussion
+class FootregionModelForm_clubDir extends FootregionModelClubDir
 {
-	protected $_context = 'discussion';
+	protected $_context = 'clubDir';
 
 	protected function populateState()
 	{
@@ -16,8 +16,8 @@ class FootregionModelForm_discussion extends FootregionModelDiscussion
 
 		// Charge l'état depuis l'URL
 		$pk = $app->input->getInt('id');
-		$this->setState('discussion.id', $pk);
-		
+		$this->setState('club.id', $pk);
+
 		$this->setState($this->_context.'id', $pk);
 
 		$return = $app->input->get('return', null, 'base64');
@@ -25,11 +25,11 @@ class FootregionModelForm_discussion extends FootregionModelDiscussion
 
 		$this->setState('layout', $app->input->getString('layout'));
 	}
-	
+
 	public function getItem($itemId = null)
 	{
-		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('discussion.id');
-		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
+		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('club.id');
+		//echo "Frontend itemId=".$itemId;   // TEST DEBUG
 
 		// Obtient une instance de la ligne
 		$table = $this->getTable();

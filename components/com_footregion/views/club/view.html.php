@@ -1,29 +1,22 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
- 
-jimport('joomla.application.component.view');
- 
+
 class FootregionViewClub extends JViewLegacy
 {
-	protected $items;
-	
-	// surcharge de la methode display de la class JViewLegacy
-	function display($tpl = null) 
-	{
-		// récupère la liste des items à afficher
-		$this->items = $this->get('Items');
-		// récupère l'objet jPagination correspondant à la liste
-		$this->pagination = $this->get('Pagination');
-		// récupère les informations contextuelles (des listes ou de l'utilisateur)
-		$this->state = $this->get('State');
+	protected $item;
 
-		// affiche les erreurs éventuellement retournées
+	function display($tpl = null)
+	{
+		// initialise les variables
+		$this->item = $this->get('Item');
+
+		// affiche les erreurs
 		if (count($errors = $this->get('Errors'))) {
 			JError::raiseWarning(500, implode("\n", $errors));
 			return false;
 		}
 
-		// affiche les calques par appel de la méthode display() de la classe parente
+		// affiche la vue
 		parent::display($tpl);
 	}
 }
