@@ -37,12 +37,12 @@ $isAdmin = (in_array('13', $user->groups));		// sets flag when user group is '10
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
-						<button type="button" class="btn" onclick="Joomla.submitbutton('club.cancel')">
+						<button type="button" class="btn" onclick="Joomla.submitbutton('clubDir.cancel')">
 							<span class="icon-cancel"></span>
 						</button>
 					</div>
 					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('club.save')">
+						<button type="button" class="btn btn-primary validate" onclick="Joomla.submitbutton('clubDir.save')">
 							<span class="icon-ok"></span>
 						</button>
 					</div>

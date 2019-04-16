@@ -16,7 +16,7 @@ JHtml::_('formbehavior.chosen', 'select');
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_footregion&view=clubs&layout=edit&id='.(int) $this->item->id); ?>"
+<form action="<?php echo JRoute::_('index.php?option=com_footregion&view=clubsDir&layout=edit&id='.(int) $this->item->id); ?>"
       method="post" name="adminForm" id="footregion-form" class="form-validate">
 
 	<div class="control-group">
@@ -24,14 +24,14 @@ JHtml::_('formbehavior.chosen', 'select');
 		<div class="controls"><?php echo $this->form->getInput('nom'); ?></div>
 		<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
 		<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-	</div>					
+	</div>
 
 
 	<div class="form-horizontal">
 		<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', JText::_('COM_FOOTREGION_CLUB')); ?>
 		<div class="row-fluid">
-			
+
 			<div class="span9">
 				<div class="control-group">
 				</div>
@@ -50,7 +50,7 @@ JHtml::_('formbehavior.chosen', 'select');
 			<div class="form-vertical">
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('sigle'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('sigle'); ?></div> 
+					<div class="controls"><?php echo $this->form->getInput('sigle'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('adr_rue'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('adr_rue'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('adr_ville'); ?></div>
@@ -58,12 +58,12 @@ JHtml::_('formbehavior.chosen', 'select');
 					<div class="control-label"><?php echo $this->form->getLabel('adr_cp'); ?></div>
 					<div class="controls"><?php echo $this->form->getInput('adr_cp'); ?></div>
 					<div class="control-label"><?php echo $this->form->getLabel('directeurs_id'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('directeurs_id'); ?></div> 
-				</div>					
+					<div class="controls"><?php echo $this->form->getInput('directeurs_id'); ?></div>
+				</div>
 			</div>
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
-			
+
 		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'publishing', JText::_('JGLOBAL_FIELDSET_PUBLISHING', true)); ?>
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="span6">
@@ -73,7 +73,7 @@ JHtml::_('formbehavior.chosen', 'select');
 				<?php echo JLayoutHelper::render('joomla.edit.metadata', $this); ?>
 			</div>
 		</div>
-	
+
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 		<?php echo JLayoutHelper::render('joomla.edit.params', $this); ?>

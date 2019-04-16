@@ -1,12 +1,12 @@
-<?php
+	<?php
 defined('_JEXEC') or die;
 
 // use Joomla\Registry\Registry;
 
 // Base ce modèle sur celui du backend.
-require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/clubDir.php';
+require_once JPATH_COMPONENT_ADMINISTRATOR.'/models/club.php';
 
-class FootregionModelForm_clubDir extends FootregionModelClubDir
+class FootregionModelForm_clubDir extends FootregionModelClub
 {
 	protected $_context = 'clubDir';
 

@@ -1,0 +1,504 @@
+Structure du dossier
+Le num‚ro de s‚rie du volume est 5E75-A9B9
+C:.
+|   access.xml
+|   config.xml
+|   controller.php
+|   footregion.php
+|   footregion.xml
+|   index.html
+|   output.docx
+|   output.txt
+|   
++---controllers
+|       arbitre.php
+|       arbitres.php
+|       categorie.php
+|       categories.php
+|       categoriesOLD.php
+|       club.php
+|       clubDir.php
+|       clubs.php
+|       clubsDir.php
+|       clubsOLD.php
+|       contactsOLD.php
+|       directeur.php
+|       directeurs.php
+|       directeursOLD.php
+|       discussion.php
+|       discussions.php
+|       entraineur.php
+|       entraineurs.php
+|       entreprise.php
+|       entreprises.php
+|       entreprisesOLD.php
+|       equipe.php
+|       equipes.php
+|       index.html
+|       joueur.php
+|       joueurs.php
+|       match.php
+|       matches.php
+|       matchs_arbitre.php
+|       matchs_arbitres.php
+|       message.php
+|       messages.php
+|       signalement.php
+|       signalements.php
+|       statut.php
+|       statuts.php
+|       tournoi.php
+|       tournois.php
+|       utilisateur.php
+|       utilisateurs - Copie.php
+|       utilisateurs.php
+|       
++---helpers
+|       index.html
+|       utilisateur.php
+|       
++---language
+|   +---en-GB
+|   |       en-GB.com_footregion.ini
+|   |       en-GB.com_footregion.sys.ini
+|   |       
+|   \---fr-FR
+|           fr-FR.com_footregion.ini
+|           fr-FR.com_footregion.sys.ini
+|           
++---models
+|   |   arbitre.php
+|   |   arbitres.php
+|   |   categorie.php
+|   |   categories.php
+|   |   club.php
+|   |   clubDir.php
+|   |   clubs.php
+|   |   clubsDir.php
+|   |   contact.php
+|   |   contacts.php
+|   |   directeur.php
+|   |   directeurs.php
+|   |   discussion.php
+|   |   discussions.php
+|   |   entraineur.php
+|   |   entraineurs.php
+|   |   equipe.php
+|   |   equipes.php
+|   |   index.html
+|   |   joueur.php
+|   |   joueurs.php
+|   |   match.php
+|   |   matches.php
+|   |   matchs_arbitre.php
+|   |   matchs_arbitres.php
+|   |   message.php
+|   |   messages.php
+|   |   signalement.php
+|   |   signalements.php
+|   |   statut.php
+|   |   statuts.php
+|   |   tounois.php
+|   |   tournoi.php
+|   |   tournois.php
+|   |   utilisateur.php
+|   |   utilisateurs.php
+|   |   
+|   \---forms
+|           arbitre.xml
+|           categorie.xml
+|           club.xml
+|           directeur.xml
+|           discussion.xml
+|           entraineur.xml
+|           entreprise.xml
+|           equipe.xml
+|           joueur.xml
+|           match.xml
+|           matchs_arbitre.xml
+|           message.xml
+|           signalement.xml
+|           statut.xml
+|           tournoi.xml
+|           utilisateur.xml
+|           
++---sql
+|       index.html
+|       install.sql
+|       install_prefix.sql
+|       uninstall.sql
+|       uninstall_prefix.sql
+|       
++---tables
+|       arbitre.php
+|       categorie.php
+|       club.php
+|       directeur.php
+|       discussion.php
+|       entraineur.php
+|       equipe.php
+|       index.html
+|       joueur.php
+|       match.php
+|       matchs_arbitre.php
+|       message.php
+|       signalement.php
+|       statut.php
+|       tournoi.php
+|       utilisateur.php
+|       
+\---views
+    |   index.html
+    |   
+    +---arbitre
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---arbitres
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---categorie
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---categories
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---club
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---clubDir
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---clubs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---directeur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---directeurs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---discussion
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---discussions
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---entraineur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---entraineurs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---entreprise
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---entreprises
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---equipe
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---equipes
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---joueur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---joueurs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---match
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---matches
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---matchs_arbitre
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---matchs_arbitres
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---message
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   +---messages
+    |   |   |   index.html
+    |   |   |   view.html.php
+    |   |   |   
+    |   |   \---tmpl
+    |   |           default.php
+    |   |           default_body.php
+    |   |           default_foot.php
+    |   |           default_headcolumns.php
+    |   |           default_headfields.php
+    |   |           index.html
+    |   |           
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---messages
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---signalement
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---signalements
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---statut
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---statuts
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---tournoi
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           index.html
+    |           
+    +---tournois
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default_body.php
+    |           default_foot.php
+    |           default_headcolumns.php
+    |           default_headfields.php
+    |           index.html
+    |           
+    +---utilisateur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   +---tmpl
+    |   |       edit.php
+    |   |       index.html
+    |   |       
+    |   \---utilisateurs
+    |       |   index.html
+    |       |   view.html.php
+    |       |   
+    |       \---tmpl
+    |               default.php
+    |               default_body.php
+    |               default_foot.php
+    |               default_headcolumns.php
+    |               default_headfields.php
+    |               index.html
+    |               
+    \---utilisateurs
+        |   index.html
+        |   view.html.php
+        |   
+        \---tmpl
+                default.php
+                default_body.php
+                default_foot.php
+                default_headcolumns.php
+                default_headfields.php
+                index.html
+                
