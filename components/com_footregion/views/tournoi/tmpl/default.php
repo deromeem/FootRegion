@@ -1,19 +1,3 @@
-<?php
-defined('_JEXEC') or die('Restricted access');
-
-$user = JFactory::getUser();               		// gets current user object
-$isAdmin = (in_array('12', $user->groups));		// sets flag when user group is '1' that is 'FootRegion Public
-$isArb = (in_array('10', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur
-$isPub = (in_array('1', $user->groups));		// set flags when user group is '1' that is 'FootRegion Public
-$isPub1 = (in_array('12', $user->groups));		// set flags when user group is '12' that is 'FootRegion Public
-$isPub2 = (in_array('13', $user->groups));		// set flags when user group is '12' that is 'FootRegion Public
-$isPub3 = (in_array('14', $user->groups));		// set flags when user group is '12' that is 'FootRegion Public
-$isPub4 = (in_array('15', $user->groups));		// set flags when user group is '12' that is 'FootRegion Public
-?>
-
-<?php if (!$isAdmin && !$isArb && !$isPub && !$isPub1 && !$isPub2 && !$isPub3 && !$isPub4) : ?>a
-	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
-<?php else : ?>
 	<div class="form-inline form-inline-header">
 		<div class="btn-group pull-left">
 			<h2><?php echo JText::_('COM_FOOTREGION_TOURNOI'); ?></h2>
@@ -56,4 +40,3 @@ $isPub4 = (in_array('15', $user->groups));		// set flags when user group is '12'
 			</tbody>
 		</table>
 	</div>
-<?php endif; ?>
