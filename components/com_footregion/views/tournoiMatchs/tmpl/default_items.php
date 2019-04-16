@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=tournoiMatchs&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=match&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
@@ -28,9 +28,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<div class="btn-group pull-left">
 			<button type="submit" class="btn" title="<?php echo JText::_('JSEARCH_FILTER');?>">
 				<i class="icon-search"></i></button>
-		</div>
+		</div>	
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_c&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_match&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -43,10 +43,18 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_TOURNOIS_NOM'), 'nom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_footregion_MATCHS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
-				<!-- <th class="title"><?php echo JHtml::_('grid.sort', 'Date', 'created', $listDirn, $listOrder) ?></th> -->
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_MATCHS_DATE_HEURE'), 'date_heure', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_MATCHS_ADR_VILLE'), 'adr_ville', $listDirn, $listOrder) ?>
+				</th>
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_MATCHS_STATUT'), 'statuts_id', $listDirn, $listOrder) ?>
+				</th>
 			</tr>
 		</thead>
 
@@ -56,6 +64,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
 					</td>
+					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'matchs.', true); ?></td> -->
+					<td><?php echo $item->date_heure ?></td>
+					<td><?php echo $item->adr_ville ?></td>
+					<td><?php echo $item->statut ?></td>
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>
