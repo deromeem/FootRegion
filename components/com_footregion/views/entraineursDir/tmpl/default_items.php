@@ -1,14 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=joueur&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_footregion&view=entraineurDir&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
-$isEnt = (in_array('14', $user->groups));
-$isAdmin = (in_array('11', $user->groups));
-
-
 ?>
 
 <form action="<?php echo JUri::getInstance()->toString(); ?>" method="post" name="adminForm" id="adminForm">
@@ -32,11 +28,10 @@ $isAdmin = (in_array('11', $user->groups));
 		<div class="btn-group pull-left">
 			<button type="submit" class="btn" title="<?php echo JText::_('JSEARCH_FILTER');?>">
 				<i class="icon-search"></i></button>
-		</div>
-		<if
+		</div>	
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form&layout=edit'); ?>" class="btn" role="button" <?php if (!$isEnt && !$isAdmin)?> type="hidden" <?php ?> <span class="icon-plus"></span></a>
-		</div>
+			<a href="<?php echo JRoute::_('index.php?option=com_footregion&view=form_entraineurDir&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
 			<?php echo $this->pagination->getLimitBox(); ?>
@@ -51,18 +46,12 @@ $isAdmin = (in_array('11', $user->groups));
 					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_UTILISATEURS_NOM'), 'nom', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_NOM'), 'nom_equipe', $listDirn, $listOrder) ?>
+				<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_EQUIPES_NOM'), 'nom_equipe', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_EMAIL'), 'email', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_ENTRAINEURS_EMAIL'), 'email', $listDirn, $listOrder) ?>
 				</th>
 				<!-- <th class="title">Publié</th> -->
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_POSTE'), 'poste', $listDirn, $listOrder) ?>
-				</th>
-				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_FOOTREGION_JOUEURS_DATE_NAISS'), 'date_naiss', $listDirn, $listOrder) ?>
-				</th>
 			</tr>
 		</thead>
 
@@ -74,9 +63,7 @@ $isAdmin = (in_array('11', $user->groups));
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->email ?></a>
 					</td>
-					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'joueurs.', true); ?></td> -->
-					<td><?php echo $item->poste ?></td>
-					<td><?php echo $item->date_naiss ?></td>
+					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entraineurs.', true); ?></td> -->
 					</tr>			
 			<?php endforeach; ?>
 		</tbody>
