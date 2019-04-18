@@ -29,7 +29,7 @@ class FootregionModelForm_utilisateur extends FootregionModelUtilisateur
 	public function getItem($itemId = null)
 	{
 		$itemId = (int) (!empty($itemId)) ? $itemId : $this->getState('utilisateur.id');
-		// echo "Frontend itemId=".$itemId;   // TEST/DEBUG
+		 echo "Frontend itemId=".$itemId;   // TEST/DEBUG
 
 		// Obtient une instance de la ligne
 		$table = $this->getTable();
