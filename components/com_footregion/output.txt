@@ -1,0 +1,432 @@
+Structure du dossier
+Le num‚ro de s‚rie du volume est 5E75-A9B9
+C:.
+|   controller.php
+|   footregion.php
+|   index.html
+|   output.txt
+|   
++---controllers
+|       arbitre.php
+|       club.php
+|       clubDir.php
+|       contact.php
+|       discussion.php
+|       entraineur.php
+|       entreprise.php
+|       equipe.php
+|       index.html
+|       joueur.php
+|       match.php
+|       message.php
+|       tournoi.php
+|       utilisateur.php
+|       
++---language
+|   +---en-GB
+|   |       en-GB.com_footregion.ini
+|   |       
+|   \---fr-FR
+|           fr-FR.com_footregion.ini
+|           
++---models
+|   |   arbitre.php
+|   |   arbitres.php
+|   |   club.php
+|   |   clubDir.php
+|   |   clubs.php
+|   |   clubsDir.php
+|   |   discussion.php
+|   |   discussions.php
+|   |   entraineur.php
+|   |   entraineurs.php
+|   |   equipe.php
+|   |   equipes.php
+|   |   form_arbitre.php
+|   |   form_club.php
+|   |   form_clubDir.php
+|   |   form_discussion.php
+|   |   form_entraineur.php
+|   |   form_equipe.php
+|   |   form_joueur.php
+|   |   form_match.php
+|   |   form_message.php
+|   |   form_utilisateur.php
+|   |   index.html
+|   |   joueur.php
+|   |   joueurs.php
+|   |   match.php
+|   |   matchs.php
+|   |   message.php
+|   |   messages.php
+|   |   signalement.php
+|   |   signalements.php
+|   |   tournoi.php
+|   |   tournois.php
+|   |   utilisateur.php
+|   |   utilisateurs.php
+|   |   
+|   \---forms
+|           arbitre.xml
+|           clubDir.xml
+|           contact.xml
+|           discussion.xml
+|           entraineur.xml
+|           entreprise.xml
+|           equipe.xml
+|           index.html
+|           joueur.xml
+|           match.xml
+|           message.xml
+|           tournoi.xml
+|           utilisateur.xml
+|           
+\---views
+    +---arbitre
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---arbitres
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---club
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---clubDir
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---clubs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---clubsDir
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---discussion
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---discussions
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---entraineur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---entraineurs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---equipe
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---equipes
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---form_arbitre
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_club
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_clubDir
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_discussion
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_entraineur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_equipe
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_joueur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_match
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_message
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_signalement
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_tournoi
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---form_utilisateur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           edit.php
+    |           edit.xml
+    |           index.html
+    |           
+    +---joueur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---joueurs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---match
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---matchs
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---message
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---messages
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---signalement
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---signalements
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---tournoi
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    +---tournois
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           default_full.php
+    |           default_items.php
+    |           index.html
+    |           
+    +---utilisateur
+    |   |   index.html
+    |   |   view.html.php
+    |   |   
+    |   \---tmpl
+    |           default.php
+    |           default.xml
+    |           index.html
+    |           
+    \---utilisateurs
+        |   index.html
+        |   view.html.php
+        |   
+        \---tmpl
+                default.php
+                default.xml
+                default_full.php
+                default_items.php
+                index.html
+                
