@@ -48,18 +48,8 @@ LEFT JOIN footregion_footregion_statuts AS s ON s.id=m.statuts_id
 WHERE (m.published=0 OR m.published=1)
 ORDER BY m.date_heure desc;
 
-footregion_vue_mes_clubs : NOK !
-http://127.0.0.1/footregion/api/index.php?login=mdupond&pwd=123456&task=mess_clubs
-(select distinct `c`.`id` AS `id`,`c`.`nom` AS `nom`,`c`.`adr_rue` AS `adr_rue`,`c`.`sigle` AS `sigle`,`c`.`adr_ville` AS `adr_ville`,`c`.`adr_cp` AS `adr_cp`,`d`.`email` AS `email`,`ent`.`email` AS `emailEntraineur`,`j`.`email` AS `emailJoueur`,`u`.`nom` AS `nomDirecteur`,`u`.`prenom` AS `prenomDirecteur` 
-from ((((((`footregion`.`footregion_footregion_clubs` `c` left join `footregion`.`footregion_footregion_directeurs` `d` on((`d`.`id` = `c`.`directeurs_id`))) 
-left join `footregion`.`footregion_footregion_equipes` `e` on((`e`.`clubs_id` = `c`.`id`))) 
-left join `footregion`.`footregion_footregion_entraineurs` `ent` on((`ent`.`id` = `e`.`entraineurs_id`))) 
-left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) 
-left join `footregion`.`footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) 
-left join `footregion`.`footregion_footregion_utilisateurs` `u` on(((`u`.`email` = `d`.`email`) and (`u`.`email` = `ent`.`email`) and (`u`.`email` = `j`.`email`)))) where (`c`.`published` = 1) order by `c`.`nom`)
-
-footregion_vue_mes_clubs : OK !
-http://127.0.0.1/footregion/api/index.php?login=mdupond&pwd=123456&task=mes_clubs
+footregion_vue_mes_clubs : ANCIENNE !
+http://localhost/footregion/api/index.php?login=mdupond&pwd=123456&task=mes_clubs
 (select distinct `c`.`id` AS `id`,`c`.`nom` AS `nom`,`c`.`adr_rue` AS `adr_rue`,`c`.`sigle` AS `sigle`,`c`.`adr_ville` AS `adr_ville`,`c`.`adr_cp` AS `adr_cp`,`d`.`email` AS `email`,`e`.`nom` AS `equipe`,`ent`.`email` AS `emailEntraineur`,`j`.`email` AS `emailJoueur`,`u`.`nom` AS `nomDirecteur`,`u`.`prenom` AS `prenomDirecteur` 
 from ((((((`footregion`.`footregion_footregion_clubs` `c` left join `footregion`.`footregion_footregion_directeurs` `d` on((`d`.`id` = `c`.`directeurs_id`))) 
 left join `footregion`.`footregion_footregion_equipes` `e` on((`e`.`clubs_id` = `c`.`id`))) 
@@ -68,17 +58,13 @@ left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` =
 left join `footregion`.`footregion_footregion_joueurs` `j` on((`j`.`equipes_id` = `e`.`id`))) 
 left join `footregion`.`footregion_footregion_utilisateurs` `u` on((`u`.`email` = `d`.`email`))) where (`c`.`published` = 1) order by `c`.`nom`)
 
-footregion_vue_mes_equipes : NOK !
-http://localhost/footregion/api/index.php?task=mes_equipes&login=inote&pwd=123456
-(select `e`.`id` AS `id`,`e`.`nom` AS `nom`,`c`.`nom` AS `clubs`,`cat`.`nom` AS `nom_cat`,`e`.`published` AS `published`,`e`.`hits` AS `hits`,`e`.`modified` AS `modified`, concat(`u`.`nom`,' ',`u`.`prenom`) AS `utilisateur`,`c`.`nom` AS `club`,`en`.`email` AS `email` 
-from (((((`footregion`.`footregion_footregion_equipes` `e` 
-left join `footregion`.`footregion_footregion_entraineurs` `en` on((`en`.`id` = `e`.`entraineurs_id`))) 
-left join `footregion`.`footregion_footregion_joueurs` `j` on((`en`.`email` = `j`.`email`))) 
-left join `footregion`.`footregion_footregion_categories` `cat` on((`cat`.`id` = `e`.`categories_id`))) 
-left join `footregion`.`footregion_footregion_utilisateurs` `u` on((`u`.`email` = `en`.`email`))) 
-left join `footregion`.`footregion_footregion_clubs` `c` on((`c`.`id` = `e`.`clubs_id`))) 
-where (`e`.`published` = 1) 
-order by `e`.`nom`)
+footregion_vue_mes_clubs : SIMPLIFIEE !
+http://localhost/footregion/api/index.php?login=mdupond&pwd=123456&task=mes_clubs
+select distinct `c`.`id` AS `id`,`c`.`nom` AS `nom`,`c`.`adr_rue` AS `adr_rue`,`c`.`sigle` AS `sigle`,`c`.`adr_ville` AS `adr_ville`,`c`.`adr_cp` AS `adr_cp`,`d`.`email` AS `email`,`u`.`nom` AS `nomDirecteur`,`u`.`prenom` AS `prenomDirecteur` 
+from ((`footregion`.`footregion_footregion_clubs` `c`
+left join `footregion`.`footregion_footregion_directeurs` `d` on((`d`.`id` = `c`.`directeurs_id`))) 
+left join `footregion`.`footregion_footregion_utilisateurs` `u` on((`u`.`email` = `d`.`email`)))
+where (`c`.`published` = 1) order by `c`.`nom`;
 
 footregion_vue_mes_equipes : OK !
 http://localhost/footregion/api/index.php?task=mes_equipes&login=inote&pwd=123456
