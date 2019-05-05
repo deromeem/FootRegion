@@ -36,9 +36,9 @@ class UtilisateurHelper extends JHelperContent
 		);
 
 		JHtmlSidebar::addEntry(
-				JText::_('Discussions'),
-				'index.php?option=com_footregion&view=discussions',
-				$vName == 'discussions'
+			JText::_('Discussions'),
+			'index.php?option=com_footregion&view=discussions',
+			$vName == 'discussions'
 		);
 		
 		JHtmlSidebar::addEntry(

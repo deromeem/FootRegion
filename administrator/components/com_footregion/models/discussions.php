@@ -11,6 +11,7 @@ class FootregionModelDiscussions extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'd.id',
 				'theme', 'd.theme',
+				'nom_lanceur', 'd.nom_lanceur',
 				'utilisateurs_id', 'd.uilisateurs_id',
 				'alias', 'd.alias',
 				'published', 'd.published',
@@ -30,7 +31,7 @@ class FootregionModelDiscussions extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		$pay = $this->getUserStateFromRequest($this->context.'.filter.nom', 'filter_nom', '');
+		$nom = $this->getUserStateFromRequest($this->context.'.filter.nom', 'filter_nom', '');
 		$this->setState('filter.nom', $nom);
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
@@ -47,7 +48,7 @@ class FootregionModelDiscussions extends JModelList
 		$query->from('#__footregion_discussions d');
 
 		// joint la table utilisateurs
-		$query->select('d.noms AS utlisateurs')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS nom_lanceur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id=d.utilisateurs_id');
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
@@ -62,7 +63,7 @@ class FootregionModelDiscussions extends JModelList
 				// Compile les clauses de recherche
 				$searches	= array();
 				$searches[]	= 'd.theme LIKE '.$search;
-				$searches[]	= 'd.utilisateurs_id LIKE '.$search;
+				$searches[]	= 'u.nom LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -70,8 +71,8 @@ class FootregionModelDiscussions extends JModelList
 
 		// filtre selon l'état du filtre 'filter_pay'
 		$nom = $this->getState('filter.nom');
-		f (is_numeric($nom)) {
-		$query->where('d.noms_id=' . (int) $pay);
+		if (is_numeric($nom)) {
+			$query->where('d.noms_id=' . (int) $pay);
 		}
 		
 		// filtre selon l'état du filtre 'filter_published'
@@ -89,7 +90,7 @@ class FootregionModelDiscussions extends JModelList
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		//echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 

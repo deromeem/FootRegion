@@ -45,12 +45,12 @@ class FootregionModelEquipes extends JModelList
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
 		$query->select('eq.id, eq.nom, eq.clubs_id, eq.categories_id, eq.published, eq.entraineurs_id, eq.hits, eq.modified');
-		$query->from('#__footregion_Equipes eq');
+		$query->from('#__footregion_equipes eq');
 
 		// joint la table pays
-		$query->select('c.nom AS nom_clubs')->join('LEFT', '#__footregion_clubs AS c ON c.id = eq.clubs_id');
+		$query->select('cl.nom AS nom_clubs')->join('LEFT', '#__footregion_clubs AS cl ON cl.id = eq.clubs_id');
 		$query->select('ca.nom AS nom_categories')->join('LEFT', '#__footregion_categories AS ca ON ca.id = eq.categories_id');
-		$query->select('en.email AS email_entraineurs')->join('LEFT', '#__footregion_entraineurs AS en ON en.email = eq.id');
+		$query->select('en.email AS email_entraineurs')->join('LEFT', '#__footregion_entraineurs AS en ON en.id = eq.entraineurs_id');
 		
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');

@@ -29,7 +29,7 @@
 			class="inputbox" default="" required="false" filter="user_utc" format="%Y-%m-%d"
 			showtime="false" todaybutton="false" filltable="false" translateformat="true"
         />
-		<field name="equipes_id" type="sql" default="" label="COM_FOOTREGION_EQUIPES_ID" 
+		<field name="equipes_id" type="sql" default="" label="COM_FOOTREGION_EQUIPE" 
 			description="COM_FOOTREGION_EQUIPES_ID"
 			query="SELECT id, nom FROM #__footregion_equipes" 
 			key_field="id" value_field="nom" required="false"

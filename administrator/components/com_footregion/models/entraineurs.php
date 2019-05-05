@@ -11,6 +11,7 @@ class FootregionModelEntraineurs extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'en.id',
 				'email', 'en.email',
+				'nom_entraineur', 'en.nom_entraineur',
 				'num_licence', 'en.num_licence',
 				'published', 'en.published',
 				'hits', 'en.hits',
@@ -40,10 +41,11 @@ class FootregionModelEntraineurs extends JModelList
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
 		$query->select('en.id, en.email, en.num_licence, en.published, en.hits, en.modified');
-		$query->from('#__footregion_Entraineurs en');
+		$query->from('#__footregion_entraineurs en');
 
-		// joint la table pays
-		$query->select('CONCAT(u.nom, " ", u.prenom) AS nom_entraineurs')->join('LEFT', '#__footregion_utilisateurs AS u ON u.id = en.id');
+		// joint la table utilisateurs
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS nom_entraineur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email = en.email');
+
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
@@ -56,7 +58,7 @@ class FootregionModelEntraineurs extends JModelList
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'en.nom LIKE '.$search;
+				$searches[]	= 'en.email LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -79,11 +81,11 @@ class FootregionModelEntraineurs extends JModelList
 		}
 
 		// tri des colonnes
-		$orderCol = $this->state->get('list.ordering', 'en.nom');
+		$orderCol = $this->state->get('list.ordering', 'en.email');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
-		 //echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
+		// echo nl2br(str_replace('#__','footregion_',$query));			// TEST/DEBUG
 		return $query;
 	}
 	public function getEntraineur()

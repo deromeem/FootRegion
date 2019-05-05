@@ -140,7 +140,6 @@ class FootregionModelUtilisateurs extends JModelList
 
 		// tri des colonnes
 		$orderCol = $this->state->get('list.ordering', 'u.nom');
-		$orderCol = $this->state->get('list.ordering', 'u.libelle');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 

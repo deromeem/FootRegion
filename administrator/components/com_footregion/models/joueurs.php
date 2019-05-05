@@ -11,10 +11,12 @@ class FootregionModelJoueurs extends JModelList
 			$config['filter_fields'] = array(
 				'id', 'j.id',
 				'email', 'j.email',
+				'nom_joueur', 'j.nom_joueur',
 				'poste', 'j.poste',
 				'num_licence', 'j.num_licence',
 				'date_naiss', 'j.date_naiss',
 				'equipe_id', 'j.equipes_id',
+				'nom_equipe', 'j.nom_equipe',
 				'published', 'j.published',
 				'hits', 'j.hits',
 				'modified', 'j.modified'
@@ -43,10 +45,13 @@ class FootregionModelJoueurs extends JModelList
 		// construit la requête d'affichage de la liste
 		$query = $this->_db->getQuery(true);
 		$query->select('j.id, j.email, j.poste, j.num_licence, j.date_naiss, j.equipes_id, j.published, j.hits, j.modified');
-		$query->from('#__footregion_Joueurs j');
+		$query->from('#__footregion_joueurs j');
 
-		// joint la table pays
-		$query->select('eq.nom AS nom_equipes')->join('LEFT', '#__footregion_equipes AS eq ON eq.id = j.id');
+		// joint la table equipes
+		$query->select('eq.nom AS nom_equipe')->join('LEFT', '#__footregion_equipes AS eq ON eq.id = j.equipes_id');
+
+		// joint la table utilisateurs
+		$query->select('CONCAT(u.nom, " ", u.prenom) AS nom_joueur')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email = j.email');
 
 		// filtre de recherche rapide textuel
 		$search = $this->getState('filter.search');
@@ -60,7 +65,7 @@ class FootregionModelJoueurs extends JModelList
 				$search = $this->_db->Quote('%'.$this->_db->escape($search, true).'%');
 				// Compile les clauses de recherche
 				$searches	= array();
-				$searches[]	= 'j.nom LIKE '.$search;
+				$searches[]	= 'j.email LIKE '.$search;
 				// Ajoute les clauses à la requête
 				$query->where('('.implode(' OR ', $searches).')');
 			}
@@ -83,7 +88,7 @@ class FootregionModelJoueurs extends JModelList
 		}
 
 		// tri des colonnes
-		$orderCol = $this->state->get('list.ordering', 'j.nom');
+		$orderCol = $this->state->get('list.ordering', 'j.email');
 		$orderDirn = $this->state->get('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 

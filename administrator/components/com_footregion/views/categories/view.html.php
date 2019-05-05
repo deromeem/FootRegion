@@ -43,7 +43,7 @@ class FootRegionViewCategories extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION_CATEGORIES'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_CATEGORIES'));
 		
 		// affiche les boutons d'action
 		JToolBarHelper::addNew('categorie.add');

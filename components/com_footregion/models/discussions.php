@@ -81,12 +81,13 @@ class FootregionModelDiscussions extends JModelList
 
 		// filtre les éléments publics
 		$query->where('d.published=1');
-		echo nl2br(str_replace('#__','footregion_',$query));	  
+
 		// tri des colonnes
 		$orderCol = $this->getState('list.ordering', 'theme');
 		$orderDirn = $this->getState('list.direction', 'ASC');
 		$query->order($this->_db->escape($orderCol.' '.$orderDirn));
 
+		// echo nl2br(str_replace('#__','footregion_',$query));
 		return $query;
 	}
 }

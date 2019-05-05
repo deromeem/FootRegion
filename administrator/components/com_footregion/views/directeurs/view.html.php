@@ -43,7 +43,7 @@ class FootRegionViewDirecteurs extends JViewLegacy
 	protected function addToolBar() 
 	{
 		// affiche le titre de la page
-		JToolBarHelper::title(JText::_('COM_FOOTREGION_DIRECTEURS'));
+		JToolBarHelper::title(JText::_('COM_FOOTREGION')." : ".JText::_('COM_FOOTREGION_DIRECTEURS'));
 		
 		// affiche les boutons d'action
 		JToolBarHelper::addNew('directeur.add');

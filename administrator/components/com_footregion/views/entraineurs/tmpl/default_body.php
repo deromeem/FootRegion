@@ -17,17 +17,18 @@ if ($saveOrder)
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
-		<td class="wrap has-context">
+		<td class="nowrap hidden-phone">
 			<div class="pull-left">
 				<a href="<?php echo JRoute::_('index.php?option=com_footregion&task=entraineur.edit&id='.(int) $item->id); ?>">
-				<?php echo $item->nom_entraineurs; ?>
+					<?php echo $item->email ?>
 				</a>
 			</div>
-		<td class="nowrap hidden-phone">
-			<?php echo $item->num_licence; ?>
+		</td>
+		<td class="wrap has-context">
+			<?php echo $item->nom_entraineur ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->email?>
+			<?php echo $item->num_licence; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'entraineurs.', true); ?>
@@ -37,6 +38,9 @@ if ($saveOrder)
 		</td>
 		<td class="center hidden-tablet hidden-phone">
 			<?php echo (int) $item->hits; ?>
+		</td>
+		<td class="center hidden-phone">
+			<?php echo (int) $item->id; ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

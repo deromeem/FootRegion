@@ -24,6 +24,9 @@ if ($saveOrder)
 				</a>
 			</div>
 		</td>
+		<td class="wrap has-context">
+			<?php echo $item->nom_joueur ?>
+		</td>
 		<td class="nowrap hidden-phone">
 			<?php echo $item->poste; ?>
 		</td>
@@ -34,7 +37,7 @@ if ($saveOrder)
 			<?php echo $item->date_naiss; ?>
 		</td>
 		<td class="nowrap hidden-phone">
-			<?php echo $item->nom_equipes; ?>
+			<?php echo $item->nom_equipe; ?>
 		</td>
 		<td class="center hidden-phone">
 			<?php echo JHtml::_('jgrid.published', $item->published, $i, 'equipes.', true); ?>

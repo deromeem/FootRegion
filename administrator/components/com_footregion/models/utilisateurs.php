@@ -28,8 +28,8 @@ class FootregionModelUtilisateurs extends JModelList
 		$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 
-		$pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
-		$this->setState('filter.pay', $pay);
+		// $pay = $this->getUserStateFromRequest($this->context.'.filter.pay', 'filter_pay', '');
+		// $this->setState('filter.pay', $pay);
 
 		$published = $this->getUserStateFromRequest($this->context.'.filter.published', 'filter_published', '');
 		$this->setState('filter.published', $published);

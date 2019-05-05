@@ -48,7 +48,7 @@ class FootregionModelDirecteurs extends JModelList
 		$query->select('d.id, d.email, d.date_affectation, d.alias, d.published, d.created, d.created_by, d.modified, d.modified_by, d.hits');
 		$query->from('#__footregion_directeurs d');
 
-		// joint la table pays
+		// joint la table utilisateurs
 		$query->select('u.nom AS nom, u.prenom AS prenom')->join('LEFT', '#__footregion_utilisateurs AS u ON u.email=d.email');
 
 		// filtre de recherche rapide textuel
