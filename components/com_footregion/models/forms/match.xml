@@ -5,8 +5,8 @@
 
 		<field name="asset_id" type="hidden" filter="unset" />
 		
-		<field name="nom" type="text" label="COM_footregion_matchS_NOM"
-			description="COM_footregion_matchS_NOM"
+		<field name="nom" type="text" label="COM_FOOTREGION_MATCHS_NOM"
+			description="COM_FOOTREGION_MATCHS_NOM"
 			size="40" class="inputbox" default="" required="true"
 		/>
 		<field name="alias" type="text"
@@ -14,6 +14,20 @@
 			description="JFIELD_ALIAS_DESC"
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 			class="inputbox" size="45"
+		/>
+		<field
+			name="date_heure" type="calendar" label="COM_FOOTREGION_MATCHS_DATE_HEURE"
+			description="COM_FOOTREGION_MATCHS_DATE_HEURE"
+			size="22" class="inputbox" default=""
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+		<field name="score_domicile" type="text" label="COM_FOOTREGION_MATCHS_SCORE_DOM"
+			description="COM_FOOTREGION_MATCHS_SCORE_DOM"
+			size="40" class="inputbox" default="" required="false"
+		/>
+		<field name="score_invite" type="text" label="COM_FOOTREGION_MATCHS_SCORE_INV"
+			description="COM_FOOTREGION_MATCHS_SCORE_INV"
+			size="40" class="inputbox" default="" required="false"
 		/>
 		<field name="adr_rue" type="text" label="COM_FOOTREGION_MATCHS_ADR_RUE"
 			description="COM_FOOTREGION_MATCHS_ADR_RUE"
@@ -27,44 +41,39 @@
 			description="COM_FOOTREGION_MATCHS_ADR_CP"
 			size="40" class="inputbox" default="" required="true"
 		/>
+		<field name="coord_gps" type="text" label="COM_FOOTREGION_MATCHS_COORD_GPS"
+			description="COM_FOOTREGION_MATCHS_COORD_GPS"
+			size="40" class="inputbox" default="" required="false"
+		/>
 		<field name="equipes_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS" 
 			description="COM_FOOTREGION_MATCHS_EQUIPE_VISITEURS"
 			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom"
-			key_field="id" value_field="nom" required="false"
+			key_field="id" value_field="nom" required="true"
 		/>
 		<field name="equipes_domicile_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX" 
 			description="COM_FOOTREGION_MATCHS_EQUIPE_LOCAUX"
 			query="SELECT id, nom FROM #__footregion_equipes ORDER BY nom" 
-			key_field="id" value_field="nom" required="false"
+			key_field="id" value_field="nom" required="true"
 		/>
-		<field name="entraineurs_visiteur_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS" 
+		<field name="entraineurs_invite_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_VISITEURS" 
 			description="COM_FOOTREGION_MATCHS_ENTRAINEURS_VISITEUR"
 			query="SELECT id, email FROM #__footregion_entraineurs ORDER BY email" 
 			key_field="id" value_field="email" required="false"
 		/>
-		<field name="fonction" type="text" label="COM_footregion_matchS_FONCTION"
-			description="COM_footregion_matchS_FONCTION" 
-			size="40" class="inputbox" default="" required="false"
+		<field name="entraineurs_initiateur_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX" 
+			description="COM_FOOTREGION_MATCHS_ENTRAINEUR_LOCAUX"
+			query="SELECT id, email FROM #__footregion_entraineurs ORDER BY email" 
+			key_field="id" value_field="email" required="false"
 		/>
-		<field name="email" type="text" label="COM_footregion_matchS_EMAIL"
-			description="COM_footregion_matchS_EMAIL"
-			size="40" class="inputbox" default="" required="false"
+		<field name="tournois_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_TOURNOI" 
+			description="COM_FOOTREGION_MATCHS_TOURNOI"
+			query="SELECT id, nom FROM #__footregion_tournois ORDER BY nom" 
+			key_field="id" value_field="nom" required="false"
 		/>
-		<field name="mobile" type="text" label="COM_footregion_matchS_MOBILE"
-			description="COM_footregion_matchS_MOBILE"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field name="tel" type="text" label="COM_footregion_matchS_TEL"
-			description="COM_footregion_matchS_TEL"
-			size="40" class="inputbox" default="" required="false"
-		/>
-		<field
-			name="commentaire" type="editor" label="COM_footregion_COMMENT"
-			description="COM_footregion_COMMENT"
-			class="inputbox"
-			filter="JComponentHelper::filterText"
-			buttons="true"
-			hide="readmore,pagebreak"
+		<field name="statuts_id" type="sql" default="" label="COM_FOOTREGION_MATCHS_STATUT" 
+			description="COM_FOOTREGION_MATCHS_STATUT"
+			query="SELECT id, statut FROM #__footregion_statuts ORDER BY statut" 
+			key_field="id" value_field="statut" required="false"
 		/>
 		<field id="published" name="published" type="list"
 			label="JSTATUS"	description="JSTATUS"
@@ -79,11 +88,6 @@
 			<option value="-2">
 				JTRASHED</option>
 		</field>				
-		<field
-			name="hits" type="text" label="JGLOBAL_HITS"
-			description="JGLOBAL_HITS"
-			size="6" class="readonly" readonly="true" filter="unset"
-		/>		
 		<field
 			name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
 			description="JGLOBAL_FIELD_CREATED_LABEL"
@@ -106,5 +110,10 @@
 			description="JGLOBAL_FIELD_MODIFIED_BY_DESC"
 			class="inputbox" default=""
 		/>
+		<field
+			name="hits" type="text" label="JGLOBAL_HITS"
+			description="JGLOBAL_HITS"
+			size="6" class="readonly" readonly="true" filter="unset"
+		/>		
 	</fieldset>
 </form>

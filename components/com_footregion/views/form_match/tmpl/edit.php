@@ -7,11 +7,11 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select');
 
 $user = JFactory::getUser();               		// gets current user object
-$isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' that is 'MRH Administrateur 
+$isEnt = (in_array('14', $user->groups));		// sets flag when user group is '14' that is 'FootRegion Entraineur' 
 ?>
 
 <?php if (!$isEnt) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_footregion_RESTRICTED_ACCESS') ); ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_FOOTREGION_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 	<script type="text/javascript">
 		// fonction javascript pour gérer les actions sur les boutons
@@ -31,7 +31,7 @@ $isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' 
 			<div class="form-inline form-inline-header">
 				<div class="btn-group pull-left">
 					<?php $isNew = ($this->item->id == 0); ?>
-					<h2><?php echo JText::_('COM_footregion_match')." ".($isNew ? JText::_('COM_footregion_ADD_PAR'): JText::_('COM_footregion_MODIF_PAR')); ?></h2>
+					<h2><?php echo JText::_('COM_FOOTREGION_MATCH')." ".($isNew ? JText::_('COM_FOOTREGION_ADD_PAR'): JText::_('COM_FOOTREGION_MODIF_PAR')); ?></h2>
 				</div>
 				<div class="btn-toolbar">
 					<div class="btn-group pull-right">
@@ -50,22 +50,14 @@ $isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' 
 
 			<fieldset>
 				<ul class="nav nav-tabs">
-					<li><a href="#match" data-toggle="tab"><?php echo JText::_('COM_footregion_match'); ?></a></li>
-					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_footregion_ADVANCED'); ?></a></li>
-					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_footregion_COMMENT'); ?></a></li>
+					<li><a href="#match" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_MATCH'); ?></a></li>
+					<li><a href="#avance" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_ADVANCED'); ?></a></li>
+					<li><a href="#commentaire" data-toggle="tab"><?php echo JText::_('COM_FOOTREGION_COMMENT'); ?></a></li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="match">
 						<table class="table">
 							<tbody>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
-									</td>
-								</tr>
 								<tr>
 									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('nom'); ?></div>
@@ -114,14 +106,6 @@ $isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' 
 										<div class="controls"><?php echo $this->form->getInput('equipes_domicile_id'); ?></div>
 									</td>
 								</tr>
-								<tr>
-									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('entraineurs_visiteur_id'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('entraineurs_visiteur_id'); ?></div>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -129,9 +113,22 @@ $isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' 
 						<table class="table">
 							<tbody>
 								<tr>
+								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo 'Pas de champs à remplir.' ?></div>
+										<div class="control-label"><?php echo $this->form->getLabel('entraineurs_invite_id'); ?></div>
 									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('entraineurs_invite_id'); ?></div>
+									</td>
+								</tr>
+								<tr>
+									<td width="20%" class="nowrap right">
+										<div class="control-label"><?php echo $this->form->getLabel('entraineurs_initiateur_id'); ?></div>
+									</td>
+									<td width="80%">
+										<div class="controls"><?php echo $this->form->getInput('entraineurs_initiateur_id'); ?></div>
+									</td>
+								</tr>
 							</tbody>
 						</table>				
 
@@ -141,7 +138,7 @@ $isEnt = (in_array('14', $user->groups));		// sets flag when user group is '10' 
 					<div class="tab-pane" id="commentaire">
 						<?php echo $this->form->getControlGroup('commentaire'); ?>
 					</div>
-					</div>
+				</div>
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>
 		</form>

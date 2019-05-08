@@ -42,7 +42,7 @@ class FootregionModelMatch extends JModelItem
 			
 			$query->where('m.id = ' . (int) $pk);
 
-			echo nl2br(str_replace('#__','footregion_',$query));
+			// echo nl2br(str_replace('#__','footregion_',$query));
 			$db->setQuery($query);
 			$data = $db->loadObject();
 			$this->_item[$pk] = $data;
