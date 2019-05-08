@@ -67,14 +67,6 @@ $isArbitre = (in_array('12', $user->groups));
 						<?php echo $this->item->mobile ?>
 					</td>
 				</tr>
-				<tr>
-					<td width="20%" class="nowrap right">
-						<span class="label"><?php echo JText::_('COM_FOOTREGION_UTILISATEURS_ALIAS'); ?></span>
-					</td>
-					<td width="80%">
-						<?php echo $this->item->alias; ?>
-					</td>
-				</tr>
 				<?php if ($isDirecteur) : ?>
 						<tr>
 							<td width="20%" class="nowrap right">

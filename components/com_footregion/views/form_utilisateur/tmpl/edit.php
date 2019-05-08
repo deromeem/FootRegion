@@ -92,15 +92,6 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 
 								<tr>
 									<td width="20%" class="nowrap right">
-										<div class="control-label"><?php echo $this->form->getLabel('alias'); ?></div>
-									</td>
-									<td width="80%">
-										<div class="controls"><?php echo $this->form->getInput('alias'); ?></div>
-									</td>
-								</tr>
-
-								<tr>
-									<td width="20%" class="nowrap right">
 										<div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
 									</td>
 									<td width="80%">
@@ -112,12 +103,7 @@ $isJoueur = (in_array('15', $user->groups));	// sets flag when user group is '10
 					</div>
 					
 					<div class="tab-pane" id="commentaire">
-						<table class="table">
-							<tbody>
-								<div class="tab-pane" id="commentaire">
-								<?php echo $this->form->getControlGroup('commentaire'); ?>
-							</tbody>
-						</table>
+						<?php echo $this->form->getControlGroup('commentaire'); ?>
 					</div>
 
 					<input type="hidden" name="task" value="" />
