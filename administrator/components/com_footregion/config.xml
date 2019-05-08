@@ -5,7 +5,7 @@
 		label="COM_FOOTREGION_OPTIONS"
 		description="COM_FOOTREGION_OPTIONS_DESCR">		
 		<field
-			name="show_title"
+			name="show_nom_utilisateur"
 			type="radio"
 			class="btn-group btn-group-yesno"
 			default="1"
@@ -15,7 +15,7 @@
 			<option value="0">JHIDE</option>
 		</field>
 		<field
-			name="link_titles"
+			name="show_photo_utilisateur"
 			type="radio"
 			class="btn-group btn-group-yesno"
 			default="1"
@@ -25,7 +25,7 @@
 			<option value="0">JNO</option>
 		</field>
 		<field
-			name="show_title"
+			name="show_nom_club"
 			type="radio"
 			class="btn-group btn-group-yesno"
 			default="1"
@@ -35,7 +35,7 @@
 			<option value="0">JHIDE</option>
 		</field>
 		<field
-			name="link_titles"
+			name="show_logo_club"
 			type="radio"
 			class="btn-group btn-group-yesno"
 			default="1"

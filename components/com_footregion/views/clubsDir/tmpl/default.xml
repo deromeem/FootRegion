@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <metadata> 
-	<layout title="Liste des clubs"> 
+	<layout title="Liste de mes clubs"> 
 		<message> 
-			<![CDATA[Ecran de liste de tous les clubs]]> 
+			<![CDATA[Ecran de liste de tous mes clubs]]> 
 		</message> 
 	</layout> 
 </metadata>
